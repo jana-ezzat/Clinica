@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "../shared/styles/variables.css";
+
+/* ============================================
+   Design System Utilities
+   Usage: ds-bg-primary, ds-text, ds-bg-card, etc.
+   ============================================ */
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@utility ds-bg {
+  background-color: var(--ds-background);
+}
+
+@utility ds-bg-card {
+  background-color: var(--ds-card-background);
+}
+
+@utility ds-bg-primary {
+  background-color: var(--ds-primary);
+}
+
+@utility ds-bg-secondary {
+  background-color: var(--ds-secondary);
+}
+
+@utility ds-text {
+  color: var(--ds-text);
+}
+
+@utility ds-text-secondary {
+  color: var(--ds-text-secondary);
+}
+
+@utility ds-border-primary {
+  border-color: var(--ds-primary);
+}
+
+@utility ds-border-secondary {
+  border-color: var(--ds-secondary);
+}
+
+@utility ds-shadow {
+  box-shadow: 0 4px 12px var(--ds-shadow);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--ds-background);
+  color: var(--ds-text);
+}
