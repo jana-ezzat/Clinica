@@ -28,7 +28,7 @@ export default async function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <ThemeToggle />
           <NavLink href="/sign-in">{t("login")}</NavLink>
           <Button tag="link" href="/sign-up" size="sm">
