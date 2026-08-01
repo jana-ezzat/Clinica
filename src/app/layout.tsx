@@ -5,6 +5,7 @@ import { changeLocaleAction } from "@/lib/actions/changeLocale";
 import { ThemeToggle } from "@/shared/components/ThemeButton";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
+import { pickMessages } from "@/lib/pickMessages";
 
 export default async function RootLayout({
   children,
@@ -13,6 +14,11 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const clientMessages = pickMessages(messages, [
+    "pricing",
+    "faq",
+    "stayUpdated",
+  ]);
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
@@ -22,7 +28,7 @@ export default async function RootLayout({
           attribute="data-theme"
           defaultTheme="light"
           enableSystem={false}>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={clientMessages}>
             {children}
             <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
             <ThemeToggle />
