@@ -31,7 +31,6 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={clientMessages}>
             {children}
             <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
-            <ThemeToggle />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

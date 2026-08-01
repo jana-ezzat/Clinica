@@ -40,8 +40,12 @@
   border-color: var(--ds-secondary);
 }
 
-@utility ds-shadow {
-  box-shadow: 0 4px 12px var(--ds-shadow);
+@utility ds-shadow-lg {
+  box-shadow: 0 4px 12px var(--ds-shadow-lg);
+}
+
+@utility ds-shadow-sm {
+  box-shadow: 0 2px 4px var(--ds-shadow-sm);
 }
 
 html,

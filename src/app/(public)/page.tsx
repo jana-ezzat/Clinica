@@ -1,5 +1,9 @@
-import React from "react";
+import Header from "@/modules/landing/components/organisms/Header";
 
 export default function page() {
-  return <div>Page</div>;
+  return (
+    <div>
+    <Header />
+    </div>
+  );
 }
