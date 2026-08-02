@@ -24,6 +24,9 @@
   background-color: var(--ds-secondary);
 }
 
+@utility ds-primary {
+  color: var(--ds-primary);
+}
 @utility ds-text {
   color: var(--ds-text);
 }
@@ -47,7 +50,9 @@
 @utility ds-shadow-sm {
   box-shadow: 0 2px 4px var(--ds-shadow-sm);
 }
-
+@utility ds-text-inverse {
+  color: var(--ds-background);
+}
 html,
 body {
   height: 100%;
