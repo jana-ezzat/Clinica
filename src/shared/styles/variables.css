@@ -4,27 +4,27 @@
    ============================================ */
 
 :root {
-  /* Light mode (default) */
   --ds-background: #f8fafc;
   --ds-card-background: #ffffff;
+
   --ds-text: #1e293b;
   --ds-text-secondary: #64748b;
+
   --ds-primary: #016dc3;
   --ds-secondary: #4db6ac;
-  --ds-shadow-lg: #838383;
-  --ds-shadow-sm: #e2e8f0;
-  --ds-primary-light: #016dc3;
-  
+
+  --ds-shadow: #838383;
 }
 
 [data-theme="dark"] {
   --ds-background: #0f172a;
   --ds-card-background: #1e293b;
+
   --ds-text: #f8fafc;
   --ds-text-secondary: #94a3b8;
-  --ds-primary-light: #dbeafe;
-  --ds-primary: #00283b;
+
+  --ds-primary: #38bdf8;
   --ds-secondary: #2dd4bf;
-  --ds-shadow-sm: #1e293b;
-  --ds-shadow-lg: #838383;
+
+  --ds-shadow: #838383;
 }
