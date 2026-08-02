@@ -35,7 +35,8 @@ export default function Title({
         variants[variant],
         center ? "text-center" : "",
         className,
-      )}>
+      )}
+    >
       {children}
     </h1>
   );

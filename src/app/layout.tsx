@@ -18,6 +18,7 @@ export default async function RootLayout({
     "pricing",
     "faq",
     "stayUpdated",
+    "forgetpassword",
   ]);
   const dir = locale === "ar" ? "rtl" : "ltr";
 
