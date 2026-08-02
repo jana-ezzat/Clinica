@@ -181,5 +181,22 @@
       }
     ],
     "copyright": "2025 Clinica. All rights reserved."
+  },
+  "forgetpassword": {
+    "title": "Forgot Password ?",
+    "description": "Enter your email and we'll send you a verification code to reset your password",
+    "label": "Email Address",
+    "placeholder": "email@example.com",
+    "btn": "Send Reset Link",
+    "loginLink": "Back to Login",
+    "returnToLogin": "Return to Login",
+    "rememberPassword": "Remember Password?",
+    "error": {
+      "invalidEmail": "Please enter a valid email address.",
+      "emailRequired": "Email is required."
+    },
+    "Logo": {
+      "alt": "Clinica"
+    }
   }
 }

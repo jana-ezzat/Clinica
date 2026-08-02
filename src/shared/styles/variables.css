@@ -5,28 +5,26 @@
 
 :root {
   /* Light mode (default) */
-  --ds-background: #F8FAFC;
-  --ds-card-background: #FFFFFF;
-
-  --ds-text: #1E293B;
-  --ds-text-secondary: #64748B;
-
-  --ds-primary: #016DC3;
-  --ds-secondary: #4DB6AC;
-
+  --ds-background: #f8fafc;
+  --ds-card-background: #ffffff;
+  --ds-text: #1e293b;
+  --ds-text-secondary: #64748b;
+  --ds-primary: #016dc3;
+  --ds-secondary: #4db6ac;
   --ds-shadow-lg: #838383;
-  --ds-shadow-sm: #E2E8F0;
+  --ds-shadow-sm: #e2e8f0;
+  --ds-primary-light: #016dc3;
+  
 }
 
 [data-theme="dark"] {
-  --ds-background: #0F172A;
-  --ds-card-background: #1E293B;
-
-  --ds-text: #F8FAFC;
-  --ds-text-secondary: #94A3B8;
-
-  --ds-primary: #00283B;
-  --ds-secondary: #2DD4BF;
-  --ds-shahow-sm: #1E293B;
+  --ds-background: #0f172a;
+  --ds-card-background: #1e293b;
+  --ds-text: #f8fafc;
+  --ds-text-secondary: #94a3b8;
+  --ds-primary-light: #dbeafe;
+  --ds-primary: #00283b;
+  --ds-secondary: #2dd4bf;
+  --ds-shadow-sm: #1e293b;
   --ds-shadow-lg: #838383;
 }
