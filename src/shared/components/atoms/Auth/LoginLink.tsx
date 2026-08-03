@@ -6,7 +6,7 @@ const LoginLink = ({ children }: { children: React.ReactNode }) => {
     <div className="flex justify-center items-center w-full mt-2">
       <Link
         href="/sign-in"
-        className="text-sm text-[var(--ds-primary-light)] transition-all  "
+        className="text-sm  ds-text-primary transition-all  "
       >
         {children}
       </Link>

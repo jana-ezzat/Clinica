@@ -27,7 +27,7 @@ export default function IconBox({
     lg: 30,
   };
   const variants = {
-    primary: "bg-[var(--ds-primary-light)]/30 text-[var(--ds-primary-light)] ",
+   primary: "bg-[var(--ds-primary)]/10 ds-text-primary",
     secondary: "bg-[var(--ds-secondary)] text-[var(--ds-text)]",
   };
 

@@ -28,7 +28,7 @@ const useRestPassword = () => {
   const onSubmit = (data: ResetPasswordFormValues) => {
     setSuccess(true);
   };
- return {
+  return {
     register,
     handleSubmit,
     errors,
