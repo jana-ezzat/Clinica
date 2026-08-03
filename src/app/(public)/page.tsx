@@ -5,7 +5,9 @@ import FeaturesSection from "@/modules/landing/components/organisms/FeaturesSect
 import Header from "@/modules/landing/components/organisms/Header";
 import HeroSection from "@/modules/landing/components/organisms/HeroSection";
 import PricingSection from "@/modules/landing/components/organisms/PricingSection";
+import SubscribeSection from "@/modules/landing/components/organisms/SubscribeSection";
 import TestimonialsSection from "@/modules/landing/components/organisms/TestimonialsSection";
+import FooterSection from "@/shared/components/FooterSection";
 
 export default function page() {
   return (
@@ -16,6 +18,8 @@ export default function page() {
     <TestimonialsSection />
     <PricingSection />
     <FAQSection />
+    <SubscribeSection />
+    <FooterSection />
     </div>
   );
 }

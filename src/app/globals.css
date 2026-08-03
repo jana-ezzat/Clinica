@@ -12,6 +12,10 @@
   background-color: var(--ds-background);
 }
 
+@utility ds-footer-text {
+  color: var(--ds-background);
+}
+
 @utility ds-bg-grey {
   background-color: var(--ds-bg-grey);
 }
@@ -39,6 +43,11 @@
 @utility ds-primary {
   color: var(--ds-primary);
 }
+
+@utility ds-bg-footer {
+  background-color: var(--ds-bg-footer);
+}
+
 @utility ds-text {
   color: var(--ds-text);
 }

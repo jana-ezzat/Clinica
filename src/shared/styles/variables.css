@@ -7,12 +7,12 @@
   --ds-text: #1e293b;
   --ds-text-secondary: #64748b;
   --ds-border-gray: #64748B33;
+  --ds-bg-footer: #016dc3;
 
   --ds-primary: #016dc3;
   --ds-secondary: #4db6ac;
   --ds-icon-tint: #016dc3;
   --ds-button-primary: #016dc3;
-
   --ds-shadow-lg: #838383;
   --ds-shadow-sm: #e2e8f0;
 }
@@ -29,7 +29,7 @@
   --ds-secondary: #2dd4bf;
   --ds-icon-tint: #016dc3;
   --ds-button-primary: #38BDF8;
-
+  --ds-bg-footer: #38BDF8;
   --ds-shadow-sm: #1e293b;
   --ds-shadow-lg: #838383;
 }
