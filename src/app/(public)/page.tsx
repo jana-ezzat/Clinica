@@ -1,7 +1,9 @@
+import BillingToggle from "@/modules/landing/components/molecules/BillingToggle";
 import TestimonialCard from "@/modules/landing/components/molecules/TestimonialCard";
 import FeaturesSection from "@/modules/landing/components/organisms/FeaturesSection";
 import Header from "@/modules/landing/components/organisms/Header";
 import HeroSection from "@/modules/landing/components/organisms/HeroSection";
+import PricingSection from "@/modules/landing/components/organisms/PricingSection";
 import TestimonialsSection from "@/modules/landing/components/organisms/TestimonialsSection";
 
 export default function page() {
@@ -11,6 +13,7 @@ export default function page() {
     <HeroSection />
     <FeaturesSection />
     <TestimonialsSection />
+    <PricingSection />
     </div>
   );
 }

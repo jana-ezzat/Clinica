@@ -27,8 +27,8 @@ const baseClasses =
   "inline-flex items-center justify-center font-medium rounded-lg transition-opacity focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
 const variants = {
-  primary: "ds-bg-primary text-white hover:opacity-90",
-  outline: "ds-bg-card ds-text border ds-border-secondary hover:opacity-80",
+  primary: "ds-bg-button-primary text-white hover:opacity-90",
+  outline: "ds-bg-card ds-text border ds-border-gray hover:opacity-80",
   ghost: "ds-text-primary hover:opacity-70",
 } as const;
 

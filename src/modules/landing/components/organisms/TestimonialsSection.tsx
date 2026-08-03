@@ -13,7 +13,7 @@ export default async function TestimonialsSection() {
   }[];
 
   return (
-    <section id="reviews" className="ds-bg-card px-6 py-16">
+    <section id="reviews" className="ds-bg px-6 py-16">
       <div className="max-w-6xl mx-auto">
         <Heading title={t("heading")} subtitle={t("subheading")} />
 

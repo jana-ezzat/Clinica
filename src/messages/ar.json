@@ -71,7 +71,7 @@
     "monthly": "شهري",
     "yearly": "سنوي",
     "popularBadge": "الأكثر شعبية",
-    "currency": "جنية / شهر",
+    "currency": "شهر / جنية",
     "plans": [
       {
         "key": "basic",

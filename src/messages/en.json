@@ -71,7 +71,7 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "popularBadge": "Most Popular",
-    "currency": "EGP / month",
+    "currency": "month / EGP",
     "plans": [
       {
         "key": "basic",

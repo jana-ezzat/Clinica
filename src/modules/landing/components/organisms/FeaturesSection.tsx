@@ -30,7 +30,7 @@ export default async function FeaturesSection() {
             return (
               <FeatureCard
                 key={item.key}
-                icon={<Icon size={24} className="ds-text-primary" />}
+                icon={<Icon size={24} className="ds-text-primary dark:text-white" />}
                 title={item.title}
                 description={item.description}
               />

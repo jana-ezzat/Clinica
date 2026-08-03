@@ -17,7 +17,7 @@
 }
 
 @utility ds-bg-icon {
-  background-color: color-mix(in srgb, var(--ds-primary) 20%, transparent);
+  background-color: color-mix(in srgb, var(--ds-icon-tint) 20%, transparent);
 }
 
 @utility ds-bg-card {
@@ -30,6 +30,10 @@
 
 @utility ds-bg-secondary {
   background-color: var(--ds-secondary);
+}
+
+@utility ds-border-gray {
+  border-color: var(--ds-border-gray);
 }
 
 @utility ds-primary {
@@ -57,6 +61,14 @@
 
 @utility ds-border-secondary {
   border-color: var(--ds-secondary);
+}
+
+@utility ds-bg-button-primary {
+  background-color: var(--ds-button-primary);
+}
+
+@utility ds-text-button-primary {
+  color: var(--ds-button-primary);
 }
 
 @utility ds-shadow-lg {
