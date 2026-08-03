@@ -189,7 +189,7 @@
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
     "loginLink": "Back to Login",
-    "returnToLogin": "Return to Login",
+    "returnToLogin": " Login",
     "rememberPassword": "Remember Password?",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
@@ -197,6 +197,28 @@
     },
     "Logo": {
       "alt": "Clinica"
+    }
+  },
+  "resetpassword": {
+    "title": "Reset Password",
+    "description": "Enter your new password below to reset your account password",
+    "label": "New Password",
+    "placeholder": "Enter your new password",
+    "placeholderConfirm": "Confirm your new password",
+    "titleConfirm": "Confirm New Password",
+    "btn": "Reset Password",
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?",
+    "error": {
+      "passwordRequired": "Password is required.",
+      "passwordsDontMatch": "Passwords do not match.",
+      "passwordMinLength": "Password must be at least 8 characters long.",
+      "passwordMaxLength": "Password must not exceed 20 characters."
+    },
+    "success": {
+      "title": "Password Changed",
+      "description": "Your password has been reset successfully"
     }
   }
 }
