@@ -197,6 +197,10 @@
     },
     "Logo": {
       "alt": "Clinica"
+    },
+    "success": {
+      "title": "Successfully Sent",
+      "description": "An OTP verification code has been sent to your email: {email}"
     }
   },
   "resetpassword": {

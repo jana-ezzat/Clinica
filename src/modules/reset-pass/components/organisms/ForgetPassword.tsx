@@ -1,32 +1,19 @@
 "use client";
 import FormCard from "@/shared/components/atoms/Auth/FormCard";
-import AuthTop from "../molecules/AuthTop";
 import FormHead from "../molecules/FormHead";
 import { MdOutlineEmail } from "react-icons/md";
-import { getTranslations } from "next-intl/server";
 import { EmailField } from "../molecules/EmailField";
 import Button from "@/shared/components/atoms/Button";
 import LoginLink from "@/shared/components/atoms/Auth/LoginLink";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
-import { forgetPasswordSchema } from "@/lib/Sechma/ForgetPasswordSechma";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import Modal from "@/shared/components/atoms/Modal";
+import useForgetPassword from "@/lib/Hooks/useForgetPassword";
 
-type ForgetPasswordFormValues = {
-  email: string;
-};
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ForgetPasswordFormValues>({
-    resolver: zodResolver(forgetPasswordSchema),
-  });
+  const { register, handleSubmit, errors, success, router ,submitemail } =
+    useForgetPassword();
 
   return (
     <div className="flex w-full flex-col items-center">
@@ -37,18 +24,12 @@ const ForgetPassword = () => {
           icon={MdOutlineEmail}
         />
 
-        <form
-          onSubmit={handleSubmit((data) => console.log(data))}
-          className="space-y-4"
-        >
+        <form onSubmit={handleSubmit} className="space-y-4">
           <EmailField
             id="email"
             label={t("label")}
             placeholder={t("placeholder")}
-            error={
-              errors.email?.message &&
-              t(`error.${errors.email.message}`)
-            }
+            error={errors.email?.message && t(`error.${errors.email.message}`)}
             {...register("email")}
           />
 
@@ -64,6 +45,16 @@ const ForgetPassword = () => {
         question={t("rememberPassword")}
         linkLabel={t("returnToLogin")}
         href="/sign-in"
+      />
+
+      {/* Modal */}
+      <Modal
+        show={success}
+        title={t("success.title")}
+        message={t("success.description", { email: submitemail })}
+        onClose={() => {
+          router.push("/otp");
+        }}
       />
     </div>
   );

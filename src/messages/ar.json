@@ -197,6 +197,10 @@
     },
     "Logo": {
       "alt": " كلينيكا"
+    },
+    "success": {
+      "title": "تم الإرسال",
+      "description": "تم إرسال رمز التحقق (OTP) إلى البريد الإلكتروني {email}"
     }
   },
   "resetpassword": {

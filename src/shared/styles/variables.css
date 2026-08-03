@@ -14,6 +14,7 @@
   --ds-secondary: #4db6ac;
 
   --ds-shadow: #838383;
+  --ds-primary-light: #016dc3;
 }
 
 [data-theme="dark"] {
@@ -27,5 +28,5 @@
   --ds-secondary: #2dd4bf;
 
   --ds-shadow: #838383;
+  --ds-primary-light: #dbeafe;
 }
-

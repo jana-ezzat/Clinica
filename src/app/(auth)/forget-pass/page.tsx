@@ -1,13 +1,11 @@
-import AuthTop from "@/modules/reset-pass/components/molecules/AuthTop";
 import ForgetPassword from "@/modules/reset-pass/components/organisms/ForgetPassword";
-
+import Form from "@/modules/reset-pass/components/Templet/Form";
 
 const page = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-3 px-5 py-4 sm:gap-6 sm:px-4 sm:py-6">
-      <AuthTop />
+    <Form>
       <ForgetPassword />
-    </div>
+    </Form>
   );
 };
 
