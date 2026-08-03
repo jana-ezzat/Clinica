@@ -10,6 +10,10 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+@theme {
+  --font-cairo: var(--font-cairo);
+}
+
 @utility ds-bg {
   background-color: var(--ds-background);
 }
@@ -41,8 +45,16 @@
   color: var(--ds-text);
 }
 
+@utility ds-text-primary {
+  color: var(--ds-primary);
+}
+
 @utility ds-text-secondary {
   color: var(--ds-text-secondary);
+}
+
+@utility ds-text-inverse {
+  color: var(--ds-background);
 }
 
 @utility ds-border-primary {
@@ -60,9 +72,7 @@
 @utility ds-shadow-sm {
   box-shadow: 0 2px 4px var(--ds-shadow-sm);
 }
-@utility ds-text-inverse {
-  color: var(--ds-background);
-}
+
 html,
 body {
   height: 100%;

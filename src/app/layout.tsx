@@ -6,6 +6,13 @@ import { ThemeToggle } from "@/shared/components/ThemeButton";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 import { pickMessages } from "@/lib/pickMessages";
+import { Cairo } from "next/font/google";
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-cairo",
+});
 
 export default async function RootLayout({
   children,
@@ -18,11 +25,17 @@ export default async function RootLayout({
     "pricing",
     "faq",
     "stayUpdated",
+    "forgetpassword",
   ]);
+
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir}
+      suppressHydrationWarning
+      className={cairo.variable}>
       <body>
         <ThemeProvider
           attribute="data-theme"
