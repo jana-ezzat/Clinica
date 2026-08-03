@@ -71,7 +71,7 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "popularBadge": "Most Popular",
-    "currency": "EGP / month",
+    "currency": "month / EGP",
     "plans": [
       {
         "key": "basic",
@@ -125,23 +125,23 @@
     "items": [
       {
         "question": "How do I get started with the platform?",
-        "answer": "Add the real answer here."
+        "answer": "Create your account, choose the right plan, and start managing your clinic with ease. Everything you need is in one place."
       },
       {
         "question": "Is my data safe and secure?",
-        "answer": "Add the real answer here."
+        "answer": "Yes. Your data is protected using modern security and encryption standards. Your privacy and your patients' privacy are our priority."
       },
       {
         "question": "Can I use the platform on mobile?",
-        "answer": "Add the real answer here."
+        "answer": "Yes. The platform works on mobile, tablet, and desktop. Access it anytime, anywhere."
       },
       {
         "question": "What payment methods are available?",
-        "answer": "Add the real answer here."
+        "answer": "We offer secure and convenient payment options. Simply choose the method that works best for you during checkout."
       },
       {
         "question": "Can I cancel my subscription at any time?",
-        "answer": "Add the real answer here."
+        "answer": "Yes. You can cancel your subscription at any time. Your plan won't renew after cancellation."
       }
     ]
   },
@@ -181,5 +181,48 @@
       }
     ],
     "copyright": "2025 Clinica. All rights reserved."
+  },
+  "forgetpassword": {
+    "title": "Forgot Password ?",
+    "description": "Enter your email and we'll send you a verification code to reset your password",
+    "label": "Email Address",
+    "placeholder": "email@example.com",
+    "btn": "Send Reset Link",
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?",
+    "error": {
+      "invalidEmail": "Please enter a valid email address.",
+      "emailRequired": "Email is required."
+    },
+    "Logo": {
+      "alt": "Clinica"
+    },
+    "success": {
+      "title": "Successfully Sent",
+      "description": "An OTP verification code has been sent to your email: {email}"
+    }
+  },
+  "resetpassword": {
+    "title": "Reset Password",
+    "description": "Enter your new password below to reset your account password",
+    "label": "New Password",
+    "placeholder": "Enter your new password",
+    "placeholderConfirm": "Confirm your new password",
+    "titleConfirm": "Confirm New Password",
+    "btn": "Reset Password",
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?",
+    "error": {
+      "passwordRequired": "Password is required.",
+      "passwordsDontMatch": "Passwords do not match.",
+      "passwordMinLength": "Password must be at least 8 characters long.",
+      "passwordMaxLength": "Password must not exceed 20 characters."
+    },
+    "success": {
+      "title": "Password Changed",
+      "description": "Your password has been reset successfully"
+    }
   }
 }
