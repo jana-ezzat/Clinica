@@ -11,7 +11,7 @@ const AuthTop = () => {
 
       <Title
         size="xxl"
-        className="p-0 font-extrabold text-[var(--ds-primary-light)] mt-10"
+        className="p-0 font-extrabold font-cairo ds-text-primary mt-10"
       >
         {t("alt")}
       </Title>
