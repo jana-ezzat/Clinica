@@ -26,6 +26,7 @@ export default async function RootLayout({
     "faq",
     "stayUpdated",
     "forgetpassword",
+    "resetpassword",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -40,7 +41,8 @@ export default async function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
-          enableSystem={false}>
+          enableSystem={false}
+        >
           <NextIntlClientProvider messages={clientMessages}>
             {children}
             <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
