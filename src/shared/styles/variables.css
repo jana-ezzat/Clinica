@@ -1,30 +1,35 @@
-/* ============================================
-   Design System Tokens — Color
-   Source: Figma Color Palette (Light / Dark mood)
-   ============================================ */
-
 :root {
+  /* Light mode */
   --ds-background: #f8fafc;
   --ds-card-background: #ffffff;
+  --ds-bg-grey: #ededed;
 
   --ds-text: #1e293b;
   --ds-text-secondary: #64748b;
+  --ds-border-gray: #64748B33;
+  --ds-bg-footer: #016dc3;
 
   --ds-primary: #016dc3;
   --ds-secondary: #4db6ac;
-
-  --ds-shadow: #838383;
+  --ds-icon-tint: #016dc3;
+  --ds-button-primary: #016dc3;
+  --ds-shadow-lg: #838383;
+  --ds-shadow-sm: #e2e8f0;
 }
 
 [data-theme="dark"] {
   --ds-background: #0f172a;
   --ds-card-background: #1e293b;
+  --ds-bg-grey: #121C34;
 
   --ds-text: #f8fafc;
   --ds-text-secondary: #94a3b8;
 
-  --ds-primary: #38bdf8;
+  --ds-primary: #00283b;
   --ds-secondary: #2dd4bf;
-
-  --ds-shadow: #838383;
+  --ds-icon-tint: #016dc3;
+  --ds-button-primary: #38BDF8;
+  --ds-bg-footer: #38BDF8;
+  --ds-shadow-sm: #1e293b;
+  --ds-shadow-lg: #838383;
 }

@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 interface Props {
   children: React.ReactNode;
   size?: "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
-  variant?: "primary" | "secondary" | "inverse";
+  variant?: "primary" | "secondary" | "inverse" | "footerText";
   center?: boolean;
   className?: string;
 }
@@ -27,7 +27,8 @@ export default function Title({
     primary: "ds-text",
     secondary: "ds-text-secondary",
     inverse: "ds-text-inverse",
-  };
+    footerText: "ds-footer-text",
+    };
   return (
     <h1
       className={cn(
