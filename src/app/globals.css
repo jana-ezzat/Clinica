@@ -4,12 +4,22 @@
 /* ============================================
    Design System Utilities
    Usage: ds-bg-primary, ds-text, ds-bg-card, etc.
-   ============================================ */
+   ===================================
+   
+   ========= */
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @utility ds-bg {
   background-color: var(--ds-background);
+}
+
+@utility ds-bg-grey {
+  background-color: var(--ds-bg-grey);
+}
+
+@utility ds-bg-icon {
+  background-color: color-mix(in srgb, var(--ds-primary) 20%, transparent);
 }
 
 @utility ds-bg-card {
@@ -61,4 +71,5 @@ body {
 body {
   background-color: var(--ds-background);
   color: var(--ds-text);
+  font-family: var(--font-cairo), sans-serif;
 }

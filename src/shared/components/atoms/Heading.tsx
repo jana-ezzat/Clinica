@@ -9,11 +9,11 @@ interface HeadingProps {
 export default function Heading({ title, subtitle }: HeadingProps) {
   return (
     <div className="flex flex-col gap-y-4 mb-5 font-normal">
-      <Title variant="primary" size="xl" center className="font-normal">
+      <Title variant="primary" size="lg" center className="font-semibold">
         {title}
       </Title>
       {subtitle && (
-        <Text size="md" className="text-center">
+        <Text size="md" variant="secondary" center>
           {subtitle}
         </Text>
       )}
