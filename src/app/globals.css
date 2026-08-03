@@ -1,12 +1,6 @@
 @import "tailwindcss";
 @import "../shared/styles/variables.css";
 
-/* ============================================
-   Design System Utilities
-   Usage: ds-bg-primary, ds-text, ds-bg-card, etc.
-   ===================================
-   
-   ========= */
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 

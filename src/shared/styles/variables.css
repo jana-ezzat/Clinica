@@ -1,10 +1,5 @@
-/* ============================================
-   Design System Tokens — Color
-   Source: Figma Color Palette (Light / Dark mood)
-   ============================================ */
-
 :root {
-  /* Light mode (default) */
+  /* Light mode */
   --ds-background: #f8fafc;
   --ds-card-background: #ffffff;
   --ds-bg-grey: #ededed;
