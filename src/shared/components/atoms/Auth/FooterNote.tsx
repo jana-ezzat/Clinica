@@ -15,7 +15,7 @@ export default function FooterNote({ question, linkLabel, href }: Props) {
       </Text>
       <Link
         href={href}
-        className="text-sm font-bold ds-text-primary hover:underline"
+        className="text-sm font-bold ds-text-primary dark:text-white hover:underline"
       >
         {linkLabel}
       </Link>
