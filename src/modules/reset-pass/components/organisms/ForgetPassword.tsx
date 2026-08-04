@@ -12,6 +12,7 @@ import useForgetPassword from "@/lib/Hooks/useForgetPassword";
 
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");
+  const c = useTranslations("commonAuth");
   const { register, handleSubmit, errors, success, router ,submitemail } =
     useForgetPassword();
 
@@ -38,12 +39,12 @@ const ForgetPassword = () => {
           </Button>
         </form>
 
-        <LoginLink>{t("loginLink")}</LoginLink>
+        <LoginLink>{c("loginLink")}</LoginLink>
       </FormCard>
 
       <FooterNote
-        question={t("rememberPassword")}
-        linkLabel={t("returnToLogin")}
+        question={c("rememberPassword")}
+        linkLabel={c("returnToLogin")}
         href="/sign-in"
       />
 
