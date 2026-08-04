@@ -27,7 +27,6 @@ export default async function RootLayout({
     "stayUpdated",
     "forgetpassword",
     "resetpassword",
-    "signin"
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
