@@ -12,6 +12,7 @@ import PasswordFelids from "../molecules/PasswordFelids";
 
 const ResetPassword = () => {
   const t = useTranslations("resetpassword");
+  const c = useTranslations("commonAuth");
   const { register, handleSubmit, errors, success, onSubmit, router } =
     useRestPassword();
   return (
@@ -50,13 +51,13 @@ const ResetPassword = () => {
           <Button variant="primary" className="w-full mt-4" type="submit">
             {t("btn")}
           </Button>
-          <LoginLink>{t("loginLink")}</LoginLink>
+          <LoginLink>{c("loginLink")}</LoginLink>
         </form>
       </FormCard>
 
       <FooterNote
-        question={t("rememberPassword")}
-        linkLabel={t("returnToLogin")}
+        question={c("rememberPassword")}
+        linkLabel={c("returnToLogin")}
         href="/sign-in"
       />
 

@@ -188,9 +188,6 @@
     "label": "Email Address",
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
-    "loginLink": "Back to Login",
-    "returnToLogin": " Login",
-    "rememberPassword": "Remember Password?",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
       "emailRequired": "Email is required."
@@ -211,9 +208,6 @@
     "placeholderConfirm": "Confirm your new password",
     "titleConfirm": "Confirm New Password",
     "btn": "Reset Password",
-    "loginLink": "Back to Login",
-    "returnToLogin": " Login",
-    "rememberPassword": "Remember Password?",
     "error": {
       "passwordRequired": "Password is required.",
       "passwordsDontMatch": "Passwords do not match.",
@@ -224,5 +218,17 @@
       "title": "Password Changed",
       "description": "Your password has been reset successfully"
     }
+  },
+  "commonAuth": {
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?"
+  },
+  "otp": {
+    "title": "Enter Verification Code",
+    "description": "A 6-digit code has been sent to your email",
+    "resend": "Resend Code",
+    "btn": "Verify Code",
+    "resendIn": "Resend code in "
   }
 }
