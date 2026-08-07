@@ -27,7 +27,9 @@ export default async function RootLayout({
     "stayUpdated",
     "forgetpassword",
     "resetpassword",
-    "signin"
+    "signin",
+    "commonAuth",
+    "otp",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -37,7 +39,8 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cairo.variable}>
+      className={cairo.variable}
+    >
       <body>
         <ThemeProvider
           attribute="data-theme"

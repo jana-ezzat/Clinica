@@ -215,9 +215,6 @@
     "label": " البريد الالكتروني",
     "placeholder": "email@example.com",
     "btn": "ارسال رمز التحقق",
-    "loginLink": "العودة لتسجيل الدخول",
-    "returnToLogin": " سجل الدخول",
-    "rememberPassword": "تذكرت كلمة المرور ؟",
     "error": {
       "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح.",
       "emailRequired": "البريد الإلكتروني مطلوب."
@@ -238,9 +235,6 @@
     "placeholderConfirm": "أدخل كلمة المرور الجديدة مرة أخرى",
     "titleConfirm": "تأكيد كلمة المرور الجديدة",
     "btn": "إعادة تعيين كلمة المرور",
-    "loginLink": "العودة لتسجيل الدخول",
-    "returnToLogin": " سجل الدخول",
-    "rememberPassword": "تذكرت كلمة المرور ؟",
     "error": {
       "passwordRequired": "كلمة المرور مطلوبة.",
       "passwordsDontMatch": "كلمتا المرور غير متطابقتين.",
@@ -272,6 +266,17 @@
       "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
       "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
       "networkError": "تعذر الاتصال بالخادم. تحقق من اتصالك."
-    }
+    },
+  "commonAuth": {
+    "loginLink": "العودة لتسجيل الدخول",
+    "returnToLogin": " سجل الدخول",
+    "rememberPassword": "تذكرت كلمة المرور ؟"
+  },
+  "otp": {
+    "title": "أدخل رمز التحقق",
+    "description": "تم إرسال رمز مكون من 6 أرقام إلى بريدك الإلكتروني",
+    "btn": "تأكيد الرمز",
+    "resend": "إعادة إرسال الرمز",
+    "resendIn": "إعادة إرسال الرمز خلال"
   }
 }

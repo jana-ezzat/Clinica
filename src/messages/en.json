@@ -152,7 +152,7 @@
     "cta": "Subscribe Now"
   },
   "footer": {
-    "brand": "Clinica",
+    "brand": "كيلينكا",
     "tagline": "An integrated platform for efficient and professional clinic management",
     "columns": [
       {
@@ -215,9 +215,6 @@
     "label": "Email Address",
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
-    "loginLink": "Back to Login",
-    "returnToLogin": " Login",
-    "rememberPassword": "Remember Password?",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
       "emailRequired": "Email is required."
@@ -238,9 +235,6 @@
     "placeholderConfirm": "Confirm your new password",
     "titleConfirm": "Confirm New Password",
     "btn": "Reset Password",
-    "loginLink": "Back to Login",
-    "returnToLogin": " Login",
-    "rememberPassword": "Remember Password?",
     "error": {
       "passwordRequired": "Password is required.",
       "passwordsDontMatch": "Passwords do not match.",
@@ -271,6 +265,17 @@
       "invalidCredentials": "Incorrect email or password.",
       "somethingWentWrong": "Something went wrong. Please try again.",
       "networkError": "Couldn't connect to the server. Check your connection."
-    }
+    },
+    "commonAuth": {
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?"
+  },
+  "otp": {
+    "title": "Enter Verification Code",
+    "description": "A 6-digit code has been sent to your email",
+    "resend": "Resend Code",
+    "btn": "Verify Code",
+    "resendIn": "Resend code in "
   }
 }
