@@ -4,8 +4,7 @@ import { forwardRef, InputHTMLAttributes, useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/cn";
 
-interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
-  type?: "email" | "password" | "text";
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   hasError?: boolean;
   className?: string;
 }
