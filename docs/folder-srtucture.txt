@@ -1,0 +1,73 @@
+Project Structure
+────────────────────────────────────────────────────────────────────
+
+    ── clinica
+        ├── src
+        │   ├── app
+        │   │   ├── layout.tsx                    # Root layout, providers, locale, theme, RTL/LTR
+        │   │   ├── globals.css                   # Global styles
+        │   │   │
+        │   │   ├── (public)
+        │   │   │   └── page.tsx                  # Landing page
+        │   │   │
+        │   │   ├── (auth)
+        │   │   │   ├── sign-in
+        │   │   │   │   └── page.tsx              # Sign in
+        │   │   │   ├── sign-up
+        │   │   │   │   └── page.tsx              # Sign up
+        │   │   │   ├── forget-pass
+        │   │   │   │   └── page.tsx              # Forgot password
+        │   │   │   ├── otp
+        │   │   │   │   └── page.tsx              # OTP verification
+        │   │   │   └── reset-pass
+        │   │   │       └── page.tsx              # Reset password
+        │   │   │
+        │   │   └── (dashboard)
+        │   │       └── dashboard
+        │   │           └── page.tsx              # Dashboard
+        │   │
+        │   ├── modules
+        │   │   └── landing
+        │   │       └── components
+        │   │           ├── organisms             # Large composed sections
+        │   │           └── molecules             # Reusable landing blocks
+        │   │
+        │   ├── shared
+        │   │   ├── components
+        │   │   │   ├── atoms                     # Design system primitives
+        │   │   │   ├── LocaleSwitcher.tsx
+        │   │   │   └── ThemeButton.tsx
+        │   │   │
+        │   │   └── styles
+        │   │       └── variables.css            # Design tokens
+        │   │
+        │   ├── lib
+        │   │   ├── cn.ts                        # ClassName helper
+        │   │   ├── pickMessages.ts              # Select i18n namespaces
+        │   │   └── actions
+        │   │       ├── changeLocale.ts
+        │   │       └── changeTheme.ts
+        │   │
+        │   ├── providers
+        │   │   └── ThemeProvider.tsx
+        │   │
+        │   ├── config
+        │   │   └── env.ts
+        │   │
+        │   ├── i18n
+        │   │   └── request.ts
+        │   │
+        │   ├── messages
+        │   │   ├── ar.json
+        │   │   └── en.json
+        │   │
+        │   └── assets
+        │       └── icons
+        │           └── icons.tsx
+        │
+        ├── next.config.ts
+        ├── tsconfig.json
+        ├── eslint.config.mjs
+        ├── postcss.config.mjs
+        ├── package.json
+        └── README.md
