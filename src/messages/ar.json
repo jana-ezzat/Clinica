@@ -158,25 +158,52 @@
       {
         "heading": "المنتج",
         "links": [
-          { "label": "المميزات", "href": "#features" },
-          { "label": "الأسعار", "href": "#pricing" },
-          { "label": "التحديثات", "href": "#" }
+          {
+            "label": "المميزات",
+            "href": "#features"
+          },
+          {
+            "label": "الأسعار",
+            "href": "#pricing"
+          },
+          {
+            "label": "التحديثات",
+            "href": "#"
+          }
         ]
       },
       {
         "heading": "الشركة",
         "links": [
-          { "label": "من نحن", "href": "#" },
-          { "label": "أتصل بنا", "href": "#" },
-          { "label": "الوظائف", "href": "#" }
+          {
+            "label": "من نحن",
+            "href": "#"
+          },
+          {
+            "label": "أتصل بنا",
+            "href": "#"
+          },
+          {
+            "label": "الوظائف",
+            "href": "#"
+          }
         ]
       },
       {
         "heading": "الدعم",
         "links": [
-          { "label": "مركز المساعدة", "href": "#" },
-          { "label": "الشروط و الأحكام", "href": "#" },
-          { "label": "سياسة الخصوصية", "href": "#" }
+          {
+            "label": "مركز المساعدة",
+            "href": "#"
+          },
+          {
+            "label": "الشروط و الأحكام",
+            "href": "#"
+          },
+          {
+            "label": "سياسة الخصوصية",
+            "href": "#"
+          }
         ]
       }
     ],
@@ -220,6 +247,26 @@
       "description": "تم إعادة تعيين كلمة المرور بنجاح"
     }
   },
+  "signin": {
+    "title": "أهلاً بعودتك",
+    "description": "سجل الدخول لإدارة عيادتك ومرضاك ومواعيدك",
+    "emailLabel": "البريد الالكتروني",
+    "emailPlaceholder": "email@example.com",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "btn": "تسجيل الدخول",
+    "btnLoading": "جاري تسجيل الدخول...",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "error": {
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح.",
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+      "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "networkError": "تعذر الاتصال بالخادم. تحقق من اتصالك."
+    },
   "commonAuth": {
     "loginLink": "العودة لتسجيل الدخول",
     "returnToLogin": " سجل الدخول",

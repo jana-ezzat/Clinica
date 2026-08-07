@@ -27,6 +27,7 @@ export default async function RootLayout({
     "stayUpdated",
     "forgetpassword",
     "resetpassword",
+    "signin",
     "commonAuth",
     "otp",
   ]);
