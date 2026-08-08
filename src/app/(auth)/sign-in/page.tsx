@@ -1,12 +1,9 @@
-import SignIn from "@/modules/sign-in/components/organisms/SignIn";
-import Form from "@/modules/reset-pass/components/Templet/Form";
+import SignIn from "@/modules/auth/sign-in/components/organisms/SignIn";
 
-const page = () => {
+export default function page() {
   return (
-    <Form>
+    <>
       <SignIn />
-    </Form>
+    </>
   );
 };
-
-export default page;

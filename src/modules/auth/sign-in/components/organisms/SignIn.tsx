@@ -1,8 +1,8 @@
 "use client";
 import FormCard from "@/shared/components/atoms/Auth/FormCard";
-import FormHead from "@/modules/reset-pass/components/molecules/FormHead";
-import { EmailField } from "@/modules/reset-pass/components/molecules/EmailField";
-import PasswordFelids from "@/modules/reset-pass/components/molecules/PasswordFelids";
+import FormHead from "@/modules/auth/reset-pass/components/molecules/FormHead";
+import { EmailField } from "@/modules/auth/reset-pass/components/molecules/EmailField";
+import PasswordFelids from "@/modules/auth/reset-pass/components/molecules/PasswordFelids";
 import Button from "@/shared/components/atoms/Button";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import ForgotPasswordLink from "@/shared/components/atoms/Auth/ForgotPasswordLink";
@@ -12,13 +12,16 @@ import useLogin from "@/lib/Hooks/useLogin";
 
 const SignIn = () => {
   const t = useTranslations("signin");
-  const { register, handleSubmit, errors, isSubmitting, apiError } =
-    useLogin();
+  const { register, handleSubmit, errors, isSubmitting, apiError } = useLogin();
 
   return (
     <div className="flex w-full flex-col items-center">
       <FormCard>
-        <FormHead title={t("title")} description={t("description")} icon={MdLogin} />
+        <FormHead
+          title={t("title")}
+          description={t("description")}
+          icon={MdLogin}
+        />
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <EmailField
@@ -52,8 +55,7 @@ const SignIn = () => {
             variant="primary"
             className="mt-4 w-full"
             type="submit"
-            disabled={isSubmitting}
-          >
+            disabled={isSubmitting}>
             {isSubmitting ? t("btnLoading") : t("btn")}
           </Button>
         </form>

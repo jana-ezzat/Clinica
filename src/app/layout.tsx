@@ -30,6 +30,7 @@ export default async function RootLayout({
     "signin",
     "commonAuth",
     "otp",
+    "sign-up",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -39,14 +40,12 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cairo.variable}
-    >
+      className={cairo.variable}>
       <body>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
-          enableSystem={false}
-        >
+          enableSystem={false}>
           <NextIntlClientProvider messages={clientMessages}>
             {children}
             <LocaleSwitcher changeLocaleAction={changeLocaleAction} />

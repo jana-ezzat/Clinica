@@ -1,4 +1,4 @@
-import AuthTop from "@/modules/reset-pass/components/molecules/AuthTop";
+import AuthTop from "@/modules/auth/reset-pass/components/molecules/AuthTop";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
