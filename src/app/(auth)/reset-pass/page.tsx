@@ -1,4 +1,4 @@
-import ResetPassword from "@/modules/reset-pass/components/organisms/ResetPassword";
+import ResetPassword from "@/modules/auth/reset-pass/components/organisms/ResetPassword";
 
 const page = () => {
   return <ResetPassword />;

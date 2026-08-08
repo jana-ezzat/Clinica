@@ -267,16 +267,47 @@
       "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
       "networkError": "تعذر الاتصال بالخادم. تحقق من اتصالك."
     },
-  "commonAuth": {
-    "loginLink": "العودة لتسجيل الدخول",
-    "returnToLogin": " سجل الدخول",
-    "rememberPassword": "تذكرت كلمة المرور ؟"
+    "commonAuth": {
+      "loginLink": "العودة لتسجيل الدخول",
+      "returnToLogin": " سجل الدخول",
+      "rememberPassword": "تذكرت كلمة المرور ؟"
+    },
+    "otp": {
+      "title": "أدخل رمز التحقق",
+      "description": "تم إرسال رمز مكون من 6 أرقام إلى بريدك الإلكتروني",
+      "btn": "تأكيد الرمز",
+      "resend": "إعادة إرسال الرمز",
+      "resendIn": "إعادة إرسال الرمز خلال"
+    }
   },
-  "otp": {
-    "title": "أدخل رمز التحقق",
-    "description": "تم إرسال رمز مكون من 6 أرقام إلى بريدك الإلكتروني",
-    "btn": "تأكيد الرمز",
-    "resend": "إعادة إرسال الرمز",
-    "resendIn": "إعادة إرسال الرمز خلال"
+  "sign-up": {
+    "title": "إنشاء حساب جديد",
+    "description": "ابدأ تجربتك المجانية لمدة 14 يوم",
+    "label": "الاسم بالكامل",
+    "placeholder": "أحمد محمد علي",
+    "specialty": {
+      "label": "التخصص",
+      "placeholder": "أختر التخصص"
+    },
+    "email": {
+      "label": "البريد الإلكتروني",
+      "placeholder": "email@gmail.com"
+    },
+    "password": {
+      "label": "كلمة المرور",
+      "placeholder": "••••••••••••",
+      "hint": "يجب أن تحتوي على 8 أحرف على الأقل"
+    },
+    "confirmPassword": {
+      "label": "تأكيد كلمة المرور",
+      "placeholder": "••••••••••••"
+    },
+    "btn": "إنشاء حساب",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "loginLink": "سجل الدخول",
+    "termsText": "بإنشاء حساب، أنت توافق على",
+    "termsLink": "الشروط و الأحكام",
+    "and": "و",
+    "privacyLink": "سياسة الخصوصية"
   }
 }

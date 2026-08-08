@@ -1,4 +1,4 @@
-import Otp from "@/modules/reset-pass/components/organisms/Otp";
+import Otp from "@/modules/auth/reset-pass/components/organisms/Otp";
 import React from "react";
 
 const page = () => {

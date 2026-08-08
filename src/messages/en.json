@@ -267,15 +267,46 @@
       "networkError": "Couldn't connect to the server. Check your connection."
     },
     "commonAuth": {
-    "loginLink": "Back to Login",
-    "returnToLogin": " Login",
-    "rememberPassword": "Remember Password?"
+      "loginLink": "Back to Login",
+      "returnToLogin": " Login",
+      "rememberPassword": "Remember Password?"
+    },
+    "otp": {
+      "title": "Enter Verification Code",
+      "description": "A 6-digit code has been sent to your email",
+      "resend": "Resend Code",
+      "btn": "Verify Code",
+      "resendIn": "Resend code in "
+    }
   },
-  "otp": {
-    "title": "Enter Verification Code",
-    "description": "A 6-digit code has been sent to your email",
-    "resend": "Resend Code",
-    "btn": "Verify Code",
-    "resendIn": "Resend code in "
+  "sign-up": {
+    "title": "Create a New Account",
+    "description": "Start your 14-day free trial",
+    "label": "Full Name",
+    "placeholder": "Ahmed Mohamed Ali",
+    "specialty": {
+      "label": "Specialty",
+      "placeholder": "Select your specialty"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "email@gmail.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "••••••••••••",
+      "hint": "Must be at least 8 characters"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "••••••••••••"
+    },
+    "btn": "Create Account",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "termsText": "By creating an account, you agree to the",
+    "termsLink": "Terms & Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy"
   }
 }
