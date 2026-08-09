@@ -244,6 +244,18 @@
     "success": {
       "title": "Password Changed",
       "description": "Your password has been reset successfully"
+    },
+    "otp": {
+      "title": "Enter Verification Code",
+      "description": "A 6-digit code has been sent to your email",
+      "resend": "Resend Code",
+      "btn": "Verify Code",
+      "resendIn": "Resend code in "
+    },
+    "commonAuth": {
+      "loginLink": "Back to Login",
+      "returnToLogin": " Login",
+      "rememberPassword": "Remember Password?"
     }
   },
   "signin": {
@@ -265,18 +277,6 @@
       "invalidCredentials": "Incorrect email or password.",
       "somethingWentWrong": "Something went wrong. Please try again.",
       "networkError": "Couldn't connect to the server. Check your connection."
-    },
-    "commonAuth": {
-      "loginLink": "Back to Login",
-      "returnToLogin": " Login",
-      "rememberPassword": "Remember Password?"
-    },
-    "otp": {
-      "title": "Enter Verification Code",
-      "description": "A 6-digit code has been sent to your email",
-      "resend": "Resend Code",
-      "btn": "Verify Code",
-      "resendIn": "Resend code in "
     }
   },
   "sign-up": {

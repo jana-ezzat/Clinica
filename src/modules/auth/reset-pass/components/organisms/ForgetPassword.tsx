@@ -12,7 +12,7 @@ import useForgetPassword from "@/lib/Hooks/useForgetPassword";
 
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");
-  const c = useTranslations("commonAuth");
+  const c = useTranslations("resetpassword.commonAuth");
   const { register, handleSubmit, errors, success, router ,submitemail } =
     useForgetPassword();
 
