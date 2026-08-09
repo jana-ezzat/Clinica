@@ -6,7 +6,7 @@ const ForgotPasswordLink = ({ children }: { children: React.ReactNode }) => {
     <div className="flex w-full justify-end">
       <Link
         href="/forget-pass"
-        className="text-sm ds-text-primary transition-all"
+        className="text-sm ds-text-primary dark:text-white transition-all"
       >
         {children}
       </Link>

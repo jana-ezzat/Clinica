@@ -28,8 +28,6 @@ export default async function RootLayout({
     "forgetpassword",
     "resetpassword",
     "signin",
-    "commonAuth",
-    "otp",
     "sign-up",
   ]);
 
@@ -40,12 +38,14 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cairo.variable}>
+      className={cairo.variable}
+    >
       <body>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
-          enableSystem={false}>
+          enableSystem={false}
+        >
           <NextIntlClientProvider messages={clientMessages}>
             {children}
             <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
