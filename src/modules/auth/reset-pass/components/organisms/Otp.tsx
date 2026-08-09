@@ -12,7 +12,7 @@ import OtpTimer from "../molecules/OtpTimer";
 import { useRouter } from "next/navigation";
 
 const Otp = () => {
-  const c = useTranslations("commonAuth");
+  const c = useTranslations("signin.commonAuth");
   const t = useTranslations("otp");
   const router = useRouter();
   const [code, setCode] = useState("");

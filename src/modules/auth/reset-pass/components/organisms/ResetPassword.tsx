@@ -12,7 +12,7 @@ import PasswordFelids from "../molecules/PasswordFelids";
 
 const ResetPassword = () => {
   const t = useTranslations("resetpassword");
-  const c = useTranslations("commonAuth");
+  const c = useTranslations("signin.commonAuth");
   const { register, handleSubmit, errors, success, onSubmit, router } =
     useRestPassword();
   return (
