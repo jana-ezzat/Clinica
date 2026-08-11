@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { loginSchema, LoginFormValues } from "../Sechma/LoginSechma";
 import { env } from "@/config/env";
 
-export const useLogin = () => {
+const useLogin = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
 
@@ -18,10 +18,9 @@ export const useLogin = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = async (data: LoginFormValues) => {
+  const onSubmit = async (data: LoginFormValues): Promise<void> => {
     setApiError(null);
 
-    // The Postman collection sends login as multipart form-data, not JSON.
     const formData = new FormData();
     formData.append("email", data.email);
     formData.append("password", data.password);
@@ -50,8 +49,9 @@ export const useLogin = () => {
       }
 
       router.push("/dashboard");
-    } catch {
+    } catch (error) {
       setApiError("networkError");
+      // console.log(error);
     }
   };
 
