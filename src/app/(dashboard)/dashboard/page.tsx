@@ -1,6 +1,5 @@
-import Header from "@/modules/landing/components/organisms/Header";
+import DashboardHome from "@/modules/dashboard/components/organisms/DashboardHome";
 
-export default function page() {
-  return <div>
-  </div>;
+export default function DashboardPage() {
+  return <DashboardHome />;
 }
