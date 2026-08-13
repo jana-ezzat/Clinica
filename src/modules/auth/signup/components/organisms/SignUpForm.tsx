@@ -1,6 +1,6 @@
 "use client";
-import { SignUpSchema, SignUpValues } from "@/modules/auth/schema/signUpSchema";
 import FormHead from "@/modules/auth/reset-pass/components/molecules/FormHead";
+import { SignUpSchema, SignUpValues } from "@/modules/auth/schema/signUpSchema";
 import FormCard from "@/shared/components/atoms/Auth/FormCard";
 import InputField from "@/shared/components/atoms/Auth/InputField";
 import LoginLink from "@/shared/components/atoms/Auth/LoginLink";

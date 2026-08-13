@@ -6,8 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ResetPasswordFormValues,
   resetPasswordSchema,
-} from "@/modules/auth/schema/ResetPasswordSechma";
-const useRestPassword = () => {
+} from "../schema/ResetPasswordSechma";
+
+export const useResetPassword = () => {
   const [success, setSuccess] = useState(false);
   const router = useRouter();
 
@@ -21,21 +22,20 @@ const useRestPassword = () => {
 
   useEffect(() => {
     if (!success) return;
-    let timer = setTimeout(() => router.push("/sign-in"), 3000);
+    const timer = setTimeout(() => router.push("/sign-in"), 3000);
     return () => clearTimeout(timer);
-  }, [success]);
+  }, [success, router]);
 
-  const onSubmit = (data: ResetPasswordFormValues) => {
+  const onSubmit = (_data: ResetPasswordFormValues) => {
     setSuccess(true);
   };
+
   return {
     register,
-    handleSubmit,
+    handleSubmit: handleSubmit(onSubmit),
     errors,
     success,
-    onSubmit,
-    router,
   };
 };
 
-export default useRestPassword;
+export default useResetPassword;

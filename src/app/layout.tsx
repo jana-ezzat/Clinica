@@ -32,6 +32,7 @@ export default async function RootLayout({
     "resetpassword",
     "signin",
     "sign-up",
+    "patients",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";

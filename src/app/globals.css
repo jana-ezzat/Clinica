@@ -25,6 +25,16 @@
   background-color: color-mix(in srgb, var(--ds-icon-tint) 20%, transparent);
 }
 
+@utility ds-badge-info {
+  background-color: color-mix(in srgb, var(--ds-primary) 12%, transparent);
+  color: var(--ds-primary);
+}
+
+@utility ds-badge-success {
+  background-color: color-mix(in srgb, var(--ds-secondary) 18%, transparent);
+  color: var(--ds-secondary);
+}
+
 @utility ds-bg-card {
   background-color: var(--ds-card-background);
 }

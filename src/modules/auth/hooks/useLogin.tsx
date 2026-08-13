@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { loginSchema, LoginFormValues } from "../schema/LoginSechma";
 import { env } from "@/config/env";
+import { tokenService } from "@/services/tokenService";
 
 export const useLogin = () => {
   const [apiError, setApiError] = useState<string | null>(null);
@@ -46,7 +47,7 @@ export const useLogin = () => {
 
       const token = result?.token ?? result?.access_token;
       if (token) {
-        localStorage.setItem("auth_token", token);
+        tokenService.set(token);
       }
 
       router.push("/dashboard");
