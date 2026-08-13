@@ -7,7 +7,7 @@ import Button from "@/shared/components/atoms/Button";
 import LoginLink from "@/shared/components/atoms/Auth/LoginLink";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import Modal from "@/shared/components/atoms/Modal";
-import useRestPassword from "@/lib/Hooks/useRestPassword";
+import useRestPassword from "@/modules/auth/hooks/useRestPassword";
 import PasswordFelids from "../molecules/PasswordFelids";
 
 const ResetPassword = () => {

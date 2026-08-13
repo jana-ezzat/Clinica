@@ -1,5 +1,5 @@
 "use client";
-import { SignUpSchema, SignUpValues } from "@/lib/Sechma/signUpSchema";
+import { SignUpSchema, SignUpValues } from "@/modules/auth/schema/signUpSchema";
 import FormHead from "@/modules/auth/reset-pass/components/molecules/FormHead";
 import FormCard from "@/shared/components/atoms/Auth/FormCard";
 import InputField from "@/shared/components/atoms/Auth/InputField";

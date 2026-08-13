@@ -14,9 +14,9 @@ export default function WelcomeBanner({ doctorName }: Props) {
       }}>
       <GiStethoscope
         size={90}
-        className="absolute start-6 top-1/2 -translate-y-1/2 text-white/25"
+        className="absolute end-6 top-1/2 -translate-y-1/2 text-white/25"
       />
-      <div className="relative w-full text-end">
+      <div className="relative w-full">
         <h2 className="text-xl font-bold text-white sm:text-2xl">
           مرحبا {doctorName}
         </h2>

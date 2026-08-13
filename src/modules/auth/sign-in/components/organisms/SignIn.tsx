@@ -8,7 +8,7 @@ import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import ForgotPasswordLink from "@/shared/components/atoms/Auth/ForgotPasswordLink";
 import { useTranslations } from "next-intl";
 import { MdLogin } from "react-icons/md";
-import useLogin from "@/lib/Hooks/useLogin";
+import useLogin from "@/modules/auth/hooks/useLogin";
 
 const SignIn = () => {
   const t = useTranslations("signin");
