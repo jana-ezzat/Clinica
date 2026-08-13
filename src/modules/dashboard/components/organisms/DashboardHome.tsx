@@ -23,11 +23,13 @@ const statIcons = [
 export default function DashboardHome() {
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-4 sm:flex-row">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-1 flex-col gap-4">
+          <WelcomeBanner doctorName="د/ أحمد محمد" />
+        </div>
         <Button variant="primary" className="shrink-0">
           + إضافة موعد جديد
         </Button>
-        <WelcomeBanner doctorName="د/ أحمد محمد" />
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

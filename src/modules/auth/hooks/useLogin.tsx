@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { loginSchema, LoginFormValues } from "../Sechma/LoginSechma";
+import { loginSchema, LoginFormValues } from "../schema/LoginSechma";
 import { env } from "@/config/env";
 
 export const useLogin = () => {

@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ResetPasswordFormValues,
   resetPasswordSchema,
-} from "@/lib/Sechma/ResetPasswordSechma";
+} from "@/modules/auth/schema/ResetPasswordSechma";
 const useRestPassword = () => {
   const [success, setSuccess] = useState(false);
   const router = useRouter();

@@ -8,12 +8,12 @@ import LoginLink from "@/shared/components/atoms/Auth/LoginLink";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import { useTranslations } from "next-intl";
 import Modal from "@/shared/components/atoms/Modal";
-import useForgetPassword from "@/lib/Hooks/useForgetPassword";
+import useForgetPassword from "@/modules/auth/hooks/useForgetPassword";
 
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");
   const c = useTranslations("resetpassword.commonAuth");
-  const { register, handleSubmit, errors, success, router ,submitemail } =
+  const { register, handleSubmit, errors, success, router, submitemail } =
     useForgetPassword();
 
   return (
