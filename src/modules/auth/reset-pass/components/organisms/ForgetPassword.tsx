@@ -8,7 +8,7 @@ import LoginLink from "@/shared/components/atoms/Auth/LoginLink";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import { useTranslations } from "next-intl";
 import Modal from "@/shared/components/atoms/Modal";
-import useForgetPassword from "@/modules/auth/hooks/useForgetPassword";
+import useForgetPassword from "@/lib/hooks/useForgetPassword";
 
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");

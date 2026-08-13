@@ -309,5 +309,22 @@
     "termsLink": "الشروط و الأحكام",
     "and": "و",
     "privacyLink": "سياسة الخصوصية"
+  },
+  "patients": {
+    "pageTitle": "المرضى",
+    "loading": "جاري تحميل المرضى...",
+    "loadError": "تعذر تحميل بيانات المرضى",
+    "retry": "إعادة المحاولة",
+    "emptyTitle": "لا يوجد مرضى بعد",
+    "emptyDescription": "سيظهر المرضى هنا بمجرد إضافتهم",
+    "noEmail": "—",
+    "type": { "new": "جديد", "returning": "عائد" },
+    "columns": {
+      "name": "الاسم",
+      "type": "النوع",
+      "nationality": "الجنسية",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني"
+    }
   }
 }

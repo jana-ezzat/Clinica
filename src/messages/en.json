@@ -308,5 +308,22 @@
     "termsLink": "Terms & Conditions",
     "and": "and",
     "privacyLink": "Privacy Policy"
+  },
+  "patients": {
+    "pageTitle": "Patients",
+    "loading": "Loading patients...",
+    "loadError": "Failed to load patients",
+    "retry": "Retry",
+    "emptyTitle": "No patients yet",
+    "emptyDescription": "Patients will appear here once added",
+    "noEmail": "—",
+    "type": { "new": "New", "returning": "Returning" },
+    "columns": {
+      "name": "Name",
+      "type": "Type",
+      "nationality": "Nationality",
+      "phone": "Phone",
+      "email": "Email"
+    }
   }
 }
