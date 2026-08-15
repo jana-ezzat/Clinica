@@ -1,4 +1,6 @@
 import { GiStethoscope } from "react-icons/gi";
+import Title from "@/shared/components/atoms/Title";
+import Text from "@/shared/components/atoms/Text";
 
 type Props = {
   doctorName: string;
@@ -14,13 +16,15 @@ export default function WelcomeBanner({ doctorName }: Props) {
       }}>
       <GiStethoscope
         size={90}
-        className="absolute end-6 top-1/2 -translate-y-1/2 text-white/25"
+        className="absolute start-6 top-1/2 -translate-y-1/2 text-white/25"
       />
-      <div className="relative w-full">
-        <h2 className="text-xl font-bold text-white sm:text-2xl">
+      <div className="relative w-full text-end">
+        <Title size="sm" className="!p-0 !text-white font-bold">
           مرحبا {doctorName}
-        </h2>
-        <p className="mt-1 text-sm text-white/80">إليك ملخص عيادتك اليوم</p>
+        </Title>
+        <Text size="sm" className="mt-1 !p-0 !text-white/80">
+          إليك ملخص عيادتك اليوم
+        </Text>
       </div>
     </div>
   );

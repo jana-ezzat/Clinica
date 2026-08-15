@@ -1,4 +1,6 @@
 import { MdChevronLeft } from "react-icons/md";
+import Title from "@/shared/components/atoms/Title";
+import Text from "@/shared/components/atoms/Text";
 import type { NewPatient } from "../../lib/mockData";
 
 type Props = {
@@ -13,11 +15,13 @@ export default function NewPatientsTable({ patients }: Props) {
           <MdChevronLeft size={16} />
           عرض الكل
         </button>
-        <h3 className="text-lg font-bold ds-text">المرضى الجدد</h3>
+        <Title size="sm" className="p-0! font-bold">
+          المرضى الجدد
+        </Title>
       </div>
-      <p className="mb-4 text-end text-sm ds-text-secondary">
+      <Text size="sm" className="mb-4 p-0! text-end">
         آخر المسجلين
-      </p>
+      </Text>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm">

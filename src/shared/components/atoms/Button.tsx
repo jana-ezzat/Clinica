@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type BaseProps = {
   children: ReactNode;
   variant?: "primary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "icon";
   fullWidth?: boolean;
   className?: string;
 };
@@ -36,6 +36,7 @@ const sizes = {
   sm: "px-4 py-2 text-sm",
   md: "px-6 py-2.5 text-base",
   lg: "px-8 py-3 text-lg",
+  icon: "p-2",
 } as const;
 
 export default function Button({
