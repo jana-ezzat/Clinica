@@ -6,6 +6,7 @@ const COLORS = {
   blue: "ds-badge-info",
   orange: "ds-badge-orange",
   green: "ds-badge-green",
+  dark: "ds-badge-dark",
 } as const;
 
 export default function Tag({

@@ -8,6 +8,10 @@ import { PatientTab } from "@/modules/dashboard/patients/components/molecules/Pa
 import StatusCard from "@/modules/dashboard/patients/components/atoms/StatusCard";
 import PatientHeader from "@/modules/dashboard/patients/components/organisms/PatientHeader";
 import MedicalFileSection from "@/modules/dashboard/patients/components/organisms/MedicalFileSection";
+import DataSection from "@/modules/dashboard/patients/components/organisms/DataSection";
+import EmergencySection from "@/modules/dashboard/patients/components/organisms/EmergencySection";
+import InsuranceSection from "@/modules/dashboard/patients/components/organisms/InsuranceSection";
+import LatestSection from "@/modules/dashboard/patients/components/organisms/LatestSection";
 
 export default function PatientDetailsPage() {
   const params = useParams<{ id: string }>();
@@ -38,9 +42,11 @@ export default function PatientDetailsPage() {
         onTabChange={setActiveTab}
       />
 
-    <MedicalFileSection />
-      {/* Sections (البيانات الأساسية, الملف الطبي, جهة اتصال الطوارئ, بيانات التأمين)
-          and "أخر المواعيد" go here next, once we build our way down. */}
+      <DataSection />
+      <MedicalFileSection />
+      <EmergencySection />
+      <InsuranceSection />
+      <LatestSection />
     </div>
   );
 }

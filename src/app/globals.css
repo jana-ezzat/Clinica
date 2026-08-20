@@ -123,6 +123,11 @@
   color: var(--ds-green);
 }
 
+@utility ds-badge-dark {
+  background-color: var(--ds-dark);
+  color: white;
+}
+
 html,
 body {
   height: 100%;

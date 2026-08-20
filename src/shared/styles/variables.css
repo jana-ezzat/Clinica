@@ -20,19 +20,21 @@
   --ds-yellow: #ca8a04;
   --ds-orange: #ea580c;
   --ds-green: #16a34a;
+  --ds-dark: #0f172a;
 }
 
 [data-theme="dark"] {
   --ds-background: #0f172a;
   --ds-card-background: #1e293b;
   --ds-bg-grey: #121c34;
-
+  --ds-dark: #334155;
   --ds-text: #f8fafc;
   --ds-text-secondary: #94a3b8;
+  --ds-border-gray: #94a3b833;
 
-  --ds-primary: #00283b;
+  --ds-primary: #38bdf8;
   --ds-secondary: #2dd4bf;
-  --ds-icon-tint: #016dc3;
+  --ds-icon-tint: #38bdf8;
   --ds-button-primary: #38bdf8;
   --ds-bg-footer: #38bdf8;
   --ds-shadow-sm: #1e293b;
