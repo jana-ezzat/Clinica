@@ -324,6 +324,24 @@
       "nationality": "Nationality",
       "phone": "Phone",
       "email": "Email"
+    },
+    "details": {
+      "loading": "Loading patient data...",
+      "loadError": "Failed to load patient data",
+      "retry": "Retry",
+      "fileNumberLabel": "File No.",
+      "notAvailable": "—",
+      "lastVisit": "Last Visit",
+      "phone": "Phone",
+      "age": "Age",
+      "gender": "Gender",
+      "tabs": {
+        "overview": "Overview",
+        "visits": "Visit History",
+        "medicalFile": "Medical File",
+        "invoices": "Invoices",
+        "attachments": "Attachments"
+      }
     }
   }
 }

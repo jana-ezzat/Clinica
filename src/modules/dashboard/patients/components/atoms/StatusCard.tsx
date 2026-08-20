@@ -18,7 +18,7 @@ export default function StatusCard({
   tone = "default",
 }: StatusCardProps) {
   return (
-    <div className="ds-bg-card ds-shadow-sm flex flex-col items-center justify-center gap-2 rounded-[18px] py-20">
+    <div className="flex flex-col items-center justify-center gap-2 py-20">
       {title && <Text className="ds-text font-medium">{title}</Text>}
       <Text
         className={`text-sm ${tone === "error" ? "text-destructive" : "ds-text-secondary"}`}>
