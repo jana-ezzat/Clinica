@@ -7,6 +7,8 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+import Title from "@/shared/components/atoms/Title";
+import Text from "@/shared/components/atoms/Text";
 import { weeklyAppointments } from "../../lib/mockData";
 
 const chartConfig = {
@@ -19,10 +21,12 @@ const chartConfig = {
 export default function WeeklyAppointmentsChart() {
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
-      <h3 className="text-lg font-bold ds-text">المواعيد الأسبوعية</h3>
-      <p className="mb-4 text-sm ds-text-secondary">
+      <Title size="sm" className="p-0 font-bold">
+        المواعيد الأسبوعية
+      </Title>
+      <Text size="sm" className="mb-4">
         عدد المواعيد لكل يوم
-      </p>
+      </Text>
 
       <ChartContainer config={chartConfig} className="min-h-[260px] w-full">
         <BarChart data={weeklyAppointments} margin={{ left: -20 }}>

@@ -1,3 +1,4 @@
+
 import { SidebarProvider } from "@/modules/dashboard/context/SidebarContext";
 import Sidebar from "@/modules/dashboard/components/organisms/Sidebar";
 import Header from "@/modules/dashboard/components/organisms/Header";
