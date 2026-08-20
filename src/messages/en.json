@@ -412,5 +412,15 @@
       },
       "required": "This field is required"
     }
-  }
+  },
+  "MedicalFile": {
+    "title": "Complete Medical File",
+    "chronicDiseases": "Chronic Diseases",
+    "allergies": "Allergies",
+    "currentMedications": "Current Medications",
+    "previousOperations": "Previous Operations",
+    "medicalAndFamilyHistory": "Medical & Family History",
+    "medicalHistory": "Medical History",
+    "familyHistory": "Family Medical History"
+  } 
 }
