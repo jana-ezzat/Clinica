@@ -35,6 +35,7 @@ export const useResetPassword = () => {
     handleSubmit: handleSubmit(onSubmit),
     errors,
     success,
+    router,
   };
 };
 

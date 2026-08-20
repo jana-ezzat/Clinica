@@ -344,5 +344,73 @@
         "attachments": "المرفقات"
       }
     }
+  },
+  "visitHistory": {
+    "Title": "سجل الزيارات",
+    "btnTitle": "اضافة إضافة موعد اخر +",
+    "reason": "سبب الزيارة",
+    "vitals": "العلامات الحيوية",
+    "weight": "الوزن",
+    "pressure": "الضغط",
+    "pulse": "النبض",
+    "temperature": "الحرارة",
+    "examination": "الفحص السريري",
+    "diagnosis": "التشخيص",
+    "prescription": "الروشتة",
+    "doctorNotes": "ملاحظات الطبيب",
+    "followUp": "توصيات المتابعة"
+  },
+  "appointmentsModal": {
+    "addAppointment": {
+      "title": "إضافة موعد جديد",
+      "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
+      "submit": "حفظ الموعد",
+      "cancel": "إلغاء",
+
+      "patient": {
+        "title": "معلومات المريض",
+        "subtitle": "بيانات المريض الأساسية",
+        "patientType": "نوع المريض",
+        "newPatient": "مريض جديد",
+        "existingPatient": "مريض سابق",
+
+        "name": "اسم المريض",
+        "nationality": "الجنسية",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+
+        "searchPatient": "البحث عن المريض",
+        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف"
+      },
+
+      "meeting": {
+        "title": "تفاصيل الموعد",
+        "subtitle": "اختر التاريخ والوقت ونوع الموعد",
+
+        "time": "الوقت",
+        "timePlaceholder": "اختر الوقت",
+        "date": "تاريخ الموعد",
+
+        "type": "نوع الموعد",
+        "typePlaceholder": "اختر نوع الموعد",
+        "duration": "المدة المتوقعة",
+        "durationPlaceholder": "اختر المدة",
+        "types": {
+          "followup": "متابعة",
+          "new": "كشف جديد",
+          "checkup": "فحص دوري"
+        },
+
+        "durations": {
+          "15": "15 دقيقة",
+          "30": "30 دقيقة",
+          "45": "45 دقيقة"
+        },
+
+        "notes": "ملاحظات إضافية",
+        "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
+      },
+      "required": "هذا الحقل مطلوب"
+    }
   }
 }

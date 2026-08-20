@@ -1,3 +1,4 @@
+"use client";
 import { MdOutlineWarningAmber, MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineCalendarToday, MdOutlineGroup } from "react-icons/md";
 import Button from "@/shared/components/atoms/Button";
@@ -12,6 +13,8 @@ import {
   newPatients,
   upcomingAppointments,
 } from "../../lib/mockData";
+import { useState } from "react";
+import ModalAppointment from "../../visting/components/organisms/ModalAppointment";
 
 const statIcons = [
   MdOutlineWarningAmber,
@@ -21,10 +24,15 @@ const statIcons = [
 ];
 
 export default function DashboardHome() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row">
-        <Button variant="primary" className="shrink-0">
+        <Button
+          variant="primary"
+          className="shrink-0"
+          onClick={() => setIsModalOpen(true)}
+        >
           + إضافة موعد جديد
         </Button>
         <WelcomeBanner doctorName="د/ أحمد محمد" />
@@ -45,6 +53,11 @@ export default function DashboardHome() {
         <RevenueChart />
         <WeeklyAppointmentsChart />
       </div>
+
+      <ModalAppointment
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

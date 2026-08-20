@@ -12,6 +12,7 @@ import DataSection from "@/modules/dashboard/patients/components/organisms/DataS
 import EmergencySection from "@/modules/dashboard/patients/components/organisms/EmergencySection";
 import InsuranceSection from "@/modules/dashboard/patients/components/organisms/InsuranceSection";
 import LatestSection from "@/modules/dashboard/patients/components/organisms/LatestSection";
+import VisitHistorySection from "@/modules/dashboard/visting/components/organisms/VisitHistorySection";
 
 export default function PatientDetailsPage() {
   const params = useParams<{ id: string }>();
@@ -42,11 +43,17 @@ export default function PatientDetailsPage() {
         onTabChange={setActiveTab}
       />
 
-      <DataSection />
-      <MedicalFileSection />
-      <EmergencySection />
-      <InsuranceSection />
-      <LatestSection />
+      {activeTab === "overview" && (
+        <>
+          <DataSection />
+          <MedicalFileSection />
+          <EmergencySection />
+          <InsuranceSection />
+          <LatestSection />
+        </>
+      )}
+
+      {activeTab === "visits" && <VisitHistorySection />}
     </div>
   );
 }
