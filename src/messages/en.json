@@ -343,5 +343,74 @@
         "attachments": "Attachments"
       }
     }
+  },
+  "visitHistory": {
+    "Title": "Visit History",
+    "btnTitle": "Add Another Appointment +",
+    "reason": "Visit Reason",
+    "vitals": "Vital Signs",
+    "weight": "Weight",
+    "pressure": "Pressure",
+    "pulse": "Pulse",
+    "temperature": "Temperature",
+    "examination": "Clinical Examination",
+    "diagnosis": "Diagnosis",
+    "prescription": "Prescription",
+    "doctorNotes": "Doctor's Notes",
+    "followUp": "Follow-up Recommendations"
+  },
+  "appointmentsModal": {
+    "addAppointment": {
+      "title": "Add New Appointment",
+      "description": "Fill in the following information to book a new appointment for the patient",
+      "submit": "Save Appointment",
+      "cancel": "Cancel",
+
+      "patient": {
+        "title": "Patient Information",
+        "subtitle": "Basic Patient Information",
+        "patientType": "Patient Type",
+        "newPatient": "New Patient",
+        "existingPatient": "Registered Patient",
+
+        "name": "Patient Name",
+        "nationality": "Nationality",
+        "email": "Email",
+        "phone": "Phone Number",
+
+        "searchPatient": "Search Patient",
+        "searchPatientPlaceholder": "Search by patient name or file number"
+      },
+
+      "meeting": {
+        "title": "Appointment Details",
+        "subtitle": "Select the appointment date, time, and type",
+
+        "time": "Time",
+        "timePlaceholder": "Select time",
+        "date": "Appointment Date",
+
+        "type": "Appointment Type",
+        "typePlaceholder": "Select appointment type",
+        "duration": "Expected Duration",
+        "durationPlaceholder": "Select duration",
+
+        "types": {
+          "followup": "Follow-up",
+          "new": "New Examination",
+          "checkup": "Periodic Check-up"
+        },
+
+        "durations": {
+          "15": "15 minutes",
+          "30": "30 minutes",
+          "45": "45 minutes"
+        },
+
+        "notes": "Additional Notes",
+        "notesPlaceholder": "Any additional notes or details about the appointment..."
+      },
+      "required": "This field is required"
+    }
   }
 }

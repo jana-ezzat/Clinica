@@ -9,7 +9,7 @@ import { Cairo, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import QueryProvider from "@/providers/QueryProvider";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -33,6 +33,8 @@ export default async function RootLayout({
     "signin",
     "sign-up",
     "patients",
+    "visitHistory",
+    "appointmentsModal",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -42,13 +44,15 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cn("font-sans", inter.variable, cairo.variable)}>
+      className={cn("font-sans", inter.variable, cairo.variable)}
+    >
       <body>
         <QueryProvider>
           <ThemeProvider
             attribute="data-theme"
             defaultTheme="light"
-            enableSystem={false}>
+            enableSystem={false}
+          >
             <NextIntlClientProvider messages={clientMessages}>
               {children}
               <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
