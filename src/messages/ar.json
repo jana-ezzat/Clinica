@@ -325,6 +325,24 @@
       "nationality": "الجنسية",
       "phone": "الهاتف",
       "email": "البريد الإلكتروني"
+    },
+    "details": {
+      "loading": "جاري تحميل بيانات المريض...",
+      "loadError": "تعذر تحميل بيانات المريض",
+      "retry": "إعادة المحاولة",
+      "fileNumberLabel": "رقم الملف",
+      "notAvailable": "—",
+      "lastVisit": "أخر زيارة",
+      "phone": "الهاتف",
+      "age": "العمر",
+      "gender": "النوع",
+      "tabs": {
+        "overview": "نظرة عامة",
+        "visits": "سجل الزيارات",
+        "medicalFile": "الملف الطبي",
+        "invoices": "الفواتير",
+        "attachments": "المرفقات"
+      }
     }
   }
 }

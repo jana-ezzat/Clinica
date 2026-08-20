@@ -2,8 +2,8 @@ import { getTranslations } from "next-intl/server";
 
 import { ThemeToggle } from "@/shared/components/ThemeButton";
 import NavLink from "@/shared/components/atoms/navbar/NavLink";
-import Button from "@/shared/components/atoms/Button";
 import Logo from "@/shared/components/atoms/Logo";
+import NavAuthActions from "@/shared/components/atoms/navbar/NavAuthActions";
 
 const NAV_ITEMS = [
   { key: "features", href: "#features" },
@@ -30,10 +30,7 @@ export default async function Header() {
 
         <div className="flex items-center gap-6">
           <ThemeToggle />
-          <NavLink href="/sign-in">{t("login")}</NavLink>
-          <Button tag="link" href="/sign-up" size="sm">
-            {t("cta")}
-          </Button>
+          <NavAuthActions loginLabel={t("login")} ctaLabel={t("cta")} />
         </div>
       </div>
     </header>
