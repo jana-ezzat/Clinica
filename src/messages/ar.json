@@ -412,5 +412,15 @@
       },
       "required": "هذا الحقل مطلوب"
     }
+  },
+  "MedicalFile": {
+    "title": "الملف الطبي الكامل",
+    "chronicDiseases": "الأمراض المزمنة",
+    "allergies": "الحساسية",
+    "currentMedications": "الأدوية الحالية",
+    "previousOperations": "العمليات السابقة",
+    "medicalAndFamilyHistory": "التاريخ المرضي و العائلة",
+    "medicalHistory": "التاريخ المرضي",
+    "familyHistory": "تاريخ العائلة المرضي"
   }
 }
