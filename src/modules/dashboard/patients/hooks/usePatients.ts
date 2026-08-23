@@ -1,3 +1,4 @@
+// src/modules/dashboard/patients/hooks/usePatients.ts
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/services/axiosConfig";

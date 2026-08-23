@@ -1,3 +1,4 @@
+// app/dashboard/patients/[id]/page.tsx
 "use client";
 import { useState } from "react";
 import { useParams } from "next/navigation";

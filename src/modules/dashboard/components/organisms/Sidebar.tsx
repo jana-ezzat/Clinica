@@ -1,3 +1,4 @@
+// src/modules/dashboard/components/organisms/Sidebar.tsx
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -16,10 +17,17 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
     <div className="flex h-full flex-col">
       <div
         className={cn(
-          "flex items-center px-5 py-6",
-          collapsed ? "justify-center" : "justify-between",
-        )}>
-        {!collapsed && <Logo />}
+          "flex h-[76px] items-center px-3",
+          collapsed ? "justify-center" : "justify-between px-5",
+        )}
+      >
+        {collapsed ? (
+          <span className="text-xl font-extrabold ds-text-button-primary">
+            ك
+          </span>
+        ) : (
+          <Logo />
+        )}
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto px-3">
@@ -38,12 +46,13 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
               variant="ghost"
               fullWidth
               className={cn(
-                "!justify-start gap-3 font-medium",
-                collapsed && "!justify-center",
+                "gap-3 font-medium",
+                collapsed ? "!justify-center !px-0" : "!justify-start",
                 isActive
                   ? "!ds-text-button-primary"
                   : "!ds-text hover:opacity-70",
-              )}>
+              )}
+            >
               <Icon size={22} className="shrink-0" />
               {!collapsed && (
                 <Text size="sm" className="!p-0 !text-inherit font-medium">
@@ -59,10 +68,12 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
         <Button
           variant="ghost"
           fullWidth
+          title="تسجيل الخروج"
           className={cn(
-            "!justify-start gap-3 !text-red-500 hover:opacity-70",
-            collapsed && "!justify-center",
-          )}>
+            "gap-3 !text-red-500 hover:opacity-70",
+            collapsed ? "!justify-center !px-0" : "!justify-start",
+          )}
+        >
           <MdLogout size={22} className="shrink-0" />
           {!collapsed && (
             <Text size="sm" className="!p-0 !text-inherit font-medium">
@@ -79,24 +90,38 @@ export default function Sidebar() {
   const { collapsed, toggleCollapsed, mobileOpen, closeMobile } =
     useSidebar();
 
+  const widthClass = collapsed ? "w-20" : "w-64";
+
   return (
     <>
+      {/* Reserves horizontal space so content follows collapsed width */}
+      <div
+        aria-hidden
+        className={cn(
+          "hidden shrink-0 transition-[width] duration-200 md:block",
+          widthClass,
+        )}
+      />
+
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "relative hidden shrink-0 border-l ds-border-gray ds-bg-card transition-[width] duration-200 md:block",
-          collapsed ? "w-20" : "w-64",
-        )}>
+          "fixed inset-y-0 start-0 z-20 hidden border-e ds-border-gray ds-bg-card transition-[width] duration-200 md:block",
+          widthClass,
+        )}
+      >
         <Button
           variant="outline"
           size="icon"
           onClick={toggleCollapsed}
           aria-label="Toggle sidebar"
-          className="absolute -start-3 top-8 z-10 !rounded-full !p-0 h-6 w-6">
+          aria-expanded={!collapsed}
+          className="absolute -end-3 top-8 z-30 h-6 w-6 !rounded-full !p-0"
+        >
           {collapsed ? (
-            <MdChevronLeft size={16} />
+            <MdChevronRight size={16} className="rtl:rotate-180" />
           ) : (
-            <MdChevronRight size={16} />
+            <MdChevronLeft size={16} className="rtl:rotate-180" />
           )}
         </Button>
         <SidebarContent collapsed={collapsed} />
@@ -109,7 +134,7 @@ export default function Sidebar() {
             className="absolute inset-0 bg-black/40"
             onClick={closeMobile}
           />
-          <aside className="absolute inset-y-0 end-0 w-64 ds-bg-card shadow-xl">
+          <aside className="absolute inset-y-0 start-0 w-64 ds-bg-card shadow-xl">
             <SidebarContent collapsed={false} />
           </aside>
         </div>

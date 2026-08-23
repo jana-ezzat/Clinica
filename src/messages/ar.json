@@ -318,7 +318,10 @@
     "emptyTitle": "لا يوجد مرضى بعد",
     "emptyDescription": "سيظهر المرضى هنا بمجرد إضافتهم",
     "noEmail": "—",
-    "type": { "new": "جديد", "returning": "عائد" },
+    "type": {
+      "new": "جديد",
+      "returning": "عائد"
+    },
     "columns": {
       "name": "الاسم",
       "type": "النوع",
@@ -366,31 +369,25 @@
       "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
       "submit": "حفظ الموعد",
       "cancel": "إلغاء",
-
       "patient": {
         "title": "معلومات المريض",
         "subtitle": "بيانات المريض الأساسية",
         "patientType": "نوع المريض",
         "newPatient": "مريض جديد",
         "existingPatient": "مريض سابق",
-
         "name": "اسم المريض",
         "nationality": "الجنسية",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
-
         "searchPatient": "البحث عن المريض",
         "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف"
       },
-
       "meeting": {
         "title": "تفاصيل الموعد",
         "subtitle": "اختر التاريخ والوقت ونوع الموعد",
-
         "time": "الوقت",
         "timePlaceholder": "اختر الوقت",
         "date": "تاريخ الموعد",
-
         "type": "نوع الموعد",
         "typePlaceholder": "اختر نوع الموعد",
         "duration": "المدة المتوقعة",
@@ -400,13 +397,11 @@
           "new": "كشف جديد",
           "checkup": "فحص دوري"
         },
-
         "durations": {
           "15": "15 دقيقة",
           "30": "30 دقيقة",
           "45": "45 دقيقة"
         },
-
         "notes": "ملاحظات إضافية",
         "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
       },
@@ -422,5 +417,52 @@
     "medicalAndFamilyHistory": "التاريخ المرضي و العائلة",
     "medicalHistory": "التاريخ المرضي",
     "familyHistory": "تاريخ العائلة المرضي"
+  },
+  "reports": {
+    "filters": {
+      "title": "البحث في التقارير",
+      "reportType": "نوع التقرير",
+      "receivedFrom": "استلم من",
+      "receivedFromPlaceholder": "ابحث باسم الطبيب",
+      "bookingType": "نوع الحجز",
+      "status": "الحالة",
+      "bookingDate": "ميعاد الحجز",
+      "paymentMethod": "طريقة الدفع",
+      "selectPlaceholder": "اختر",
+      "addCondition": "إضافة شرط",
+      "resetFilters": "الغاء",
+      "applyFilters": "تنفيذ"
+    },
+    "reportTypes": {
+      "booking": "تقارير الحجوزات"
+    },
+    "bookingTypes": {
+      "consultation": "كشف",
+      "regular": "عادي",
+      "emergency": "طوارئ"
+    },
+    "statuses": {
+      "paid": "مدفوع",
+      "pending": "معلق",
+      "overdue": "متأخر"
+    },
+    "paymentMethods": {
+      "cash": "نقدًا",
+      "visa": "فيزا"
+    },
+    "table": {
+      "title": "تقارير الحجوزات",
+      "searchPlaceholder": "البحث باسم التقرير",
+      "dateFilter": "فلترة بالتاريخ",
+      "receivedFrom": "استلم من",
+      "bookingType": "نوع الحجز",
+      "status": "الحالة",
+      "bookingDate": "ميعاد الحجز",
+      "paymentMethod": "طريقة الدفع",
+      "actions": "التحكم",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "empty": "لا توجد تقارير"
+    }
   }
 }

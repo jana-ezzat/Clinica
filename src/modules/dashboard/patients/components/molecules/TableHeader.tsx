@@ -1,5 +1,4 @@
-import React from "react";
-
+// src/modules/dashboard/patients/components/molecules/TableHeader.tsx
 interface TableHeaderProps {
   labels: {
     name: string;

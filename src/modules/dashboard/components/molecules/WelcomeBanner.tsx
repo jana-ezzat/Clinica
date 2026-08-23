@@ -1,3 +1,4 @@
+// src/modules/dashboard/components/molecules/WelcomeBanner.tsx
 import { GiStethoscope } from "react-icons/gi";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
@@ -16,9 +17,9 @@ export default function WelcomeBanner({ doctorName }: Props) {
       }}>
       <GiStethoscope
         size={90}
-        className="absolute start-6 top-1/2 -translate-y-1/2 text-white/25"
+        className="absolute end-6 top-1/2 -translate-y-1/2 text-white/25"
       />
-      <div className="relative w-full text-end">
+      <div className="relative w-full text-start">
         <Title size="sm" className="!p-0 !text-white font-bold">
           مرحبا {doctorName}
         </Title>

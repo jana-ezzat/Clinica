@@ -1,3 +1,4 @@
+// src/modules/dashboard/components/organisms/DashboardHome.tsx
 "use client";
 import { MdOutlineWarningAmber, MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineCalendarToday, MdOutlineGroup } from "react-icons/md";

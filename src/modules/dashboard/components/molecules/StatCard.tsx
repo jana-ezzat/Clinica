@@ -22,10 +22,10 @@ export default function StatCard({
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <div className="mb-6 flex items-center justify-between">
-        <Icon size={22} className="ds-text-secondary" />
         <Text size="sm" className="!p-0 font-medium">
           {label}
         </Text>
+        <Icon size={22} className="ds-text-secondary" />
       </div>
 
       <Title size="md" className="mb-2 !p-0 font-bold">
