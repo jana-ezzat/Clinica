@@ -11,7 +11,7 @@ export default function DataField({
 }) {
   return (
     <div className={fullWidth ? "col-span-full" : undefined}>
-      <Text size="sm"variant="accent" className="font-bold mb-2">
+      <Text size="sm" variant="accent" className="font-bold mb-2">
         {label}
       </Text>
       <Text size="sm">{value}</Text>
