@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import VisitMeta from "../molecules/VisitMeta";
 import VisitDetailsSection from "./VisitDetails";
-import ModalAppointment from "./ModalAppointment";
 import VisitingHeader from "../molecules/VisitingHeader";
 import { visitHistoryData } from "@/modules/dashboard/lib/VisitHistoryData";
+import ModalAppointment from "./ModalAppointment";
 
 const VisitHistorySection = () => {
   const t = useTranslations("visitHistory");
