@@ -1,5 +1,5 @@
+// src/modules/dashboard/patients/components/organisms/PatientTable.tsx
 "use client";
-import React from "react";
 import { useTranslations } from "next-intl";
 import usePatients from "../../hooks/usePatients";
 import StatusCard from "../atoms/StatusCard";

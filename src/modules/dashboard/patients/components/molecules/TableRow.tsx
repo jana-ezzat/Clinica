@@ -1,4 +1,4 @@
-import React from "react";
+// src/modules/dashboard/patients/components/molecules/TableRow.tsx
 import { useRouter } from "next/navigation";
 import AvatarInitial from "../atoms/AvatarInitial";
 import PatientTypeBadge from "../atoms/Badge";

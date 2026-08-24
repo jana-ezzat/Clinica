@@ -1,3 +1,4 @@
+// app/(dashboard)/layout.tsx
 import DashboardTemplate from "@/modules/dashboard/templates/DashboardTemplate";
 
 export default function DashboardLayout({

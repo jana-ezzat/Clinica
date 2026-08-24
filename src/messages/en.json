@@ -317,7 +317,10 @@
     "emptyTitle": "No patients yet",
     "emptyDescription": "Patients will appear here once added",
     "noEmail": "—",
-    "type": { "new": "New", "returning": "Returning" },
+    "type": {
+      "new": "New",
+      "returning": "Returning"
+    },
     "columns": {
       "name": "Name",
       "type": "Type",
@@ -365,48 +368,39 @@
       "description": "Fill in the following information to book a new appointment for the patient",
       "submit": "Save Appointment",
       "cancel": "Cancel",
-
       "patient": {
         "title": "Patient Information",
         "subtitle": "Basic Patient Information",
         "patientType": "Patient Type",
         "newPatient": "New Patient",
         "existingPatient": "Registered Patient",
-
         "name": "Patient Name",
         "nationality": "Nationality",
         "email": "Email",
         "phone": "Phone Number",
-
         "searchPatient": "Search Patient",
         "searchPatientPlaceholder": "Search by patient name or file number"
       },
-
       "meeting": {
         "title": "Appointment Details",
         "subtitle": "Select the appointment date, time, and type",
-
         "time": "Time",
         "timePlaceholder": "Select time",
         "date": "Appointment Date",
-
         "type": "Appointment Type",
         "typePlaceholder": "Select appointment type",
         "duration": "Expected Duration",
         "durationPlaceholder": "Select duration",
-
         "types": {
           "followup": "Follow-up",
           "new": "New Examination",
           "checkup": "Periodic Check-up"
         },
-
         "durations": {
           "15": "15 minutes",
           "30": "30 minutes",
           "45": "45 minutes"
         },
-
         "notes": "Additional Notes",
         "notesPlaceholder": "Any additional notes or details about the appointment..."
       },
@@ -422,5 +416,52 @@
     "medicalAndFamilyHistory": "Medical & Family History",
     "medicalHistory": "Medical History",
     "familyHistory": "Family Medical History"
-  } 
+  },
+  "reports": {
+    "filters": {
+      "title": "Search Reports",
+      "reportType": "Report Type",
+      "receivedFrom": "Received From",
+      "receivedFromPlaceholder": "Search by doctor name",
+      "bookingType": "Booking Type",
+      "status": "Status",
+      "bookingDate": "Booking Date",
+      "paymentMethod": "Payment Method",
+      "selectPlaceholder": "Select",
+      "addCondition": "Add Condition",
+      "resetFilters": "Cancel",
+      "applyFilters": "Apply"
+    },
+    "reportTypes": {
+      "booking": "Booking Reports"
+    },
+    "bookingTypes": {
+      "consultation": "Consultation",
+      "regular": "Regular",
+      "emergency": "Emergency"
+    },
+    "statuses": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
+    "paymentMethods": {
+      "cash": "Cash",
+      "visa": "Visa"
+    },
+    "table": {
+      "title": "Booking Reports",
+      "searchPlaceholder": "Search by report name",
+      "dateFilter": "Filter by Date",
+      "receivedFrom": "Received From",
+      "bookingType": "Booking Type",
+      "status": "Status",
+      "bookingDate": "Booking Date",
+      "paymentMethod": "Payment Method",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "empty": "No Reports Found"
+    }
+  }
 }
