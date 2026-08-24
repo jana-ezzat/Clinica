@@ -36,6 +36,7 @@ export default function ModalAppointment({ isOpen, onClose }: Props) {
 
   const handleData = (data: AppointmentFormValues) => {
     console.log(data);
+    onClose();
   };
 
   const handleClose = () => {

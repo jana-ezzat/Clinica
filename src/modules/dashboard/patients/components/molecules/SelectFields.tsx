@@ -32,7 +32,7 @@ export default function SelectFields({
           defaultValue=""
           className={cn(
             "h-11 w-full appearance-none rounded-lg px-3.5 text-sm",
-            "bg-ds-card-background text-ds-text",
+            "ds-bg-card  text-ds-text",
             error ? "border border-red-500" : "border border-gray-300",
             "outline-none focus:outline-none focus:ring-0",
           )}
