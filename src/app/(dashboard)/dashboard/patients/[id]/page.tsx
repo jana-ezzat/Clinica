@@ -12,8 +12,9 @@ import DataSection from "@/modules/dashboard/patients/components/organisms/DataS
 import EmergencySection from "@/modules/dashboard/patients/components/organisms/EmergencySection";
 import InsuranceSection from "@/modules/dashboard/patients/components/organisms/InsuranceSection";
 import LatestSection from "@/modules/dashboard/patients/components/organisms/LatestSection";
-import VisitHistorySection from "@/modules/dashboard/visting/components/organisms/VisitHistorySection";
-import MedicalFile from "@/modules/dashboard/medicalfile/components/organisms/MedicalFile";
+
+import MedicalFile from "@/modules/dashboard/patients/components/molecules/MedicalFile";
+import VisitHistorySection from "@/modules/dashboard/patients/components/organisms/VisitHistorySection";
 
 export default function PatientDetailsPage() {
   const params = useParams<{ id: string }>();

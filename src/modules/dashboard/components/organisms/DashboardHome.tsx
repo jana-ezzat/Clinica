@@ -15,7 +15,8 @@ import {
   upcomingAppointments,
 } from "../../lib/mockData";
 import { useState } from "react";
-import ModalAppointment from "../../visting/components/organisms/ModalAppointment";
+import ModalAppointment from "../../patients/components/organisms/ModalAppointment";
+
 
 const statIcons = [
   MdOutlineWarningAmber,
