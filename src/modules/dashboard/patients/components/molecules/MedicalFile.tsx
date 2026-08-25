@@ -3,10 +3,9 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import GroupDetails from "../molecules/GroupDetails";
 import { medicalFileData } from "@/modules/dashboard/lib/medicalfile";
-import IconList from "@/shared/components/molecules/IconList";
 import { Info, Pill } from "@/assets/icons/icons";
 import IconListSection from "../molecules/IconListSection";
-import InfoBox from "@/modules/dashboard/visting/components/molecules/InfoBox";
+import HistorySection from "./HistorySection";
 
 const MedicalFile = () => {
   const t = useTranslations("MedicalFile");
@@ -44,19 +43,13 @@ const MedicalFile = () => {
         iconClassName="text-red-400"
       />
 
-      <div className="flex flex-col gap-4">
-        <Title size="md" className="text-xl sm:text-3xl md:text-4xl">
-          {t("medicalAndFamilyHistory")}
-        </Title>
-        <div className="flex flex-col gap-3">
-          <InfoBox label={t("medicalHistory")} tone="gray">
-            {medicalFileData.medicalHistory}
-          </InfoBox>
-          <InfoBox label={t("familyHistory")} tone="gray">
-            {medicalFileData.familyHistory}
-          </InfoBox>
-        </div>
-      </div>
+      <HistorySection
+        title={t("medicalAndFamilyHistory")}
+        medicalHistoryLabel={t("medicalHistory")}
+        medicalHistory={medicalFileData.medicalHistory}
+        familyHistoryLabel={t("familyHistory")}
+        familyHistory={medicalFileData.familyHistory}
+      />
     </div>
   );
 };
