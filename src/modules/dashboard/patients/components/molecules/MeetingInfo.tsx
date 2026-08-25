@@ -4,8 +4,8 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 import PatientTitle from "./PatientTitle";
 import ModalField from "./ModalField";
 import Text from "@/shared/components/atoms/Text";
-import { AppointmentFormValues } from "@/modules/dashboard/schema/AppointmentModalSechma";
 import SelectFields from "./SelectFields";
+import { AppointmentFormValues } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
 
 interface Props {
   register: UseFormRegister<AppointmentFormValues>;

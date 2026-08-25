@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { AppointmentFormValues } from "@/modules/dashboard/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
 import Text from "@/shared/components/atoms/Text";
 import { FieldError, UseFormRegister } from "react-hook-form";
 

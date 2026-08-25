@@ -10,10 +10,8 @@ import Button from "@/shared/components/atoms/Button";
 import Modal from "../molecules/Modal";
 import PatientInfo from "../molecules/PatientInfo";
 import MeetingInfo from "../molecules/MeetingInfo";
-import {
-  AppointmentFormValues,
-  AppointmentModalSchema,
-} from "@/modules/dashboard/schema/AppointmentModalSechma";
+import { AppointmentFormValues, AppointmentModalSchema } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
+
 
 interface Props {
   isOpen: boolean;
