@@ -1,7 +1,7 @@
-import StatCard from "@/modules/dashboard/components/molecules/StatCard";
 import { CalendarDays, Siren, Users, Wallet } from "lucide-react";
 import type { StatCardData } from "@/modules/dashboard/lib/mockData";
 import type { ComponentType, SVGProps } from "react";
+import StatCard from "@/modules/dashboard/components/molecules/StatCard";
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
 
