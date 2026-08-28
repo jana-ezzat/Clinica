@@ -1,7 +1,5 @@
-// src/modules/dashboard/patients/hooks/usePatients.ts
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@/services/axiosConfig";
 
 export interface Patient {
   id: number;
@@ -12,14 +10,35 @@ export interface Patient {
   email: string | null;
 }
 
-interface PatientsResponse {
-  patient: Patient[];
-}
+// Backend disconnected — temporary local mock data until the new backend is wired up.
+const MOCK_PATIENTS: Patient[] = [
+  {
+    id: 1,
+    name: "Sara Ahmed",
+    patient_type: "returning",
+    nationality: "Egyptian",
+    phone: "+20 100 123 4567",
+    email: "sara.ahmed@example.com",
+  },
+  {
+    id: 2,
+    name: "Omar Khaled",
+    patient_type: "new",
+    nationality: "Egyptian",
+    phone: "+20 111 987 6543",
+    email: "omar.khaled@example.com",
+  },
+  {
+    id: 3,
+    name: "Laila Hassan",
+    patient_type: "returning",
+    nationality: "Saudi",
+    phone: "+966 50 123 4567",
+    email: null,
+  },
+];
 
-const fetchPatients = async (): Promise<Patient[]> => {
-  const { data } = await api.get<PatientsResponse>("/patients");
-  return data.patient;
-};
+const fetchPatients = async (): Promise<Patient[]> => MOCK_PATIENTS;
 
 export const usePatients = () => {
   return useQuery({

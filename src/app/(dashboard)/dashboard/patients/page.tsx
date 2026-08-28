@@ -1,4 +1,3 @@
-// app/dashboard/patients/page.tsx
 import PatientTable from "@/modules/dashboard/patients/components/organisms/PatientTable";
 import Title from "@/shared/components/atoms/Title";
 import { useTranslations } from "next-intl";
