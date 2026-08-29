@@ -2,7 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 import { MdOutlineTrendingUp, MdOutlineTrendingDown } from "react-icons/md";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 import { useTranslations } from "next-intl";
 import type { StatCardData } from "@/modules/dashboard/lib/mockData";
 

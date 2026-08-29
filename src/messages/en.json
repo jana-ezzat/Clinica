@@ -309,6 +309,9 @@
     "and": "and",
     "privacyLink": "Privacy Policy"
   },
+  "dashboard": {
+    "lastMonth": "from last month"
+  },
   "patients": {
     "pageTitle": "Patients",
     "loading": "Loading patients...",

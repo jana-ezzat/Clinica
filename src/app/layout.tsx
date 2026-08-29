@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 import { pickMessages } from "@/lib/pickMessages";
 import { Cairo, Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 import QueryProvider from "@/providers/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -32,6 +32,7 @@ export default async function RootLayout({
     "resetpassword",
     "signin",
     "sign-up",
+    "dashboard",
     "patients",
     "visitHistory",
     "appointmentsModal",

@@ -1,4 +1,3 @@
-// src/modules/dashboard/components/organisms/Sidebar.tsx
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -6,7 +5,7 @@ import { MdChevronLeft, MdChevronRight, MdLogout } from "react-icons/md";
 import Logo from "@/shared/components/atoms/Logo";
 import Button from "@/shared/components/atoms/Button";
 import Text from "@/shared/components/atoms/Text";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 import { navItems } from "../../lib/navItems";
 import { useSidebar } from "../../context/SidebarContext";
 
