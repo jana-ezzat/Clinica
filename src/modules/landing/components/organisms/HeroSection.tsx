@@ -10,9 +10,8 @@ export default async function HeroSection() {
   return (
     <section className="ds-bg px-6 py-20 md:py-28 text-center">
       <div className="max-w-3xl mx-auto flex flex-col items-center gap-6">
-        <Badge tone="primary" size="md">
-          {t("badge")}
-        </Badge>
+        <Badge>{t("badge")}</Badge>
+
         <Title size="xxl" center>
           <span className="block">{t("titleLine1")}</span>
           <span className="block">{t("titleLine2")}</span>

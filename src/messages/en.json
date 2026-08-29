@@ -152,58 +152,31 @@
     "cta": "Subscribe Now"
   },
   "footer": {
-    "brand": "كيلينكا",
+    "brand": "Clinica",
     "tagline": "An integrated platform for efficient and professional clinic management",
     "columns": [
       {
         "heading": "Product",
         "links": [
-          {
-            "label": "Features",
-            "href": "#features"
-          },
-          {
-            "label": "Pricing",
-            "href": "#pricing"
-          },
-          {
-            "label": "Updates",
-            "href": "#"
-          }
+          { "label": "Features", "href": "#features" },
+          { "label": "Pricing", "href": "#pricing" },
+          { "label": "Updates", "href": "#" }
         ]
       },
       {
         "heading": "Company",
         "links": [
-          {
-            "label": "About Us",
-            "href": "#"
-          },
-          {
-            "label": "Contact Us",
-            "href": "#"
-          },
-          {
-            "label": "Careers",
-            "href": "#"
-          }
+          { "label": "About Us", "href": "#" },
+          { "label": "Contact Us", "href": "#" },
+          { "label": "Careers", "href": "#" }
         ]
       },
       {
         "heading": "Support",
         "links": [
-          {
-            "label": "Help Center",
-            "href": "#"
-          },
-          {
-            "label": "Terms & Conditions",
-            "href": "#"
-          },
-          {
-            "label": "Privacy Policy",
-            "href": "#"
-          }
+          { "label": "Help Center", "href": "#" },
+          { "label": "Terms & Conditions", "href": "#" },
+          { "label": "Privacy Policy", "href": "#" }
         ]
       }
     ],
@@ -215,6 +188,9 @@
     "label": "Email Address",
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
       "emailRequired": "Email is required."
@@ -235,6 +211,9 @@
     "placeholderConfirm": "Confirm your new password",
     "titleConfirm": "Confirm New Password",
     "btn": "Reset Password",
+    "loginLink": "Back to Login",
+    "returnToLogin": " Login",
+    "rememberPassword": "Remember Password?",
     "error": {
       "passwordRequired": "Password is required.",
       "passwordsDontMatch": "Passwords do not match.",
@@ -244,227 +223,6 @@
     "success": {
       "title": "Password Changed",
       "description": "Your password has been reset successfully"
-    },
-    "otp": {
-      "title": "Enter Verification Code",
-      "description": "A 6-digit code has been sent to your email",
-      "resend": "Resend Code",
-      "btn": "Verify Code",
-      "resendIn": "Resend code in "
-    },
-    "commonAuth": {
-      "loginLink": "Back to Login",
-      "returnToLogin": " Login",
-      "rememberPassword": "Remember Password?"
-    }
-  },
-  "signin": {
-    "title": "Welcome Back",
-    "description": "Sign in to manage your clinic, patients, and appointments",
-    "emailLabel": "Email Address",
-    "emailPlaceholder": "email@example.com",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Enter your password",
-    "forgotPassword": "Forgot Password?",
-    "btn": "Sign In",
-    "btnLoading": "Signing in...",
-    "noAccount": "Don't have an account?",
-    "signUp": "Sign Up",
-    "error": {
-      "emailRequired": "Email is required.",
-      "invalidEmail": "Please enter a valid email address.",
-      "passwordRequired": "Password is required.",
-      "invalidCredentials": "Incorrect email or password.",
-      "somethingWentWrong": "Something went wrong. Please try again.",
-      "networkError": "Couldn't connect to the server. Check your connection."
-    }
-  },
-  "sign-up": {
-    "title": "Create a New Account",
-    "description": "Start your 14-day free trial",
-    "label": "Full Name",
-    "placeholder": "Ahmed Mohamed Ali",
-    "specialty": {
-      "label": "Specialty",
-      "placeholder": "Select your specialty"
-    },
-    "email": {
-      "label": "Email Address",
-      "placeholder": "email@gmail.com"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "••••••••••••",
-      "hint": "Must be at least 8 characters"
-    },
-    "confirmPassword": {
-      "label": "Confirm Password",
-      "placeholder": "••••••••••••"
-    },
-    "btn": "Create Account",
-    "haveAccount": "Already have an account?",
-    "loginLink": "Log in",
-    "termsText": "By creating an account, you agree to the",
-    "termsLink": "Terms & Conditions",
-    "and": "and",
-    "privacyLink": "Privacy Policy"
-  },
-  "dashboard": {
-    "lastMonth": "from last month"
-  },
-  "patients": {
-    "pageTitle": "Patients",
-    "loading": "Loading patients...",
-    "loadError": "Failed to load patients",
-    "retry": "Retry",
-    "emptyTitle": "No patients yet",
-    "emptyDescription": "Patients will appear here once added",
-    "noEmail": "—",
-    "type": {
-      "new": "New",
-      "returning": "Returning"
-    },
-    "columns": {
-      "name": "Name",
-      "type": "Type",
-      "nationality": "Nationality",
-      "phone": "Phone",
-      "email": "Email"
-    },
-    "details": {
-      "loading": "Loading patient data...",
-      "loadError": "Failed to load patient data",
-      "retry": "Retry",
-      "fileNumberLabel": "File No.",
-      "notAvailable": "—",
-      "lastVisit": "Last Visit",
-      "phone": "Phone",
-      "age": "Age",
-      "gender": "Gender",
-      "tabs": {
-        "overview": "Overview",
-        "visits": "Visit History",
-        "medicalFile": "Medical File",
-        "invoices": "Invoices",
-        "attachments": "Attachments"
-      }
-    }
-  },
-  "visitHistory": {
-    "Title": "Visit History",
-    "btnTitle": "Add Another Appointment +",
-    "reason": "Visit Reason",
-    "vitals": "Vital Signs",
-    "weight": "Weight",
-    "pressure": "Pressure",
-    "pulse": "Pulse",
-    "temperature": "Temperature",
-    "examination": "Clinical Examination",
-    "diagnosis": "Diagnosis",
-    "prescription": "Prescription",
-    "doctorNotes": "Doctor's Notes",
-    "followUp": "Follow-up Recommendations"
-  },
-  "appointmentsModal": {
-    "addAppointment": {
-      "title": "Add New Appointment",
-      "description": "Fill in the following information to book a new appointment for the patient",
-      "submit": "Save Appointment",
-      "cancel": "Cancel",
-      "patient": {
-        "title": "Patient Information",
-        "subtitle": "Basic Patient Information",
-        "patientType": "Patient Type",
-        "newPatient": "New Patient",
-        "existingPatient": "Registered Patient",
-        "name": "Patient Name",
-        "nationality": "Nationality",
-        "email": "Email",
-        "phone": "Phone Number",
-        "searchPatient": "Search Patient",
-        "searchPatientPlaceholder": "Search by patient name or file number"
-      },
-      "meeting": {
-        "title": "Appointment Details",
-        "subtitle": "Select the appointment date, time, and type",
-        "time": "Time",
-        "timePlaceholder": "Select time",
-        "date": "Appointment Date",
-        "type": "Appointment Type",
-        "typePlaceholder": "Select appointment type",
-        "duration": "Expected Duration",
-        "durationPlaceholder": "Select duration",
-        "types": {
-          "followup": "Follow-up",
-          "new": "New Examination",
-          "checkup": "Periodic Check-up"
-        },
-        "durations": {
-          "15": "15 minutes",
-          "30": "30 minutes",
-          "45": "45 minutes"
-        },
-        "notes": "Additional Notes",
-        "notesPlaceholder": "Any additional notes or details about the appointment..."
-      },
-      "required": "This field is required"
-    }
-  },
-  "MedicalFile": {
-    "title": "Complete Medical File",
-    "chronicDiseases": "Chronic Diseases",
-    "allergies": "Allergies",
-    "currentMedications": "Current Medications",
-    "previousOperations": "Previous Operations",
-    "medicalAndFamilyHistory": "Medical & Family History",
-    "medicalHistory": "Medical History",
-    "familyHistory": "Family Medical History"
-  },
-  "reports": {
-    "filters": {
-      "title": "Search Reports",
-      "reportType": "Report Type",
-      "receivedFrom": "Received From",
-      "receivedFromPlaceholder": "Search by doctor name",
-      "bookingType": "Booking Type",
-      "status": "Status",
-      "bookingDate": "Booking Date",
-      "paymentMethod": "Payment Method",
-      "selectPlaceholder": "Select",
-      "addCondition": "Add Condition",
-      "resetFilters": "Cancel",
-      "applyFilters": "Apply"
-    },
-    "reportTypes": {
-      "booking": "Booking Reports"
-    },
-    "bookingTypes": {
-      "consultation": "Consultation",
-      "regular": "Regular",
-      "emergency": "Emergency"
-    },
-    "statuses": {
-      "paid": "Paid",
-      "pending": "Pending",
-      "overdue": "Overdue"
-    },
-    "paymentMethods": {
-      "cash": "Cash",
-      "visa": "Visa"
-    },
-    "table": {
-      "title": "Booking Reports",
-      "searchPlaceholder": "Search by report name",
-      "dateFilter": "Filter by Date",
-      "receivedFrom": "Received From",
-      "bookingType": "Booking Type",
-      "status": "Status",
-      "bookingDate": "Booking Date",
-      "paymentMethod": "Payment Method",
-      "actions": "Actions",
-      "edit": "Edit",
-      "delete": "Delete",
-      "empty": "No Reports Found"
     }
   }
 }
