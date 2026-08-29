@@ -1,27 +1,27 @@
-import StatusBadge from "@/shared/components/atoms/StatusBadge";
-import Tag from "@/shared/components/atoms/Tag";
+
 import Accordion from "../molecules/Accordion";
 import FieldGroup from "../atoms/FieldGroup";
 import DataField from "@/shared/components/atoms/DataField";
 import IconList from "@/shared/components/molecules/IconList";
 import { Pill, Scissors } from "lucide-react";
+import Badge from "@/shared/components/atoms/Badge";
 
 export default function MedicalFileSection() {
   return (
     <Accordion title="الملف الطبي">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <FieldGroup label="فصيلة الدم">
-          <StatusBadge color="red">A+</StatusBadge>
+          <Badge tone="red">A+</Badge>
         </FieldGroup>
 
         <FieldGroup label="الحساسية">
-          <Tag color="pink">البنسلين</Tag>
-          <Tag color="yellow">الفول السودانى</Tag>
+          <Badge tone="pink">البنسلين</Badge>
+          <Badge tone="yellow">الفول السودانى</Badge>
         </FieldGroup>
 
         <FieldGroup label="الامراض المزمنة">
-          <Tag color="yellow">السكري من النوع الثاني</Tag>
-          <Tag color="blue">ارتفاع ضغط الدم</Tag>
+          <Badge tone="yellow">السكري من النوع الثاني</Badge>
+          <Badge tone="info">ارتفاع ضغط الدم</Badge>
         </FieldGroup>
 
         <IconList

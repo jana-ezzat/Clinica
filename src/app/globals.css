@@ -123,6 +123,11 @@
   color: var(--ds-green);
 }
 
+@utility ds-badge-red {
+  background-color: color-mix(in srgb, #dc2626 15%, transparent);
+  color: #dc2626;
+}
+
 @utility ds-badge-dark {
   background-color: var(--ds-dark);
   color: white;

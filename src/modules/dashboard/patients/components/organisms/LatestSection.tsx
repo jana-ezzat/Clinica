@@ -17,7 +17,7 @@ export default function LatestSection() {
           type="متابعة"
           datetime="10:00 - 2024-11-15 ص"
           status="تم"
-          statusColor="blue"
+          statusColor="info"
         />
       </div>
     </Accordion>

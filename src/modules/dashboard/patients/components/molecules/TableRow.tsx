@@ -1,8 +1,7 @@
-// src/modules/dashboard/patients/components/molecules/TableRow.tsx
 import { useRouter } from "next/navigation";
 import AvatarInitial from "../atoms/AvatarInitial";
-import PatientTypeBadge from "../atoms/Badge";
 import type { Patient } from "../../hooks/usePatients";
+import Badge from "@/shared/components/atoms/Badge";
 
 interface PatientTableRowProps {
   patient: Patient;
@@ -28,7 +27,11 @@ export default function PatientTableRow({
         </div>
       </td>
       <td className="px-4 py-3">
-        <PatientTypeBadge type={patient.patient_type} labels={typeLabels} />
+        <Badge tone={patient.patient_type === "returning" ? "info" : "success"}>
+          {patient.patient_type === "returning"
+            ? typeLabels.returning
+            : typeLabels.new}
+        </Badge>{" "}
       </td>
       <td className="ds-text-secondary px-4 py-3 text-sm">
         {patient.nationality}
