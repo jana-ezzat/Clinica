@@ -37,6 +37,7 @@ import {
   BadgeCheck,
   Trash2,
   CircleX,
+  Pill,
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineEmail, MdPersonOutline } from "react-icons/md";
@@ -112,4 +113,5 @@ export {
   BadgeCheck,
   Trash2,
   CircleX,
+  Pill,
 };

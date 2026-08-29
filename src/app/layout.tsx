@@ -2,11 +2,14 @@ import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import LocaleSwitcher from "@/shared/components/LocaleSwitcher";
 import { changeLocaleAction } from "@/lib/actions/changeLocale";
-import { ThemeToggle } from "@/shared/components/ThemeButton";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 import { pickMessages } from "@/lib/pickMessages";
-import { Cairo } from "next/font/google";
+import { Cairo, Inter } from "next/font/google";
+import { cn } from "@/lib/cn";
+import QueryProvider from "@/providers/QueryProvider";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -27,6 +30,14 @@ export default async function RootLayout({
     "stayUpdated",
     "forgetpassword",
     "resetpassword",
+    "signin",
+    "sign-up",
+    "dashboard",
+    "patients",
+    "visitHistory",
+    "appointmentsModal",
+    "MedicalFile",
+    "reports",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -36,18 +47,21 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cairo.variable}>
+      className={cn("font-sans", inter.variable, cairo.variable)}
+    >
       <body>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="light"
-          enableSystem={false}
-        >
-          <NextIntlClientProvider messages={clientMessages}>
-            {children}
-            <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider
+            attribute="data-theme"
+            defaultTheme="light"
+            enableSystem={false}
+          >
+            <NextIntlClientProvider messages={clientMessages}>
+              {children}
+              <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );
