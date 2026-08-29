@@ -310,6 +310,9 @@
     "and": "و",
     "privacyLink": "سياسة الخصوصية"
   },
+  "dashboard": {
+    "lastMonth": "من الشهر الماضي"
+  },
   "patients": {
     "pageTitle": "المرضى",
     "loading": "جاري تحميل المرضى...",
