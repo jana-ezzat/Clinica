@@ -468,11 +468,14 @@
   "Invoice": {
     "savePdf": "حفظ PDF",
     "print": "طباعة",
+    "invoice": "فاتورة",
     "invoiceNumber": "فاتورة {number}",
     "taxNumber": "الرقم الضريبي",
     "mainBranch": "الفرع الرئيسي",
     "brand": "كلينيكا",
     "titleDate": "فاتورة",
+    "address": "العنوان",
+    "email": "البريد الإلكتروني",
     "date": "التاريخ",
     "time": "الوقت",
     "NotesLabel": "ملاحظات",
@@ -481,7 +484,10 @@
     "Terms": "الفاتورة صالحة لمدة 30 يوم من تاريخ الإصدار",
     "fileNumber": "رقم الملف",
     "phone": "رقم الهاتف",
+    "patient": "المريض",
+    "doctor": "الطبيب",
     "visitDate": "تاريخ الزيارة",
+    "services": "الخدمات",
     "servicestitle": "تفاصيل الخدمات",
     "headers": {
       "total": "الإجمالي",
@@ -490,6 +496,7 @@
       "description": "الوصف"
     },
     "summary": {
+      "title": "ملخص الدفع",
       "total": "المجموع:",
       "discount": "الخصم:",
       "netTotal": "الإجمالي:",
@@ -502,7 +509,16 @@
       "status": "حالة الدفع",
       "date": "تاريخ الدفع"
     },
+    "servicesList": {
+      "checkup": "كشف طبي",
+      "examination": "فحص طبي",
+      "consultation": "استشارة"
+    },
+    "downloadSuccess": "تم تحميل الفاتورة",
     "cash": "نقدي",
-    "paid": "مدفوع"
+    "paid": "مدفوع",
+    "savePdf": "حفظ PDF",
+    "downloading": "جاري التحميل...",
+    "print": "طباعة"
   }
 }

@@ -3,6 +3,7 @@ import ServicesTableHeader from "./ServicesTableHeader";
 import ServicesTableRow from "./ServicesTableRow";
 
 interface Service {
+  key: string;
   total: string;
   discount: string;
   price: string;
@@ -35,9 +36,10 @@ const ServicesTable = ({ title, headers, services }: Props) => {
         <ServicesTableHeader {...headers} />
 
         <tbody>
-          {services.map((service, index) => (
-            <ServicesTableRow key={index} {...service} />
-          ))}
+          {services.map((service, index) => {
+            const { key, ...serviceInfo } = service;
+            return <ServicesTableRow key={index} {...serviceInfo} />;
+          })}
         </tbody>
       </table>
     </div>

@@ -19,6 +19,58 @@ export interface VisitData {
   };
 }
 
+export interface Service {
+  key: string;
+  description: string;
+  price: string;
+  discount: string;
+  total: string;
+}
+
+export interface InvoiceClinic {
+  brand: string;
+  doctorName: string;
+  taxNumber: string;
+  address: string;
+  phone: string;
+  email: string;
+}
+
+export interface InvoicePatient {
+  name: string;
+  fileNumber: string;
+  phone: string;
+  visitDate: string;
+  doctorName: string;
+}
+
+export interface InvoiceSummary {
+  total: string;
+  discount: string;
+  netTotal: string;
+  paid: string;
+  paymentMethod: string;
+}
+
+export interface InvoicePaymentDetails {
+  method: string;
+  status: string;
+  date: string;
+}
+
+export interface InvoiceData {
+  invoiceNumber: string;
+  clinic: InvoiceClinic;
+  date: string;
+  time: string;
+  patient: InvoicePatient;
+  services: Service[];
+  summary: InvoiceSummary;
+  paymentDetails: InvoicePaymentDetails;
+  notes: string;
+  terms: string;
+}
+
 export const invoiceHeaderData: InvoiceHeaderData = {
   invoiceNumber: "INV-2024-1247",
   doctorName: "عيادة الدكتور احمد",
@@ -43,32 +95,35 @@ export const visitData: VisitData = {
 
 export const servicesData = [
   {
-    total: "472.5",
+    key: "checkup",
+    description: "كشف طبي",
+    price: "525 جنيه",
     discount: "10%",
-    price: "525",
-    description: "فحص طبي شامل",
+    total: "472.5 جنيه",
   },
   {
-    total: "540",
+    key: "examination",
+    description: "فحص طبي",
+    price: "600 جنيه",
     discount: "10%",
-    price: "600",
-    description: "موجات دم كاملة",
+    total: "450 جنيه",
   },
   {
-    total: "135",
+    key: "consultation",
+    description: "استشارة",
+    price: "150 جنيه",
     discount: "10%",
-    price: "150",
-    description: "فحص الضغط",
+    total: "135 جنيه",
   },
 ];
 
-export const invoiceData = {
+export const invoiceData: InvoiceData = {
   invoiceNumber: "INV-2024-1247",
 
   clinic: {
     brand: "Clinica",
     doctorName: "د. أحمد محمد",
-    taxNumber: "123456789",
+    taxNumber: "415421646845121412",
     address: "القاهرة، مصر",
     phone: "01012345678",
     email: "info@clinica.com",
@@ -87,25 +142,27 @@ export const invoiceData = {
 
   services: [
     {
+      key: "checkup",
       description: "كشف طبي",
-      price: "500 جنيه",
-      discount: "50 جنيه",
-      total: "450 جنيه",
+      price: "525 جنيه",
+      discount: "10%",
+      total: "472.5 جنيه",
     },
     {
+      key: "examination",
       description: "فحص طبي",
-      price: "500 جنيه",
-      discount: "50 جنيه",
+      price: "600 جنيه",
+      discount: "10%",
       total: "450 جنيه",
     },
     {
+      key: "consultation",
       description: "استشارة",
-      price: "350 جنيه",
-      discount: "50 جنيه",
-      total: "300 جنيه",
+      price: "150 جنيه",
+      discount: "10%",
+      total: "135 جنيه",
     },
   ],
-
   summary: {
     total: "1350 جنيه",
     discount: "150 جنيه",

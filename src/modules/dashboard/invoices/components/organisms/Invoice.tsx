@@ -6,7 +6,7 @@ import {
   invoiceHeaderData,
   servicesData,
   visitData,
-} from "@/modules/dashboard/lib/InvovesData";
+} from "@/modules/dashboard/lib/InvoicesData";
 import ClinicInfoCard from "../molecules/ClinicInfoCard";
 import InvoicesDate from "../molecules/InvoicesDate";
 import InfoBox from "@/modules/dashboard/patients/components/molecules/InfoBox";
@@ -14,70 +14,15 @@ import PatientVisitCard from "../molecules/PatientVisitCard";
 import ServicesTable from "../molecules/ServicesTable";
 import PaymentSummary from "../molecules/PaymentSummary";
 import PaymentDetails from "../molecules/PaymentDetails";
-import { useDownloadPdf } from "../hooks/DowloadPdf";
+import SuccessModal from "../molecules/SuccessModal";
+import { useInvoicePdfProps } from "@/modules/dashboard/lib/InvoicePdfProps";
+import { useDownloadPdf } from "../hooks/DownloadPdf";
 
 const Invoices = () => {
   const t = useTranslations("Invoice");
-
-  const { handleDownload, isDownloading } = useDownloadPdf(
-    {
-      invoice: {
-        ...invoiceData,
-
-        clinic: {
-          ...invoiceData.clinic,
-          brand: t("brand"),
-        },
-
-        summary: {
-          ...invoiceData.summary,
-          paymentMethod: t("cash"),
-        },
-
-        paymentDetails: {
-          ...invoiceData.paymentDetails,
-          method: t("cash"),
-          status: t("paid"),
-        },
-
-        notes: t("Notes"),
-        terms: t("Terms"),
-      },
-
-      labels: {
-        invoice: t("invoice"),
-        taxNumber: t("taxNumber"),
-        address: t("address"),
-        phone: t("phone"),
-        email: t("email"),
-        date: t("date"),
-        time: t("time"),
-
-        patient: t("patient"),
-        fileNumber: t("fileNumber"),
-        visitDate: t("visitDate"),
-        doctor: t("doctor"),
-
-        services: t("services"),
-        description: t("headers.description"),
-        price: t("headers.price"),
-        discount: t("headers.discount"),
-        total: t("headers.total"),
-
-        paymentSummary: t("summary.title"),
-        netTotal: t("summary.netTotal"),
-        paid: t("summary.paid"),
-        paymentMethod: t("summary.paymentMethod"),
-
-        paymentDetails: t("details.title"),
-        status: t("details.status"),
-
-        notes: t("NotesLabel"),
-        terms: t("TermsLabel"),
-      },
-    },
-    `invoice-${invoiceData.invoiceNumber}`,
-  );
+  const pdf = useInvoicePdfProps();
+  const { handleDownload, isDownloading, showSuccess, setShowSuccess } =
+    useDownloadPdf(pdf, `invoice-${invoiceData.invoiceNumber}`);
 
   return (
     <div className="flex flex-col gap-7">
@@ -118,14 +63,17 @@ const Invoices = () => {
       />
 
       <ServicesTable
-        title={t("title")}
+        title={t("servicestitle")}
         headers={{
           total: t("headers.total"),
           discount: t("headers.discount"),
           price: t("headers.price"),
           description: t("headers.description"),
         }}
-        services={servicesData}
+        services={servicesData.map((service) => ({
+          ...service,
+          description: t(`servicesList.${service.key}`),
+        }))}
       />
 
       <div className="mt-7 flex w-full flex-col gap-10 px-5">
@@ -160,6 +108,12 @@ const Invoices = () => {
       <InfoBox label={t("TermsLabel")} tone="gray">
         {t("Terms")}
       </InfoBox>
+
+      <SuccessModal
+        isOpen={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        message={t("downloadSuccess")}
+      />
     </div>
   );
 };

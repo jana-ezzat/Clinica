@@ -1,7 +1,19 @@
 "use client";
-
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
-
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Font,
+} from "@react-pdf/renderer";
+Font.register({
+  family: "Cairo",
+  fonts: [
+    { src: "/fonts/Cairo-Regular.ttf", fontWeight: "normal" },
+    { src: "/fonts/Cairo-Bold.ttf", fontWeight: "bold" },
+  ],
+});
 const styles = StyleSheet.create({
   page: {
     padding: 35,
@@ -209,19 +221,6 @@ const styles = StyleSheet.create({
     color: "#64748b",
     lineHeight: 1.5,
   },
-
-  // Footer
-  footer: {
-    marginTop: 15,
-    paddingTop: 10,
-    borderTop: "1px solid #e2e8f0",
-    textAlign: "center",
-  },
-
-  footerText: {
-    fontSize: 8,
-    color: "#94a3b8",
-  },
 });
 
 interface Service {
@@ -334,8 +333,6 @@ export default function InvoicePdf({ invoice, labels }: Props) {
           </View>
         </View>
 
-        {/* ================= TAX ================= */}
-
         <View style={styles.card}>
           <View style={styles.row}>
             <Text style={styles.label}>{labels.taxNumber}</Text>
@@ -430,7 +427,7 @@ export default function InvoicePdf({ invoice, labels }: Props) {
               <View key={index} style={styles.tableRow}>
                 <Text style={[styles.descriptionCell, styles.cellText]}>
                   {service.description}
-                </Text>
+                </Text> 
 
                 <Text style={[styles.smallCell, styles.cellText]}>
                   {service.price}
@@ -524,10 +521,6 @@ export default function InvoicePdf({ invoice, labels }: Props) {
 
             <Text style={styles.noteText}>{invoice.terms}</Text>
           </View>
-        </View>
-
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>{invoice.clinic.brand}</Text>
         </View>
       </Page>
     </Document>

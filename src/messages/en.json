@@ -467,11 +467,14 @@
   "Invoice": {
     "savePdf": "Save PDF",
     "print": "Print",
+    "invoice": "Invoice",
     "invoiceNumber": "Invoice {number}",
     "taxNumber": "Tax Number",
     "mainBranch": "Main Branch",
-    "brand": "Clinca",
+    "brand": "Clinica",
     "titleDate": "Invoice",
+    "address": "Address",
+    "email": "Email",
     "date": "Date",
     "time": "Time",
     "NotesLabel": "Notes",
@@ -480,13 +483,41 @@
     "Terms": "The invoice is valid for 30 days from the date of issuance",
     "fileNumber": "File Number",
     "phone": "Phone Number",
+    "patient": "Patient",
+    "doctor": "Doctor",
     "visitDate": "Visit Date",
+    "services": "Services",
     "servicestitle": "Service Details",
     "headers": {
       "total": "Total",
       "discount": "Discount",
       "price": "Price",
       "description": "Description"
-    }
+    },
+    "summary": {
+      "title": "Payment Summary",
+      "total": "Total:",
+      "discount": "Discount:",
+      "netTotal": "Net Total:",
+      "paid": "Paid:",
+      "paymentMethod": "Payment Method:"
+    },
+    "details": {
+      "title": "Payment Details",
+      "method": "Payment Method",
+      "status": "Payment Status",
+      "date": "Payment Date"
+    },
+     "servicesList": {
+    "checkup": "Medical Checkup",
+    "examination": "Medical Examination",
+    "consultation": "Consultation"
+  },
+    "downloadSuccess": "Invoice downloaded",
+    "cash": "Cash",
+    "paid": "Paid",
+    "savePdf": "Save PDF",
+    "downloading": "Downloading...",
+    "print": "Print"
   }
 }
