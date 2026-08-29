@@ -6,8 +6,6 @@ export type StatCardData = {
   deltaPositive: boolean;
 };
 
-// ⚠️ Mock data only — swap for real API data once the backend endpoints
-// for stats/patients/appointments/revenue are ready.
 export const statCards: StatCardData[] = [
   { label: "حالات طارئة", value: "3", delta: "2%+", deltaPositive: false },
   { label: "الإيرادات", value: "40.00 EG", delta: "80%+", deltaPositive: true },

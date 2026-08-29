@@ -3,13 +3,11 @@ import { MdOutlineTrendingUp, MdOutlineTrendingDown } from "react-icons/md";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import type { StatCardData } from "@/modules/dashboard/lib/mockData";
 
-type Props = {
+type Props = StatCardData & {
   icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
-  label: string;
-  value: string;
-  delta: string;
-  deltaPositive: boolean;
 };
 
 export default function StatCard({
@@ -19,6 +17,8 @@ export default function StatCard({
   delta,
   deltaPositive,
 }: Props) {
+  const t = useTranslations("dashboard");
+
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <div className="mb-6 flex items-center justify-between">
@@ -34,13 +34,13 @@ export default function StatCard({
 
       <div className="flex items-center justify-between text-xs">
         <Text size="xs" className="!p-0">
-          من الشهر الماضي
+          {t("lastMonth")}
         </Text>
         <Text
           size="xs"
           className={cn(
             "!inline-flex !p-0 items-center gap-1 font-medium",
-            deltaPositive ? "!text-emerald-500" : "!text-red-500",
+            deltaPositive ? "ds-text-success" : "ds-text-error",
           )}>
           {delta}
           {deltaPositive ? (
