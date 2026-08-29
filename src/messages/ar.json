@@ -158,52 +158,25 @@
       {
         "heading": "المنتج",
         "links": [
-          {
-            "label": "المميزات",
-            "href": "#features"
-          },
-          {
-            "label": "الأسعار",
-            "href": "#pricing"
-          },
-          {
-            "label": "التحديثات",
-            "href": "#"
-          }
+          { "label": "المميزات", "href": "#features" },
+          { "label": "الأسعار", "href": "#pricing" },
+          { "label": "التحديثات", "href": "#" }
         ]
       },
       {
         "heading": "الشركة",
         "links": [
-          {
-            "label": "من نحن",
-            "href": "#"
-          },
-          {
-            "label": "أتصل بنا",
-            "href": "#"
-          },
-          {
-            "label": "الوظائف",
-            "href": "#"
-          }
+          { "label": "من نحن", "href": "#" },
+          { "label": "أتصل بنا", "href": "#" },
+          { "label": "الوظائف", "href": "#" }
         ]
       },
       {
         "heading": "الدعم",
         "links": [
-          {
-            "label": "مركز المساعدة",
-            "href": "#"
-          },
-          {
-            "label": "الشروط و الأحكام",
-            "href": "#"
-          },
-          {
-            "label": "سياسة الخصوصية",
-            "href": "#"
-          }
+          { "label": "مركز المساعدة", "href": "#" },
+          { "label": "الشروط و الأحكام", "href": "#" },
+          { "label": "سياسة الخصوصية", "href": "#" }
         ]
       }
     ],
@@ -215,6 +188,9 @@
     "label": " البريد الالكتروني",
     "placeholder": "email@example.com",
     "btn": "ارسال رمز التحقق",
+    "loginLink": "العودة لتسجيل الدخول",
+    "returnToLogin": " سجل الدخول",
+    "rememberPassword": "تذكرت كلمة المرور ؟",
     "error": {
       "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح.",
       "emailRequired": "البريد الإلكتروني مطلوب."
@@ -235,6 +211,9 @@
     "placeholderConfirm": "أدخل كلمة المرور الجديدة مرة أخرى",
     "titleConfirm": "تأكيد كلمة المرور الجديدة",
     "btn": "إعادة تعيين كلمة المرور",
+    "loginLink": "العودة لتسجيل الدخول",
+    "returnToLogin": " سجل الدخول",
+    "rememberPassword": "تذكرت كلمة المرور ؟",
     "error": {
       "passwordRequired": "كلمة المرور مطلوبة.",
       "passwordsDontMatch": "كلمتا المرور غير متطابقتين.",
@@ -245,227 +224,6 @@
     "success": {
       "title": "تم تغيير كلمة المرور",
       "description": "تم إعادة تعيين كلمة المرور بنجاح"
-    },
-    "commonAuth": {
-      "loginLink": "العودة لتسجيل الدخول",
-      "returnToLogin": " سجل الدخول",
-      "rememberPassword": "تذكرت كلمة المرور ؟"
-    },
-    "otp": {
-      "title": "أدخل رمز التحقق",
-      "description": "تم إرسال رمز مكون من 6 أرقام إلى بريدك الإلكتروني",
-      "btn": "تأكيد الرمز",
-      "resend": "إعادة إرسال الرمز",
-      "resendIn": "إعادة إرسال الرمز خلال"
-    }
-  },
-  "signin": {
-    "title": "أهلاً بعودتك",
-    "description": "سجل الدخول لإدارة عيادتك ومرضاك ومواعيدك",
-    "emailLabel": "البريد الالكتروني",
-    "emailPlaceholder": "email@example.com",
-    "passwordLabel": "كلمة المرور",
-    "passwordPlaceholder": "أدخل كلمة المرور",
-    "forgotPassword": "نسيت كلمة المرور؟",
-    "btn": "تسجيل الدخول",
-    "btnLoading": "جاري تسجيل الدخول...",
-    "noAccount": "ليس لديك حساب؟",
-    "signUp": "إنشاء حساب",
-    "error": {
-      "emailRequired": "البريد الإلكتروني مطلوب.",
-      "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح.",
-      "passwordRequired": "كلمة المرور مطلوبة.",
-      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
-      "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-      "networkError": "تعذر الاتصال بالخادم. تحقق من اتصالك."
-    }
-  },
-  "sign-up": {
-    "title": "إنشاء حساب جديد",
-    "description": "ابدأ تجربتك المجانية لمدة 14 يوم",
-    "label": "الاسم بالكامل",
-    "placeholder": "أحمد محمد علي",
-    "specialty": {
-      "label": "التخصص",
-      "placeholder": "أختر التخصص"
-    },
-    "email": {
-      "label": "البريد الإلكتروني",
-      "placeholder": "email@gmail.com"
-    },
-    "password": {
-      "label": "كلمة المرور",
-      "placeholder": "••••••••••••",
-      "hint": "يجب أن تحتوي على 8 أحرف على الأقل"
-    },
-    "confirmPassword": {
-      "label": "تأكيد كلمة المرور",
-      "placeholder": "••••••••••••"
-    },
-    "btn": "إنشاء حساب",
-    "haveAccount": "لديك حساب بالفعل؟",
-    "loginLink": "سجل الدخول",
-    "termsText": "بإنشاء حساب، أنت توافق على",
-    "termsLink": "الشروط و الأحكام",
-    "and": "و",
-    "privacyLink": "سياسة الخصوصية"
-  },
-  "dashboard": {
-    "lastMonth": "من الشهر الماضي"
-  },
-  "patients": {
-    "pageTitle": "المرضى",
-    "loading": "جاري تحميل المرضى...",
-    "loadError": "تعذر تحميل بيانات المرضى",
-    "retry": "إعادة المحاولة",
-    "emptyTitle": "لا يوجد مرضى بعد",
-    "emptyDescription": "سيظهر المرضى هنا بمجرد إضافتهم",
-    "noEmail": "—",
-    "type": {
-      "new": "جديد",
-      "returning": "عائد"
-    },
-    "columns": {
-      "name": "الاسم",
-      "type": "النوع",
-      "nationality": "الجنسية",
-      "phone": "الهاتف",
-      "email": "البريد الإلكتروني"
-    },
-    "details": {
-      "loading": "جاري تحميل بيانات المريض...",
-      "loadError": "تعذر تحميل بيانات المريض",
-      "retry": "إعادة المحاولة",
-      "fileNumberLabel": "رقم الملف",
-      "notAvailable": "—",
-      "lastVisit": "أخر زيارة",
-      "phone": "الهاتف",
-      "age": "العمر",
-      "gender": "النوع",
-      "tabs": {
-        "overview": "نظرة عامة",
-        "visits": "سجل الزيارات",
-        "medicalFile": "الملف الطبي",
-        "invoices": "الفواتير",
-        "attachments": "المرفقات"
-      }
-    }
-  },
-  "visitHistory": {
-    "Title": "سجل الزيارات",
-    "btnTitle": "اضافة إضافة موعد اخر +",
-    "reason": "سبب الزيارة",
-    "vitals": "العلامات الحيوية",
-    "weight": "الوزن",
-    "pressure": "الضغط",
-    "pulse": "النبض",
-    "temperature": "الحرارة",
-    "examination": "الفحص السريري",
-    "diagnosis": "التشخيص",
-    "prescription": "الروشتة",
-    "doctorNotes": "ملاحظات الطبيب",
-    "followUp": "توصيات المتابعة"
-  },
-  "appointmentsModal": {
-    "addAppointment": {
-      "title": "إضافة موعد جديد",
-      "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
-      "submit": "حفظ الموعد",
-      "cancel": "إلغاء",
-      "patient": {
-        "title": "معلومات المريض",
-        "subtitle": "بيانات المريض الأساسية",
-        "patientType": "نوع المريض",
-        "newPatient": "مريض جديد",
-        "existingPatient": "مريض سابق",
-        "name": "اسم المريض",
-        "nationality": "الجنسية",
-        "email": "البريد الإلكتروني",
-        "phone": "رقم الهاتف",
-        "searchPatient": "البحث عن المريض",
-        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف"
-      },
-      "meeting": {
-        "title": "تفاصيل الموعد",
-        "subtitle": "اختر التاريخ والوقت ونوع الموعد",
-        "time": "الوقت",
-        "timePlaceholder": "اختر الوقت",
-        "date": "تاريخ الموعد",
-        "type": "نوع الموعد",
-        "typePlaceholder": "اختر نوع الموعد",
-        "duration": "المدة المتوقعة",
-        "durationPlaceholder": "اختر المدة",
-        "types": {
-          "followup": "متابعة",
-          "new": "كشف جديد",
-          "checkup": "فحص دوري"
-        },
-        "durations": {
-          "15": "15 دقيقة",
-          "30": "30 دقيقة",
-          "45": "45 دقيقة"
-        },
-        "notes": "ملاحظات إضافية",
-        "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
-      },
-      "required": "هذا الحقل مطلوب"
-    }
-  },
-  "MedicalFile": {
-    "title": "الملف الطبي الكامل",
-    "chronicDiseases": "الأمراض المزمنة",
-    "allergies": "الحساسية",
-    "currentMedications": "الأدوية الحالية",
-    "previousOperations": "العمليات السابقة",
-    "medicalAndFamilyHistory": "التاريخ المرضي و العائلة",
-    "medicalHistory": "التاريخ المرضي",
-    "familyHistory": "تاريخ العائلة المرضي"
-  },
-  "reports": {
-    "filters": {
-      "title": "البحث في التقارير",
-      "reportType": "نوع التقرير",
-      "receivedFrom": "استلم من",
-      "receivedFromPlaceholder": "ابحث باسم الطبيب",
-      "bookingType": "نوع الحجز",
-      "status": "الحالة",
-      "bookingDate": "ميعاد الحجز",
-      "paymentMethod": "طريقة الدفع",
-      "selectPlaceholder": "اختر",
-      "addCondition": "إضافة شرط",
-      "resetFilters": "الغاء",
-      "applyFilters": "تنفيذ"
-    },
-    "reportTypes": {
-      "booking": "تقارير الحجوزات"
-    },
-    "bookingTypes": {
-      "consultation": "كشف",
-      "regular": "عادي",
-      "emergency": "طوارئ"
-    },
-    "statuses": {
-      "paid": "مدفوع",
-      "pending": "معلق",
-      "overdue": "متأخر"
-    },
-    "paymentMethods": {
-      "cash": "نقدًا",
-      "visa": "فيزا"
-    },
-    "table": {
-      "title": "تقارير الحجوزات",
-      "searchPlaceholder": "البحث باسم التقرير",
-      "dateFilter": "فلترة بالتاريخ",
-      "receivedFrom": "استلم من",
-      "bookingType": "نوع الحجز",
-      "status": "الحالة",
-      "bookingDate": "ميعاد الحجز",
-      "paymentMethod": "طريقة الدفع",
-      "actions": "التحكم",
-      "edit": "تعديل",
-      "delete": "حذف",
-      "empty": "لا توجد تقارير"
     }
   }
 }

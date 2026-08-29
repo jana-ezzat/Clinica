@@ -1,7 +1,13 @@
-import ResetPassword from "@/modules/auth/reset-pass/components/organisms/ResetPassword";
+
+import ResetPassword from '@/modules/reset-pass/components/organisms/ResetPassword'
+import Form from '@/modules/reset-pass/components/Templet/Form'
 
 const page = () => {
-  return <ResetPassword />;
-};
+  return (
+    <Form>
+      <ResetPassword/>
+    </Form>
+  )
+}
 
-export default page;
+export default page
