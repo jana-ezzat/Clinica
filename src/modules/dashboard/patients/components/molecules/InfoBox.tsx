@@ -17,7 +17,7 @@ const tones = {
 export default function InfoBox({ label, tone = "gray", children }: Props) {
   return (
     <div className="flex flex-col gap-2">
-      <Text size="sm" variant="secondary" className="text-right font-medium">
+      <Text size="sm" variant="secondary" className="font-medium">
         {label}
       </Text>
       <div className={cn("rounded-lg p-3", tones[tone])}>

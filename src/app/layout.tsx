@@ -37,6 +37,7 @@ export default async function RootLayout({
     "appointmentsModal",
     "MedicalFile",
     "reports",
+    "Invoice",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
