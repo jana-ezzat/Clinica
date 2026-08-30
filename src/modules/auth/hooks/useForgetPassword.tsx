@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   forgetPasswordSchema,
   ForgetPasswordValues,
-} from "../Sechma/ForgetPasswordSechma";
+} from "../schema/ForgetPasswordSechma";
 import { useModal } from "./useModal";
 
 export const useForgetPassword = () => {

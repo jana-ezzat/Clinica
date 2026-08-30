@@ -37,7 +37,13 @@ import {
   BadgeCheck,
   Trash2,
   CircleX,
+  Pill,
+  Download,
+  Printer,
+  ChevronRight,
+  
 } from "lucide-react";
+
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineEmail, MdPersonOutline } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
@@ -112,4 +118,8 @@ export {
   BadgeCheck,
   Trash2,
   CircleX,
+  Pill,
+  Download,
+  Printer,
+  ChevronRight,
 };

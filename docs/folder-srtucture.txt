@@ -11,6 +11,7 @@ Project Structure
         │   │   │   └── page.tsx                  # Landing page
         │   │   │
         │   │   ├── (auth)
+        │   │   │   ├── layout.tsx                # Auth layout
         │   │   │   ├── sign-in
         │   │   │   │   └── page.tsx              # Sign in
         │   │   │   ├── sign-up
@@ -23,33 +24,92 @@ Project Structure
         │   │   │       └── page.tsx              # Reset password
         │   │   │
         │   │   └── (dashboard)
+        │   │       ├── layout.tsx                # Dashboard layout (sidebar, header)
         │   │       └── dashboard
-        │   │           └── page.tsx              # Dashboard
+        │   │           ├── page.tsx              # Dashboard home
+        │   │           └── patients
+        │   │               ├── page.tsx          # Patients list
+        │   │               └── [id]
+        │   │                   └── page.tsx      # Patient detail
         │   │
         │   ├── modules
+        │   │   ├── auth
+        │   │   │   ├── hooks                     # Auth hooks (login, forget/reset password, modal)
+        │   │   │   ├── schema                    # Zod schemas (login, signup, forget/reset)
+        │   │   │   ├── sign-in
+        │   │   │   │   └── components
+        │   │   │   │       └── organisms         # SignIn form
+        │   │   │   ├── signup
+        │   │   │   │   └── components
+        │   │   │   │       └── organisms         # SignUpForm
+        │   │   │   └── reset-pass
+        │   │   │       └── components
+        │   │   │           ├── molecules         # Auth fields, OTP, form head
+        │   │   │           └── organisms         # ForgetPassword, Otp, ResetPassword
+        │   │   │
+        │   │   ├── dashboard
+        │   │   │   ├── components
+        │   │   │   │   ├── molecules             # StatCard, tables, WelcomeBanner
+        │   │   │   │   └── organisms             # DashboardHome, Sidebar, Header, charts
+        │   │   │   ├── context
+        │   │   │   │   └── SidebarContext.tsx
+        │   │   │   ├── lib                       # mockData, navItems, medicalfile, VisitHistoryData
+        │   │   │   ├── schema                    # Appointment modal schema
+        │   │   │   ├── templates
+        │   │   │   │   └── DashboardTemplate.tsx
+        │   │   │   ├── patients
+        │   │   │   │   ├── hooks                 # usePatients, usePatient
+        │   │   │   │   └── components
+        │   │   │   │       ├── atoms             # Avatar, Badge, FieldGroup, StatusCard
+        │   │   │   │       ├── molecules         # Tabs, table, accordion, info cards
+        │   │   │   │       └── organisms         # PatientTable, sections (data, insurance, etc.)
+        │   │   │   ├── medicalfile
+        │   │   │   │   └── components
+        │   │   │   │       ├── molecules         # GroupDetails, IconListSection
+        │   │   │   │       └── organisms         # MedicalFile, MedicalFileSection
+        │   │   │   └── visting
+        │   │   │       └── components
+        │   │   │           ├── molecules         # Visit meta, modal fields, patient info
+        │   │   │           └── organisms         # VisitDetails, VisitHistory, ModalAppointment
+        │   │   │
         │   │   └── landing
         │   │       └── components
-        │   │           ├── organisms             # Large composed sections
-        │   │           └── molecules             # Reusable landing blocks
+        │   │           ├── atoms                 # Footer links, social icons, pricing btn
+        │   │           ├── molecules             # Cards, accordion, billing toggle
+        │   │           └── organisms             # Hero, Features, Pricing, FAQ, Footer, etc.
         │   │
         │   ├── shared
         │   │   ├── components
-        │   │   │   ├── atoms                     # Design system primitives
+        │   │   │   ├── atoms
+        │   │   │   │   ├── Auth/                 # FormCard, OtpInput, LoginLink, etc.
+        │   │   │   │   ├── navbar/               # MenuButton, NavLink, NavAuthActions
+        │   │   │   │   └── …                     # Button, Input, Text, Badge, Modal, etc.
+        │   │   │   ├── molecules                 # Header, IconList
         │   │   │   ├── LocaleSwitcher.tsx
-        │   │   │   └── ThemeButton.tsx
+        │   │   │   ├── ThemeButton.tsx
+        │   │   │   └── FooterSection.tsx
         │   │   │
         │   │   └── styles
         │   │       └── variables.css            # Design tokens
         │   │
+        │   ├── components
+        │   │   └── ui                            # shadcn/ui primitives (button, chart)
+        │   │
+        │   ├── services
+        │   │   ├── axiosConfig.ts                # Axios instance
+        │   │   └── tokenService.ts               # Auth token helpers
+        │   │
         │   ├── lib
-        │   │   ├── cn.ts                        # ClassName helper
-        │   │   ├── pickMessages.ts              # Select i18n namespaces
+        │   │   ├── cn.ts                          # ClassName helper
+        │   │   ├── utils.ts                       # Shared utils
+        │   │   ├── pickMessages.ts                # Select i18n namespaces
         │   │   └── actions
         │   │       ├── changeLocale.ts
         │   │       └── changeTheme.ts
         │   │
         │   ├── providers
-        │   │   └── ThemeProvider.tsx
+        │   │   ├── ThemeProvider.tsx
+        │   │   └── QueryProvider.tsx             # React Query
         │   │
         │   ├── config
         │   │   └── env.ts
@@ -69,5 +129,6 @@ Project Structure
         ├── tsconfig.json
         ├── eslint.config.mjs
         ├── postcss.config.mjs
+        ├── components.json                        # shadcn/ui config
         ├── package.json
         └── README.md

@@ -7,14 +7,15 @@ import Button from "@/shared/components/atoms/Button";
 import LoginLink from "@/shared/components/atoms/Auth/LoginLink";
 import FooterNote from "@/shared/components/atoms/Auth/FooterNote";
 import Modal from "@/shared/components/atoms/Modal";
-import useRestPassword from "@/lib/Hooks/useRestPassword";
+
 import PasswordFelids from "../molecules/PasswordFelids";
+import useResetPassword from "@/modules/auth/hooks/useRestPassword";
 
 const ResetPassword = () => {
   const t = useTranslations("resetpassword");
   const c = useTranslations("resetpassword.commonAuth");
-  const { register, handleSubmit, errors, success, onSubmit, router } =
-    useRestPassword();
+  const { register, handleSubmit, errors, success, router } =
+    useResetPassword();
   return (
     <div className="flex w-full flex-col items-center">
       <FormCard>
@@ -24,7 +25,7 @@ const ResetPassword = () => {
           icon={TbLockPassword}
         />
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <PasswordFelids
             id="password"
             label={t("label")}
