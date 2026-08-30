@@ -2,6 +2,7 @@
 "use client";
 import { MdOutlineWarningAmber, MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineCalendarToday, MdOutlineGroup } from "react-icons/md";
+import { useTranslations } from "next-intl";
 import Button from "@/shared/components/atoms/Button";
 import WelcomeBanner from "../molecules/WelcomeBanner";
 import StatCard from "../molecules/StatCard";
@@ -27,6 +28,8 @@ const statIcons = [
 
 export default function DashboardHome() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslations("dashboard.home");
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row">
@@ -35,14 +38,14 @@ export default function DashboardHome() {
           className="shrink-0"
           onClick={() => setIsModalOpen(true)}
         >
-          + إضافة موعد جديد
+          + {t("addAppointment")}
         </Button>
         <WelcomeBanner doctorName="د/ أحمد محمد" />
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {statCards.map((stat, i) => (
-          <StatCard key={stat.label} icon={statIcons[i]} {...stat} />
+          <StatCard key={stat.labelKey ?? stat.label} icon={statIcons[i]} {...stat} />
         ))}
       </div>
 

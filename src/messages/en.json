@@ -310,7 +310,87 @@
     "privacyLink": "Privacy Policy"
   },
   "dashboard": {
-    "lastMonth": "from last month"
+    "lastMonth": "from last month",
+    "sidebar": {
+      "home": "Home",
+      "patients": "Patients",
+      "doctors": "Doctors",
+      "appointments": "Appointments",
+      "invoices": "Invoices",
+      "reports": "Reports",
+      "settings": "Settings",
+      "logout": "Log out"
+    },
+    "header": {
+      "searchPlaceholder": "Search...."
+    },
+    "home": {
+      "addAppointment": "Add new appointment",
+      "welcome": "Welcome {name}",
+      "summary": "Here's your clinic summary today",
+      "stats": {
+        "emergencies": "Emergency cases",
+        "revenue": "Revenue",
+        "appointments": "Appointments",
+        "patientsToday": "Patients today"
+      },
+      "newPatients": {
+        "title": "New Patients",
+        "subtitle": "Latest registrations",
+        "viewAll": "View all",
+        "columns": {
+          "patient": "Patient",
+          "age": "Age",
+          "symptoms": "Symptoms",
+          "date": "Date"
+        },
+        "ageUnit": "yrs"
+      },
+      "upcomingAppointments": {
+        "title": "Upcoming Appointments",
+        "subtitle": "Today's appointment schedule",
+        "viewAll": "View all",
+        "columns": {
+          "patient": "Patient",
+          "time": "Time",
+          "type": "Visit type",
+          "status": "Status"
+        },
+        "status": {
+          "confirmed": "Confirmed",
+          "cancelled": "Cancelled",
+          "pending": "Pending"
+        }
+      },
+      "revenueChart": {
+        "title": "Monthly Revenue",
+        "subtitle": "Revenue trend over the past months",
+        "series": "Revenue"
+      },
+      "weeklyChart": {
+        "title": "Weekly Appointments",
+        "subtitle": "Number of appointments per day",
+        "series": "Appointments"
+      },
+      "months": {
+        "jan": "January",
+        "feb": "February",
+        "mar": "March",
+        "apr": "April",
+        "may": "May",
+        "jun": "June",
+        "jul": "July"
+      },
+      "weekdays": {
+        "sat": "Sat",
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri"
+      }
+    }
   },
   "patients": {
     "pageTitle": "Patients",
@@ -511,16 +591,14 @@
       "status": "Payment Status",
       "date": "Payment Date"
     },
-     "servicesList": {
-    "checkup": "Medical Checkup",
-    "examination": "Medical Examination",
-    "consultation": "Consultation"
-  },
+    "servicesList": {
+      "checkup": "Medical Checkup",
+      "examination": "Medical Examination",
+      "consultation": "Consultation"
+    },
     "downloadSuccess": "Invoice downloaded",
     "cash": "Cash",
     "paid": "Paid",
-    "savePdf": "Save PDF",
-    "downloading": "Downloading...",
-    "print": "Print"
+    "downloading": "Downloading..."
   }
 }

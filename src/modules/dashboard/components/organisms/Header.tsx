@@ -7,6 +7,7 @@ import {
   MdNotificationsNone,
   MdPerson,
 } from "react-icons/md";
+import { useTranslations } from "next-intl";
 import Button from "@/shared/components/atoms/Button";
 import Input from "@/shared/components/atoms/Input";
 import { ThemeToggle } from "@/shared/components/ThemeButton";
@@ -14,6 +15,7 @@ import { useSidebar } from "../../context/SidebarContext";
 
 export default function Header() {
   const { openMobile } = useSidebar();
+  const t = useTranslations("dashboard.header");
 
   return (
     <header className="flex justify-between items-center border-b ds-border-gray ds-bg px-4 py-4 sm:px-6">
@@ -29,7 +31,7 @@ export default function Header() {
 
         <Input
           type="text"
-          placeholder="بحث...."
+          placeholder={t("searchPlaceholder")}
           icon={<MdSearch size={20} />}
           trailingIcon={<MdOutlineFilterList size={20} />}
           className="flex-1 !bg-[var(--ds-card-background)]"

@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useTranslations } from "next-intl";
 import {
   ChartContainer,
   ChartTooltip,
@@ -17,21 +18,25 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import { monthlyRevenue } from "../../lib/mockData";
 
-const chartConfig = {
-  revenue: {
-    label: "الإيرادات",
-    color: "#22c55e",
-  },
-} satisfies ChartConfig;
-
 export default function RevenueChart() {
+  const t = useTranslations("dashboard.home");
+
+  const chartConfig = {
+    revenue: {
+      label: t("revenueChart.series"),
+      color: "#22c55e",
+    },
+  } satisfies ChartConfig;
+
+  const monthLabel = (key: string) => t(`months.${key}`);
+
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <Title size="sm" className="p-0 font-bold">
-        الإيرادات الشهرية
+        {t("revenueChart.title")}
       </Title>
       <Text size="sm" className="mb-4">
-        تطور الإيرادات خلال الأشهر الماضية
+        {t("revenueChart.subtitle")}
       </Text>
 
       <ChartContainer config={chartConfig} className="min-h-[260px] w-full">
@@ -52,10 +57,11 @@ export default function RevenueChart() {
           </defs>
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <XAxis
-            dataKey="month"
+            dataKey="monthKey"
             tickLine={false}
             axisLine={false}
             tickMargin={8}
+            tickFormatter={monthLabel}
           />
           <YAxis
             tickLine={false}
@@ -64,7 +70,13 @@ export default function RevenueChart() {
               value === 0 ? "0" : `${value / 1000}k`
             }
           />
-          <ChartTooltip content={<ChartTooltipContent />} />
+          <ChartTooltip
+            content={
+              <ChartTooltipContent
+                labelFormatter={(label) => monthLabel(String(label))}
+              />
+            }
+          />
           <Area
             dataKey="revenue"
             type="monotone"

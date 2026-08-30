@@ -13,6 +13,7 @@ type Props = StatCardData & {
 export default function StatCard({
   icon: Icon,
   label,
+  labelKey,
   value,
   delta,
   deltaPositive,
@@ -23,7 +24,7 @@ export default function StatCard({
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <div className="mb-6 flex items-center justify-between">
         <Text size="sm" className="!p-0 font-medium">
-          {label}
+          {labelKey ? t(`home.stats.${labelKey}`) : label}
         </Text>
         <Icon size={22} className="ds-text-secondary" />
       </div>
