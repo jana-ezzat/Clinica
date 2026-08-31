@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { usePatient } from "@/modules/dashboard/patients/hooks/usePatient";
 
 import { PatientTab } from "@/modules/dashboard/patients/components/molecules/PatientTabs";
-import StatusCard from "@/modules/dashboard/patients/components/atoms/StatusCard";
 import PatientHeader from "@/modules/dashboard/patients/components/organisms/PatientHeader";
 import MedicalFileSection from "@/modules/dashboard/patients/components/organisms/MedicalFileSection";
 import DataSection from "@/modules/dashboard/patients/components/organisms/DataSection";
@@ -15,6 +14,7 @@ import LatestSection from "@/modules/dashboard/patients/components/organisms/Lat
 
 import MedicalFile from "@/modules/dashboard/patients/components/molecules/MedicalFile";
 import VisitHistorySection from "@/modules/dashboard/patients/components/organisms/VisitHistorySection";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 
 export default function PatientDetailsPage() {
   const params = useParams<{ id: string }>();

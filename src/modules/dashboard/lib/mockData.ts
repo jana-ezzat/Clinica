@@ -1,16 +1,34 @@
-// src/modules/dashboard/lib/mockData.ts
-export type StatCardData = {
-  label: string;
-  value: string;
-  delta: string;
-  deltaPositive: boolean;
-};
+export type { StatCardData, StatCardId } from "@/shared/types/stats";
 
 export const statCards: StatCardData[] = [
-  { label: "حالات طارئة", value: "3", delta: "2%+", deltaPositive: false },
-  { label: "الإيرادات", value: "40.00 EG", delta: "80%+", deltaPositive: true },
-  { label: "المواعيد", value: "25", delta: "55%+", deltaPositive: true },
-  { label: "مرضى اليوم", value: "43", delta: "12%+", deltaPositive: true },
+  {
+    id: "emergencyCases",
+    label: "حالات طارئة",
+    value: "3",
+    delta: "2%+",
+    deltaPositive: false,
+  },
+  {
+    id: "revenue",
+    label: "الإيرادات",
+    value: "40.00 EG",
+    delta: "80%+",
+    deltaPositive: true,
+  },
+  {
+    id: "appointments",
+    label: "المواعيد",
+    value: "25",
+    delta: "55%+",
+    deltaPositive: true,
+  },
+  {
+    id: "todayPatients",
+    label: "مرضى اليوم",
+    value: "43",
+    delta: "12%+",
+    deltaPositive: true,
+  },
 ];
 
 export type NewPatient = {
@@ -101,24 +119,28 @@ export const weeklyAppointments = [
 
 export const reportStatCards: StatCardData[] = [
   {
+    id: "todayPatients",
     label: "إجمالي المرضى",
     value: "1,250",
     delta: "12%+",
     deltaPositive: true,
   },
   {
+    id: "appointments",
     label: "المواعيد",
     value: "320",
     delta: "8%+",
     deltaPositive: true,
   },
   {
+    id: "revenue",
     label: "الإيرادات",
     value: "40,000 EG",
     delta: "15%+",
     deltaPositive: true,
   },
   {
+    id: "emergencyCases",
     label: "الحالات الطارئة",
     value: "18",
     delta: "3%-",

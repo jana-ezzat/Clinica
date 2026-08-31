@@ -10,7 +10,8 @@ export type BadgeTone =
   | "orange"
   | "green"
   | "red"
-  | "dark";
+  | "dark"
+  | "neutral";
 
 const TONES: Record<BadgeTone, string> = {
   primary: "ds-bg-secondary ds-text-inverse",
@@ -22,6 +23,7 @@ const TONES: Record<BadgeTone, string> = {
   green: "ds-badge-green",
   red: "ds-badge-red",
   dark: "ds-badge-dark",
+  neutral: "ds-badge-neutral",
 };
 
 const SIZES = {

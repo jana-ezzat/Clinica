@@ -5,23 +5,15 @@ import type {
   AppointmentStatus,
   UpcomingAppointment,
 } from "../../lib/mockData";
+import Badge, { type BadgeTone } from "@/shared/components/atoms/Badge";
 
-const statusStyles: Record<
+const statusConfig: Record<
   AppointmentStatus,
-  { label: string; className: string }
+  { label: string; tone: BadgeTone }
 > = {
-  confirmed: {
-    label: "مؤكد",
-    className: "bg-emerald-100 text-emerald-700",
-  },
-  cancelled: {
-    label: "ملغي",
-    className: "bg-red-500 text-white",
-  },
-  pending: {
-    label: "قيد الانتظار",
-    className: "ds-bg-grey ds-text-secondary",
-  },
+  confirmed: { label: "مؤكد", tone: "success" },
+  cancelled: { label: "ملغي", tone: "red" },
+  pending: { label: "قيد الانتظار", tone: "neutral" },
 };
 
 type Props = {
@@ -52,9 +44,7 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
                 المريض
               </th>
               <th className="px-4 py-3 text-start font-medium">الوقت</th>
-              <th className="px-4 py-3 text-start font-medium">
-                نوع الكشف
-              </th>
+              <th className="px-4 py-3 text-start font-medium">نوع الكشف</th>
               <th className="rounded-s-lg px-4 py-3 text-start font-medium">
                 الحالة
               </th>
@@ -67,12 +57,9 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
                 <td className="px-4 py-3 ds-text-secondary">{appt.time}</td>
                 <td className="px-4 py-3 ds-text-secondary">{appt.type}</td>
                 <td className="px-4 py-3">
-                  <span
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
-                      statusStyles[appt.status].className
-                    }`}>
-                    {statusStyles[appt.status].label}
-                  </span>
+                  <Badge tone={statusConfig[appt.status].tone}>
+                    {statusConfig[appt.status].label}
+                  </Badge>
                 </td>
               </tr>
             ))}
