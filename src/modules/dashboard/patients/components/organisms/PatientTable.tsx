@@ -1,11 +1,9 @@
-// src/modules/dashboard/patients/components/organisms/PatientTable.tsx
 "use client";
 import { useTranslations } from "next-intl";
 import usePatients from "../../hooks/usePatients";
-import StatusCard from "../atoms/StatusCard";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 import TableHeader from "../molecules/TableHeader";
 import TableRow from "../molecules/TableRow";
-
 
 export default function PatientTable() {
   const t = useTranslations("patients");

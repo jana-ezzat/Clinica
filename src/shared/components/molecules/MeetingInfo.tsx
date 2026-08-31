@@ -5,7 +5,7 @@ import PatientTitle from "./PatientTitle";
 import ModalField from "./ModalField";
 import Text from "@/shared/components/atoms/Text";
 import SelectFields from "./SelectFields";
-import { AppointmentFormValues } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
 
 interface Props {
   register: UseFormRegister<AppointmentFormValues>;

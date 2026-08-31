@@ -113,6 +113,11 @@
   color: var(--ds-yellow);
 }
 
+@utility ds-badge-neutral {
+  background-color: var(--ds-bg-grey);
+  color: var(--ds-text-secondary);
+}
+
 @utility ds-badge-orange {
   background-color: color-mix(in srgb, var(--ds-orange) 15%, transparent);
   color: var(--ds-orange);
