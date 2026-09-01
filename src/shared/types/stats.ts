@@ -1,8 +1,14 @@
+import type { ComponentType, SVGProps } from "react";
+import type { BadgeTone } from "@/shared/components/atoms/Badge";
+
 export type StatCardId =
   | "emergencyCases"
   | "revenue"
   | "appointments"
-  | "todayPatients";
+  | "todayPatients"
+  | "confirmationRate"
+  | "confirmedToday"
+  | "bookingsToday";
 
 export type StatCardData = {
   id: StatCardId;
@@ -10,4 +16,10 @@ export type StatCardData = {
   value: string;
   delta: string;
   deltaPositive: boolean;
+  date?: string;
+};
+
+export type StatCardIconConfig = {
+  icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
+  tone: BadgeTone;
 };

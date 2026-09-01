@@ -1,12 +1,14 @@
-import type { ComponentType, SVGProps } from "react";
+import { cn } from "@/lib/cn";
 import StatCard from "./StatCard";
-import type { StatCardData, StatCardId } from "@/shared/types/stats";
-
-type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
+import type {
+  StatCardData,
+  StatCardIconConfig,
+  StatCardId,
+} from "@/shared/types/stats";
 
 interface StatsGridProps {
   stats: StatCardData[];
-  icons: Record<StatCardId, IconComponent>;
+  icons: Partial<Record<StatCardId, StatCardIconConfig>>;
   comparisonLabel: string;
 }
 
@@ -17,14 +19,18 @@ export default function StatsGrid({
 }: StatsGridProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat) => (
-        <StatCard
-          key={stat.id}
-          icon={icons[stat.id]}
-          comparisonLabel={comparisonLabel}
-          {...stat}
-        />
-      ))}
+      {stats.map((stat) => {
+        const config = icons[stat.id];
+        return config ? (
+          <StatCard
+            key={stat.id}
+            icon={config.icon}
+            iconTone={config.tone}
+            comparisonLabel={comparisonLabel}
+            {...stat}
+          />
+        ) : null;
+      })}
     </div>
   );
 }
