@@ -1,37 +1,40 @@
-// src/modules/dashboard/lib/mockData.ts
-export type StatCardData = {
-  label: string;
-  labelKey?: "emergencies" | "revenue" | "appointments" | "patientsToday";
-  value: string;
-  delta: string;
-  deltaPositive: boolean;
-};
+// // src/modules/dashboard/lib/mockData.ts
+// export type StatCardData = {
+//   label: string;
+//   labelKey?: "emergencies" | "revenue" | "appointments" | "patientsToday";
+//   value: string;
+//   delta: string;
+//   deltaPositive: boolean;
+// };
+
+import type { StatCardData, StatCardId } from "@/shared/types/stats";
+export type { StatCardData, StatCardId };
 
 export const statCards: StatCardData[] = [
   {
+    id: "emergencyCases",
     label: "حالات طارئة",
-    labelKey: "emergencies",
     value: "3",
     delta: "2%+",
     deltaPositive: false,
   },
   {
+    id: "revenue",
     label: "الإيرادات",
-    labelKey: "revenue",
     value: "40.00 EG",
     delta: "80%+",
     deltaPositive: true,
   },
   {
+ 
     label: "المواعيد",
-    labelKey: "appointments",
-    value: "25",
-    delta: "55%+",
+    value: "3",
+    delta: "80%+",
+    id: "appointments",
     deltaPositive: true,
-  },
-  {
+  },{
+    id: "todayPatients",
     label: "مرضى اليوم",
-    labelKey: "patientsToday",
     value: "43",
     delta: "12%+",
     deltaPositive: true,
@@ -126,24 +129,28 @@ export const weeklyAppointments = [
 
 export const reportStatCards: StatCardData[] = [
   {
+    id: "todayPatients",
     label: "إجمالي المرضى",
     value: "1,250",
     delta: "12%+",
     deltaPositive: true,
   },
   {
+    id: "appointments",
     label: "المواعيد",
     value: "320",
     delta: "8%+",
     deltaPositive: true,
   },
   {
+    id: "revenue",
     label: "الإيرادات",
     value: "40,000 EG",
     delta: "15%+",
     deltaPositive: true,
   },
   {
+    id: "emergencyCases",
     label: "الحالات الطارئة",
     value: "18",
     delta: "3%-",

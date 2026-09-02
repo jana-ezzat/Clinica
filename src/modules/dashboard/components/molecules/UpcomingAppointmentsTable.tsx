@@ -7,11 +7,12 @@ import type {
   AppointmentStatus,
   UpcomingAppointment,
 } from "../../lib/mockData";
+import Badge, { type BadgeTone } from "@/shared/components/atoms/Badge";
 
-const statusClassNames: Record<AppointmentStatus, string> = {
-  confirmed: "bg-emerald-100 text-emerald-700",
-  cancelled: "bg-red-500 text-white",
-  pending: "ds-bg-grey ds-text-secondary",
+const statusTones: Record<AppointmentStatus, BadgeTone> = {
+  confirmed: "success",
+  cancelled: "red",
+  pending: "neutral",
 };
 
 type Props = {
@@ -64,12 +65,9 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
                 <td className="px-4 py-3 ds-text-secondary">{appt.time}</td>
                 <td className="px-4 py-3 ds-text-secondary">{appt.type}</td>
                 <td className="px-4 py-3">
-                  <span
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
-                      statusClassNames[appt.status]
-                    }`}>
+                  <Badge tone={statusTones[appt.status]}>
                     {t(`status.${appt.status}`)}
-                  </span>
+                  </Badge>
                 </td>
               </tr>
             ))}
