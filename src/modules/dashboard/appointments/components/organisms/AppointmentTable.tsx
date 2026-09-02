@@ -16,11 +16,19 @@ import type { AppointmentBookingType } from "../../lib/mockData";
 import type { AppointmentStatus } from "@/modules/dashboard/lib/mockData";
 import TableCard from "@/shared/components/molecules/TableCard";
 import TableHeaderRow from "@/shared/components/molecules/TableHeaderRow";
+import AppointmentsPdf from "../molecules/AppointmentsPdf";
+import { useAppointmentsPdfProps } from "../../hooks/useAppointmentsPdfProps";
+import { useDownloadPdf } from "@/shared/hooks/DownloadPdf";
+import SuccessModal from "@/shared/components/molecules/SuccessModal";
 
 const ITEMS_PER_PAGE = 5;
 
 export default function AppointmentsTable() {
   const t = useTranslations("appointments");
+
+  const pdfProps = useAppointmentsPdfProps();
+  const { handleDownload, isDownloading, showSuccess, setShowSuccess } =
+    useDownloadPdf(<AppointmentsPdf {...pdfProps} />, "appointments");
 
   const [search, setSearch] = useState("");
   const [bookingType, setBookingType] = useState("");
@@ -112,7 +120,6 @@ export default function AppointmentsTable() {
               placeholder={t("filters.bookingType")}
             />
           </div>
-
           <div className="w-full sm:w-48">
             <Input
               type="date"
@@ -121,8 +128,13 @@ export default function AppointmentsTable() {
               aria-label={t("filters.bookingDate")}
             />
           </div>
-          
-          <Button type="button" variant="primary" size="sm" className="gap-2">
+          <Button
+            type="button"
+            variant="primary"
+            size="sm"
+            className="gap-2"
+            onClick={handleDownload}
+            disabled={isDownloading}>
             <Download size={18} />
             {t("filters.export")}
           </Button>
@@ -172,6 +184,11 @@ export default function AppointmentsTable() {
           ))}
         </tbody>
       </TableCard>
+      <SuccessModal
+        isOpen={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        message={t("table.exportSuccess")}
+      />
     </section>
   );
 }

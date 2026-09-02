@@ -21,7 +21,9 @@ export default function TableCard({
         className,
       )}>
       <div className="overflow-x-auto">
-        <table className={cn("w-full text-right", minWidth)}>{children}</table>
+        <table className={cn("w-full text-start", minWidth)}>
+          {children}
+        </table>
       </div>
       {footer}
     </div>

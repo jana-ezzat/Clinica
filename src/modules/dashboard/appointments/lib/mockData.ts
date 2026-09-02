@@ -1,33 +1,16 @@
 import type { StatCardData } from "@/shared/types/stats";
 import type { AppointmentStatus } from "@/modules/dashboard/lib/mockData";
 
-export const appointmentStatCards: StatCardData[] = [
-  {
-    id: "bookingsToday",
-    label: "عدد حجوزات اليوم",
-    value: "25",
-    delta: "55%+",
-    deltaPositive: true,
-    date: "السبت، 28 نوفمبر 2025",
-  },
-  {
-    id: "confirmedToday",
-    label: "الحجوزات المؤكدة اليوم",
-    value: "14",
-    delta: "55%+",
-    deltaPositive: true,
-    date: "السبت، 28 نوفمبر 2025",
-  },
-  {
-    id: "confirmationRate",
-    label: "نسبة الحجوزات المؤكدة",
-    value: "66%",
-    delta: "55%+",
-    deltaPositive: true,
-    date: "السبت، 28 نوفمبر 2025",
-  },
-];
+export type AppointmentStatValue = Pick<
+  StatCardData,
+  "id" | "value" | "delta" | "deltaPositive"
+>;
 
+export const appointmentStatValues: AppointmentStatValue[] = [
+ { id: "bookingsToday", value: "25", delta: "55%+", deltaPositive: true },
+  { id: "confirmedToday", value: "14", delta: "55%+", deltaPositive: true },
+  { id: "confirmationRate", value: "66%", delta: "55%+", deltaPositive: true },
+];
 export type AppointmentBookingType = "checkup" | "followup" | "emergency";
 
 export type AppointmentBooking = {

@@ -14,9 +14,9 @@ import PatientVisitCard from "../molecules/PatientVisitCard";
 import ServicesTable from "../molecules/ServicesTable";
 import PaymentSummary from "../molecules/PaymentSummary";
 import PaymentDetails from "../molecules/PaymentDetails";
-import SuccessModal from "../molecules/SuccessModal";
+import SuccessModal from "../../../../../shared/components/molecules/SuccessModal";
 import { useInvoicePdfProps } from "@/modules/dashboard/lib/InvoicePdfProps";
-import { useDownloadPdf } from "../hooks/DownloadPdf";
+import { useDownloadPdf } from "../../../../../shared/hooks/DownloadPdf";
 
 const Invoices = () => {
   const t = useTranslations("Invoice");

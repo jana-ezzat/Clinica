@@ -467,14 +467,14 @@
       "empty": "No Reports Found"
     }
   },
-    "appointments": {
+  "appointments": {
     "pageTitle": "Appointments",
     "fromAverage": "from average",
     "filters": {
       "searchPlaceholder": "Search by name",
       "bookingType": "Booking Type",
       "bookingDate": "Booking Date",
-      "export": "Export"
+      "export": "Export as PDF"
     },
     "bookingTypes": {
       "checkup": "Checkup",
@@ -498,7 +498,14 @@
       "empty": "No appointments found",
       "loading": "Loading...",
       "loadError": "Failed to load appointments",
-      "retry": "Retry"
+      "retry": "Retry",
+      "exportSuccess": "File downloaded successfully"
+    },
+    "stats": {
+      "bookingsToday": "Today's Bookings",
+      "confirmedToday": "Confirmed Today",
+      "confirmationRate": "Confirmation Rate",
+      "date": "Saturday, November 28, 2025"
     }
   },
   "Invoice": {
@@ -545,11 +552,11 @@
       "status": "Payment Status",
       "date": "Payment Date"
     },
-     "servicesList": {
-    "checkup": "Medical Checkup",
-    "examination": "Medical Examination",
-    "consultation": "Consultation"
-  },
+    "servicesList": {
+      "checkup": "Medical Checkup",
+      "examination": "Medical Examination",
+      "consultation": "Consultation"
+    },
     "downloadSuccess": "Invoice downloaded",
     "cash": "Cash",
     "paid": "Paid",

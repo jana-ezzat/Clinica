@@ -469,39 +469,46 @@
     }
   },
     "appointments": {
-    "pageTitle": "الحجوزات",
-    "fromAverage": "من المتوسط",
-    "filters": {
-      "searchPlaceholder": "ابحث بالاسم",
-      "bookingType": "نوع الحجز",
-      "bookingDate": "تاريخ الحجز",
-      "export": "حفظ كملف"
+      "pageTitle": "الحجوزات",
+      "fromAverage": "من المتوسط",
+      "filters": {
+        "searchPlaceholder": "ابحث بالاسم",
+        "bookingType": "نوع الحجز",
+        "bookingDate": "تاريخ الحجز",
+        "export": "حفظ كملف"
+      },
+      "bookingTypes": {
+        "checkup": "كشف",
+        "followup": "اعادة",
+        "emergency": "طوارئ"
+      },
+      "statuses": {
+        "confirmed": "مؤكد",
+        "cancelled": "ملغى",
+        "pending": "قيد الانتظار"
+      },
+      "table": {
+        "name": "الاسم",
+        "bookingType": "نوع الحجز",
+        "status": "الحالة",
+        "bookingDate": "ميعاد الحجز",
+        "bookingTime": "وقت الحجز",
+        "actions": "تحكم",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "empty": "لا توجد حجوزات",
+        "exportSuccess": "تم تحميل الملف بنجاح",
+        "loading": "جاري التحميل...",
+        "loadError": "حدث خطأ أثناء تحميل الحجوزات",
+        "retry": "إعادة المحاولة"
+      },
+      "stats": {
+        "bookingsToday": "عدد حجوزات اليوم",
+        "confirmedToday": "الحجوزات المؤكدة اليوم",
+        "confirmationRate": "نسبة الحجوزات المؤكدة",
+        "date": "السبت، 28 نوفمبر 2025"
+      }
     },
-    "bookingTypes": {
-      "checkup": "كشف",
-      "followup": "اعادة",
-      "emergency": "طوارئ"
-    },
-    "statuses": {
-      "confirmed": "مؤكد",
-      "cancelled": "ملغى",
-      "pending": "قيد الانتظار"
-    },
-    "table": {
-      "name": "الاسم",
-      "bookingType": "نوع الحجز",
-      "status": "الحالة",
-      "bookingDate": "ميعاد الحجز",
-      "bookingTime": "وقت الحجز",
-      "actions": "تحكم",
-      "edit": "تعديل",
-      "delete": "حذف",
-      "empty": "لا توجد حجوزات",
-      "loading": "جاري التحميل...",
-      "loadError": "حدث خطأ أثناء تحميل الحجوزات",
-      "retry": "إعادة المحاولة"
-    }
-  },
   "Invoice": {
     "savePdf": "حفظ PDF",
     "print": "طباعة",
