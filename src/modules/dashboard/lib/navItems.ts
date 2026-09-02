@@ -10,29 +10,33 @@ import {
 import type { IconType } from "react-icons";
 
 export type NavItem = {
-  label: string;
+  labelKey: string;
   href: string;
   icon: IconType;
 };
 
 export const navItems: NavItem[] = [
-  { label: "الرئيسية", href: "/dashboard", icon: MdGridView },
-  { label: "المرضى", href: "/dashboard/patients", icon: MdOutlineGroup },
+  { labelKey: "home", href: "/dashboard", icon: MdGridView },
+  { labelKey: "patients", href: "/dashboard/patients", icon: MdOutlineGroup },
   {
-    label: "الأطباء",
+    labelKey: "doctors",
     href: "/dashboard/doctors",
     icon: MdOutlineMedicalServices,
   },
   {
-    label: "المواعيد",
+    labelKey: "appointments",
     href: "/dashboard/appointments",
     icon: MdOutlineCalendarToday,
   },
   {
-    label: "الفواتير",
+    labelKey: "invoices",
     href: "/dashboard/invoices",
     icon: MdOutlineReceiptLong,
   },
-  { label: "التقارير", href: "/dashboard/reports", icon: MdOutlineShowChart },
-  { label: "الأعدادات", href: "/dashboard/settings", icon: MdOutlineSettings },
+  { labelKey: "reports", href: "/dashboard/reports", icon: MdOutlineShowChart },
+  {
+    labelKey: "settings",
+    href: "/dashboard/settings",
+    icon: MdOutlineSettings,
+  },
 ];

@@ -311,7 +311,87 @@
     "privacyLink": "سياسة الخصوصية"
   },
   "dashboard": {
-    "lastMonth": "من الشهر الماضي"
+    "lastMonth": "من الشهر الماضي",
+    "sidebar": {
+      "home": "الرئيسية",
+      "patients": "المرضى",
+      "doctors": "الأطباء",
+      "appointments": "المواعيد",
+      "invoices": "الفواتير",
+      "reports": "التقارير",
+      "settings": "الأعدادات",
+      "logout": "تسجيل الخروج"
+    },
+    "header": {
+      "searchPlaceholder": "بحث...."
+    },
+    "home": {
+      "addAppointment": "إضافة موعد جديد",
+      "welcome": "مرحبا {name}",
+      "summary": "إليك ملخص عيادتك اليوم",
+      "stats": {
+        "emergencies": "حالات طارئة",
+        "revenue": "الإيرادات",
+        "appointments": "المواعيد",
+        "patientsToday": "مرضى اليوم"
+      },
+      "newPatients": {
+        "title": "المرضى الجدد",
+        "subtitle": "آخر المسجلين",
+        "viewAll": "عرض الكل",
+        "columns": {
+          "patient": "المريض",
+          "age": "العمر",
+          "symptoms": "الأعراض",
+          "date": "التاريخ"
+        },
+        "ageUnit": "سنه"
+      },
+      "upcomingAppointments": {
+        "title": "المواعيد القادمة",
+        "subtitle": "جدول مواعيد اليوم",
+        "viewAll": "عرض الكل",
+        "columns": {
+          "patient": "المريض",
+          "time": "الوقت",
+          "type": "نوع الكشف",
+          "status": "الحالة"
+        },
+        "status": {
+          "confirmed": "مؤكد",
+          "cancelled": "ملغي",
+          "pending": "قيد الانتظار"
+        }
+      },
+      "revenueChart": {
+        "title": "الإيرادات الشهرية",
+        "subtitle": "تطور الإيرادات خلال الأشهر الماضية",
+        "series": "الإيرادات"
+      },
+      "weeklyChart": {
+        "title": "المواعيد الأسبوعية",
+        "subtitle": "عدد المواعيد لكل يوم",
+        "series": "المواعيد"
+      },
+      "months": {
+        "jan": "يناير",
+        "feb": "فبراير",
+        "mar": "مارس",
+        "apr": "ابريل",
+        "may": "مايو",
+        "jun": "يونيو",
+        "jul": "يوليو"
+      },
+      "weekdays": {
+        "sat": "السبت",
+        "sun": "الأحد",
+        "mon": "الأثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة"
+      }
+    }
   },
   "patients": {
     "pageTitle": "المرضى",
@@ -561,8 +641,6 @@
     "downloadSuccess": "تم تحميل الفاتورة",
     "cash": "نقدي",
     "paid": "مدفوع",
-    "savePdf": "حفظ PDF",
-    "downloading": "جاري التحميل...",
-    "print": "طباعة"
+    "downloading": "جاري التحميل..."
   }
 }

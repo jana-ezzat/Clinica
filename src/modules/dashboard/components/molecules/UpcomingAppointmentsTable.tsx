@@ -1,19 +1,18 @@
 import { MdChevronLeft } from "react-icons/md";
+import { useTranslations } from "next-intl";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
+import Button from "@/shared/components/atoms/Button";
 import type {
   AppointmentStatus,
   UpcomingAppointment,
 } from "../../lib/mockData";
 import Badge, { type BadgeTone } from "@/shared/components/atoms/Badge";
 
-const statusConfig: Record<
-  AppointmentStatus,
-  { label: string; tone: BadgeTone }
-> = {
-  confirmed: { label: "مؤكد", tone: "success" },
-  cancelled: { label: "ملغي", tone: "red" },
-  pending: { label: "قيد الانتظار", tone: "neutral" },
+const statusTones: Record<AppointmentStatus, BadgeTone> = {
+  confirmed: "success",
+  cancelled: "red",
+  pending: "neutral",
 };
 
 type Props = {
@@ -21,19 +20,24 @@ type Props = {
 };
 
 export default function UpcomingAppointmentsTable({ appointments }: Props) {
+  const t = useTranslations("dashboard.home.upcomingAppointments");
+
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <div className="mb-1 flex items-center justify-between">
-        <button className="flex items-center gap-1 text-sm ds-text-secondary hover:opacity-70">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="!gap-1 !p-0 !text-sm ds-text-secondary hover:opacity-70">
           <MdChevronLeft size={16} />
-          عرض الكل
-        </button>
+          {t("viewAll")}
+        </Button>
         <Title size="sm" className="p-0! font-bold">
-          المواعيد القادمة
+          {t("title")}
         </Title>
       </div>
       <Text size="sm" className="mb-4 p-0 text-end">
-        جدول مواعيد اليوم
+        {t("subtitle")}
       </Text>
 
       <div className="overflow-x-auto">
@@ -41,12 +45,16 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
           <thead>
             <tr className="ds-bg-button-primary text-white">
               <th className="rounded-e-lg px-4 py-3 text-start font-medium">
-                المريض
+                {t("columns.patient")}
               </th>
-              <th className="px-4 py-3 text-start font-medium">الوقت</th>
-              <th className="px-4 py-3 text-start font-medium">نوع الكشف</th>
+              <th className="px-4 py-3 text-start font-medium">
+                {t("columns.time")}
+              </th>
+              <th className="px-4 py-3 text-start font-medium">
+                {t("columns.type")}
+              </th>
               <th className="rounded-s-lg px-4 py-3 text-start font-medium">
-                الحالة
+                {t("columns.status")}
               </th>
             </tr>
           </thead>
@@ -57,8 +65,8 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
                 <td className="px-4 py-3 ds-text-secondary">{appt.time}</td>
                 <td className="px-4 py-3 ds-text-secondary">{appt.type}</td>
                 <td className="px-4 py-3">
-                  <Badge tone={statusConfig[appt.status].tone}>
-                    {statusConfig[appt.status].label}
+                  <Badge tone={statusTones[appt.status]}>
+                    {t(`status.${appt.status}`)}
                   </Badge>
                 </td>
               </tr>

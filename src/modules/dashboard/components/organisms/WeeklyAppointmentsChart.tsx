@@ -1,6 +1,7 @@
 "use client";
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { useTranslations } from "next-intl";
 import {
   ChartContainer,
   ChartTooltip,
@@ -11,34 +12,45 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import { weeklyAppointments } from "../../lib/mockData";
 
-const chartConfig = {
-  count: {
-    label: "المواعيد",
-    color: "var(--ds-button-primary)",
-  },
-} satisfies ChartConfig;
-
 export default function WeeklyAppointmentsChart() {
+  const t = useTranslations("dashboard.home");
+
+  const chartConfig = {
+    count: {
+      label: t("weeklyChart.series"),
+      color: "var(--ds-button-primary)",
+    },
+  } satisfies ChartConfig;
+
+  const dayLabel = (key: string) => t(`weekdays.${key}`);
+
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
       <Title size="sm" className="p-0 font-bold">
-        المواعيد الأسبوعية
+        {t("weeklyChart.title")}
       </Title>
       <Text size="sm" className="mb-4">
-        عدد المواعيد لكل يوم
+        {t("weeklyChart.subtitle")}
       </Text>
 
       <ChartContainer config={chartConfig} className="min-h-[260px] w-full">
         <BarChart data={weeklyAppointments} margin={{ left: -20 }}>
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <XAxis
-            dataKey="day"
+            dataKey="dayKey"
             tickLine={false}
             axisLine={false}
             tickMargin={8}
+            tickFormatter={dayLabel}
           />
           <YAxis tickLine={false} axisLine={false} />
-          <ChartTooltip content={<ChartTooltipContent />} />
+          <ChartTooltip
+            content={
+              <ChartTooltipContent
+                labelFormatter={(label) => dayLabel(String(label))}
+              />
+            }
+          />
           <Bar
             dataKey="count"
             fill="var(--color-count)"
