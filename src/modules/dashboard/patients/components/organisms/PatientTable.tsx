@@ -2,8 +2,9 @@
 import { useTranslations } from "next-intl";
 import usePatients from "../../hooks/usePatients";
 import StatusCard from "@/shared/components/atoms/StatusCard";
-import TableHeader from "../molecules/TableHeader";
 import TableRow from "../molecules/TableRow";
+import TableCard from "@/shared/components/molecules/TableCard";
+import TableHeaderRow from "@/shared/components/molecules/TableHeaderRow";
 
 export default function PatientTable() {
   const t = useTranslations("patients");
@@ -44,20 +45,26 @@ export default function PatientTable() {
   }
 
   return (
-    <div className="ds-bg-card ds-shadow-sm overflow-hidden rounded-[18px]">
-      <table className="w-full text-right">
-        <TableHeader labels={columnLabels} />
-        <tbody>
-          {patients.map((patient) => (
-            <TableRow
-              key={patient.id}
-              patient={patient}
-              typeLabels={typeLabels}
-              emptyValueLabel={t("noEmail")}
-            />
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <TableCard className="ds-bg-card ds-shadow-sm overflow-hidden rounded-[18px]">
+      <TableHeaderRow
+        columns={[
+          columnLabels.name,
+          columnLabels.type,
+          columnLabels.nationality,
+          columnLabels.phone,
+          columnLabels.email,
+        ]}
+      />
+      <tbody>
+        {patients.map((patient) => (
+          <TableRow
+            key={patient.id}
+            patient={patient}
+            typeLabels={typeLabels}
+            emptyValueLabel={t("noEmail")}
+          />
+        ))}
+      </tbody>
+    </TableCard>
   );
 }

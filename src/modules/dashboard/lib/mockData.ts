@@ -1,4 +1,6 @@
-export type { StatCardData, StatCardId } from "@/shared/types/stats";
+
+import type { StatCardData, StatCardId } from "@/shared/types/stats";
+export type { StatCardData, StatCardId };
 
 export const statCards: StatCardData[] = [
   {

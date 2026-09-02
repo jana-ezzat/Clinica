@@ -467,6 +467,47 @@
       "empty": "No Reports Found"
     }
   },
+  "appointments": {
+    "pageTitle": "Appointments",
+    "fromAverage": "from average",
+    "filters": {
+      "searchPlaceholder": "Search by name",
+      "bookingType": "Booking Type",
+      "bookingDate": "Booking Date",
+      "export": "Export as PDF"
+    },
+    "bookingTypes": {
+      "checkup": "Checkup",
+      "followup": "Follow-up",
+      "emergency": "Emergency"
+    },
+    "statuses": {
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "pending": "Pending"
+    },
+    "table": {
+      "name": "Name",
+      "bookingType": "Booking Type",
+      "status": "Status",
+      "bookingDate": "Booking Date",
+      "bookingTime": "Booking Time",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "empty": "No appointments found",
+      "loading": "Loading...",
+      "loadError": "Failed to load appointments",
+      "retry": "Retry",
+      "exportSuccess": "File downloaded successfully"
+    },
+    "stats": {
+      "bookingsToday": "Today's Bookings",
+      "confirmedToday": "Confirmed Today",
+      "confirmationRate": "Confirmation Rate",
+      "date": "Saturday, November 28, 2025"
+    }
+  },
   "Invoice": {
     "savePdf": "Save PDF",
     "print": "Print",
@@ -511,11 +552,11 @@
       "status": "Payment Status",
       "date": "Payment Date"
     },
-     "servicesList": {
-    "checkup": "Medical Checkup",
-    "examination": "Medical Examination",
-    "consultation": "Consultation"
-  },
+    "servicesList": {
+      "checkup": "Medical Checkup",
+      "examination": "Medical Examination",
+      "consultation": "Consultation"
+    },
     "downloadSuccess": "Invoice downloaded",
     "cash": "Cash",
     "paid": "Paid",

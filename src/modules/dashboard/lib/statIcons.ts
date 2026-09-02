@@ -4,15 +4,11 @@ import {
   MdOutlineCalendarToday,
   MdOutlineGroup,
 } from "react-icons/md";
-import type { StatCardId } from "@/shared/types/stats";
-import type { ComponentType, SVGProps } from "react";
+import type { StatCardId, StatCardIconConfig } from "@/shared/types/stats";
 
-export const dashboardStatIcons: Record<
-  StatCardId,
-  ComponentType<SVGProps<SVGSVGElement> & { size?: number }>
-> = {
-  emergencyCases: MdOutlineWarningAmber,
-  revenue: MdOutlineAttachMoney,
-  appointments: MdOutlineCalendarToday,
-  todayPatients: MdOutlineGroup,
+export const dashboardStatIcons: Partial<Record<StatCardId, StatCardIconConfig>> = {
+  emergencyCases: { icon: MdOutlineWarningAmber, tone: "red" },
+  revenue: { icon: MdOutlineAttachMoney, tone: "success" },
+  appointments: { icon: MdOutlineCalendarToday, tone: "info" },
+  todayPatients: { icon: MdOutlineGroup, tone: "orange" },
 };
