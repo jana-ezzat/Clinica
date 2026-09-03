@@ -360,6 +360,11 @@
           "confirmed": "Confirmed",
           "cancelled": "Cancelled",
           "pending": "Pending"
+        },
+        "visitTypes": {
+          "checkup": "Routine checkup",
+          "followUp": "Follow-up",
+          "consultation": "Consultation"
         }
       },
       "revenueChart": {

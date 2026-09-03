@@ -11,7 +11,7 @@ export default async function AppointmentsTemplate() {
   const t = await getTranslations("appointments");
  const stats: StatCardData[] = appointmentStatValues.map((stat) => ({
    ...stat,
-   label: t(`stats.${stat.id}`),
+   labelKey: t(`stats.${stat.id}`),
    date: t("stats.date"),
  }));
   return (

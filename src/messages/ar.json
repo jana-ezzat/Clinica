@@ -361,6 +361,11 @@
           "confirmed": "مؤكد",
           "cancelled": "ملغي",
           "pending": "قيد الانتظار"
+        },
+        "visitTypes": {
+          "checkup": "كشف دوري",
+          "followUp": "متابعة",
+          "consultation": "استشارة"
         }
       },
       "revenueChart": {

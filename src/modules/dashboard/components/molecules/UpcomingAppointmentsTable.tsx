@@ -63,7 +63,9 @@ export default function UpcomingAppointmentsTable({ appointments }: Props) {
               <tr key={appt.id} className="border-b ds-border-gray">
                 <td className="px-4 py-3 ds-text">{appt.patient}</td>
                 <td className="px-4 py-3 ds-text-secondary">{appt.time}</td>
-                <td className="px-4 py-3 ds-text-secondary">{appt.type}</td>
+                <td className="px-4 py-3 ds-text-secondary">
+                  {t(`visitTypes.${appt.typeKey}`)}
+                </td>
                 <td className="px-4 py-3">
                   <Badge tone={statusTones[appt.status]}>
                     {t(`status.${appt.status}`)}
