@@ -1,13 +1,13 @@
 import { cn } from "@/lib/cn";
 import StatCard from "./StatCard";
 import type {
-  StatCardData,
+  StatCardDisplayData,
   StatCardIconConfig,
   StatCardId,
 } from "@/shared/types/stats";
 
 interface StatsGridProps {
-  stats: StatCardData[];
+  stats: StatCardDisplayData[];
   icons: Partial<Record<StatCardId, StatCardIconConfig>>;
   comparisonLabel: string;
 }

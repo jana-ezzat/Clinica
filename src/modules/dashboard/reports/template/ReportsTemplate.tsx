@@ -13,12 +13,17 @@ interface ReportsTemplateProps {
 
 const ReportsTemplate = async ({ doctorName, stats }: ReportsTemplateProps) => {
   const t = await getTranslations("dashboard");
+  const tStats = await getTranslations("dashboard.home.stats");
+  const translatedStats = stats.map(({ labelKey, ...stat }) => ({
+    ...stat,
+    label: tStats(labelKey),
+  }));
 
   return (
     <div className="space-y-9">
       <WelcomeBanner doctorName={doctorName} />
       <StatsGrid
-        stats={stats}
+        stats={translatedStats}
         icons={reportStatIcons}
         comparisonLabel={t("lastMonth")}
       />
