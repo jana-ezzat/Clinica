@@ -24,6 +24,11 @@ export default async function DashboardHomeTemplate({
 }: DashboardHomeTemplateProps) {
   const t = await getTranslations("dashboard");
   const tModal = await getTranslations("appointmentsModal.addAppointment");
+  const tStats = await getTranslations("dashboard.home.stats");
+  const translatedStats = stats.map(({ labelKey, ...stat }) => ({
+    ...stat,
+    label: tStats(labelKey),
+  }));
 
   return (
     <div className="space-y-6">
@@ -32,7 +37,7 @@ export default async function DashboardHomeTemplate({
         addAppointmentLabel={`+ ${tModal("title")}`}
       />
       <StatsGrid
-        stats={stats}
+        stats={translatedStats}
         icons={dashboardStatIcons}
         comparisonLabel={t("lastMonth")}
       />

@@ -13,28 +13,28 @@ export type { StatCardData, StatCardId };
 export const statCards: StatCardData[] = [
   {
     id: "emergencyCases",
-    label: "حالات طارئة",
+    labelKey: "emergencies",
     value: "3",
     delta: "2%+",
     deltaPositive: false,
   },
   {
     id: "revenue",
-    label: "الإيرادات",
+    labelKey: "revenue",
     value: "40.00 EG",
     delta: "80%+",
     deltaPositive: true,
   },
   {
  
-    label: "المواعيد",
+    labelKey: "appointments",
     value: "3",
     delta: "80%+",
     id: "appointments",
     deltaPositive: true,
   },{
     id: "todayPatients",
-    label: "مرضى اليوم",
+    labelKey: "patientsToday",
     value: "43",
     delta: "12%+",
     deltaPositive: true,
@@ -74,12 +74,14 @@ export const newPatients: NewPatient[] = [
 ];
 
 export type AppointmentStatus = "confirmed" | "cancelled" | "pending";
+export type VisitType = "checkup" | "followUp" | "consultation";
 
 export type UpcomingAppointment = {
   id: string;
   patient: string;
   time: string;
-  type: string;
+  /** Translation key inside `dashboard.home.upcomingAppointments.visitTypes` */
+  typeKey: VisitType;
   status: AppointmentStatus;
 };
 
@@ -88,21 +90,21 @@ export const upcomingAppointments: UpcomingAppointment[] = [
     id: "1",
     patient: "أمير سالم",
     time: "10:30ص",
-    type: "كشف دوري",
+    typeKey: "checkup",
     status: "confirmed",
   },
   {
     id: "2",
     patient: "أحمد جلال",
     time: "11:30ص",
-    type: "متابعة",
+    typeKey: "followUp",
     status: "cancelled",
   },
   {
     id: "3",
     patient: "عمرو جمال",
     time: "12:30م",
-    type: "استشارة",
+    typeKey: "consultation",
     status: "pending",
   },
 ];
@@ -130,28 +132,28 @@ export const weeklyAppointments = [
 export const reportStatCards: StatCardData[] = [
   {
     id: "todayPatients",
-    label: "إجمالي المرضى",
+    labelKey: "patientsToday",
     value: "1,250",
     delta: "12%+",
     deltaPositive: true,
   },
   {
     id: "appointments",
-    label: "المواعيد",
+    labelKey: "appointments",
     value: "320",
     delta: "8%+",
     deltaPositive: true,
   },
   {
     id: "revenue",
-    label: "الإيرادات",
+    labelKey: "revenue",
     value: "40,000 EG",
     delta: "15%+",
     deltaPositive: true,
   },
   {
     id: "emergencyCases",
-    label: "الحالات الطارئة",
+    labelKey: "emergencies",
     value: "18",
     delta: "3%-",
     deltaPositive: false,

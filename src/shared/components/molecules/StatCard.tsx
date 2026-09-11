@@ -4,9 +4,9 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/cn";
 import { BADGE_TONES, type BadgeTone } from "@/shared/components/atoms/Badge";
-import type { StatCardData } from "@/shared/types/stats";
+import type { StatCardDisplayData } from "@/shared/types/stats";
 
-type Props = StatCardData & {
+type Props = StatCardDisplayData & {
   icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
   iconTone: BadgeTone;
   comparisonLabel: string;

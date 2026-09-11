@@ -12,7 +12,7 @@ export type StatCardId =
 
 export type StatCardData = {
   id: StatCardId;
-  label: string;
+  labelKey: string;
   value: string;
   delta: string;
   deltaPositive: boolean;
