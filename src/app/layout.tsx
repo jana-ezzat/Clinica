@@ -25,6 +25,7 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
   const clientMessages = pickMessages(messages, [
+    "common",
     "pricing",
     "faq",
     "stayUpdated",
