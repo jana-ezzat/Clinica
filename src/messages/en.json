@@ -1,4 +1,7 @@
 {
+  "common": {
+    "of": "of"
+  },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -641,5 +644,57 @@
     "cash": "Cash",
     "paid": "Paid",
     "downloading": "Downloading..."
+  },
+  "doctors": {
+    "profile": {
+      "loading": "Loading doctor profile...",
+      "loadError": "Couldn't load the doctor's data",
+      "retry": "Retry",
+      "notFound": "Doctor not found",
+      "editProfile": "Edit profile",
+      "addAppointment": "Add new appointment",
+      "onlineNow": "Online now",
+      "offline": "Offline",
+      "personalData": {
+        "title": "Personal Data",
+        "age": "Age",
+        "gender": "Gender",
+        "phone": "Phone",
+        "email": "Email",
+        "clinicAddress": "Clinic address",
+        "workHours": "Work hours"
+      },
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "experience": {
+        "title": "Experience & Bio",
+        "yearsOfExperience": "Years of experience",
+        "certificates": "Certificates",
+        "awards": "Awards"
+      },
+      "reservations": {
+        "title": "Reservations",
+        "emptyTitle": "No reservations yet",
+        "emptyDescription": "The doctor's reservations will appear here",
+        "columns": {
+          "patient": "Patient",
+          "examType": "Visit type",
+          "date": "Date",
+          "status": "Status"
+        },
+        "status": {
+          "confirmed": "Confirmed",
+          "pending": "Pending",
+          "cancelled": "Cancelled"
+        },
+        "visitTypes": {
+          "examination": "Examination",
+          "consultation": "Consultation",
+          "followUp": "Follow-up"
+        }
+      }
+    }
   }
 }
