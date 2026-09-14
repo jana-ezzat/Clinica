@@ -6,7 +6,6 @@ import type { PatientDetails } from "../../hooks/usePatient";
 import BackButton from "@/shared/components/atoms/BackButton";
 import Header from "@/shared/components/molecules/Header";
 
-
 interface PatientHeaderProps {
   patient: PatientDetails;
   activeTab: PatientTab;
@@ -25,7 +24,7 @@ export default function PatientHeader({
       <div className="flex items-start justify-between">
         <Header
           title={patient.name}
-          subtitle={`${t("fileNumberLabel")}: ${patient.fileNumber ?? t("notAvailable")}`}
+          subtitle={`${t("fileNumberLabel")}: ${patient.insurance?.memberNumber ?? t("notAvailable")}`}
         />
         <BackButton />
       </div>

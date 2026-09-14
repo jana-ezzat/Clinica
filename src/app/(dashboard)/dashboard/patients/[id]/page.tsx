@@ -1,3 +1,4 @@
+// src/app/(dashboard)/dashboard/patients/[id]/page.tsx
 "use client";
 import { useState } from "react";
 import { useParams } from "next/navigation";
@@ -15,6 +16,7 @@ import LatestSection from "@/modules/dashboard/patients/components/organisms/Lat
 
 import MedicalFile from "@/modules/dashboard/patients/components/molecules/MedicalFile";
 import VisitHistorySection from "@/modules/dashboard/patients/components/organisms/VisitHistorySection";
+import InvoicesSection from "@/modules/dashboard/patients/components/organisms/InvoicesSection";
 
 export default function PatientDetailsPage() {
   const params = useParams<{ id: string }>();
@@ -57,6 +59,7 @@ export default function PatientDetailsPage() {
 
       {activeTab === "visits" && <VisitHistorySection />}
       {activeTab === "medicalFile" && <MedicalFile />}
+      {activeTab === "invoices" && <InvoicesSection patientId={patient.id} />}
     </div>
   );
 }
