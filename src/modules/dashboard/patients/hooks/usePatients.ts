@@ -1,44 +1,53 @@
+// src\modules\dashboard\patients\hooks\usePatients.ts
 "use client";
+import axiosConfig from "@/services/axiosConfig";
 import { useQuery } from "@tanstack/react-query";
 
 export interface Patient {
-  id: number;
+  id: string;
+  slug: string;
   name: string;
   patient_type: "new" | "returning";
-  nationality: string;
+  nationality?: string;
   phone: string;
   email: string | null;
 }
 
-// Backend disconnected — temporary local mock data until the new backend is wired up.
-const MOCK_PATIENTS: Patient[] = [
-  {
-    id: 1,
-    name: "Sara Ahmed",
-    patient_type: "returning",
-    nationality: "Egyptian",
-    phone: "+20 100 123 4567",
-    email: "sara.ahmed@example.com",
-  },
-  {
-    id: 2,
-    name: "Omar Khaled",
-    patient_type: "new",
-    nationality: "Egyptian",
-    phone: "+20 111 987 6543",
-    email: "omar.khaled@example.com",
-  },
-  {
-    id: 3,
-    name: "Laila Hassan",
-    patient_type: "returning",
-    nationality: "Saudi",
-    phone: "+966 50 123 4567",
-    email: null,
-  },
-];
+interface PatientsResponse {
+  status: string;
+  results: number;
+  data: BackendPatient[];
+}
 
-const fetchPatients = async (): Promise<Patient[]> => MOCK_PATIENTS;
+interface BackendPatient {
+  _id: string;
+  slug: string;
+  personalInformation: {
+    name: string;
+    phone: string;
+    email: string | null;
+    gender?: "male" | "female";
+    dateOfBirth?: string;
+    nationalID?: string;
+    address?: string;
+    otherPhone?: string;
+  };
+}
+
+
+const fetchPatients = async (): Promise<Patient[]> => {
+  const { data } = await axiosConfig.get<PatientsResponse>("/patient");
+
+  return data.data.map((patient) => ({
+    id: patient._id,
+    slug: patient.slug,
+    name: patient.personalInformation.name,
+    patient_type: "new",
+    nationality: "",
+    phone: patient.personalInformation.phone,
+    email: patient.personalInformation.email,
+  }));
+};
 
 export const usePatients = () => {
   return useQuery({

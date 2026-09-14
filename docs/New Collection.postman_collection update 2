@@ -1,0 +1,1174 @@
+{
+  "info": {
+    "_postman_id": "780d4453-956f-497c-9129-0b046fc8a12f",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49925833",
+    "_collection_link": "https://go.postman.co/collection/49925833-780d4453-956f-497c-9129-0b046fc8a12f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"ali@email\",\r\n    \"password\": \"12345678\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create account",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "admin",
+                  "type": "text",
+                  "uuid": "f560abe6-352d-411d-a8f2-db01c3b3fcb9"
+                },
+                {
+                  "key": "email",
+                  "value": "admin2@email",
+                  "type": "text",
+                  "uuid": "b50ef8cc-af39-4a9b-8ba3-1516aa561ab0"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "a7f51c88-3822-42b0-8e50-a2aaf403cbb2"
+                },
+                {
+                  "key": "role",
+                  "value": "doctor",
+                  "type": "text",
+                  "uuid": "f67f0696-5151-4b10-abf6-bc123941dded"
+                },
+                {
+                  "key": "img",
+                  "type": "file",
+                  "uuid": "29e03b17-51f7-43b0-a0b5-4bd3ad07b44b",
+                  "src": "/C:/Users/DELL/OneDrive/Pictures/img.png"
+                },
+                {
+                  "key": "phone",
+                  "value": "010000000",
+                  "type": "text",
+                  "uuid": "6adf7c77-4f6b-4364-90bf-21820e89af39",
+                  "disabled": true
+                },
+                {
+                  "key": "workingHours",
+                  "value": "10:00 AM - 06:00 PM",
+                  "type": "text",
+                  "uuid": "411a4b7f-1bee-4a86-9cb7-d3f4bf8b1e5f",
+                  "disabled": true
+                },
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "type": "text",
+                  "uuid": "8b414925-cd0d-4088-aa3d-59e13fc0a58e",
+                  "disabled": true
+                },
+                {
+                  "key": "dateOfBirth",
+                  "value": "10-1-1995",
+                  "type": "text",
+                  "uuid": "5f7f7811-6695-402d-84b4-e0193f49d799",
+                  "disabled": true
+                },
+                {
+                  "key": "specialty",
+                  "value": "اخصائي باطنه",
+                  "type": "text",
+                  "uuid": "12c96613-d49d-4a61-a5d2-7377a3dcb84a",
+                  "disabled": true
+                },
+                {
+                  "key": "clinicAddress",
+                  "value": "القاهره - مصر",
+                  "type": "text",
+                  "uuid": "f735ac53-c8e0-4858-8b54-9b17dd57fc4f",
+                  "disabled": true
+                },
+                {
+                  "key": "experienceYears",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "8c833a1d-afe7-482b-8b46-f0a0547a7181",
+                  "disabled": true
+                },
+                {
+                  "key": "bio",
+                  "value": "bio",
+                  "type": "text",
+                  "uuid": "e3f1cf3a-782c-4ae1-b0ad-1c9002aff987",
+                  "disabled": true
+                },
+                {
+                  "key": "certificateTitles",
+                  "value": "[\"Master of Cardiology\"]",
+                  "type": "text",
+                  "uuid": "f76594f5-aac7-43b2-bee6-3eac09b749b5",
+                  "disabled": true
+                },
+                {
+                  "key": "certificates",
+                  "type": "file",
+                  "uuid": "01673d38-86f4-4683-8602-3109aedf2bec",
+                  "value": null,
+                  "disabled": true
+                },
+                {
+                  "key": "awardTitles",
+                  "value": "[\"Best Doctor 2025\"]",
+                  "type": "text",
+                  "uuid": "d8b113e5-b307-4a75-bcae-92d846613b1a",
+                  "disabled": true
+                },
+                {
+                  "key": "awards",
+                  "type": "file",
+                  "uuid": "e00ca981-12f1-42d7-99ca-d0f0c0f7fb21",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all accounts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get my account",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"ahmed\",\r\n    \"email\": \"ahmed@email\",\r\n    \"password\": \"123\",\r\n    \"role\":\"doctor\",\r\n    \"permissions\": [\r\n    \"patients.read\",\r\n    \"patients.create\",\r\n    \"patients.update\",\r\n    \"appointments.read\",\r\n    \"appointments.create\",\r\n    \"appointments.update\",\r\n    \"medicalRecords.read\",\r\n    \"medicalRecords.create\",\r\n    \"prescriptions.create\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/user/me",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update my account",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "e795f44a-e3b3-4bb3-a0cc-522f187d1f78",
+                  "disabled": true
+                },
+                {
+                  "key": "email",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "d080eabd-e185-4b73-8258-dbcb8f7b823f",
+                  "disabled": true
+                },
+                {
+                  "key": "img",
+                  "type": "file",
+                  "uuid": "45cc2f81-493b-473a-9eff-61bde08bc258",
+                  "src": "/C:/Users/DELL/OneDrive/Pictures/img.png"
+                },
+                {
+                  "key": "certificateTitles",
+                  "value": "[\"Master of Cardiology\"]",
+                  "type": "text",
+                  "uuid": "6463ff5f-eeea-4a6f-8649-550c6f52e9ed",
+                  "disabled": true
+                },
+                {
+                  "key": "certificates",
+                  "type": "file",
+                  "uuid": "d8743bd4-e858-4e72-a3a5-492ffaecd0cc",
+                  "src": "/C:/Users/DELL/OneDrive/Pictures/img.png",
+                  "disabled": true
+                },
+                {
+                  "key": "awards",
+                  "type": "file",
+                  "uuid": "6dac62bf-3213-4b48-b533-de09e56f6b99",
+                  "src": "/C:/Users/DELL/OneDrive/Pictures/img.png",
+                  "disabled": true
+                },
+                {
+                  "key": "awardTitles",
+                  "value": "[\"Best Doctor 2025\"]",
+                  "type": "text",
+                  "uuid": "dd3e2310-3b30-45e0-9674-6a68e11e9664",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/user/me",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update account",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{admin token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "د/ احمد محمد",
+                  "type": "text",
+                  "uuid": "9f985df9-8427-4966-9a9c-eddc75497cd3"
+                },
+                {
+                  "key": "email",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "9f1b20a7-f70e-4992-9218-f223a2f18193",
+                  "disabled": true
+                },
+                {
+                  "key": "role",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "faf306b9-6302-45a3-8113-edce1f9666ff",
+                  "disabled": true
+                },
+                {
+                  "key": "img",
+                  "type": "file",
+                  "uuid": "f1da9b85-0811-4e55-a0dc-909b8b7a0115",
+                  "src": "/C:/Users/DELL/OneDrive/Pictures/img.png",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/user/d-ahmd-mhmd",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "d-ahmd-mhmd"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "patient",
+      "item": [
+        {
+          "name": "get all patients",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/patient",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "patient"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one patient",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/patient/ahmed-ali",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "patient",
+                "ahmed-ali"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create patient",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"personalInformation\": {\r\n    \"name\": \"ahmed ali\",\r\n    \"phone\": \"01012345678\",\r\n    \"otherPhone\": \"01112345678\",\r\n    \"email\": \"ahmed@gmail.com\",\r\n    \"gender\": \"male\",\r\n    \"dateOfBirth\": \"1995-05-20\",\r\n    \"nationalID\": \"29505201234567\",\r\n    \"address\": \"Cairo, Egypt\"\r\n  },\r\n  \"medicalInformation\": {\r\n    \"bloodType\": \"O+\",\r\n    \"allergies\": [\r\n      \"Penicillin\",\r\n      \"Peanuts\"\r\n    ],\r\n    \"chronicDiseases\": [\r\n      \"Diabetes\"\r\n    ],\r\n    \"medications\": [\r\n      \"Metformin\"\r\n    ],\r\n    \"previousSurgeries\": [\r\n      {\r\n        \"name\": \"Appendectomy\",\r\n        \"date\": \"2020-03-15\"\r\n      }\r\n    ],\r\n    \"familyMedicalHistory\": \"Family history of diabetes\",\r\n    \"medicalHistory\": \"Patient has a history of diabetes.\"\r\n  },\r\n  \"emergencyContact\": {\r\n    \"name\": \"Sara Ali\",\r\n    \"phone\": \"01098765432\",\r\n    \"relationship\": \"Wife\"\r\n  },\r\n  \"insurance\": {\r\n    \"company\": \"Misr Insurance\",\r\n    \"memberNumber\": \"INS-123456\",\r\n    \"coverageRatio\": 80,\r\n    \"endDate\": \"2027-12-31\"\r\n  },\r\n  \"attachments\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/patient",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "patient"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update patient",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"personalInformation\": {\r\n    \"name\": \"ahmed-ali\"\r\n  }}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/patient/ahmed-ali",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "patient",
+                "ahmed-ali"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "appointment مواعيد",
+      "item": [
+        {
+          "name": "add appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient\": \"6a94c285bc78daf3d1c3c515\",\r\n  \"doctor\": \"6a94c064fe7acabc04fe6174\",\r\n  \"date\": \"2026-09-01\",\r\n  \"startTime\": \"10:00\",\r\n  \"type\": \"consultation\"\r\n}\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n   \"type\": \"check-up\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment/6a94c369626de8d4eb79ad4b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment",
+                "6a94c369626de8d4eb79ad4b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment/6a941b2f0d9967b00171132d",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment",
+                "6a941b2f0d9967b00171132d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment/6a94c369626de8d4eb79ad4b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment",
+                "6a94c369626de8d4eb79ad4b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get doctor appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment/doctor/6a94c064fe7acabc04fe6174",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment",
+                "doctor",
+                "6a94c064fe7acabc04fe6174"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get patient appointment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/appointment/patient/6a94c285bc78daf3d1c3c515",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "appointment",
+                "patient",
+                "6a94c285bc78daf3d1c3c515"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "visit الزيارات",
+      "item": [
+        {
+          "name": "add visit",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient\": \"6a94c285bc78daf3d1c3c515\",\r\n  \"doctor\": \"6a94c064fe7acabc04fe6174\",\r\n  \"visitDate\": \"2026-08-30T10:30:00.000Z\",\r\n  \"reason\": \"ألم شديد في المعدة\",\r\n  \"vitalSigns\": {\r\n    \"weight\": 82,\r\n    \"height\": 178,\r\n    \"pulse\": 78,\r\n    \"temperature\": 36.8\r\n  },\r\n  \"diagnosis\": \"التهاب المعدة الحاد\",\r\n  \"treatment\": \"استخدام دواء 20 مجم مرتين يوميًا\",\r\n  \"doctorNotes\": \"ينصح بتجنب الأطعمة الحارة والمشروبات الغازية\",\r\n  \"followUpDate\": \"2026-09-13T10:30:00.000Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/visit",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "visit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update visit",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"reason\": \"ألم  في المعدة\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/visit/6a945118948abdedbb2a633f",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "visit",
+                "6a945118948abdedbb2a633f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all visit",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/visit",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "visit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one visit",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/visit/6a94c45a285facbcac5fe996",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "visit",
+                "6a94c45a285facbcac5fe996"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get patient visit",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/visit/patient/6a918a5d4d71e888d3002d78",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "visit",
+                "patient",
+                "6a918a5d4d71e888d3002d78"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "invoice فواتير",
+      "item": [
+        {
+          "name": "add invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient\": \"6a94c285bc78daf3d1c3c515\",\r\n  \"doctor\": \"6a94c5580f2656c2e3101400\",\r\n  \"visit\": \"6a94c45a285facbcac5fe996\",\r\n\r\n  \"services\": [\r\n    {\r\n      \"name\": \"كشف طبي\",\r\n      \"price\": 300,\r\n      \"discount\": 50\r\n    },\r\n    {\r\n      \"name\": \"أشعة\",\r\n      \"price\": 500,\r\n      \"discount\": 100\r\n    },\r\n    {\r\n      \"name\": \"تحاليل\",\r\n      \"price\": 200,\r\n      \"discount\": 0\r\n    }\r\n  ],\r\n  \"paid\": 700,\r\n  \"paymentMethod\": \"cash\",\r\n  \"notes\": \"المريض دفع جزء من الفاتورة\",\r\n  \"TermsAndConditions\": \"الدفع غير قابل للاسترداد بعد تقديم الخدمة.\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"paid\": 850\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice/6aa436bff975feb5d4bdfce3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice",
+                "6aa436bff975feb5d4bdfce3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice/6aa436bff975feb5d4bdfce3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice",
+                "6aa436bff975feb5d4bdfce3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get patient invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice/patient/6a94c285bc78daf3d1c3c515",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice",
+                "patient",
+                "6a94c285bc78daf3d1c3c515"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get doctor invoice",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/invoice/doctor/6a94c5580f2656c2e3101400",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "invoice",
+                "doctor",
+                "6a94c5580f2656c2e3101400"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
