@@ -435,6 +435,70 @@
         "medicalFile": "Medical File",
         "invoices": "Invoices",
         "attachments": "Attachments"
+      },
+      "invoices": {
+        "title": "Invoices",
+        "addBtn": "Add Invoice",
+        "loading": "Loading invoices...",
+        "loadError": "Failed to load invoices",
+        "table": {
+          "empty": "No invoices found",
+          "invoiceNumber": "Invoice No.",
+          "date": "Date",
+          "total": "Total",
+          "paid": "Paid",
+          "remaining": "Remaining",
+          "status": "Status"
+        },
+        "status": {
+          "paid": "Paid",
+          "partial": "Partially paid",
+          "unpaid": "Unpaid"
+        },
+        "addModal": {
+          "title": "Add Invoice",
+          "services": "Services",
+          "addService": "Add service",
+          "serviceName": "Service name",
+          "price": "Price",
+          "discount": "Discount",
+          "subtotal": "Subtotal",
+          "total": "Total",
+          "paid": "Paid amount",
+          "paymentMethod": "Payment method",
+          "cash": "Cash",
+          "card": "Card",
+          "insurance": "Insurance",
+          "notes": "Notes",
+          "terms": "Terms and conditions",
+          "cancel": "Cancel",
+          "save": "Save invoice",
+          "saving": "Saving..."
+        },
+        "details": {
+          "title": "Invoice Details",
+          "loading": "Loading invoice...",
+          "loadError": "Failed to load invoice",
+          "retry": "Retry",
+          "service": "Service",
+          "price": "Price",
+          "discount": "Discount",
+          "total": "Total",
+          "subtotal": "Subtotal",
+          "paid": "Paid",
+          "remaining": "Remaining",
+          "paymentMethod": "Payment method",
+          "notes": "Notes",
+          "terms": "Terms and conditions",
+          "updatePaid": "Update paid amount",
+          "updating": "Updating...",
+          "updateError": "Failed to update the paid amount",
+          "method": {
+            "cash": "Cash",
+            "card": "Card",
+            "insurance": "Insurance"
+          }
+        }
       }
     }
   },

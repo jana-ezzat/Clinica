@@ -436,6 +436,70 @@
         "medicalFile": "الملف الطبي",
         "invoices": "الفواتير",
         "attachments": "المرفقات"
+      },
+      "invoices": {
+        "title": "الفواتير",
+        "addBtn": "إضافة فاتورة",
+        "loading": "جارٍ تحميل الفواتير...",
+        "loadError": "تعذر تحميل الفواتير",
+        "table": {
+          "empty": "لا توجد فواتير",
+          "invoiceNumber": "رقم الفاتورة",
+          "date": "التاريخ",
+          "total": "الإجمالي",
+          "paid": "المدفوع",
+          "remaining": "المتبقي",
+          "status": "الحالة"
+        },
+        "status": {
+          "paid": "مدفوعة",
+          "partial": "مدفوعة جزئيًا",
+          "unpaid": "غير مدفوعة"
+        },
+        "addModal": {
+          "title": "إضافة فاتورة",
+          "services": "الخدمات",
+          "addService": "إضافة خدمة",
+          "serviceName": "اسم الخدمة",
+          "price": "السعر",
+          "discount": "الخصم",
+          "subtotal": "الإجمالي الفرعي",
+          "total": "الإجمالي",
+          "paid": "المبلغ المدفوع",
+          "paymentMethod": "طريقة الدفع",
+          "cash": "نقدي",
+          "card": "بطاقة",
+          "insurance": "تأمين",
+          "notes": "ملاحظات",
+          "terms": "الشروط والأحكام",
+          "cancel": "إلغاء",
+          "save": "حفظ الفاتورة",
+          "saving": "جارٍ الحفظ..."
+        },
+        "details": {
+          "title": "تفاصيل الفاتورة",
+          "loading": "جارٍ تحميل الفاتورة...",
+          "loadError": "تعذر تحميل الفاتورة",
+          "retry": "إعادة المحاولة",
+          "service": "الخدمة",
+          "price": "السعر",
+          "discount": "الخصم",
+          "total": "الإجمالي",
+          "subtotal": "الإجمالي الفرعي",
+          "paid": "المدفوع",
+          "remaining": "المتبقي",
+          "paymentMethod": "طريقة الدفع",
+          "notes": "ملاحظات",
+          "terms": "الشروط والأحكام",
+          "updatePaid": "تحديث المبلغ المدفوع",
+          "updating": "جارٍ التحديث...",
+          "updateError": "تعذر تحديث المبلغ المدفوع",
+          "method": {
+            "cash": "نقدي",
+            "card": "بطاقة",
+            "insurance": "تأمين"
+          }
+        }
       }
     }
   },

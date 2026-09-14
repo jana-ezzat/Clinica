@@ -1,27 +1,61 @@
+// src/modules/auth/hooks/useLogin.ts
 "use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, LoginFormValues } from "../schema/LoginSechma";
+import { useRouter } from "next/navigation";
+import axiosConfig from "@/services/axiosConfig";
+import tokenService from "@/services/tokenService";
 
-export const useLogin = () => {
+interface LoginForm {
+  email: string;
+  password: string;
+}
+
+interface LoginResponse {
+  message: string;
+  data: {
+    _id: string;
+    name: string;
+    email: string;
+    role: string;
+  };
+  jwt: string;
+}
+
+const useLogin = () => {
+  const router = useRouter();
+
   const [apiError, setApiError] = useState<string | null>(null);
 
   const {
     register,
-    handleSubmit,
+    handleSubmit: submit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
-  });
+  } = useForm<LoginForm>();
 
-  const onSubmit = async (_data: LoginFormValues) => {
-    setApiError("backendNotReady");
-  };
+  const handleSubmit = submit(async (values) => {
+    try {
+      setApiError(null);
+
+      const response = await axiosConfig.post<LoginResponse>(
+        "/auth/login",
+        values,
+      );
+
+      tokenService.set(response.data.jwt);
+
+      router.push("/dashboard");
+    } catch (error: any) {
+      setApiError(
+        error?.response?.data?.message || "loginFailed",
+      );
+    }
+  });
 
   return {
     register,
-    handleSubmit: handleSubmit(onSubmit),
+    handleSubmit,
     errors,
     isSubmitting,
     apiError,
