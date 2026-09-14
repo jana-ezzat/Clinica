@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { MdChevronLeft, MdChevronRight, MdLogout } from "react-icons/md";
 import Logo from "@/shared/components/atoms/Logo";
 import Button from "@/shared/components/atoms/Button";
@@ -11,6 +12,7 @@ import { useSidebar } from "../../context/SidebarContext";
 
 function SidebarContent({ collapsed }: { collapsed: boolean }) {
   const pathname = usePathname();
+  const t = useTranslations("dashboard.sidebar");
 
   return (
     <div className="flex h-full flex-col">
@@ -55,7 +57,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
               <Icon size={22} className="shrink-0" />
               {!collapsed && (
                 <Text size="sm" className="!p-0 !text-inherit font-medium">
-                  {item.label}
+                  {t(item.labelKey)}
                 </Text>
               )}
             </Button>
@@ -67,7 +69,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
         <Button
           variant="ghost"
           fullWidth
-          title="تسجيل الخروج"
+          title={t("logout")}
           className={cn(
             "gap-3 !text-red-500 hover:opacity-70",
             collapsed ? "!justify-center !px-0" : "!justify-start",
@@ -76,7 +78,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
           <MdLogout size={22} className="shrink-0" />
           {!collapsed && (
             <Text size="sm" className="!p-0 !text-inherit font-medium">
-              تسجيل الخروج
+              {t("logout")}
             </Text>
           )}
         </Button>

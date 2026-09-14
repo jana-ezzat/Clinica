@@ -8,6 +8,8 @@ interface PaginationProps {
     totalItems: number;
     itemsPerPage: number;
     onPageChange: (page: number) => void;
+    /** Translated word for "of", e.g. "of" / "من". Defaults to "of". */
+    ofLabel?: string;
     className?: string;
 }
 
@@ -16,6 +18,7 @@ export default function Pagination({
     totalItems,
     itemsPerPage,
     onPageChange,
+    ofLabel = "of",
     className,
 }: PaginationProps) {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -30,10 +33,26 @@ export default function Pagination({
         totalItems,
     );
 
-    const pages = Array.from(
-        { length: totalPages },
-        (_, index) => index + 1,
-    );
+    // Build a compact page list with ellipsis for large page counts,
+    // e.g. [1, "...", 4, 5, 6, "...", 42]
+    const pageItems: (number | "ellipsis")[] = (() => {
+        const SIBLINGS = 1;
+        const totalVisible = SIBLINGS * 2 + 5; // first, last, current, 2 ellipses
+
+        if (totalPages <= totalVisible) {
+            return Array.from({ length: totalPages }, (_, i) => i + 1);
+        }
+
+        const start = Math.max(currentPage - SIBLINGS, 2);
+        const end = Math.min(currentPage + SIBLINGS, totalPages - 1);
+
+        const items: (number | "ellipsis")[] = [1];
+        if (start > 2) items.push("ellipsis");
+        for (let page = start; page <= end; page++) items.push(page);
+        if (end < totalPages - 1) items.push("ellipsis");
+        items.push(totalPages);
+        return items;
+    })();
 
     return (
       <div
@@ -44,7 +63,7 @@ export default function Pagination({
         )}>
         {/* Items count */}
         <p className="ds-text-secondary text-sm">
-          {startItem} - {endItem} من {totalItems}
+          {startItem} - {endItem} {ofLabel} {totalItems}
         </p>
 
         {/* Pagination */}
@@ -59,16 +78,24 @@ export default function Pagination({
             <ChevronRight />
           </Button>
 
-          {pages.map((page) => (
-            <Button
-              key={page}
-              type="button"
-              variant={page === currentPage ? "primary" : "ghost"}
-              size="icon"
-              onClick={() => onPageChange(page)}>
-              {page}
-            </Button>
-          ))}
+          {pageItems.map((page, index) =>
+            page === "ellipsis" ? (
+              <span
+                key={`ellipsis-${index}`}
+                className="ds-text-secondary px-2 text-sm select-none">
+                …
+              </span>
+            ) : (
+              <Button
+                key={page}
+                type="button"
+                variant={page === currentPage ? "primary" : "ghost"}
+                size="icon"
+                onClick={() => onPageChange(page)}>
+                {page}
+              </Button>
+            ),
+          )}
 
           <Button
             type="button"

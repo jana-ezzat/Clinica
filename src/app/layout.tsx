@@ -25,6 +25,7 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
   const clientMessages = pickMessages(messages, [
+    "common",
     "pricing",
     "faq",
     "stayUpdated",
@@ -39,6 +40,7 @@ export default async function RootLayout({
     "MedicalFile",
     "reports",
     "Invoice",
+    "appointments",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";

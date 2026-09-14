@@ -1,4 +1,7 @@
 {
+  "common": {
+    "of": "of"
+  },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -310,7 +313,92 @@
     "privacyLink": "Privacy Policy"
   },
   "dashboard": {
-    "lastMonth": "from last month"
+    "lastMonth": "from last month",
+    "sidebar": {
+      "home": "Home",
+      "patients": "Patients",
+      "doctors": "Doctors",
+      "appointments": "Appointments",
+      "invoices": "Invoices",
+      "reports": "Reports",
+      "settings": "Settings",
+      "logout": "Log out"
+    },
+    "header": {
+      "searchPlaceholder": "Search...."
+    },
+    "home": {
+      "addAppointment": "Add new appointment",
+      "welcome": "Welcome {name}",
+      "summary": "Here's your clinic summary today",
+      "stats": {
+        "emergencies": "Emergency cases",
+        "revenue": "Revenue",
+        "appointments": "Appointments",
+        "patientsToday": "Patients today"
+      },
+      "newPatients": {
+        "title": "New Patients",
+        "subtitle": "Latest registrations",
+        "viewAll": "View all",
+        "columns": {
+          "patient": "Patient",
+          "age": "Age",
+          "symptoms": "Symptoms",
+          "date": "Date"
+        },
+        "ageUnit": "yrs"
+      },
+      "upcomingAppointments": {
+        "title": "Upcoming Appointments",
+        "subtitle": "Today's appointment schedule",
+        "viewAll": "View all",
+        "columns": {
+          "patient": "Patient",
+          "time": "Time",
+          "type": "Visit type",
+          "status": "Status"
+        },
+        "status": {
+          "confirmed": "Confirmed",
+          "cancelled": "Cancelled",
+          "pending": "Pending"
+        },
+        "visitTypes": {
+          "checkup": "Routine checkup",
+          "followUp": "Follow-up",
+          "consultation": "Consultation"
+        }
+      },
+      "revenueChart": {
+        "title": "Monthly Revenue",
+        "subtitle": "Revenue trend over the past months",
+        "series": "Revenue"
+      },
+      "weeklyChart": {
+        "title": "Weekly Appointments",
+        "subtitle": "Number of appointments per day",
+        "series": "Appointments"
+      },
+      "months": {
+        "jan": "January",
+        "feb": "February",
+        "mar": "March",
+        "apr": "April",
+        "may": "May",
+        "jun": "June",
+        "jul": "July"
+      },
+      "weekdays": {
+        "sat": "Sat",
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri"
+      }
+    }
   },
   "patients": {
     "pageTitle": "Patients",
@@ -531,6 +619,47 @@
       "empty": "No Reports Found"
     }
   },
+  "appointments": {
+    "pageTitle": "Appointments",
+    "fromAverage": "from average",
+    "filters": {
+      "searchPlaceholder": "Search by name",
+      "bookingType": "Booking Type",
+      "bookingDate": "Booking Date",
+      "export": "Export as PDF"
+    },
+    "bookingTypes": {
+      "checkup": "Checkup",
+      "followup": "Follow-up",
+      "emergency": "Emergency"
+    },
+    "statuses": {
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "pending": "Pending"
+    },
+    "table": {
+      "name": "Name",
+      "bookingType": "Booking Type",
+      "status": "Status",
+      "bookingDate": "Booking Date",
+      "bookingTime": "Booking Time",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "empty": "No appointments found",
+      "loading": "Loading...",
+      "loadError": "Failed to load appointments",
+      "retry": "Retry",
+      "exportSuccess": "File downloaded successfully"
+    },
+    "stats": {
+      "bookingsToday": "Today's Bookings",
+      "confirmedToday": "Confirmed Today",
+      "confirmationRate": "Confirmation Rate",
+      "date": "Saturday, November 28, 2025"
+    }
+  },
   "Invoice": {
     "savePdf": "Save PDF",
     "print": "Print",
@@ -575,16 +704,66 @@
       "status": "Payment Status",
       "date": "Payment Date"
     },
-     "servicesList": {
-    "checkup": "Medical Checkup",
-    "examination": "Medical Examination",
-    "consultation": "Consultation"
-  },
+    "servicesList": {
+      "checkup": "Medical Checkup",
+      "examination": "Medical Examination",
+      "consultation": "Consultation"
+    },
     "downloadSuccess": "Invoice downloaded",
     "cash": "Cash",
     "paid": "Paid",
-    "savePdf": "Save PDF",
-    "downloading": "Downloading...",
-    "print": "Print"
+    "downloading": "Downloading..."
+  },
+  "doctors": {
+    "profile": {
+      "loading": "Loading doctor profile...",
+      "loadError": "Couldn't load the doctor's data",
+      "retry": "Retry",
+      "notFound": "Doctor not found",
+      "editProfile": "Edit profile",
+      "addAppointment": "Add new appointment",
+      "onlineNow": "Online now",
+      "offline": "Offline",
+      "personalData": {
+        "title": "Personal Data",
+        "age": "Age",
+        "gender": "Gender",
+        "phone": "Phone",
+        "email": "Email",
+        "clinicAddress": "Clinic address",
+        "workHours": "Work hours"
+      },
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "experience": {
+        "title": "Experience & Bio",
+        "yearsOfExperience": "Years of experience",
+        "certificates": "Certificates",
+        "awards": "Awards"
+      },
+      "reservations": {
+        "title": "Reservations",
+        "emptyTitle": "No reservations yet",
+        "emptyDescription": "The doctor's reservations will appear here",
+        "columns": {
+          "patient": "Patient",
+          "examType": "Visit type",
+          "date": "Date",
+          "status": "Status"
+        },
+        "status": {
+          "confirmed": "Confirmed",
+          "pending": "Pending",
+          "cancelled": "Cancelled"
+        },
+        "visitTypes": {
+          "examination": "Examination",
+          "consultation": "Consultation",
+          "followUp": "Follow-up"
+        }
+      }
+    }
   }
 }

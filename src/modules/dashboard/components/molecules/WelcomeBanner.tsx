@@ -1,5 +1,6 @@
 // src/modules/dashboard/components/molecules/WelcomeBanner.tsx
 import { GiStethoscope } from "react-icons/gi";
+import { useTranslations } from "next-intl";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 
@@ -8,6 +9,8 @@ type Props = {
 };
 
 export default function WelcomeBanner({ doctorName }: Props) {
+  const t = useTranslations("dashboard.home");
+
   return (
     <div
       className="relative flex flex-1 items-center overflow-hidden rounded-xl px-6 py-6"
@@ -21,10 +24,10 @@ export default function WelcomeBanner({ doctorName }: Props) {
       />
       <div className="relative w-full text-start">
         <Title size="sm" className="!p-0 !text-white font-bold">
-          مرحبا {doctorName}
+          {t("welcome", { name: doctorName })}
         </Title>
         <Text size="sm" className="mt-1 !p-0 !text-white/80">
-          إليك ملخص عيادتك اليوم
+          {t("summary")}
         </Text>
       </div>
     </div>

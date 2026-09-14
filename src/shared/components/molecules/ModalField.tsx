@@ -1,7 +1,7 @@
 import { FieldError, UseFormRegister } from "react-hook-form";
 import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/cn";
-import { AppointmentFormValues } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
 
 interface Props {
   label: string;

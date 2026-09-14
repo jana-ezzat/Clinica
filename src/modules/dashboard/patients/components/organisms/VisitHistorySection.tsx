@@ -5,7 +5,7 @@ import VisitMeta from "../molecules/VisitMeta";
 import VisitDetailsSection from "./VisitDetails";
 import VisitingHeader from "../molecules/VisitingHeader";
 import { visitHistoryData } from "@/modules/dashboard/lib/VisitHistoryData";
-import ModalAppointment from "./ModalAppointment";
+import ModalAppointment from "@/shared/components/organisms/ModalAppointment";
 
 const VisitHistorySection = () => {
   const t = useTranslations("visitHistory");

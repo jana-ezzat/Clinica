@@ -7,10 +7,10 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import Button from "@/shared/components/atoms/Button";
 
-import Modal from "../molecules/Modal";
 import PatientInfo from "../molecules/PatientInfo";
 import MeetingInfo from "../molecules/MeetingInfo";
-import { AppointmentFormValues, AppointmentModalSchema } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
+import Modal from "@/shared/components/molecules/ModalShell";
+import { AppointmentFormValues, AppointmentModalSchema } from "@/shared/schema/AppointmentModalSechma";
 
 
 interface Props {
@@ -28,7 +28,7 @@ export default function ModalAppointment({ isOpen, onClose }: Props) {
     handleSubmit,
     clearErrors,
     formState: { errors },
-  } = useForm<AppointmentFormValues>({
+  } = useForm<AppointmentFormValues >({
     resolver: zodResolver(schema),
   });
 
