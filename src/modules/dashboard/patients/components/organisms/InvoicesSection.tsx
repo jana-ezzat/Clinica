@@ -8,7 +8,7 @@ import { Invoice } from "../../types/invoice";
 import InvoicesHeader from "../molecules/InvoicesHeader";
 import InvoicesTable from "./InvoicesTable";
 import InvoiceDetailsModal from "./InvoiceDetailsModal";
-import StatusCard from "@/modules/dashboard/patients/components/atoms/StatusCard";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 
 interface InvoicesSectionProps {
     patientId: string;

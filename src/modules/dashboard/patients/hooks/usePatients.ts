@@ -16,7 +16,9 @@ export interface Patient {
 interface PatientsResponse {
   status: string;
   results: number;
-  data: BackendPatient[];
+  data: {
+    patients: BackendPatient[];
+  };
 }
 
 interface BackendPatient {
@@ -38,7 +40,7 @@ interface BackendPatient {
 const fetchPatients = async (): Promise<Patient[]> => {
   const { data } = await axiosConfig.get<PatientsResponse>("/patient");
 
-  return data.data.map((patient) => ({
+  return data.data.patients.map((patient) => ({
     id: patient._id,
     slug: patient.slug,
     name: patient.personalInformation.name,

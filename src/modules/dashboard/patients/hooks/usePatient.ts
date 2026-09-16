@@ -51,7 +51,9 @@ export interface PatientDetails extends Patient {
 
 interface PatientResponse {
   status: string;
-  data: BackendPatient;
+  data: {
+    patient: BackendPatient;
+  };
 }
 
 interface BackendPatient {
@@ -105,7 +107,7 @@ const fetchPatient = async (slug: string): Promise<PatientDetails> => {
     `/patient/${slug}`,
   );
 
-  const patient = data.data;
+  const patient = data.data.patient;
 
   return {
     id: patient._id,

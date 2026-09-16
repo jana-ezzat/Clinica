@@ -3,8 +3,8 @@
 
 import { useTranslations } from "next-intl";
 import { Invoice } from "../../types/invoice";
-import StatusCard from "@/modules/dashboard/patients/components/atoms/StatusCard";
 import InvoiceTableRow from "../molecules/InvoiceTableRow";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 interface InvoicesTableProps {
     invoices: Invoice[];
     onRowClick: (invoice: Invoice) => void;
