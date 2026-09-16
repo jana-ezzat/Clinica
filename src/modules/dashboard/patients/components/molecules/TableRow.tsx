@@ -18,7 +18,7 @@ export default function PatientTableRow({
 
   return (
     <tr
-      onClick={() => router.push(`/dashboard/patients/${patient.id}`)}
+      onClick={() => router.push(`/dashboard/patients/${patient.slug}`)}
       className="ds-border-gray cursor-pointer border-b transition-colors hover:bg-black/[0.02] ">
       <td className="px-8 py-4">
         <div className="flex items-center gap-3">

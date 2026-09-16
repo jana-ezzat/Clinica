@@ -33,11 +33,10 @@ export default function PatientTabs({
         <button
           key={tab}
           onClick={() => onChange(tab)}
-          className={`shrink-0 whitespace-nowrap px-1 pb-3 text-xs font-medium transition-colors sm:text-sm md:text-base lg:text-lg ${
-            active === tab
+          className={`shrink-0 cursor-pointer whitespace-nowrap px-1 pb-3 text-xs font-medium transition-colors sm:text-sm md:text-base lg:text-lg ${active === tab
               ? "ds-text-primary"
               : "ds-text-secondary hover:ds-text"
-          }`}>
+            }`}>
           {labels[tab]}
         </button>
       ))}
