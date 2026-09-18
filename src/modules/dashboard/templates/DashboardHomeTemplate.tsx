@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import DashboardHeader from "../components/molecules/DashboardHeader";
 import StatsGrid from "@/shared/components/molecules/StatsGrid";
 import { dashboardStatIcons } from "../lib/statIcons";
@@ -29,6 +29,8 @@ export default async function DashboardHomeTemplate({
     ...stat,
     label: tStats(labelKey),
   }));
+    const locale = await getLocale();
+
 
   return (
     <div className="space-y-6">
@@ -40,6 +42,7 @@ export default async function DashboardHomeTemplate({
         stats={translatedStats}
         icons={dashboardStatIcons}
         comparisonLabel={t("lastMonth")}
+        locale={locale}
       />
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">

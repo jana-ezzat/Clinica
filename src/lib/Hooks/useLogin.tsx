@@ -3,8 +3,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { loginSchema, LoginFormValues } from "../Sechma/LoginSechma";
-import { env } from "@/config/env";
+import {
+  LoginFormValues,
+  loginSchema,
+} from "@/modules/auth/schema/LoginSchema";
+import { env } from "@/lib/config/env";
 
 const useLogin = () => {
   const [apiError, setApiError] = useState<string | null>(null);
@@ -26,10 +29,13 @@ const useLogin = () => {
     formData.append("password", data.password);
 
     try {
-      const res = await fetch(`${env.API_BASE_URL}/login`, {
+      const res = await fetch(`${env.API_BASE_URL}/auth/login`, {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ email: data.email, password: data.password }),
       });
 
       const result = await res.json().catch(() => null);
@@ -51,7 +57,6 @@ const useLogin = () => {
       router.push("/dashboard");
     } catch (error) {
       setApiError("networkError");
-      // console.log(error);
     }
   };
 

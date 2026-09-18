@@ -1,5 +1,3 @@
-// src/modules/dashboard/patients/hooks/usePatient.ts
-
 "use client";
 
 import { useQuery } from "@tanstack/react-query";

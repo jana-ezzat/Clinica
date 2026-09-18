@@ -1,5 +1,17 @@
-import DashboardHome from "@/modules/dashboard/components/organisms/DashboardHome";
+import DashboardHomeTemplate from "@/modules/dashboard/templates/DashboardHomeTemplate";
+import {
+  statCards,
+  newPatients,
+  upcomingAppointments,
+} from "@/modules/dashboard/lib/mockData";
 
 export default function DashboardPage() {
-  return <DashboardHome />;
+  return (
+    <DashboardHomeTemplate
+      doctorName="د/ أحمد محمد"
+      stats={statCards}
+      patients={newPatients}
+      appointments={upcomingAppointments}
+    />
+  );
 }

@@ -1,4 +1,3 @@
-// app/components/LocaleSwitcher.tsx
 "use client";
 import { useEffect } from "react";
 import { Locale, useLocale } from "next-intl";
