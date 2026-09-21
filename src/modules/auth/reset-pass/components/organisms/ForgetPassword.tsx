@@ -10,12 +10,19 @@ import { useTranslations } from "next-intl";
 import Modal from "@/shared/components/atoms/Modal";
 import useForgetPassword from "@/modules/auth/hooks/useForgetPassword";
 
-
 const ForgetPassword = () => {
   const t = useTranslations("forgetpassword");
   const c = useTranslations("resetpassword.commonAuth");
-  const { register, handleSubmit, errors, success, router, submitemail } =
-    useForgetPassword();
+  const {
+    register,
+    handleSubmit,
+    errors,
+    success,
+    router,
+    submitemail,
+    apiError,
+    isSubmitting,
+  } = useForgetPassword();
 
   return (
     <div className="flex w-full flex-col items-center">
@@ -35,8 +42,14 @@ const ForgetPassword = () => {
             {...register("email")}
           />
 
-          <Button variant="primary" className="w-full mt-4" type="submit">
-            {t("btn")}
+          {apiError && <p className="text-red-500 text-sm">{apiError}</p>}
+          <Button
+            variant="primary"
+            className="w-full mt-4"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t("btnLoading") : t("btn")}
           </Button>
         </form>
 
