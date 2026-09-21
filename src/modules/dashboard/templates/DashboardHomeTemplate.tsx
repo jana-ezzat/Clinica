@@ -8,7 +8,6 @@ import RevenueChart from "../components/organisms/RevenueChart";
 import WeeklyAppointmentsChart from "../components/organisms/WeeklyAppointmentsChart";
 import { NewPatient, StatCardData, UpcomingAppointment } from "../lib/mockData";
 
-
 interface DashboardHomeTemplateProps {
   doctorName: string;
   stats: StatCardData[];
@@ -29,8 +28,7 @@ export default async function DashboardHomeTemplate({
     ...stat,
     label: tStats(labelKey),
   }));
-    const locale = await getLocale();
-
+  const locale = await getLocale();
 
   return (
     <div className="space-y-6">

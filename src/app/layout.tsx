@@ -8,6 +8,7 @@ import { pickMessages } from "@/lib/pickMessages";
 import { Cairo, Inter } from "next/font/google";
 import { cn } from "@/lib/cn";
 import QueryProvider from "@/providers/QueryProvider";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -16,6 +17,14 @@ const cairo = Cairo({
   weight: ["600", "700", "800"],
   variable: "--font-cairo",
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "كلينيكا",
+    template: "%s | كلينيكا",
+  },
+  description: "منصة إدارة العيادات",
+};
 
 export default async function RootLayout({
   children,

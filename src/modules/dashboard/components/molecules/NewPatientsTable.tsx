@@ -14,27 +14,29 @@ export default function NewPatientsTable({ patients }: Props) {
 
   return (
     <div className="rounded-xl border ds-border-gray ds-bg-card p-5 ds-shadow-sm">
-      <div className="mb-1 flex items-center justify-between">
+      <div className="mb-1 flex items-center justify-between pb-2">
+        <div className="flex flex-col gap-1 ">
+          <Title size="sm" className="p-0! font-bold">
+            {t("title")}
+          </Title>
+          <Text size="sm" className="p-0!">
+            {t("subtitle")}
+          </Text>
+        </div>
         <Button
           variant="ghost"
           size="sm"
           className="!gap-1 !p-0 !text-sm ds-text-secondary hover:opacity-70">
-          <MdChevronLeft size={16} />
           {t("viewAll")}
+          <MdChevronLeft size={16} />
         </Button>
-        <Title size="sm" className="p-0! font-bold">
-          {t("title")}
-        </Title>
       </div>
-      <Text size="sm" className="mb-4 p-0! text-end">
-        {t("subtitle")}
-      </Text>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="ds-bg-button-primary text-white">
-              <th className="rounded-e-lg px-4 py-3 text-start font-medium">
+              <th className="px-4 py-3 text-start font-medium">
                 {t("columns.patient")}
               </th>
               <th className="px-4 py-3 text-start font-medium">
@@ -43,7 +45,7 @@ export default function NewPatientsTable({ patients }: Props) {
               <th className="px-4 py-3 text-start font-medium">
                 {t("columns.symptoms")}
               </th>
-              <th className="rounded-s-lg px-4 py-3 text-start font-medium">
+              <th className="px-4 py-3 text-start font-medium">
                 {t("columns.date")}
               </th>
             </tr>
@@ -58,9 +60,7 @@ export default function NewPatientsTable({ patients }: Props) {
                 <td className="px-4 py-3 ds-text-secondary">
                   {patient.symptoms}
                 </td>
-                <td className="px-4 py-3 ds-text-secondary">
-                  {patient.date}
-                </td>
+                <td className="px-4 py-3 ds-text-secondary">{patient.date}</td>
               </tr>
             ))}
           </tbody>
