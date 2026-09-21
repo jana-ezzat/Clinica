@@ -218,6 +218,7 @@
     "label": "Email Address",
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
+    "btnLoading": "Sending...",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
       "emailRequired": "Email is required."
