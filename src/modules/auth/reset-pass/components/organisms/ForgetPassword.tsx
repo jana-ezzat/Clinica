@@ -68,7 +68,7 @@ const ForgetPassword = () => {
         title={t("success.title")}
         message={t("success.description", { email: submitemail })}
         onClose={() => {
-          router.push("/otp");
+          router.push(`/otp?email=${submitemail}`);
         }}
       />
     </div>

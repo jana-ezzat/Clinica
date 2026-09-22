@@ -9,18 +9,27 @@ import { TbLockPassword } from "react-icons/tb";
 import Button from "@/shared/components/atoms/Button";
 import OtpFeilds from "../molecules/OtpFeilds";
 import OtpTimer from "../molecules/OtpTimer";
-import { useRouter } from "next/navigation";
+import useOtp from "@/modules/auth/hooks/useOtp";
 
 const Otp = () => {
   const c = useTranslations("resetpassword.commonAuth");
   const t = useTranslations("resetpassword.otp");
-  const router = useRouter();
+  const Loading = useTranslations("forgetpassword");
   const [code, setCode] = useState("");
-  const [error, setError] = useState("");
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("code", code);
-    router.push("/reset-pass");
+
+  const {
+    apiError,
+    setValue,
+    handleSubmit,
+    errors,
+    isResending,
+    isPending,
+    handleResend,
+  } = useOtp();
+
+  const handleOtpChange = (val: string) => {
+    setCode(val);
+    setValue("otpNumber", val);
   };
 
   return (
@@ -33,23 +42,35 @@ const Otp = () => {
         />
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          <OtpFeilds length={6} error={error} onComplete={setCode} />
+          <OtpFeilds
+            length={6}
+            error={
+              errors.otpNumber?.message
+                ? t(`error.${errors.otpNumber.message}`)
+                : undefined
+            }
+            onComplete={handleOtpChange}
+            onChange={handleOtpChange}
+          />
+
+          {apiError && (
+            <p className="text-red-500 text-sm text-center">{apiError}</p>
+          )}
+
           <Button
             variant="primary"
             className="w-full mt-4"
             type="submit"
-            disabled={!code}
+            disabled={code.length < 6 || isPending}
           >
-            {t("btn")}
+            {isPending ? Loading("btnLoading") : t("btn")}
           </Button>
 
           <OtpTimer
             seconds={60}
             labelBefore={t("resendIn")}
-            labelResend={t("resend")}
-            onResend={() => {
-              console.log("Resending OTP...");
-            }}
+            labelResend={isResending ? "..." : t("resend")}
+            onResend={handleResend}
           />
         </form>
 
