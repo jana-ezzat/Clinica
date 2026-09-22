@@ -32,7 +32,7 @@ export const useForgetPassword = () => {
     mutationFn: forgetPasswordRequest,
   });
 
-  useModal(success, "/otp", 3000);
+  useModal(success, `/otp?email=${submitemail}`, 3000);
 
   //Submit
   const Submit = async (data: ForgetPasswordValues) => {

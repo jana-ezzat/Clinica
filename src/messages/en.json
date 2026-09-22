@@ -254,7 +254,10 @@
       "description": "A 6-digit code has been sent to your email",
       "resend": "Resend Code",
       "btn": "Verify Code",
-      "resendIn": "Resend code in "
+      "resendIn": "Resend code in ",
+      "error": {
+        "OtpNumber": "Otp is required."
+      }
     },
     "commonAuth": {
       "loginLink": "Back to Login",
@@ -263,60 +266,60 @@
     }
   },
   "sign-up": {
-  "title": "Create a New Account",
-  "description": "Start your 14-day free trial",
-  "label": "Full Name",
-  "placeholder": "Ahmed Mohamed Ali",
-  "role": {
-    "label": "Job Role",
-    "placeholder": "Select job role",
-    "options": {
-      "doctor": "Doctor",
-      "receptionist": "Receptionist",
-      "accountant": "Accountant",
-      "nurse": "Nurse"
+    "title": "Create a New Account",
+    "description": "Start your 14-day free trial",
+    "label": "Full Name",
+    "placeholder": "Ahmed Mohamed Ali",
+    "role": {
+      "label": "Job Role",
+      "placeholder": "Select job role",
+      "options": {
+        "doctor": "Doctor",
+        "receptionist": "Receptionist",
+        "accountant": "Accountant",
+        "nurse": "Nurse"
+      }
+    },
+    "specialty": {
+      "label": "Specialty",
+      "placeholder": "Select specialty"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "email@gmail.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "••••••••••••",
+      "hint": "Must be at least 8 characters"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "••••••••••••"
+    },
+    "btn": "Create Account",
+    "btnLoading": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "termsText": "By creating an account, you agree to the",
+    "termsLink": "Terms & Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "error": {
+      "nameRequired": "Name is required.",
+      "roleRequired": "Please select a job role.",
+      "specialtyRequired": "Specialty is required.",
+      "emailRequired": "Email is required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "passwordMinLength": "Password must be at least 8 characters.",
+      "passwordMaxLength": "Password must not exceed 20 characters.",
+      "confirmPasswordRequired": "Please confirm your password.",
+      "passwordNotMatch": "Passwords do not match.",
+      "emailTaken": "This email is already in use.",
+      "somethingWentWrong": "Something went wrong. Please try again.",
+      "networkError": "Could not connect to the server. Check your connection."
     }
   },
-  "specialty": {
-    "label": "Specialty",
-    "placeholder": "Select specialty"
-  },
-  "email": {
-    "label": "Email",
-    "placeholder": "email@gmail.com"
-  },
-  "password": {
-    "label": "Password",
-    "placeholder": "••••••••••••",
-    "hint": "Must be at least 8 characters"
-  },
-  "confirmPassword": {
-    "label": "Confirm Password",
-    "placeholder": "••••••••••••"
-  },
-  "btn": "Create Account",
-  "btnLoading": "Creating account...",
-  "haveAccount": "Already have an account?",
-  "loginLink": "Sign in",
-  "termsText": "By creating an account, you agree to the",
-  "termsLink": "Terms & Conditions",
-  "and": "and",
-  "privacyLink": "Privacy Policy",
-  "error": {
-    "nameRequired": "Name is required.",
-    "roleRequired": "Please select a job role.",
-    "specialtyRequired": "Specialty is required.",
-    "emailRequired": "Email is required.",
-    "invalidEmail": "Please enter a valid email address.",
-    "passwordMinLength": "Password must be at least 8 characters.",
-    "passwordMaxLength": "Password must not exceed 20 characters.",
-    "confirmPasswordRequired": "Please confirm your password.",
-    "passwordNotMatch": "Passwords do not match.",
-    "emailTaken": "This email is already in use.",
-    "somethingWentWrong": "Something went wrong. Please try again.",
-    "networkError": "Could not connect to the server. Check your connection."
-  }
-},
   "sign-up": {
     "title": "Create a New Account",
     "description": "Start your 14-day free trial",
