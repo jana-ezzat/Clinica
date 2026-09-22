@@ -286,36 +286,61 @@
       "loginFailed": "فشل تسجيل الدخول. حاول مرة أخرى."
     }
   },
-  "sign-up": {
-    "title": "إنشاء حساب جديد",
-    "description": "ابدأ تجربتك المجانية لمدة 14 يوم",
-    "label": "الاسم بالكامل",
-    "placeholder": "أحمد محمد علي",
-    "specialty": {
-      "label": "التخصص",
-      "placeholder": "أختر التخصص"
-    },
-    "email": {
-      "label": "البريد الإلكتروني",
-      "placeholder": "email@gmail.com"
-    },
-    "password": {
-      "label": "كلمة المرور",
-      "placeholder": "••••••••••••",
-      "hint": "يجب أن تحتوي على 8 أحرف على الأقل"
-    },
-    "confirmPassword": {
-      "label": "تأكيد كلمة المرور",
-      "placeholder": "••••••••••••"
-    },
-    "btn": "إنشاء حساب",
-    "haveAccount": "لديك حساب بالفعل؟",
-    "loginLink": "سجل الدخول",
-    "termsText": "بإنشاء حساب، أنت توافق على",
-    "termsLink": "الشروط و الأحكام",
-    "and": "و",
-    "privacyLink": "سياسة الخصوصية"
+ "sign-up": {
+  "title": "إنشاء حساب جديد",
+  "description": "ابدأ تجربتك المجانية لمدة 14 يوم",
+  "label": "الاسم بالكامل",
+  "placeholder": "أحمد محمد علي",
+  "role": {
+    "label": "الدور الوظيفي",
+    "placeholder": "اختر الدور الوظيفي",
+    "options": {
+      "doctor": "طبيب",
+      "receptionist": "موظف استقبال",
+      "accountant": "محاسب",
+      "nurse": "ممرض/ة"
+    }
   },
+  "specialty": {
+    "label": "التخصص",
+    "placeholder": "أختر التخصص"
+  },
+  "email": {
+    "label": "البريد الإلكتروني",
+    "placeholder": "email@gmail.com"
+  },
+  "password": {
+    "label": "كلمة المرور",
+    "placeholder": "••••••••••••",
+    "hint": "يجب أن تحتوي على 8 أحرف على الأقل"
+  },
+  "confirmPassword": {
+    "label": "تأكيد كلمة المرور",
+    "placeholder": "••••••••••••"
+  },
+  "btn": "إنشاء حساب",
+  "btnLoading": "جاري إنشاء الحساب...",
+  "haveAccount": "لديك حساب بالفعل؟",
+  "loginLink": "سجل الدخول",
+  "termsText": "بإنشاء حساب، أنت توافق على",
+  "termsLink": "الشروط و الأحكام",
+  "and": "و",
+  "privacyLink": "سياسة الخصوصية",
+  "error": {
+    "nameRequired": "الاسم مطلوب.",
+    "roleRequired": "الرجاء اختيار الدور الوظيفي.",
+    "specialtyRequired": "التخصص مطلوب.",
+    "emailRequired": "البريد الإلكتروني مطلوب.",
+    "invalidEmail": "الرجاء إدخال بريد إلكتروني صالح.",
+    "passwordMinLength": "يجب أن تكون كلمة المرور على الأقل 8 أحرف.",
+    "passwordMaxLength": "يجب ألا تتجاوز كلمة المرور 20 حرفًا.",
+    "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب.",
+    "passwordNotMatch": "كلمتا المرور غير متطابقتين.",
+    "emailTaken": "هذا البريد الإلكتروني مستخدم بالفعل.",
+    "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "networkError": "تعذر الاتصال بالخادم. تحقق من اتصالك."
+  }
+},
   "dashboard": {
     "lastMonth": "من الشهر الماضي",
     "sidebar": {
