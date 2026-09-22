@@ -1,16 +1,15 @@
-// src/modules/auth/hooks/useLogin.ts
 "use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import {
+  LoginFormValues,
+  loginSchema,
+} from "@/modules/auth/schema/LoginSchema";
 import axiosConfig from "@/services/axiosConfig";
 import tokenService from "@/services/tokenService";
-
-interface LoginForm {
-  email: string;
-  password: string;
-}
 
 interface LoginResponse {
   message: string;
@@ -25,37 +24,35 @@ interface LoginResponse {
 
 const useLogin = () => {
   const router = useRouter();
-
   const [apiError, setApiError] = useState<string | null>(null);
 
   const {
     register,
-    handleSubmit: submit,
+    handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginForm>();
+  } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+  });
 
-  const handleSubmit = submit(async (values) => {
+  const onSubmit = async (data: LoginFormValues): Promise<void> => {
+    setApiError(null);
+
     try {
-      setApiError(null);
-
-      const response = await axiosConfig.post<LoginResponse>(
-        "/auth/login",
-        values,
-      );
+      const response = await axiosConfig.post<LoginResponse>("/auth/login", {
+        email: data.email,
+        password: data.password,
+      });
 
       tokenService.set(response.data.jwt);
-
       router.push("/dashboard");
     } catch (error: any) {
-      setApiError(
-        error?.response?.data?.message || "loginFailed",
-      );
+      setApiError(error?.response?.data?.message || "somethingWentWrong");
     }
-  });
+  };
 
   return {
     register,
-    handleSubmit,
+    handleSubmit: handleSubmit(onSubmit),
     errors,
     isSubmitting,
     apiError,

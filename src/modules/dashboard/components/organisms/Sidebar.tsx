@@ -9,10 +9,12 @@ import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/cn";
 import { navItems } from "../../lib/navItems";
 import { useSidebar } from "../../context/SidebarContext";
+import useLogout from "@/modules/auth/hooks/useLogout";
 
 function SidebarContent({ collapsed }: { collapsed: boolean }) {
   const pathname = usePathname();
   const t = useTranslations("dashboard.sidebar");
+  const { logout } = useLogout();
 
   return (
     <div className="flex h-full flex-col">
@@ -20,8 +22,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
         className={cn(
           "flex h-[76px] items-center px-3",
           collapsed ? "justify-center" : "justify-between px-5",
-        )}
-      >
+        )}>
         {collapsed ? (
           <span className="text-xl font-extrabold ds-text-button-primary">
             ك
@@ -52,8 +53,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
                 isActive
                   ? "!ds-text-button-primary"
                   : "!ds-text hover:opacity-70",
-              )}
-            >
+              )}>
               <Icon size={22} className="shrink-0" />
               {!collapsed && (
                 <Text size="sm" className="!p-0 !text-inherit font-medium">
@@ -70,11 +70,11 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
           variant="ghost"
           fullWidth
           title={t("logout")}
+          onClick={logout}
           className={cn(
             "gap-3 !text-red-500 hover:opacity-70",
             collapsed ? "!justify-center !px-0" : "!justify-start",
-          )}
-        >
+          )}>
           <MdLogout size={22} className="shrink-0" />
           {!collapsed && (
             <Text size="sm" className="!p-0 !text-inherit font-medium">
@@ -88,8 +88,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
 }
 
 export default function Sidebar() {
-  const { collapsed, toggleCollapsed, mobileOpen, closeMobile } =
-    useSidebar();
+  const { collapsed, toggleCollapsed, mobileOpen, closeMobile } = useSidebar();
 
   const widthClass = collapsed ? "w-20" : "w-64";
 
@@ -109,16 +108,14 @@ export default function Sidebar() {
         className={cn(
           "fixed inset-y-0 start-0 z-20 hidden border-e ds-border-gray ds-bg-card transition-[width] duration-200 md:block",
           widthClass,
-        )}
-      >
+        )}>
         <Button
           variant="outline"
           size="icon"
           onClick={toggleCollapsed}
           aria-label="Toggle sidebar"
           aria-expanded={!collapsed}
-          className="absolute -end-3 top-8 z-30 h-6 w-6 !rounded-full !p-0"
-        >
+          className="absolute -end-3 top-8 z-30 h-6 w-6 !rounded-full !p-0">
           {collapsed ? (
             <MdChevronRight size={16} className="rtl:rotate-180" />
           ) : (
@@ -131,10 +128,7 @@ export default function Sidebar() {
       {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          <div
-            className="absolute inset-0 bg-black/40"
-            onClick={closeMobile}
-          />
+          <div className="absolute inset-0 bg-black/40" onClick={closeMobile} />
           <aside className="absolute inset-y-0 start-0 w-64 ds-bg-card shadow-xl">
             <SidebarContent collapsed={false} />
           </aside>
