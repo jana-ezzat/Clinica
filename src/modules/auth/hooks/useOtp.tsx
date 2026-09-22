@@ -1,72 +1,87 @@
 "use client";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { OtpSchema, OtpValue } from "../schema/OtpSechma";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Cookies from "js-cookie";
+import { OtpSchema, OtpValue } from "../schema/OtpSechma";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
-import { OtpRequest } from "./useOtpRequest";
-import { ForgetPasswordValues } from "../schema/ForgetPasswordSechma";
-import { forgetPasswordRequest } from "./useForgetPasswordRequest";
+import { OtpRequest, OtpResponse } from "./useOtpRequest";
+import { useResendCode } from "./useResendCode";
 
 export const useOtp = () => {
   const [apiError, setApiError] = useState<string | null>("");
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const email = searchParams.get("email") || "";
 
+  useEffect(() => {
+    const currentEmail = Cookies.get("reset_email");
+    if (!currentEmail) {
+      router.replace("/forget-pass");
+    }
+  }, [router]);
+
+  // React Hook Form
   const {
     handleSubmit,
     setValue,
     formState: { errors },
   } = useForm<OtpValue>({
     resolver: zodResolver(OtpSchema),
-    defaultValues: {
-      otpNumber: "",
-    },
+    defaultValues: { otpNumber: "" },
   });
 
-  //   Submit
+  // Submit OTP
   const { mutateAsync, isPending } = useApiMutation<
     { email: string; otp: string },
-    OtpValue
+    OtpResponse
   >({
     mutationFn: OtpRequest,
   });
+
   const Submit = async (data: OtpValue) => {
     try {
       setApiError(null);
-      await mutateAsync({ email, otp: data.otpNumber });
-      router.push("/reset-pass");
+
+      const currentEmail = Cookies.get("reset_email");
+
+      if (!currentEmail) {
+        router.replace("/forget-pass");
+        return;
+      }
+
+      const response = await mutateAsync({
+        email: currentEmail,
+        otp: data.otpNumber,
+      });
+
+      if (response?.changePasswordToken) {
+        Cookies.set("reset_token", response.changePasswordToken, {
+          expires: 10 / (24 * 60),
+          secure: true,
+          sameSite: "strict",
+        });
+
+        Cookies.remove("reset_email");
+        router.push("/reset-pass");
+      }
     } catch (error: any) {
       setApiError(
-        error?.response?.data?.message || "حدث خطأ ما، حاول مرة أخرى",
+        error?.response?.data?.message || "رمز التحقق غير صحيح، حاول مرة أخرى",
       );
     }
   };
 
-  const { mutateAsync: resendOtp, isPending: isResending } = useApiMutation<
-    string,
-    ForgetPasswordValues
-  >({
-    mutationFn: forgetPasswordRequest,
-  });
-
-  const handleResend = async () => {
-    try {
-      setApiError(null);
-      await resendOtp(email);
-    } catch (error: any) {
-      setApiError(error?.response?.data?.message || "تعذر إعادة إرسال الرمز");
-    }
-  };
+  const currentEmail =
+    typeof window !== "undefined" ? Cookies.get("reset_email") || "" : "";
+  const { handleResend, isResending, resendError } =
+    useResendCode(currentEmail);
 
   return {
     setValue,
     handleSubmit: handleSubmit(Submit),
     errors,
     isPending,
-    apiError,
+    apiError: apiError || resendError,
     isResending,
     handleResend,
   };

@@ -10,6 +10,7 @@ import {
 import { useModal } from "./useModal";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { forgetPasswordRequest } from "./useForgetPasswordRequest";
+import Cookies from "js-cookie";
 
 export const useForgetPassword = () => {
   const [submitemail, setSubmitemail] = useState("");
@@ -32,13 +33,17 @@ export const useForgetPassword = () => {
     mutationFn: forgetPasswordRequest,
   });
 
-  useModal(success, `/otp?email=${submitemail}`, 3000);
+  useModal(success, "/otp", 3000);
 
   //Submit
   const Submit = async (data: ForgetPasswordValues) => {
     try {
       await mutateAsync(data.email);
       setSubmitemail(data.email);
+      Cookies.set("reset_email", data.email, {
+        expires: 30 / (24 * 60),
+        sameSite: "strict",
+      });
       setSuccess(true);
     } catch (error: any) {
       setApiError(
