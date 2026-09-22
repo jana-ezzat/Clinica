@@ -49,7 +49,6 @@ const Otp = () => {
                 ? t(`error.${errors.otpNumber.message}`)
                 : undefined
             }
-            onComplete={handleOtpChange}
             onChange={handleOtpChange}
           />
 

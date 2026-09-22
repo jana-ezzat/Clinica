@@ -5,7 +5,16 @@ interface OtpPayload {
   otp: string;
 }
 
-export async function OtpRequest({ otp, email }: OtpPayload) {
+export interface OtpResponse {
+  email: string;
+  otp: string;
+  changePasswordToken: string;
+}
+
+export async function OtpRequest({
+  otp,
+  email,
+}: OtpPayload): Promise<OtpResponse> {
   const res = await axiosConfig.post("auth/changePassword/otp", {
     otp: otp,
     email: email,
