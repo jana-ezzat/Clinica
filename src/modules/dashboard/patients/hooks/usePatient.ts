@@ -99,9 +99,7 @@ interface BackendPatient {
 }
 
 const fetchPatient = async (slug: string): Promise<PatientDetails> => {
-  const { data } = await axiosConfig.get<PatientResponse>(
-    `/patient/${slug}`,
-  );
+  const { data } = await axiosConfig.get<PatientResponse>(`/patient/${slug}`);
 
   const patient = data.data;
 
@@ -126,10 +124,8 @@ const fetchPatient = async (slug: string): Promise<PatientDetails> => {
       allergies: patient.medicalInformation?.allergies ?? [],
       chronicDiseases: patient.medicalInformation?.chronicDiseases ?? [],
       medications: patient.medicalInformation?.medications ?? [],
-      previousSurgeries:
-        patient.medicalInformation?.previousSurgeries ?? [],
-      familyMedicalHistory:
-        patient.medicalInformation?.familyMedicalHistory,
+      previousSurgeries: patient.medicalInformation?.previousSurgeries ?? [],
+      familyMedicalHistory: patient.medicalInformation?.familyMedicalHistory,
       medicalHistory: patient.medicalInformation?.medicalHistory,
     },
 
