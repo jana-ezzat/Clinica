@@ -623,8 +623,9 @@
       "booking": "تقارير الحجوزات"
     },
     "bookingTypes": {
-      "consultation": "كشف",
-      "regular": "عادي",
+      "check-up": "كشف",
+      "consultation": "استشارة",
+      "follow-up": "متابعة",
       "emergency": "طوارئ"
     },
     "statuses": {
@@ -661,8 +662,9 @@
       "export": "حفظ كملف"
     },
     "bookingTypes": {
-      "checkup": "كشف",
-      "followup": "اعادة",
+      "check-up": "كشف",
+      "consultation": "استشارة",
+      "follow-up": "متابعة",
       "emergency": "طوارئ"
     },
     "statuses": {
