@@ -8,6 +8,7 @@ interface Props {
   toValue: string;
   onFromChange: (v: string) => void;
   onToChange: (v: string) => void;
+  disabled?: boolean;
 }
 
 export default function TimeRangeField({
@@ -17,6 +18,7 @@ export default function TimeRangeField({
   toValue,
   onFromChange,
   onToChange,
+  disabled = false,
 }: Props) {
   return (
     <div className="flex w-md items-end gap-3">
@@ -28,6 +30,7 @@ export default function TimeRangeField({
         <Input
           type="time"
           value={fromValue}
+          disabled={disabled}
           onChange={(e) => onFromChange(e.target.value)}
         />
       </div>
@@ -40,6 +43,7 @@ export default function TimeRangeField({
         <Input
           type="time"
           value={toValue}
+          disabled={disabled}
           onChange={(e) => onToChange(e.target.value)}
         />
       </div>

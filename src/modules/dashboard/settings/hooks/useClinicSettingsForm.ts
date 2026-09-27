@@ -8,9 +8,11 @@ import { useWorkHours } from "../context/WorkHoursContext";
 import { ClinicSettingsForm } from "../lib/SettingData";
 import { useQueryClient } from "@tanstack/react-query";
 import { UpdateSettingData } from "./UpdateSettingDataRequest";
+import { useSettingsEdit } from "../context/SettingEdit";
 
 export function useClinicSettingsForm() {
   const { data, isLoading, isError, refetch } = useSettings();
+  const{setIsEditing} = useSettingsEdit()
   const queryClient = useQueryClient();
   const {
     register,
@@ -89,10 +91,16 @@ export function useClinicSettingsForm() {
       minAdvanceBookingHours: formValues.minAdvanceBookingHours,
     };
 
-    await mutateAsync(payload);
-    await queryClient.invalidateQueries({
-      queryKey: ["clinic-settings"],
-    });
+      await mutateAsync(payload);
+
+      await queryClient.invalidateQueries({
+        queryKey: ["clinic-settings"],
+      });
+      setIsEditing(false)
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      })
   });
 
   return {

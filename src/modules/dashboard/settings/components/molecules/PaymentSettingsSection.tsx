@@ -5,12 +5,14 @@ import { useTranslations } from "next-intl";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
 import SettingsField from "./SettingsField";
+import { useSettingsEdit } from "../../context/SettingEdit";
 
 interface props {
   register: UseFormRegister<ClinicSettingsForm>;
 }
 const PaymentSettingsSection = ({ register }: props) => {
   const t = useTranslations("settings.payment");
+  const { isEditing } = useSettingsEdit();
   return (
     <div className="flex flex-col gap-6">
       <Title size="lg" variant="primary" className="font-bold">
@@ -28,6 +30,7 @@ const PaymentSettingsSection = ({ register }: props) => {
               <input
                 type="checkbox"
                 value={method}
+                disabled={!isEditing}
                 {...register("paymentMethods")}
               />
               {t(method)}
@@ -41,6 +44,7 @@ const PaymentSettingsSection = ({ register }: props) => {
             name="taxRate"
             type="number"
             register={register}
+            disabled={!isEditing}
           />
         </div>
       </div>

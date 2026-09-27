@@ -7,8 +7,9 @@ import React, { useRef, useState } from "react";
 interface Props {
   label: string;
   uploadLabel: string;
+  disabled?: boolean;
 }
-const UploadFile = ({ label, uploadLabel }: Props) => {
+const UploadFile = ({ label, uploadLabel, disabled }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState("");
 
@@ -23,10 +24,10 @@ const UploadFile = ({ label, uploadLabel }: Props) => {
       </Text>
 
       <Button
-      variant="outline"
+        variant="outline"
         type="button"
         onClick={() => inputRef.current?.click()}
-        className="flex items-center gap-2 h-11 px-4 rounded-lg border border-gray-300 bg-ds-card-background text-sm text-ds-text hover:bg-gray-50 transition-colors w-fit"
+        className="flex items-center gap-2 h-11 px-4 rounded-lg border border-gray-300 bg-ds-card-background text-sm text-ds-text hover:bg-gray-50 hover:text-black transition-colors w-fit"
       >
         <Upload size={16} />
         {fileName || uploadLabel}
@@ -38,6 +39,7 @@ const UploadFile = ({ label, uploadLabel }: Props) => {
         onChange={handleFile}
         ref={inputRef}
         className="hidden"
+        disabled={disabled}
       />
     </div>
   );

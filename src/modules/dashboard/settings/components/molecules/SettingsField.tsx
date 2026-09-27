@@ -12,6 +12,8 @@ interface Props {
   type?: string;
   register: UseFormRegister<ClinicSettingsForm>;
   error?: FieldError;
+  onlyNumbers?: boolean;
+    disabled?: boolean;
 }
 
 export default function SettingsField({
@@ -22,6 +24,8 @@ export default function SettingsField({
   register,
   error,
   type = "text",
+  onlyNumbers,
+  disabled=false
 }: Props) {
   return (
     <div className="flex flex-col gap-2">
@@ -34,6 +38,12 @@ export default function SettingsField({
         type={type}
         placeholder={placeholder}
         {...register(name)}
+        disabled={disabled}
+        onInput={(e) => {
+          if (onlyNumbers) {
+            e.currentTarget.value = e.currentTarget.value.replace(/\D/g, "");
+          }
+        }}
         className={cn(
           "h-11 w-2xl rounded-lg px-4 py-2 text-sm",
           "bg-ds-card-background text-ds-text",
