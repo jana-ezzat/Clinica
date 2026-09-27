@@ -50,6 +50,7 @@ export default async function RootLayout({
     "reports",
     "Invoice",
     "appointments",
+    "settings",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
