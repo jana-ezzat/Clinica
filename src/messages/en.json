@@ -542,25 +542,39 @@
   "appointmentsModal": {
     "addAppointment": {
       "title": "Add New Appointment",
-      "description": "Fill in the following information to book a new appointment for the patient",
+      "description": "Fill in the following details to book a new appointment for the patient",
       "submit": "Save Appointment",
+      "submitting": "Saving...",
       "cancel": "Cancel",
+      "required": "This field is required",
+      "errors": {
+        "noDoctor": "Could not determine the current doctor. Please sign in again.",
+        "somethingWentWrong": "Something went wrong. Please try again."
+      },
       "patient": {
         "title": "Patient Information",
-        "subtitle": "Basic Patient Information",
+        "subtitle": "Basic patient details",
         "patientType": "Patient Type",
         "newPatient": "New Patient",
-        "existingPatient": "Registered Patient",
+        "existingPatient": "Existing Patient",
         "name": "Patient Name",
-        "nationality": "Nationality",
-        "email": "Email",
         "phone": "Phone Number",
+        "email": "Email",
+        "gender": "Gender",
+        "genderOptions": {
+          "male": "Male",
+          "female": "Female"
+        },
+        "age": "Age",
         "searchPatient": "Search Patient",
-        "searchPatientPlaceholder": "Search by patient name or file number"
+        "searchPatientPlaceholder": "Search by patient name or file number",
+        "loading": "Loading patients...",
+        "noResults": "No results found",
+        "selectRequired": "Please select a patient from the list"
       },
       "meeting": {
         "title": "Appointment Details",
-        "subtitle": "Select the appointment date, time, and type",
+        "subtitle": "Choose the date, time, and appointment type",
         "time": "Time",
         "timePlaceholder": "Select time",
         "date": "Appointment Date",
@@ -569,9 +583,10 @@
         "duration": "Expected Duration",
         "durationPlaceholder": "Select duration",
         "types": {
-          "followup": "Follow-up",
-          "new": "New Examination",
-          "checkup": "Periodic Check-up"
+          "check-up": "Check-up",
+          "consultation": "Consultation",
+          "follow-up": "Follow-up",
+          "emergency": "Emergency"
         },
         "durations": {
           "15": "15 minutes",
@@ -580,8 +595,7 @@
         },
         "notes": "Additional Notes",
         "notesPlaceholder": "Any additional notes or details about the appointment..."
-      },
-      "required": "This field is required"
+      }
     }
   },
   "MedicalFile": {

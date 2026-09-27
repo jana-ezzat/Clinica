@@ -549,51 +549,65 @@
     "doctorNotes": "ملاحظات الطبيب",
     "followUp": "توصيات المتابعة"
   },
-  "appointmentsModal": {
-    "addAppointment": {
-      "title": "إضافة موعد جديد",
-      "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
-      "submit": "حفظ الموعد",
-      "cancel": "إلغاء",
-      "patient": {
-        "title": "معلومات المريض",
-        "subtitle": "بيانات المريض الأساسية",
-        "patientType": "نوع المريض",
-        "newPatient": "مريض جديد",
-        "existingPatient": "مريض سابق",
-        "name": "اسم المريض",
-        "nationality": "الجنسية",
-        "email": "البريد الإلكتروني",
-        "phone": "رقم الهاتف",
-        "searchPatient": "البحث عن المريض",
-        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف"
+"appointmentsModal": {
+  "addAppointment": {
+    "title": "إضافة موعد جديد",
+    "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
+    "submit": "حفظ الموعد",
+    "submitting": "جارٍ الحفظ...",
+    "cancel": "إلغاء",
+    "required": "هذا الحقل مطلوب",
+    "errors": {
+      "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
+      "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    },
+    "patient": {
+      "title": "معلومات المريض",
+      "subtitle": "بيانات المريض الأساسية",
+      "patientType": "نوع المريض",
+      "newPatient": "مريض جديد",
+      "existingPatient": "مريض سابق",
+      "name": "اسم المريض",
+      "phone": "رقم الهاتف",
+      "email": "البريد الإلكتروني",
+      "gender": "النوع",
+      "genderOptions": {
+        "male": "ذكر",
+        "female": "أنثى"
       },
-      "meeting": {
-        "title": "تفاصيل الموعد",
-        "subtitle": "اختر التاريخ والوقت ونوع الموعد",
-        "time": "الوقت",
-        "timePlaceholder": "اختر الوقت",
-        "date": "تاريخ الموعد",
-        "type": "نوع الموعد",
-        "typePlaceholder": "اختر نوع الموعد",
-        "duration": "المدة المتوقعة",
-        "durationPlaceholder": "اختر المدة",
-        "types": {
-          "followup": "متابعة",
-          "new": "كشف جديد",
-          "checkup": "فحص دوري"
-        },
-        "durations": {
-          "15": "15 دقيقة",
-          "30": "30 دقيقة",
-          "45": "45 دقيقة"
-        },
-        "notes": "ملاحظات إضافية",
-        "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
+      "age": "العمر",
+      "searchPatient": "البحث عن المريض",
+      "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف",
+      "loading": "جاري تحميل المرضى...",
+      "noResults": "لا يوجد نتائج",
+      "selectRequired": "الرجاء اختيار مريض من القائمة"
+    },
+    "meeting": {
+      "title": "تفاصيل الموعد",
+      "subtitle": "اختر التاريخ والوقت ونوع الموعد",
+      "time": "الوقت",
+      "timePlaceholder": "اختر الوقت",
+      "date": "تاريخ الموعد",
+      "type": "نوع الموعد",
+      "typePlaceholder": "اختر نوع الموعد",
+      "duration": "المدة المتوقعة",
+      "durationPlaceholder": "اختر المدة",
+      "types": {
+        "check-up": "كشف",
+        "consultation": "استشارة",
+        "follow-up": "متابعة",
+        "emergency": "طوارئ"
       },
-      "required": "هذا الحقل مطلوب"
+      "durations": {
+        "15": "15 دقيقة",
+        "30": "30 دقيقة",
+        "45": "45 دقيقة"
+      },
+      "notes": "ملاحظات إضافية",
+      "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
     }
-  },
+  }
+},
   "MedicalFile": {
     "title": "الملف الطبي الكامل",
     "chronicDiseases": "الأمراض المزمنة",

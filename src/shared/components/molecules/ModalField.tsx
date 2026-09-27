@@ -1,7 +1,13 @@
-import { FieldError, UseFormRegister } from "react-hook-form";
+import {
+  FieldError,
+  UseFormRegister,
+  Merge,
+  FieldErrorsImpl,
+} from "react-hook-form";
 import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/cn";
 import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
+
 
 interface Props {
   label: string;
@@ -10,7 +16,7 @@ interface Props {
   name: keyof AppointmentFormValues;
   type?: string;
   register: UseFormRegister<AppointmentFormValues>;
-  error?: FieldError;
+  error?: FieldError | Merge<FieldError, FieldErrorsImpl<any>>;
 }
 export default function ModalField({
   label,
@@ -27,7 +33,6 @@ export default function ModalField({
         {label}
         {required && <span className="text-red-500"> *</span>}
       </Text>
-
       <input
         type={type}
         placeholder={placeholder}
@@ -39,8 +44,9 @@ export default function ModalField({
           "outline-none focus:outline-none focus:ring-0",
         )}
       />
-
-      {error && <span className="text-xs text-red-500">{error.message}</span>}
+      {error && typeof error.message === "string" && (
+        <span className="text-xs text-red-500">{error.message}</span>
+      )}
     </div>
   );
 }
