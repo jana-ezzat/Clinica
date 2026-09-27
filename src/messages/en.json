@@ -803,5 +803,63 @@
         }
       }
     }
+  },
+  "settings": {
+    "pageTitle": "Clinica Settings",
+    "basicInfo": {
+      "title": "Basic Information",
+      "clinicName": "Clinic Name",
+      "clinicNamePlaceholder": "Clinic name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter phone number"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saving": "Saving..."
+    },
+    "logo": {
+      "title": "Logo",
+      "upload": "Upload Logo"
+    },
+    "address": {
+      "title": "Clinic Address",
+      "placeholder": "Enter clinic address"
+    },
+    "workHours": {
+      "title": "Work Hours",
+      "daysLabel": "Work Days",
+      "timesLabel": "Work Times",
+      "from": "From",
+      "to": "To",
+      "addSlot": "+ Add another time slot",
+      "days": {
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday"
+      }
+    },
+    "payment": {
+      "title": "Payment Settings",
+      "methodsLabel": "Available Payment Methods",
+      "cash": "Cash",
+      "card": "Visa",
+      "bank_transfer": "bank transfer",
+      "taxLabel": "Tax Percentage %"
+    },
+    "rules": {
+      "title": "Appointment Rules",
+      "defaultDuration": "Default Session Duration",
+      "maxPerDay": "Max Appointments Per Day",
+      "cancelWindow": "Cancellation Window (hours)"
+    },
+    "Reload": {
+      "error": "Failed to load settings",
+      "retry": "Retry"
+    }
   }
 }

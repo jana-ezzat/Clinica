@@ -813,5 +813,64 @@
         }
       }
     }
+  },
+  "settings": {
+    "pageTitle": "إعدادات العيادة",
+    "basicInfo": {
+      "title": "المعلومات الأساسية",
+      "clinicName": "اسم العيادة",
+      "clinicNamePlaceholder": "اسم العيادة",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "أدخل رقم الهاتف"
+    },
+    "logo": {
+      "title": "الشعار",
+      "upload": "رفع الشعار"
+    },
+    "address": {
+      "title": "عنوان العيادة",
+      "placeholder": "أدخل عنوان العيادة"
+    },
+
+    "actions": {
+      "cancel": "إلغاء",
+      "save": "حفظ التغييرات",
+      "saving": "جاري الحفظ..."
+    },
+    "workHours": {
+      "title": "ساعات العمل",
+      "daysLabel": "أيام العمل",
+      "timesLabel": "أوقات العمل",
+      "from": "من",
+      "to": "إلى",
+      "addSlot": "+ إضافة فترة زمنية أخرى",
+      "days": {
+        "saturday": "السبت",
+        "sunday": "الأحد",
+        "monday": "الاثنين",
+        "tuesday": "الثلاثاء",
+        "wednesday": "الأربعاء",
+        "thursday": "الخميس",
+        "friday": "الجمعة"
+      }
+    },
+    "payment": {
+      "title": "اعدادات الدفع",
+      "methodsLabel": "طرق الدفع المتاحة",
+      "cash": "نقدي",
+      "card": "فيزا",
+      "bank_transfer": "تأمين",
+      "taxLabel": "نسبة الضريبة %"
+    },
+    "rules": {
+      "title": "قواعد المواعيد",
+      "defaultDuration": "مدة الجلسة الافتراضية",
+      "maxPerDay": "الحد الأقصى للمواعيد في اليوم",
+      "cancelWindow": "مهلة الإلغاء (بالساعات)"
+    },
+    "Reload": {
+      "error": "تعذر تحميل الإعدادات",
+      "retry": "إعادة المحاولة"
+    }
   }
 }
