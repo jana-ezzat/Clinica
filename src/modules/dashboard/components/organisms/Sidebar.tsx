@@ -10,11 +10,16 @@ import { cn } from "@/lib/cn";
 import { navItems } from "../../lib/navItems";
 import { useSidebar } from "../../context/SidebarContext";
 import useLogout from "@/modules/auth/hooks/useLogout";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
 function SidebarContent({ collapsed }: { collapsed: boolean }) {
   const pathname = usePathname();
   const t = useTranslations("dashboard.sidebar");
   const { logout } = useLogout();
+  const user = useCurrentUser();
+  const isAdmin = user?.role === "admin";
+
+  const visibleNavItems = navItems.filter((item) => !item.adminOnly || isAdmin);
 
   return (
     <div className="flex h-full flex-col">
@@ -33,7 +38,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto px-3">
-        {navItems.map((item) => {
+        {visibleNavItems.map((item) => {
           const isActive =
             item.href === "/dashboard"
               ? pathname === item.href
