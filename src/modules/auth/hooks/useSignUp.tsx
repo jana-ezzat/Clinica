@@ -33,11 +33,9 @@ const useSignUp = () => {
         method: "POST",
         headers: {
           Accept: "application/json",
-          Authorization: `Bearer ${env.TEMP_ADMIN_TOKEN}`,
-          },
-          body: formData,
         },
-      );
+        body: formData,
+      });
 
       const signUpResult = await signUpResponse.json().catch(() => null);
 
@@ -47,7 +45,7 @@ const useSignUp = () => {
         );
         return;
       }
-      
+
       const loginResponse = await fetch(`${env.API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
@@ -63,7 +61,7 @@ const useSignUp = () => {
       const loginResult = await loginResponse.json().catch(() => null);
 
       if (!loginResponse.ok) {
-        router.push("sign-in");
+        router.push("/sign-in");
         return;
       }
 

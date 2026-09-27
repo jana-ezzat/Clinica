@@ -47,18 +47,10 @@ const MeetingInfo = ({ register, errors }: Props) => {
           register={register}
           error={errors.appointmentType}
           options={[
-            {
-              value: "followup",
-              label: t("types.followup"),
-            },
-            {
-              value: "new",
-              label: t("types.new"),
-            },
-            {
-              value: "checkup",
-              label: t("types.checkup"),
-            },
+            { value: "check-up", label: t("types.check-up") },
+            { value: "consultation", label: t("types.consultation") },
+            { value: "follow-up", label: t("types.follow-up") },
+            { value: "emergency", label: t("types.emergency") },
           ]}
         />
 

@@ -37,11 +37,12 @@ export default function AppointmentsTable() {
 
   const { data: appointments, isLoading, isError, refetch } = useAppointments();
 
-  const bookingTypeLabels: Record<AppointmentBookingType, string> = {
-    checkup: t("bookingTypes.checkup"),
-    followup: t("bookingTypes.followup"),
-    emergency: t("bookingTypes.emergency"),
-  };
+ const bookingTypeLabels: Record<AppointmentBookingType, string> = {
+   "check-up": t("bookingTypes.check-up"),
+   consultation: t("bookingTypes.consultation"),
+   "follow-up": t("bookingTypes.follow-up"),
+   emergency: t("bookingTypes.emergency"),
+ };
 
   const statusLabels: Record<AppointmentStatus, string> = {
     confirmed: t("statuses.confirmed"),
@@ -49,12 +50,13 @@ export default function AppointmentsTable() {
     pending: t("statuses.pending"),
   };
 
-  const bookingTypeOptions = [
-    { value: "checkup", label: bookingTypeLabels.checkup },
-    { value: "followup", label: bookingTypeLabels.followup },
-    { value: "emergency", label: bookingTypeLabels.emergency },
-  ];
-
+ const bookingTypeOptions = [
+   { value: "check-up", label: bookingTypeLabels["check-up"] },
+   { value: "consultation", label: bookingTypeLabels.consultation },
+   { value: "follow-up", label: bookingTypeLabels["follow-up"] },
+   { value: "emergency", label: bookingTypeLabels.emergency },
+ ];
+ 
   const filtered = useMemo(() => {
     if (!appointments) return [];
     return appointments.filter((a) => {

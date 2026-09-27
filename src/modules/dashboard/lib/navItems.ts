@@ -13,6 +13,7 @@ export type NavItem = {
   labelKey: string;
   href: string;
   icon: IconType;
+  adminOnly?: boolean;
 };
 
 export const navItems: NavItem[] = [
@@ -22,6 +23,7 @@ export const navItems: NavItem[] = [
     labelKey: "doctors",
     href: "/dashboard/doctors",
     icon: MdOutlineMedicalServices,
+    adminOnly: true,
   },
   {
     labelKey: "appointments",
@@ -38,5 +40,6 @@ export const navItems: NavItem[] = [
     labelKey: "settings",
     href: "/dashboard/settings",
     icon: MdOutlineSettings,
+    adminOnly: true,
   },
 ];
