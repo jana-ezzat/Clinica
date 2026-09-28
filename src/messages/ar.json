@@ -597,7 +597,8 @@
           "check-up": "كشف",
           "consultation": "استشارة",
           "follow-up": "متابعة",
-          "emergency": "طوارئ"
+          "emergency": "طوارئ",
+          "other": "أخرى"
         },
         "durations": {
           "15": "15 دقيقة",

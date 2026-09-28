@@ -586,7 +586,8 @@
           "check-up": "Check-up",
           "consultation": "Consultation",
           "follow-up": "Follow-up",
-          "emergency": "Emergency"
+          "emergency": "Emergency",
+          "other": "Other"
         },
         "durations": {
           "15": "15 minutes",
