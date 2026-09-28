@@ -1,14 +1,19 @@
 "use client";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import tokenService from "@/services/tokenService";
 import { decodeToken } from "@/lib/utils";
 
-const useCurrentUser = () => {
-  return useMemo(() => {
+type CurrentUser = ReturnType<typeof decodeToken>;
+
+const useCurrentUser = (): CurrentUser => {
+  const [user, setUser] = useState<CurrentUser>(null);
+
+  useEffect(() => {
     const token = tokenService.get();
-    if (!token) return null;
-    return decodeToken(token);
+    setUser(token ? decodeToken(token) : null);
   }, []);
+
+  return user;
 };
 
 export default useCurrentUser;

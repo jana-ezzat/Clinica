@@ -27,20 +27,22 @@ const useAppointmentStats = (): AppointmentStatValue[] => {
 
     const todayStr = getLocalDateString(new Date(now));
 
-    const isWithinLast7Days = (dateStr: string, excludeToday = true) => {
+    const isWithinLast7Days = (dateStr: string) => {
       const diffDays = Math.floor((now - new Date(dateStr).getTime()) / DAY_MS);
-      return diffDays > (excludeToday ? 0 : -1) && diffDays <= 7;
+      return diffDays > 0 && diffDays <= 7;
     };
 
+    const isConfirmed = (status: string) => status === "confirmed";
+
     const todayAppointments = list.filter((a) => a.bookingDate === todayStr);
-    const confirmedToday = todayAppointments.filter(
-      (a) => a.status === "confirmed",
+    const confirmedToday = todayAppointments.filter((a) =>
+      isConfirmed(a.status),
     );
 
     const last7Days = list.filter((a) => isWithinLast7Days(a.bookingDate));
     const avgPerDay = last7Days.length / 7;
     const avgConfirmedPerDay =
-      last7Days.filter((a) => a.status === "confirmed").length / 7;
+      last7Days.filter((a) => isConfirmed(a.status)).length / 7;
 
     const pctDelta = (
       todayVal: number,
@@ -54,7 +56,7 @@ const useAppointmentStats = (): AppointmentStatValue[] => {
     const bookingsDelta = pctDelta(todayAppointments.length, avgPerDay);
     const confirmedDelta = pctDelta(confirmedToday.length, avgConfirmedPerDay);
 
-    const confirmedTotal = list.filter((a) => a.status === "confirmed").length;
+    const confirmedTotal = list.filter((a) => isConfirmed(a.status)).length;
     const confirmationRate =
       list.length > 0 ? Math.round((confirmedTotal / list.length) * 100) : 0;
 

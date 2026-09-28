@@ -5,7 +5,10 @@ import type {
   AppointmentBookingType,
 } from "../../lib/mockData";
 import type { AppointmentStatus } from "@/modules/dashboard/lib/mockData";
-import { appointmentStatusSolid, appointmentStatusTone } from "../../lib/appointmentStatus";
+import {
+  appointmentStatusSolid,
+  appointmentStatusTone,
+} from "../../lib/appointmentStatus";
 
 interface AppointmentTableRowProps {
   appointment: AppointmentBooking;
@@ -15,11 +18,15 @@ interface AppointmentTableRowProps {
     edit: string;
     delete: string;
   };
+  onEdit: (appointment: AppointmentBooking) => void;
+  onDelete: (appointment: AppointmentBooking) => void;
 }
 
 export default function AppointmentTableRow({
   appointment,
   labels,
+  onEdit,
+  onDelete,
 }: AppointmentTableRowProps) {
   return (
     <tr className="ds-border-gray border-b transition-colors hover:bg-black/[0.02]">
@@ -31,7 +38,7 @@ export default function AppointmentTableRow({
         <Badge
           tone={appointmentStatusTone[appointment.status]}
           solid={appointmentStatusSolid[appointment.status]}>
-          {labels.statuses[appointment.status]}+{" "}
+          {labels.statuses[appointment.status]}
         </Badge>
       </td>
       <td className="ds-text-secondary px-5 py-4 text-sm" dir="ltr">
@@ -41,7 +48,12 @@ export default function AppointmentTableRow({
         {appointment.bookingTime}
       </td>
       <td className="px-5 py-4">
-        <RowActions editLabel={labels.edit} deleteLabel={labels.delete} />
+        <RowActions
+          editLabel={labels.edit}
+          deleteLabel={labels.delete}
+          onEdit={() => onEdit(appointment)}
+          onDelete={() => onDelete(appointment)}
+        />
       </td>
     </tr>
   );

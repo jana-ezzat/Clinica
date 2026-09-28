@@ -1,4 +1,8 @@
 import { z } from "zod";
+import { APPOINTMENT_STATUSES, APPOINTMENT_TYPES } from "../lib/appointmentOptions";
+
+
+/* ---------- Create appointment ---------- */
 
 export const AppointmentModalSchema = (requiredMessage: string) =>
   z.object({
@@ -23,3 +27,14 @@ export type AppointmentFormValues = z.input<
 export type AppointmentFormOutput = z.output<
   ReturnType<typeof AppointmentModalSchema>
 >;
+
+/* ---------- Edit appointment ---------- */
+
+export const EditAppointmentSchema = z.object({
+  date: z.string().min(1, "required"),
+  startTime: z.string().min(1, "required"),
+  type: z.enum(APPOINTMENT_TYPES),
+  status: z.enum(APPOINTMENT_STATUSES),
+});
+
+export type EditAppointmentFormValues = z.infer<typeof EditAppointmentSchema>;
