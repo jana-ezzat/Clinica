@@ -14,6 +14,7 @@ import {
   Disc,
   Trash,
   LogOut,
+  FileWarning,
   LayoutDashboard,
   PieChart,
   PlusSquare,
@@ -42,10 +43,20 @@ import {
   Download,
   Printer,
   ChevronRight,
+  ImageOff,
+  ImagePlus,
+  Loader2,
 } from "lucide-react";
 
 import { FcGoogle } from "react-icons/fc";
-import { MdOutlineEmail, MdPersonOutline } from "react-icons/md";
+import {
+  MdOutlineEmail,
+  MdPersonOutline,
+  MdPerson,
+  MdOutlineGridView,
+  MdOutlineAccountCircle,
+  MdLogout,
+} from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { PiTelegramLogo } from "react-icons/pi";
 import { TiPencil } from "react-icons/ti";
@@ -70,6 +81,7 @@ export {
   ChartLine,
   LayoutDashboard,
   PieChart,
+  ImagePlus,
   ChevronDown,
   PlusSquare,
   LogOut,
@@ -77,6 +89,7 @@ export {
   List,
   Link,
   Clock9,
+  ImageOff,
   Pencil,
   ExternalLink,
   Sun,
@@ -123,4 +136,10 @@ export {
   Printer,
   ChevronRight,
   RotateCcw,
+  MdPerson,
+  MdOutlineGridView,
+  MdOutlineAccountCircle,
+  MdLogout,
+  Loader2,
+  FileWarning
 };

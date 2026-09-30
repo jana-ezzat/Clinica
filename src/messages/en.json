@@ -343,6 +343,7 @@
       "appointments": "Appointments",
       "invoices": "Invoices",
       "reports": "Reports",
+      "profile": "profile ",
       "settings": "Settings",
       "logout": "Log out"
     },
@@ -859,6 +860,41 @@
     },
     "Reload": {
       "error": "Failed to load settings",
+      "retry": "Retry"
+    }
+  },
+  "profile": {
+    "editProfile": "Edit Profile",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "personalData": "Personal Data",
+    "certificatesAwards": "Certificates & Awards",
+    "noCertificatesYet": "No certificates or awards yet",
+    "changePhoto": "Change Photo",
+    "certificates": "Certificates",
+    "awards": "Awards",
+    "certificateTitle": "Certificate title",
+    "awardTitle": "Award title",
+    "addCertificate": "Add Another Certificate",
+    "descLabelaward": "Description Award",
+    "descLabelCertification": "Description Certification",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "deletePhoto": "Delete photo",
+    "NoItems": "No items yet",
+    "Delete": "Delete",
+    "Deleting": "Deleting...",
+    "Edit": "Edit",
+    "UploadImage": "Upload an image",
+    "DragOrClick": "Drag an image here or click to browse",
+    "ChangeImage": "Change",
+    "Remove": "Remove",
+    "title": "Title",
+    "description": "Description",
+    "Reload": {
+      "error": "Failed to load Profile",
       "retry": "Retry"
     }
   }

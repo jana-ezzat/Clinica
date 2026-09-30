@@ -353,6 +353,7 @@
       "appointments": "المواعيد",
       "invoices": "الفواتير",
       "reports": "التقارير",
+      "profile": "الملف الشخصي",
       "settings": "الأعدادات",
       "logout": "تسجيل الخروج"
     },
@@ -549,65 +550,65 @@
     "doctorNotes": "ملاحظات الطبيب",
     "followUp": "توصيات المتابعة"
   },
-"appointmentsModal": {
-  "addAppointment": {
-    "title": "إضافة موعد جديد",
-    "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
-    "submit": "حفظ الموعد",
-    "submitting": "جارٍ الحفظ...",
-    "cancel": "إلغاء",
-    "required": "هذا الحقل مطلوب",
-    "errors": {
-      "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
-      "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
-    },
-    "patient": {
-      "title": "معلومات المريض",
-      "subtitle": "بيانات المريض الأساسية",
-      "patientType": "نوع المريض",
-      "newPatient": "مريض جديد",
-      "existingPatient": "مريض سابق",
-      "name": "اسم المريض",
-      "phone": "رقم الهاتف",
-      "email": "البريد الإلكتروني",
-      "gender": "النوع",
-      "genderOptions": {
-        "male": "ذكر",
-        "female": "أنثى"
+  "appointmentsModal": {
+    "addAppointment": {
+      "title": "إضافة موعد جديد",
+      "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
+      "submit": "حفظ الموعد",
+      "submitting": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "required": "هذا الحقل مطلوب",
+      "errors": {
+        "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
+        "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
       },
-      "age": "العمر",
-      "searchPatient": "البحث عن المريض",
-      "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف",
-      "loading": "جاري تحميل المرضى...",
-      "noResults": "لا يوجد نتائج",
-      "selectRequired": "الرجاء اختيار مريض من القائمة"
-    },
-    "meeting": {
-      "title": "تفاصيل الموعد",
-      "subtitle": "اختر التاريخ والوقت ونوع الموعد",
-      "time": "الوقت",
-      "timePlaceholder": "اختر الوقت",
-      "date": "تاريخ الموعد",
-      "type": "نوع الموعد",
-      "typePlaceholder": "اختر نوع الموعد",
-      "duration": "المدة المتوقعة",
-      "durationPlaceholder": "اختر المدة",
-      "types": {
-        "check-up": "كشف",
-        "consultation": "استشارة",
-        "follow-up": "متابعة",
-        "emergency": "طوارئ"
+      "patient": {
+        "title": "معلومات المريض",
+        "subtitle": "بيانات المريض الأساسية",
+        "patientType": "نوع المريض",
+        "newPatient": "مريض جديد",
+        "existingPatient": "مريض سابق",
+        "name": "اسم المريض",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "gender": "النوع",
+        "genderOptions": {
+          "male": "ذكر",
+          "female": "أنثى"
+        },
+        "age": "العمر",
+        "searchPatient": "البحث عن المريض",
+        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف",
+        "loading": "جاري تحميل المرضى...",
+        "noResults": "لا يوجد نتائج",
+        "selectRequired": "الرجاء اختيار مريض من القائمة"
       },
-      "durations": {
-        "15": "15 دقيقة",
-        "30": "30 دقيقة",
-        "45": "45 دقيقة"
-      },
-      "notes": "ملاحظات إضافية",
-      "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
+      "meeting": {
+        "title": "تفاصيل الموعد",
+        "subtitle": "اختر التاريخ والوقت ونوع الموعد",
+        "time": "الوقت",
+        "timePlaceholder": "اختر الوقت",
+        "date": "تاريخ الموعد",
+        "type": "نوع الموعد",
+        "typePlaceholder": "اختر نوع الموعد",
+        "duration": "المدة المتوقعة",
+        "durationPlaceholder": "اختر المدة",
+        "types": {
+          "check-up": "كشف",
+          "consultation": "استشارة",
+          "follow-up": "متابعة",
+          "emergency": "طوارئ"
+        },
+        "durations": {
+          "15": "15 دقيقة",
+          "30": "30 دقيقة",
+          "45": "45 دقيقة"
+        },
+        "notes": "ملاحظات إضافية",
+        "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
+      }
     }
-  }
-},
+  },
   "MedicalFile": {
     "title": "الملف الطبي الكامل",
     "chronicDiseases": "الأمراض المزمنة",
@@ -870,6 +871,41 @@
     },
     "Reload": {
       "error": "تعذر تحميل الإعدادات",
+      "retry": "إعادة المحاولة"
+    }
+  },
+  "profile": {
+    "editProfile": "تعديل الملف الشخصي",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "role": "الدور",
+    "personalData": "البيانات الشخصية",
+    "certificatesAwards": "الشهادات والجوائز",
+    "noCertificatesYet": "لا توجد شهادات أو جوائز حتى الآن",
+    "changePhoto": "تغيير الصورة",
+    "certificates": "الشهادات",
+    "awards": "الجوائز",
+    "certificateTitle": "عنوان الشهادة",
+    "awardTitle": "عنوان الجائزة",
+    "addCertificate": "إضاف شهادة اخري",
+    "descLabelaward": "وصف الجائزه ",
+    "descLabelCertification": "وصف الشهادة",
+    "cancel": "إلغاء",
+    "saveChanges": "حفظ التغييرات",
+    "saving": "جارٍ الحفظ...",
+    "deletePhoto": "حذف الصورة",
+    "NoItems": "لا يوجد عناصر",
+    "Delete": "حذف",
+    "Deleting": "جاري الحذف ...",
+    "Edit": "تعديل",
+    "UploadImage": "ارفع صورة",
+    "DragOrClick": "اسحب الصورة هنا أو اضغط للاختيار",
+    "ChangeImage": "تغيير",
+    "Remove": "إزالة",
+    "title": "العنوان",
+    "description": "الوصف",
+    "Reload": {
+      "error": "تعذر تحميل الملف الشخصي",
       "retry": "إعادة المحاولة"
     }
   }
