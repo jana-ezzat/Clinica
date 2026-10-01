@@ -16,9 +16,13 @@ import {
 } from "@/components/ui/chart";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
-import { monthlyRevenue } from "../../lib/mockData";
+import type { MonthlyRevenuePoint } from "../../lib/dashboardStats";
 
-export default function RevenueChart() {
+type Props = {
+  data: MonthlyRevenuePoint[];
+};
+
+export default function RevenueChart({ data }: Props) {
   const t = useTranslations("dashboard.home");
 
   const chartConfig = {
@@ -40,7 +44,7 @@ export default function RevenueChart() {
       </Text>
 
       <ChartContainer config={chartConfig} className="min-h-[260px] w-full">
-        <AreaChart data={monthlyRevenue} margin={{ left: -20 }}>
+        <AreaChart data={data} margin={{ left: -20 }}>
           <defs>
             <linearGradient id="revenueFill" x1="0" y1="0" x2="0" y2="1">
               <stop
@@ -67,7 +71,7 @@ export default function RevenueChart() {
             tickLine={false}
             axisLine={false}
             tickFormatter={(value) =>
-              value === 0 ? "0" : `${value / 1000}k`
+              value >= 1000 ? `${value / 1000}k` : String(value)
             }
           />
           <ChartTooltip

@@ -10,9 +10,13 @@ import {
 } from "@/components/ui/chart";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
-import { weeklyAppointments } from "../../lib/mockData";
+import type { WeeklyAppointmentPoint } from "../../lib/dashboardStats";
 
-export default function WeeklyAppointmentsChart() {
+type Props = {
+  data: WeeklyAppointmentPoint[];
+};
+
+export default function WeeklyAppointmentsChart({ data }: Props) {
   const t = useTranslations("dashboard.home");
 
   const chartConfig = {
@@ -34,7 +38,7 @@ export default function WeeklyAppointmentsChart() {
       </Text>
 
       <ChartContainer config={chartConfig} className="min-h-[260px] w-full">
-        <BarChart data={weeklyAppointments} margin={{ left: -20 }}>
+        <BarChart data={data} margin={{ left: -20 }}>
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <XAxis
             dataKey="dayKey"
