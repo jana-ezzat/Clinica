@@ -55,7 +55,7 @@ export default function NewPatientsTable({ patients }: Props) {
               <tr key={patient.id} className="border-b ds-border-gray">
                 <td className="px-4 py-3 ds-text">{patient.name}</td>
                 <td className="px-4 py-3 ds-text-secondary">
-                  {patient.age} {t("ageUnit")}
+                  {patient.age === null ? "—" : `${patient.age} ${t("ageUnit")}`}
                 </td>
                 <td className="px-4 py-3 ds-text-secondary">
                   {patient.symptoms}

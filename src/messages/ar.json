@@ -400,7 +400,8 @@
         "visitTypes": {
           "checkup": "كشف دوري",
           "followUp": "متابعة",
-          "consultation": "استشارة"
+          "consultation": "استشارة",
+          "emergency": "حالة طارئة"
         }
       },
       "revenueChart": {
@@ -413,6 +414,11 @@
         "subtitle": "عدد المواعيد لكل يوم",
         "series": "المواعيد"
       },
+      "errors": {
+        "load": "تعذر تحميل بيانات لوحة التحكم.",
+        "retry": "إعادة المحاولة",
+        "partial": "تعذر تحميل جزء من البيانات، قد تكون بعض الأرقام ناقصة."
+      },
       "months": {
         "jan": "يناير",
         "feb": "فبراير",
@@ -420,7 +426,12 @@
         "apr": "ابريل",
         "may": "مايو",
         "jun": "يونيو",
-        "jul": "يوليو"
+        "jul": "يوليو",
+        "aug": "أغسطس",
+        "sep": "سبتمبر",
+        "oct": "أكتوبر",
+        "nov": "نوفمبر",
+        "dec": "ديسمبر"
       },
       "weekdays": {
         "sat": "السبت",
@@ -555,14 +566,7 @@
       "title": "إضافة موعد جديد",
       "description": "قم بملء البيانات التالية لحجز موعد جديد للمريض",
       "submit": "حفظ الموعد",
-      "submitting": "جارٍ الحفظ...",
       "cancel": "إلغاء",
-      "required": "هذا الحقل مطلوب",
-      "errors": {
-        "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
-        "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
-      },
-
       "patient": {
         "title": "معلومات المريض",
         "subtitle": "بيانات المريض الأساسية",
@@ -570,19 +574,20 @@
         "newPatient": "مريض جديد",
         "existingPatient": "مريض سابق",
         "name": "اسم المريض",
-        "phone": "رقم الهاتف",
+        "nationality": "الجنسية",
         "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "searchPatient": "البحث عن المريض",
+        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف",
         "gender": "النوع",
         "genderOptions": {
           "male": "ذكر",
           "female": "أنثى"
         },
         "age": "العمر",
-        "searchPatient": "البحث عن المريض",
-        "searchPatientPlaceholder": "ابحث باسم المريض أو رقم الملف",
         "loading": "جاري تحميل المرضى...",
-        "noResults": "لا يوجد نتائج",
-        "selectRequired": "الرجاء اختيار مريض من القائمة"
+        "noResults": "لا توجد نتائج",
+        "selectRequired": "يرجى اختيار مريض."
       },
       "meeting": {
         "title": "تفاصيل الموعد",
@@ -595,11 +600,13 @@
         "duration": "المدة المتوقعة",
         "durationPlaceholder": "اختر المدة",
         "types": {
-          "check-up": "كشف",
+          "followup": "متابعة",
+          "new": "كشف جديد",
+          "checkup": "فحص دوري",
+          "check-up": "كشف دوري",
           "consultation": "استشارة",
           "follow-up": "متابعة",
-          "emergency": "طوارئ",
-          "other": "أخرى"
+          "emergency": "حالة طارئة"
         },
         "durations": {
           "15": "15 دقيقة",
@@ -608,17 +615,23 @@
         },
         "notes": "ملاحظات إضافية",
         "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
+      },
+      "required": "هذا الحقل مطلوب",
+      "submitting": "جاري الحفظ...",
+      "errors": {
+        "noDoctor": "تعذر تحديد الطبيب، يرجى تسجيل الدخول مرة أخرى.",
+        "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
       }
     },
     "editAppointment": {
       "title": "تعديل الموعد",
-      "date": "تاريخ الموعد",
-      "time": "الوقت",
-      "type": "نوع الموعد",
-      "status": "الحالة",
-      "save": "حفظ التعديلات",
-      "saving": "جارٍ الحفظ...",
       "cancel": "إلغاء",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "type": "نوع الكشف",
+      "status": "الحالة",
       "required": "هذا الحقل مطلوب"
     }
   },
@@ -651,9 +664,8 @@
       "booking": "تقارير الحجوزات"
     },
     "bookingTypes": {
-      "check-up": "كشف",
-      "consultation": "استشارة",
-      "follow-up": "متابعة",
+      "consultation": "كشف",
+      "regular": "عادي",
       "emergency": "طوارئ"
     },
     "statuses": {
@@ -690,23 +702,19 @@
       "export": "حفظ كملف"
     },
     "bookingTypes": {
-      "check-up": "كشف",
+      "checkup": "كشف",
+      "followup": "اعادة",
+      "emergency": "طوارئ",
+      "check-up": "كشف دوري",
       "consultation": "استشارة",
       "follow-up": "متابعة",
-      "emergency": "طوارئ",
       "other": "أخرى"
     },
-    "toasts": {
-      "updateSuccess": "تم تحديث الموعد بنجاح",
-      "updateError": "تعذر تحديث الموعد",
-      "deleteSuccess": "تم حذف الموعد",
-      "deleteError": "تعذر حذف الموعد"
-    },
     "statuses": {
-      "pending": "قيد الانتظار",
       "confirmed": "مؤكد",
-      "completed": "مكتمل",
       "cancelled": "ملغى",
+      "pending": "قيد الانتظار",
+      "completed": "مكتمل",
       "no-show": "لم يحضر"
     },
     "table": {
@@ -729,9 +737,14 @@
       "confirmedToday": "الحجوزات المؤكدة اليوم",
       "confirmationRate": "نسبة الحجوزات المؤكدة",
       "date": "السبت، 28 نوفمبر 2025"
+    },
+    "toasts": {
+      "updateSuccess": "تم تعديل الموعد بنجاح",
+      "updateError": "تعذر تعديل الموعد",
+      "deleteSuccess": "تم حذف الموعد",
+      "deleteError": "تعذر حذف الموعد"
     }
   },
-
   "Invoice": {
     "savePdf": "حفظ PDF",
     "print": "طباعة",

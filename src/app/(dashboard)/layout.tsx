@@ -1,4 +1,4 @@
-import DashboardTemplate from "@/modules/dashboard/templates/DashboardTemplate";
+ import DashboardTemplate from "@/modules/dashboard/templates/DashboardTemplate";
 
 export default function DashboardLayout({
   children,
