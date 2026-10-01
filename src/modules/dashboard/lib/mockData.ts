@@ -1,3 +1,12 @@
+// // src/modules/dashboard/lib/mockData.ts
+// export type StatCardData = {
+//   label: string;
+//   labelKey?: "emergencies" | "revenue" | "appointments" | "patientsToday";
+//   value: string;
+//   delta: string;
+//   deltaPositive: boolean;
+// };
+
 import type { StatCardData, StatCardId } from "@/shared/types/stats";
 export type { StatCardData, StatCardId };
 
@@ -35,7 +44,7 @@ export const statCards: StatCardData[] = [
 export type NewPatient = {
   id: string;
   name: string;
-  age: number;
+  age: number | null;
   symptoms: string;
   date: string;
 };
@@ -64,24 +73,18 @@ export const newPatients: NewPatient[] = [
   },
 ];
 
-export type AppointmentStatus =
-  | "pending"
-  | "confirmed"
-  | "completed"
-  | "cancelled"
-  | "no-show";
-
-export type AppointmentBookingType =
+export type AppointmentStatus = "confirmed" | "cancelled" | "pending";
+export type VisitType =
+  | "checkup"
+  | "followUp"
   | "consultation"
-  | "follow-up"
-  | "check-up"
-  | "emergency"
-  | "other";
+  | "emergency";
 
 export type UpcomingAppointment = {
   id: string;
   patient: string;
   time: string;
+  /** Translation key inside `dashboard.home.upcomingAppointments.visitTypes` */
   typeKey: VisitType;
   status: AppointmentStatus;
 };

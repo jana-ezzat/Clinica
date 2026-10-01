@@ -265,44 +265,60 @@
       "rememberPassword": "Remember Password?"
     }
   },
-  "specialty": {
-    "label": "Specialty",
-    "placeholder": "Select specialty"
-  },
-  "email": {
-    "label": "Email",
-    "placeholder": "email@gmail.com"
-  },
-  "password": {
-    "label": "Password",
-    "placeholder": "••••••••••••",
-    "hint": "Must be at least 8 characters"
-  },
-  "confirmPassword": {
-    "label": "Confirm Password",
-    "placeholder": "••••••••••••"
-  },
-  "btn": "Create Account",
-  "btnLoading": "Creating account...",
-  "haveAccount": "Already have an account?",
-  "loginLink": "Sign in",
-  "termsText": "By creating an account, you agree to the",
-  "termsLink": "Terms & Conditions",
-  "and": "and",
-  "privacyLink": "Privacy Policy",
-  "error": {
-    "nameRequired": "Name is required.",
-    "roleRequired": "Please select a job role.",
-    "specialtyRequired": "Specialty is required.",
-    "emailRequired": "Email is required.",
-    "invalidEmail": "Please enter a valid email address.",
-    "passwordMinLength": "Password must be at least 8 characters.",
-    "passwordMaxLength": "Password must not exceed 20 characters.",
-    "confirmPasswordRequired": "Please confirm your password.",
-    "passwordNotMatch": "Passwords do not match.",
-    "emailTaken": "This email is already in use.",
-    "somethingWentWrong": "Something went wrong. Please try again.",
-    "networkError": "Could not connect to the server. Check your connection."
+  "sign-up": {
+    "title": "Create a New Account",
+    "description": "Start your 14-day free trial",
+    "label": "Full Name",
+    "placeholder": "Ahmed Mohamed Ali",
+    "role": {
+      "label": "Job Role",
+      "placeholder": "Select job role",
+      "options": {
+        "doctor": "Doctor",
+        "receptionist": "Receptionist",
+        "accountant": "Accountant",
+        "nurse": "Nurse"
+      }
+    },
+    "specialty": {
+      "label": "Specialty",
+      "placeholder": "Select specialty"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "email@gmail.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "••••••••••••",
+      "hint": "Must be at least 8 characters"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "••••••••••••"
+    },
+    "btn": "Create Account",
+    "btnLoading": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "termsText": "By creating an account, you agree to the",
+    "termsLink": "Terms & Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "error": {
+      "nameRequired": "Name is required.",
+      "roleRequired": "Please select a job role.",
+      "specialtyRequired": "Specialty is required.",
+      "emailRequired": "Email is required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "passwordMinLength": "Password must be at least 8 characters.",
+      "passwordMaxLength": "Password must not exceed 20 characters.",
+      "confirmPasswordRequired": "Please confirm your password.",
+      "passwordNotMatch": "Passwords do not match.",
+      "emailTaken": "This email is already in use.",
+      "somethingWentWrong": "Something went wrong. Please try again.",
+      "networkError": "Could not connect to the server. Check your connection."
+    }
   },
   "sign-up": {
     "title": "Create a New Account",
@@ -389,7 +405,8 @@
         "visitTypes": {
           "checkup": "Routine checkup",
           "followUp": "Follow-up",
-          "consultation": "Consultation"
+          "consultation": "Consultation",
+          "emergency": "Emergency"
         }
       },
       "revenueChart": {
@@ -402,6 +419,11 @@
         "subtitle": "Number of appointments per day",
         "series": "Appointments"
       },
+      "errors": {
+        "load": "Could not load the dashboard data.",
+        "retry": "Try again",
+        "partial": "Part of the data could not be loaded, some numbers may be incomplete."
+      },
       "months": {
         "jan": "January",
         "feb": "February",
@@ -409,7 +431,12 @@
         "apr": "April",
         "may": "May",
         "jun": "June",
-        "jul": "July"
+        "jul": "July",
+        "aug": "August",
+        "sep": "September",
+        "oct": "October",
+        "nov": "November",
+        "dec": "December"
       },
       "weekdays": {
         "sat": "Sat",
@@ -542,39 +569,34 @@
   "appointmentsModal": {
     "addAppointment": {
       "title": "Add New Appointment",
-      "description": "Fill in the following details to book a new appointment for the patient",
+      "description": "Fill in the following information to book a new appointment for the patient",
       "submit": "Save Appointment",
-      "submitting": "Saving...",
       "cancel": "Cancel",
-      "required": "This field is required",
-      "errors": {
-        "noDoctor": "Could not determine the current doctor. Please sign in again.",
-        "somethingWentWrong": "Something went wrong. Please try again."
-      },
       "patient": {
         "title": "Patient Information",
-        "subtitle": "Basic patient details",
+        "subtitle": "Basic Patient Information",
         "patientType": "Patient Type",
         "newPatient": "New Patient",
-        "existingPatient": "Existing Patient",
+        "existingPatient": "Registered Patient",
         "name": "Patient Name",
-        "phone": "Phone Number",
+        "nationality": "Nationality",
         "email": "Email",
+        "phone": "Phone Number",
+        "searchPatient": "Search Patient",
+        "searchPatientPlaceholder": "Search by patient name or file number",
         "gender": "Gender",
         "genderOptions": {
           "male": "Male",
           "female": "Female"
         },
         "age": "Age",
-        "searchPatient": "Search Patient",
-        "searchPatientPlaceholder": "Search by patient name or file number",
         "loading": "Loading patients...",
-        "noResults": "No results found",
-        "selectRequired": "Please select a patient from the list"
+        "noResults": "No results",
+        "selectRequired": "Please select a patient."
       },
       "meeting": {
         "title": "Appointment Details",
-        "subtitle": "Choose the date, time, and appointment type",
+        "subtitle": "Select the appointment date, time, and type",
         "time": "Time",
         "timePlaceholder": "Select time",
         "date": "Appointment Date",
@@ -583,11 +605,13 @@
         "duration": "Expected Duration",
         "durationPlaceholder": "Select duration",
         "types": {
+          "followup": "Follow-up",
+          "new": "New Examination",
+          "checkup": "Periodic Check-up",
           "check-up": "Check-up",
           "consultation": "Consultation",
           "follow-up": "Follow-up",
-          "emergency": "Emergency",
-          "other": "Other"
+          "emergency": "Emergency"
         },
         "durations": {
           "15": "15 minutes",
@@ -596,25 +620,24 @@
         },
         "notes": "Additional Notes",
         "notesPlaceholder": "Any additional notes or details about the appointment..."
+      },
+      "required": "This field is required",
+      "submitting": "Saving...",
+      "errors": {
+        "noDoctor": "Couldn't identify the doctor. Please sign in again.",
+        "somethingWentWrong": "Something went wrong. Please try again."
       }
     },
     "editAppointment": {
-      "title": "Edit Appointment",
-      "date": "Appointment Date",
-      "time": "Time",
-      "type": "Appointment Type",
-      "status": "Status",
-      "save": "Save Changes",
-      "saving": "Saving...",
+      "title": "Edit appointment",
       "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving...",
+      "date": "Date",
+      "time": "Time",
+      "type": "Visit type",
+      "status": "Status",
       "required": "This field is required"
-    },
-    "bookingTypes": {
-      "check-up": "Check-up",
-      "consultation": "Consultation",
-      "follow-up": "Follow-up",
-      "emergency": "Emergency",
-      "other": "Other"
     }
   },
   "MedicalFile": {
@@ -646,9 +669,8 @@
       "booking": "Booking Reports"
     },
     "bookingTypes": {
-      "check-up": "Check-up",
       "consultation": "Consultation",
-      "follow-up": "Follow-up",
+      "regular": "Regular",
       "emergency": "Emergency"
     },
     "statuses": {
@@ -684,23 +706,20 @@
       "bookingDate": "Booking Date",
       "export": "Export as PDF"
     },
-    "toasts": {
-      "updateSuccess": "Appointment updated successfully",
-      "updateError": "Could not update the appointment",
-      "deleteSuccess": "Appointment deleted",
-      "deleteError": "Could not delete the appointment"
-    },
     "bookingTypes": {
+      "checkup": "Checkup",
+      "followup": "Follow-up",
+      "emergency": "Emergency",
       "check-up": "Check-up",
       "consultation": "Consultation",
       "follow-up": "Follow-up",
-      "emergency": "Emergency"
+      "other": "Other"
     },
     "statuses": {
-      "pending": "Pending",
       "confirmed": "Confirmed",
-      "completed": "Completed",
       "cancelled": "Cancelled",
+      "pending": "Pending",
+      "completed": "Completed",
       "no-show": "No-show"
     },
     "table": {
@@ -723,6 +742,12 @@
       "confirmedToday": "Confirmed Today",
       "confirmationRate": "Confirmation Rate",
       "date": "Saturday, November 28, 2025"
+    },
+    "toasts": {
+      "updateSuccess": "Appointment updated",
+      "updateError": "Failed to update the appointment",
+      "deleteSuccess": "Appointment deleted",
+      "deleteError": "Failed to delete the appointment"
     }
   },
   "Invoice": {
@@ -829,64 +854,6 @@
           "followUp": "Follow-up"
         }
       }
-    }
-  },
-  "settings": {
-    "pageTitle": "Clinica Settings",
-    "basicInfo": {
-      "title": "Basic Information",
-      "clinicName": "Clinic Name",
-      "clinicNamePlaceholder": "Clinic name",
-      "phone": "Phone Number",
-      "phonePlaceholder": "Enter phone number"
-    },
-    "actions": {
-      "cancel": "Cancel",
-      "save": "Save Changes",
-      "saving": "Saving..."
-    },
-    "logo": {
-      "title": "Logo",
-      "upload": "Upload Logo"
-    },
-    "address": {
-      "title": "Clinic Address",
-      "placeholder": "Enter clinic address"
-    },
-    "workHours": {
-      "title": "Work Hours",
-      "daysLabel": "Work Days",
-      "timesLabel": "Work Times",
-      "from": "From",
-      "to": "To",
-      "addSlot": "+ Add another time slot",
-      "days": {
-        "saturday": "Saturday",
-        "sunday": "Sunday",
-        "monday": "Monday",
-        "tuesday": "Tuesday",
-        "wednesday": "Wednesday",
-        "thursday": "Thursday",
-        "friday": "Friday"
-      }
-    },
-    "payment": {
-      "title": "Payment Settings",
-      "methodsLabel": "Available Payment Methods",
-      "cash": "Cash",
-      "card": "Visa",
-      "bank_transfer": "bank transfer",
-      "taxLabel": "Tax Percentage %"
-    },
-    "rules": {
-      "title": "Appointment Rules",
-      "defaultDuration": "Default Session Duration",
-      "maxPerDay": "Max Appointments Per Day",
-      "cancelWindow": "Cancellation Window (hours)"
-    },
-    "Reload": {
-      "error": "Failed to load settings",
-      "retry": "Retry"
     }
   }
 }
