@@ -19,6 +19,8 @@ import {
   PieChart,
   PlusSquare,
   Users,
+  Mail,
+  ShieldCheck,
   ClockCheck,
   SquarePen,
   Send,
@@ -46,6 +48,8 @@ import {
   ImageOff,
   ImagePlus,
   Loader2,
+  RefreshCw,
+  X,
 } from "lucide-react";
 
 import { FcGoogle } from "react-icons/fc";
@@ -77,6 +81,8 @@ export {
   SquarePen,
   Send,
   Lock,
+  RefreshCw,
+  X,
   ChartPie,
   ChartLine,
   LayoutDashboard,
@@ -124,6 +130,8 @@ export {
   PanelLeftOpen,
   FileText,
   LuTimer,
+  Mail,
+  ShieldCheck,
   MdPersonOutline,
   ChevronLeft,
   HiOutlineInformationCircle,
@@ -141,5 +149,5 @@ export {
   MdOutlineAccountCircle,
   MdLogout,
   Loader2,
-  FileWarning
+  FileWarning,
 };

@@ -6,8 +6,7 @@ import {
 } from "react-hook-form";
 import Text from "@/shared/components/atoms/Text";
 import { cn } from "@/lib/cn";
-import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
-
+import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 
 interface Props {
   label: string;

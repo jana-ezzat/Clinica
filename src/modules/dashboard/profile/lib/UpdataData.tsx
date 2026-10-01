@@ -14,3 +14,13 @@ export interface CredentialResponse {
     award?: CredentialData;
   };
 }
+
+export interface Props {
+  type: CredentialType;
+  id: string;
+}
+
+export interface FormValues {
+  title: string;
+  desc: string;
+}

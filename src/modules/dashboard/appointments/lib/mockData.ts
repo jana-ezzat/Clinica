@@ -1,5 +1,6 @@
-// lib/mockData.ts
 import type { StatCardData } from "@/shared/types/stats";
+import type { AppointmentStatus } from "@/modules/dashboard/lib/mockData";
+export type { AppointmentStatus };
 
 export type AppointmentStatValue = Pick<
   StatCardData,
@@ -7,12 +8,11 @@ export type AppointmentStatValue = Pick<
 >;
 
 export type AppointmentBookingType =
-  | "check-up"
   | "consultation"
   | "follow-up"
-  | "emergency";
-
-export type AppointmentStatus = "pending" | "confirmed" | "cancelled";
+  | "check-up"
+  | "emergency"
+  | "other";
 
 export type AppointmentBooking = {
   id: string;

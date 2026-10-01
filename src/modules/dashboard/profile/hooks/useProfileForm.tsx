@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { UpdateData, UserProfile } from "../lib/Profile";
 import { useForm } from "react-hook-form";
 
-
 export function useProfileForm(data?: UserProfile) {
   const {
     register,

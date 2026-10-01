@@ -6,7 +6,7 @@ import Text from "@/shared/components/atoms/Text";
 import PatientButton from "./PatientButton";
 import ModalField from "./ModalField";
 import PatientTitle from "./PatientTitle";
-import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 import usePatients from "@/modules/dashboard/patients/hooks/usePatients";
 
 interface Props {

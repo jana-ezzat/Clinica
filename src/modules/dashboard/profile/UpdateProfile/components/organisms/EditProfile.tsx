@@ -3,20 +3,19 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Text from "@/shared/components/atoms/Text";
 import Button from "@/shared/components/atoms/Button";
-
 import CredentialField from "../../../components/molecules/CredentialField";
 import EditProfileSkelton from "../molecules/EditProfileSkelton";
 import { useProfile } from "../../../hooks/Queries/useProfile";
 import { useEditProfile } from "../../../hooks/useEditProfile";
 import ProfileImage from "../molecules/ProfileImage";
 import ProfileField from "../molecules/ProfileField";
+import Reload from "@/shared/components/molecules/Reload";
 
 export default function EditProfile() {
   const router = useRouter();
   const t = useTranslations("profile");
 
-  const { data, isLoading, isError } = useProfile();
-
+  const { data, isLoading, isError ,refetch} = useProfile();
   const {
     register,
     errors,
@@ -36,7 +35,13 @@ export default function EditProfile() {
   }
 
   if (isError || !data) {
-    return <div className="p-6">Something went wrong.</div>;
+    return (
+      <Reload
+        error={t("Reload.error")}
+        retry={t("Reload.retry")}
+        onRetry={refetch}
+      />
+    );
   }
 
   return (

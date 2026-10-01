@@ -1,9 +1,6 @@
 "use client";
-
 import { useApiQuery } from "@/shared/hooks/useApiQuery";
-
 import { CredentialData, CredentialType } from "../../lib/UpdataData";
-
 import { GetCredentialById } from "../Requests/GetCredentialById";
 
 export function useGetCredentialId(type: CredentialType, id: string) {

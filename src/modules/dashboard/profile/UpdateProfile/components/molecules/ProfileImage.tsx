@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Pencil } from "@/assets/icons/icons";
-import { Trash2, ImagePlus, User } from "lucide-react";
+import { Pencil, Trash2, ImagePlus } from "@/assets/icons/icons";
 import Avatar from "../../../components/molecules/Avatar";
 
 interface Props {

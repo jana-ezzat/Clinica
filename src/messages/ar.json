@@ -562,6 +562,7 @@
         "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
         "somethingWentWrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
       },
+
       "patient": {
         "title": "معلومات المريض",
         "subtitle": "بيانات المريض الأساسية",
@@ -597,7 +598,8 @@
           "check-up": "كشف",
           "consultation": "استشارة",
           "follow-up": "متابعة",
-          "emergency": "طوارئ"
+          "emergency": "طوارئ",
+          "other": "أخرى"
         },
         "durations": {
           "15": "15 دقيقة",
@@ -607,6 +609,17 @@
         "notes": "ملاحظات إضافية",
         "notesPlaceholder": "أي ملاحظات أو تفاصيل إضافية عن الموعد..."
       }
+    },
+    "editAppointment": {
+      "title": "تعديل الموعد",
+      "date": "تاريخ الموعد",
+      "time": "الوقت",
+      "type": "نوع الموعد",
+      "status": "الحالة",
+      "save": "حفظ التعديلات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "required": "هذا الحقل مطلوب"
     }
   },
   "MedicalFile": {
@@ -680,12 +693,21 @@
       "check-up": "كشف",
       "consultation": "استشارة",
       "follow-up": "متابعة",
-      "emergency": "طوارئ"
+      "emergency": "طوارئ",
+      "other": "أخرى"
+    },
+    "toasts": {
+      "updateSuccess": "تم تحديث الموعد بنجاح",
+      "updateError": "تعذر تحديث الموعد",
+      "deleteSuccess": "تم حذف الموعد",
+      "deleteError": "تعذر حذف الموعد"
     },
     "statuses": {
+      "pending": "قيد الانتظار",
       "confirmed": "مؤكد",
+      "completed": "مكتمل",
       "cancelled": "ملغى",
-      "pending": "قيد الانتظار"
+      "no-show": "لم يحضر"
     },
     "table": {
       "name": "الاسم",
@@ -709,6 +731,7 @@
       "date": "السبت، 28 نوفمبر 2025"
     }
   },
+
   "Invoice": {
     "savePdf": "حفظ PDF",
     "print": "طباعة",
@@ -907,6 +930,23 @@
     "Reload": {
       "error": "تعذر تحميل الملف الشخصي",
       "retry": "إعادة المحاولة"
+    },
+    "toast": {
+      "profileUpdated": "تم تحديث الملف الشخصي بنجاح",
+      "profileUpdateFailed": "فشل تحديث الملف الشخصي",
+      "photoUpdated": "تم تحديث صورة الملف الشخصي بنجاح",
+      "photoDeleted": "تم حذف صورة الملف الشخصي بنجاح",
+      "photoDeleteFailed": "فشل حذف صورة الملف الشخصي",
+      "certificateAdded": "تمت إضافة الشهادة بنجاح",
+      "certificateUpdated": "تم تحديث الشهادة بنجاح",
+      "certificateDeleted": "تم حذف الشهادة بنجاح",
+      "certificateSaveFailed": "فشل حفظ الشهادة",
+      "certificateDeleteFailed": "فشل حذف الشهادة",
+      "awardAdded": "تمت إضافة الجائزة بنجاح",
+      "awardUpdated": "تم تحديث الجائزة بنجاح",
+      "awardDeleted": "تم حذف الجائزة بنجاح",
+      "awardSaveFailed": "فشل حفظ الجائزة",
+      "awardDeleteFailed": "فشل حذف الجائزة"
     }
   }
 }

@@ -2,7 +2,7 @@ import Skeleton from "@/shared/components/atoms/Skeleton";
 
 export default function ProfileSkeleton() {
   return (
-    <div className=" rounded-2xl p-7 w-full w-full">
+    <div className=" rounded-2xl p-7  w-full">
       <div className="flex items-start justify-between mb-6">
         <div className="flex items-center gap-3.5">
           <Skeleton className="w-14 h-14 rounded-full" />
@@ -24,6 +24,11 @@ export default function ProfileSkeleton() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="border rounded-xl p-5">
+        <Skeleton className="h-4 w-32 mb-3" />
+        <Skeleton className="h-16 w-full" />
       </div>
 
       <div className="border rounded-xl p-5">

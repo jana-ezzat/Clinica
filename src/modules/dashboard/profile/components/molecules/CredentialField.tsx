@@ -1,11 +1,10 @@
 "use client";
-
 import { useEffect, useId, useState } from "react";
-import { ImagePlus, RefreshCw, X } from "lucide-react";
+import { ImagePlus, RefreshCw, X } from "@/assets/icons/icons";
 import { useTranslations } from "next-intl";
-
 import Text from "@/shared/components/atoms/Text";
 import Input from "@/shared/components/atoms/Input";
+import FadeImage from "../../UpdateCredential/components/molecules/FadeImage";
 
 interface CredentialItem {
   title: string;
@@ -88,7 +87,7 @@ export default function CredentialField({
       {/* Upload */}
       {preview ? (
         <div className="group relative aspect-16/8 w-full overflow-hidden rounded-xl ds-bg">
-          <img
+          <FadeImage
             src={preview}
             alt={item.file?.name ?? ""}
             className="h-full w-full object-cover"

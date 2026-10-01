@@ -1,7 +1,5 @@
 import axiosConfig from "@/services/axiosConfig";
 import { AddCredentialPayload } from "../../lib/Profile";
-
-
 export async function useCertificateRequest(data: AddCredentialPayload) {
   const formData = new FormData();
 

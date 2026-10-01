@@ -1,17 +1,20 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 import { UpdateData, UserProfile } from "../lib/Profile";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { useProfileForm } from "./useProfileForm";
 import { useProfileImage } from "./useProfileImage";
 import { useCredentials } from "./useCredentials";
 import { UpdateRequest } from "./Requests/useUpdateRequest";
-import { useState } from "react";
 
 export function useEditProfile(data?: UserProfile) {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const t = useTranslations("profile");
 
   const { register, handleSubmit, reset, errors } = useProfileForm(data);
 
@@ -22,13 +25,13 @@ export function useEditProfile(data?: UserProfile) {
     handleImageDelete,
     removeImage,
   } = useProfileImage(data?.img?.url);
-  const [isSaving, setIsSaving] = useState(false);
+
   const {
     award,
     setAward,
+    awardFileError,
     certificate,
     setCertificate,
-    awardFileError,
     certificateError,
     validateCredentials,
     submitCredentials,
@@ -38,27 +41,32 @@ export function useEditProfile(data?: UserProfile) {
     mutationFn: UpdateRequest,
   });
 
+  useEffect(() => {
+    router.prefetch("/dashboard/profile");
+  }, [router]);
+
+  const [isSaving, setIsSaving] = useState(false);
+
   const handleUpdateProfile = async (values: UpdateData) => {
-    const isValid = validateCredentials();
+    if (!validateCredentials()) return;
+
     setIsSaving(true);
+
     try {
-      if (!isValid) return;
-
-      // Update profile
-      await mutateAsync({
-        ...values,
-        img: imageFile,
-        removeImage,
-      });
-
-      await submitCredentials();
-      await Promise.all([
-        queryClient.refetchQueries({ queryKey: ["user-profile"], type: "all" }),
-        queryClient.refetchQueries({ queryKey: ["Awards"], type: "all" }),
-        queryClient.refetchQueries({ queryKey: ["Certificate"], type: "all" }),
+      const [updatedProfile] = await Promise.all([
+        mutateAsync({ ...values, img: imageFile, removeImage }),
+        submitCredentials(),
       ]);
+
+      queryClient.setQueryData(["user-profile"], updatedProfile);
+      queryClient.invalidateQueries({ queryKey: ["Awards"] });
+      queryClient.invalidateQueries({ queryKey: ["Certificate"] });
+
+
+      toast.success(t("toast.profileUpdated"));
       router.push("/dashboard/profile");
     } catch (error) {
+      toast.error(t("toast.profileUpdateFailed"));
       setIsSaving(false);
       throw error;
     }

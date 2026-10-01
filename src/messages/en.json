@@ -587,7 +587,8 @@
           "check-up": "Check-up",
           "consultation": "Consultation",
           "follow-up": "Follow-up",
-          "emergency": "Emergency"
+          "emergency": "Emergency",
+          "other": "Other"
         },
         "durations": {
           "15": "15 minutes",
@@ -597,6 +598,24 @@
         "notes": "Additional Notes",
         "notesPlaceholder": "Any additional notes or details about the appointment..."
       }
+    },
+    "editAppointment": {
+      "title": "Edit Appointment",
+      "date": "Appointment Date",
+      "time": "Time",
+      "type": "Appointment Type",
+      "status": "Status",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "required": "This field is required"
+    },
+    "bookingTypes": {
+      "check-up": "Check-up",
+      "consultation": "Consultation",
+      "follow-up": "Follow-up",
+      "emergency": "Emergency",
+      "other": "Other"
     }
   },
   "MedicalFile": {
@@ -666,6 +685,12 @@
       "bookingDate": "Booking Date",
       "export": "Export as PDF"
     },
+    "toasts": {
+      "updateSuccess": "Appointment updated successfully",
+      "updateError": "Could not update the appointment",
+      "deleteSuccess": "Appointment deleted",
+      "deleteError": "Could not delete the appointment"
+    },
     "bookingTypes": {
       "check-up": "Check-up",
       "consultation": "Consultation",
@@ -673,9 +698,11 @@
       "emergency": "Emergency"
     },
     "statuses": {
+      "pending": "Pending",
       "confirmed": "Confirmed",
+      "completed": "Completed",
       "cancelled": "Cancelled",
-      "pending": "Pending"
+      "no-show": "No-show"
     },
     "table": {
       "name": "Name",
@@ -896,6 +923,23 @@
     "Reload": {
       "error": "Failed to load Profile",
       "retry": "Retry"
+    },
+    "toast": {
+      "profileUpdated": "Profile updated successfully",
+      "profileUpdateFailed": "Failed to update profile",
+      "photoUpdated": "Profile photo updated successfully",
+      "photoDeleted": "Profile photo deleted successfully",
+      "photoDeleteFailed": "Failed to delete profile photo",
+      "certificateAdded": "Certificate added successfully",
+      "certificateUpdated": "Certificate updated successfully",
+      "certificateDeleted": "Certificate deleted successfully",
+      "certificateSaveFailed": "Failed to save certificate",
+      "certificateDeleteFailed": "Failed to delete certificate",
+      "awardAdded": "Award added successfully",
+      "awardUpdated": "Award updated successfully",
+      "awardDeleted": "Award deleted successfully",
+      "awardSaveFailed": "Failed to save award",
+      "awardDeleteFailed": "Failed to delete award"
     }
   }
 }

@@ -1,11 +1,11 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, FileBadge } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Text from "@/shared/components/atoms/Text";
 import { CredentialCardProps } from "../../lib/Profile";
 import { ImageOff } from "@/assets/icons/icons";
+import FadeImage from "../../UpdateCredential/components/molecules/FadeImage";
 
 export default function CredentialCard({
   title,
@@ -48,10 +48,9 @@ export default function CredentialCard({
                 {/* Image */}
                 <div className="relative aspect-16/10 w-full shrink-0 overflow-hidden rounded-lg bg-gray-200 sm:w-56">
                   {item.file ? (
-                    <Image
+                    <FadeImage
                       src={item.file}
                       alt={item.title || "Credential"}
-                      fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (

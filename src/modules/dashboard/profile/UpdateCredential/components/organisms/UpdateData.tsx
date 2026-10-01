@@ -1,41 +1,24 @@
 "use client";
-
 import { useEffect, useId } from "react";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
-
 import Text from "@/shared/components/atoms/Text";
-
 import { useCredentialId } from "../../../hooks/Queries/useCredentialId";
-import {
-  EditCredentialProvider,
-  useEditCredentialContext,
-} from "../../../context/EditCredintalContext";
-import { CredentialType } from "../../../lib/UpdataData";
-
+import { FormValues, Props } from "../../../lib/UpdataData";
 import UpdateDataSkeleton from "../molecules/UpdateDataSkeleton";
 import EditCredentialHeader from "../molecules/EditCredentialHeader";
 import CredentialImageEditor from "../molecules/CredentialImageEditor";
 import UpdateDataInputs from "../molecules/UpdateDataInputs";
-
 import ButtonsAction from "../../../components/molecules/ButtonsAction";
 import { useDeleteCredential } from "../../../hooks/useDeleteCredential";
+import { useEditCredential } from "../../../hooks/Queries/useEditCredential";
+import Reload from "@/shared/components/molecules/Reload";
 
-interface Props {
-  type: CredentialType;
-  id: string;
-}
-
-interface FormValues {
-  title: string;
-  desc: string;
-}
-
-function GetUploadData({ type, id }: Props) {
+export default function UpdateData({ type, id }: Props) {
   const t = useTranslations("profile");
   const fileId = useId();
 
-  const { data, isLoading, isError } = useCredentialId(type, id);
+  const { data, isLoading, isError, refetch } = useCredentialId(type, id);
 
   const { register, reset, handleSubmit } = useForm<FormValues>({
     defaultValues: {
@@ -47,20 +30,16 @@ function GetUploadData({ type, id }: Props) {
   const {
     isEdit,
     handleEdit,
-
     preview,
     selectedFile,
     removedImage,
-
     handlePickImage,
     handleRemoveImage,
     handleCancel,
-
     handleSave,
-
     isSaving,
     error,
-  } = useEditCredentialContext();
+  } = useEditCredential();
 
   const {
     deletingAwardId,
@@ -83,7 +62,13 @@ function GetUploadData({ type, id }: Props) {
   }
 
   if (isError || !data) {
-    return <div className="p-6">{t("Reload.error")}</div>;
+    return (
+      <Reload
+        error={t("Reload.error")}
+        retry={t("Reload.retry")}
+        onRetry={refetch}
+      />
+    );
   }
 
   const heading = type === "awards" ? t("awards") : t("certificates");
@@ -101,7 +86,6 @@ function GetUploadData({ type, id }: Props) {
     }
 
     await handleDeleteCertificate(data);
-    
   };
 
   const imageSrc = preview ?? (!removedImage ? data.file : null);
@@ -128,30 +112,27 @@ function GetUploadData({ type, id }: Props) {
 
   return (
     <div className="flex w-full flex-col gap-6 p-6">
-      {/* Header */}
-
-      <div className="flex items-center justify-between">
-        <Text size="xl" variant="primary" className="font-bold">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <Text size="xl" variant="primary" className="min-w-0 font-bold">
           {t("Edit")} · {heading}
         </Text>
 
-        <EditCredentialHeader
-          label={t("Edit")}
-          onClick={handleEdit}
-          onDelete={handleDelete}
-          disabled={isEdit || isSaving || isDeleting}
-          deleteText={isDeleting ? t("Deleting") : t("Delete")}
-        />
+        <div className="shrink-0">
+          <EditCredentialHeader
+            label={t("Edit")}
+            onClick={handleEdit}
+            onDelete={handleDelete}
+            disabled={isEdit || isSaving || isDeleting}
+            deleteText={isDeleting ? t("Deleting") : t("Delete")}
+          />
+        </div>
       </div>
 
       {/* Form */}
-
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="ds-bg-card ds-shadow-sm flex w-full flex-col gap-6 rounded-xl p-6"
       >
-        {/* Image */}
-
         <CredentialImageEditor
           imageSrc={imageSrc}
           title={data.title}
@@ -164,7 +145,6 @@ function GetUploadData({ type, id }: Props) {
         />
 
         {/* Title */}
-
         <UpdateDataInputs
           isEdit={isEdit && !isSaving}
           name="title"
@@ -173,7 +153,6 @@ function GetUploadData({ type, id }: Props) {
         />
 
         {/* Description */}
-
         <UpdateDataInputs
           isEdit={isEdit && !isSaving}
           name="desc"
@@ -193,13 +172,5 @@ function GetUploadData({ type, id }: Props) {
         )}
       </form>
     </div>
-  );
-}
-
-export default function UpdateData({ type, id }: Props) {
-  return (
-    <EditCredentialProvider>
-      <GetUploadData type={type} id={id} />
-    </EditCredentialProvider>
   );
 }

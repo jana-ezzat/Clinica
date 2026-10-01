@@ -9,6 +9,7 @@ import { Cairo, Inter } from "next/font/google";
 import { cn } from "@/lib/cn";
 import QueryProvider from "@/providers/QueryProvider";
 import { Metadata } from "next";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -62,16 +63,15 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={cn("font-sans", inter.variable, cairo.variable)}
-    >
+      className={cn("font-sans", inter.variable, cairo.variable)}>
       <body>
         <QueryProvider>
           <ThemeProvider
             attribute="data-theme"
             defaultTheme="light"
-            enableSystem={false}
-          >
+            enableSystem={false}>
             <NextIntlClientProvider messages={clientMessages}>
+              <Toaster position="top-left" richColors />
               {children}
               <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
             </NextIntlClientProvider>

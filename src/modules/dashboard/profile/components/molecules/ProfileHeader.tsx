@@ -1,11 +1,10 @@
 "use client";
-import Image from "next/image";
-import { Pencil } from "lucide-react";
+import { Pencil } from "@/assets/icons/icons";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import Text from "@/shared/components/atoms/Text";
-import Avatar from "./Avatar";
 import { ProfileImage } from "../../lib/Profile";
+import FadeProfileImage from "./FadeProfileImage";
 
 interface Props {
   name: string;
@@ -19,7 +18,7 @@ export default function ProfileHeader({ name, role, img }: Props) {
 
   return (
     <div className="mb-2 flex items-center gap-5 border-b border-gray-200 pb-8 dark:border-gray-700 sm:gap-7">
-      <Avatar
+      <FadeProfileImage
         src={img?.url}
         name={name}
         className="h-32 w-32 text-4xl ring-2 ring-blue-500 ring-offset-4 ring-offset-white dark:ring-offset-gray-900"

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { User } from "lucide-react";
+import { User } from "@/assets/icons/icons";
 
 interface Props {
   src?: string | null;

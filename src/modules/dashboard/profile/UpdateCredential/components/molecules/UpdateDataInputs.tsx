@@ -13,7 +13,6 @@ interface Props {
   isEdit: boolean;
   register: UseFormRegister<FormValues>;
 }
-
 const UpdateDataInputs = ({ title, name, isEdit, register }: Props) => {
   return (
     <div className="flex flex-col gap-2">

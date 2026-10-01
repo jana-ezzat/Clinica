@@ -14,11 +14,13 @@ import {
   AppointmentFormValues,
   AppointmentFormOutput,
   AppointmentModalSchema,
-} from "@/shared/schema/AppointmentModalSechma";
+} from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 
 import { ageToDateOfBirth } from "@/lib/utils";
 import useCreatePatient from "@/modules/dashboard/patients/hooks/useCreatePatient";
-import useCreateAppointment, { getCurrentDoctorId } from "@/modules/dashboard/appointments/hooks/useCreateAppointments";
+import useCreateAppointment, {
+  getCurrentDoctorId,
+} from "@/modules/dashboard/appointments/hooks/useCreateAppointments";
 
 interface Props {
   isOpen: boolean;

@@ -1,18 +1,12 @@
-import Image from "next/image";
-import {
-  ImageOff,
-  ImagePlus,
-  Trash2,
-} from "lucide-react";
+import { ImageOff, ImagePlus, Trash2 } from "@/assets/icons/icons";
+import FadeImage from "./FadeImage";
 
 interface Props {
   imageSrc: string | null;
   title: string;
   isEdit: boolean;
   fileId: string;
-  onPickImage: (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => void;
+  onPickImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onRemoveImage: () => void;
   changeImageText: string;
   removeImageText: string;
@@ -31,12 +25,9 @@ export default function CredentialImageEditor({
   if (imageSrc) {
     return (
       <div className="relative h-52 w-full max-w-md overflow-hidden rounded-xl bg-gray-100">
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          className="object-cover"
-        />
+        <div className="relative h-52 w-full max-w-md overflow-hidden rounded-xl bg-gray-100">
+          <FadeImage src={imageSrc} alt={title} className="object-cover" />
+        </div>
 
         {isEdit && (
           <div className="absolute inset-e-3 bottom-3 flex gap-2">
@@ -72,10 +63,7 @@ export default function CredentialImageEditor({
 
   return (
     <div className="relative flex h-40 w-full max-w-md items-center justify-center rounded-xl bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-800">
-      <ImageOff
-        size={30}
-        className="text-blue-400"
-      />
+      <ImageOff size={30} className="text-blue-400" />
 
       {isEdit && (
         <>
