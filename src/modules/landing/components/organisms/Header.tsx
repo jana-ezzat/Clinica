@@ -1,8 +1,12 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 import { ThemeToggle } from "@/shared/components/ThemeButton";
 import NavLink from "@/shared/components/atoms/navbar/NavLink";
 import Logo from "@/shared/components/atoms/Logo";
+import { useAuth } from "@/shared/hooks/useAuth";
+import ProfileDropdown from "@/modules/dashboard/components/molecules/ProfileDropdown";
 import NavAuthActions from "@/shared/components/atoms/navbar/NavAuthActions";
 
 const NAV_ITEMS = [
@@ -12,8 +16,9 @@ const NAV_ITEMS = [
   { key: "faq", href: "#faq" },
 ] as const;
 
-export default async function Header() {
-  const t = await getTranslations("nav");
+export default function Header() {
+  const t = useTranslations("nav");
+  const { isAuthenticated } = useAuth();
 
   return (
     <header className="ds-bg-card ds-shadow sticky top-0 z-50">
@@ -30,7 +35,14 @@ export default async function Header() {
 
         <div className="flex items-center gap-6">
           <ThemeToggle />
-          <NavAuthActions loginLabel={t("login")} ctaLabel={t("cta")} />
+
+          {isAuthenticated ? (
+            <ProfileDropdown />
+          ) : (
+            <>
+              <NavAuthActions loginLabel={t("login")} ctaLabel={t("cta")} />
+            </>
+          )}
         </div>
       </div>
     </header>

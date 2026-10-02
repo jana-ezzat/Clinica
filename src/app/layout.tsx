@@ -52,6 +52,8 @@ export default async function RootLayout({
     "Invoice",
     "appointments",
     "settings",
+    "nav",
+    "profile"
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -69,7 +71,7 @@ export default async function RootLayout({
             defaultTheme="light"
             enableSystem={false}>
             <NextIntlClientProvider messages={clientMessages}>
-              <Toaster position="top-center" richColors />
+              <Toaster position="top-left" richColors />
               {children}
               <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
             </NextIntlClientProvider>

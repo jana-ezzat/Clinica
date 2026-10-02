@@ -359,6 +359,7 @@
       "appointments": "Appointments",
       "invoices": "Invoices",
       "reports": "Reports",
+      "profile": "profile ",
       "settings": "Settings",
       "logout": "Log out"
     },
@@ -854,6 +855,116 @@
           "followUp": "Follow-up"
         }
       }
+    }
+  },
+  "settings": {
+    "pageTitle": "Clinica Settings",
+    "basicInfo": {
+      "title": "Basic Information",
+      "clinicName": "Clinic Name",
+      "clinicNamePlaceholder": "Clinic name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter phone number"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saving": "Saving..."
+    },
+    "logo": {
+      "title": "Logo",
+      "upload": "Upload Logo"
+    },
+    "address": {
+      "title": "Clinic Address",
+      "placeholder": "Enter clinic address"
+    },
+    "workHours": {
+      "title": "Work Hours",
+      "daysLabel": "Work Days",
+      "timesLabel": "Work Times",
+      "from": "From",
+      "to": "To",
+      "addSlot": "+ Add another time slot",
+      "days": {
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday"
+      }
+    },
+    "payment": {
+      "title": "Payment Settings",
+      "methodsLabel": "Available Payment Methods",
+      "cash": "Cash",
+      "card": "Visa",
+      "bank_transfer": "bank transfer",
+      "taxLabel": "Tax Percentage %"
+    },
+    "rules": {
+      "title": "Appointment Rules",
+      "defaultDuration": "Default Session Duration",
+      "maxPerDay": "Max Appointments Per Day",
+      "cancelWindow": "Cancellation Window (hours)"
+    },
+    "Reload": {
+      "error": "Failed to load settings",
+      "retry": "Retry"
+    }
+  },
+  "profile": {
+    "editProfile": "Edit Profile",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "personalData": "Personal Data",
+    "certificatesAwards": "Certificates & Awards",
+    "noCertificatesYet": "No certificates or awards yet",
+    "changePhoto": "Change Photo",
+    "certificates": "Certificates",
+    "awards": "Awards",
+    "certificateTitle": "Certificate title",
+    "awardTitle": "Award title",
+    "addCertificate": "Add Another Certificate",
+    "descLabelaward": "Description Award",
+    "descLabelCertification": "Description Certification",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "deletePhoto": "Delete photo",
+    "NoItems": "No items yet",
+    "Delete": "Delete",
+    "Deleting": "Deleting...",
+    "Edit": "Edit",
+    "UploadImage": "Upload an image",
+    "DragOrClick": "Drag an image here or click to browse",
+    "ChangeImage": "Change",
+    "Remove": "Remove",
+    "title": "Title",
+    "description": "Description",
+    "Reload": {
+      "error": "Failed to load Profile",
+      "retry": "Retry"
+    },
+    "toast": {
+      "profileUpdated": "Profile updated successfully",
+      "profileUpdateFailed": "Failed to update profile",
+      "photoUpdated": "Profile photo updated successfully",
+      "photoDeleted": "Profile photo deleted successfully",
+      "photoDeleteFailed": "Failed to delete profile photo",
+      "certificateAdded": "Certificate added successfully",
+      "certificateUpdated": "Certificate updated successfully",
+      "certificateDeleted": "Certificate deleted successfully",
+      "certificateSaveFailed": "Failed to save certificate",
+      "certificateDeleteFailed": "Failed to delete certificate",
+      "awardAdded": "Award added successfully",
+      "awardUpdated": "Award updated successfully",
+      "awardDeleted": "Award deleted successfully",
+      "awardSaveFailed": "Failed to save award",
+      "awardDeleteFailed": "Failed to delete award"
     }
   }
 }

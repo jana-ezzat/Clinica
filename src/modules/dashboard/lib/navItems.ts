@@ -6,6 +6,7 @@ import {
   MdOutlineReceiptLong,
   MdOutlineShowChart,
   MdOutlineSettings,
+  MdPerson,
 } from "react-icons/md";
 import type { IconType } from "react-icons";
 
@@ -36,6 +37,12 @@ export const navItems: NavItem[] = [
     icon: MdOutlineReceiptLong,
   },
   { labelKey: "reports", href: "/dashboard/reports", icon: MdOutlineShowChart },
+
+  {
+    labelKey: "profile",
+    href: "/dashboard/profile",
+    icon: MdPerson,
+  },
   {
     labelKey: "settings",
     href: "/dashboard/settings",
