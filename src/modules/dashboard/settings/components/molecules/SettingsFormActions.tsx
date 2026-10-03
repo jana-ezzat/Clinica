@@ -6,25 +6,34 @@ import { useSettingsEdit } from "../../context/SettingEdit";
 interface Props {
   onCancel: () => void;
   isSaving?: boolean;
+  isDirty?: boolean;
 }
-const SettingsFormActions = ({ onCancel, isSaving }: Props) => {
+const SettingsFormActions = ({ onCancel, isSaving ,isDirty}: Props) => {
   const t = useTranslations("settings.actions");
-  const { isEditing } = useSettingsEdit();
-  if (!isEditing) return null;
+  const { isEditing, setIsEditing } = useSettingsEdit();
+
   return (
-    <div className="flex   gap-4">
-      <Button variant="primary" type="submit" disabled={isSaving}>
-        {isSaving ? t("saving") : t("save")}
-      </Button>
-      <Button
-        variant="ghost"
-        type="button"
-        onClick={onCancel}
-        className="text-red-500 text-sm"
-      >
-        {t("cancel")}
-      </Button>
-    </div>
+    <>
+      {isEditing && (
+        <div className="flex   gap-4">
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={isSaving || !isDirty}
+          >
+            {isSaving ? t("saving") : t("save")}
+          </Button>
+          <Button
+            variant="ghost"
+            type="button"
+            onClick={onCancel}
+            className="text-red-500 text-sm"
+          >
+            {t("cancel")}
+          </Button>
+        </div>
+      )}
+    </>
   );
 };
 

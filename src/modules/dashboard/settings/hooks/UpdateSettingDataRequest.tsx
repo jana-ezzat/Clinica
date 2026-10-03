@@ -1,7 +1,11 @@
 import axiosConfig from "@/services/axiosConfig";
-import { ClinicSettingsForm } from "../lib/SettingData";
 
-export async function UpdateSettingData(payload: Partial<ClinicSettingsForm>) {
-  const res = await axiosConfig.put("settings", payload);
+export async function UpdateSettingData(formData: FormData) {
+  const res = await axiosConfig.put("settings", formData, {
+    headers: {
+      "Content-Type": undefined,
+    },
+  });
+
   return res.data;
 }
