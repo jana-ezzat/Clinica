@@ -2,11 +2,16 @@ export interface TimeSlot {
   start: string;
   end: string;
 }
+interface logo {
+  url: string | null;
+  public_id: string;
+}
 
 export interface ClinicSettingsForm {
   clinicName: string;
   phone: string;
   email: string;
+  logo: logo;
   address: string;
   workingDays: string[];
   workingHours: TimeSlot;
@@ -25,6 +30,7 @@ export interface ClinicSettingsResponse {
     phone: string;
     email: string;
     address: string;
+    logo: logo;
     workingDays: string[];
     workingHours: {
       start: string;
@@ -35,8 +41,6 @@ export interface ClinicSettingsResponse {
     appointmentDuration: number;
     maxAdvanceBookingDays: number;
     minAdvanceBookingHours: number;
-    createdAt: string;
-    updatedAt: string;
   };
 }
 

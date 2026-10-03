@@ -31,9 +31,6 @@ export default function EditCredentialHeader({
 
   return (
     <div className="flex w-full items-center gap-2 sm:w-auto sm:gap-3">
-      {/* Back */}
-    
-
       {/* Edit */}
       <button
         type="button"
@@ -50,7 +47,7 @@ export default function EditCredentialHeader({
         type="button"
         onClick={handleDelete}
         disabled={disabled}
-        className="order-2 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-red-50 px-3 text-sm font-medium text-red-600 transition-colors hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20 sm:order-2 sm:px-4"
+        className="order-2 cursor-pointer inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-red-50 px-3 text-sm font-medium text-red-600 transition-colors hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20 sm:order-2 sm:px-4"
       >
         <Trash size={15} />
         {deleteText}

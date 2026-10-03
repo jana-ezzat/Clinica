@@ -29,6 +29,9 @@ const ClinicSettingsContent = () => {
     isSaving,
     resetForm,
     refetch,
+    data,
+    setLogo,
+    isDirty,
   } = useClinicSettingsForm();
 
   if (isLoading) {
@@ -71,6 +74,8 @@ const ClinicSettingsContent = () => {
             label={t("logo.title")}
             uploadLabel={t("logo.upload")}
             disabled={!isEditing}
+            logo={data?.logo.url}
+            onFileChange={setLogo}
           />
 
           <SettingsField
@@ -90,9 +95,14 @@ const ClinicSettingsContent = () => {
 
         <SettingsFormActions
           isSaving={isSaving}
+          isDirty={isDirty}
           onCancel={() => {
             resetForm();
             setIsEditing(false);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         />
       </form>

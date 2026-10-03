@@ -913,6 +913,10 @@
     "Reload": {
       "error": "Failed to load settings",
       "retry": "Retry"
+    },
+    "toast": {
+      "success": "Settings updated successfully",
+      "error": "Failed to update settings"
     }
   },
   "profile": {
