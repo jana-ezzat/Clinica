@@ -11,6 +11,10 @@ const axiosConfig = axios.create({
 
 axiosConfig.interceptors.request.use(
   (config) => {
+    if (typeof FormData !== "undefined" && config.data instanceof FormData) {
+      delete config.headers["Content-Type"];
+    }
+
     const isChangePassword = config.url?.includes("auth/changePassword");
 
     const token = isChangePassword

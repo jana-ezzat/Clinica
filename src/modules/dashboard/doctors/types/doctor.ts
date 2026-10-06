@@ -24,16 +24,17 @@ export type DoctorReservation = {
 export type DoctorProfile = {
   id: string;
   name: string;
+  role: string;
   specialty: string;
-  avatarUrl: string;
-  isOnline: boolean;
+  image: string;
+  // isOnline: boolean;
   age: number;
-  gender: DoctorGender;
+  gender?: DoctorGender;
   phone: string;
   email: string;
   clinicAddress: string;
-  workHours: string;
-  yearsOfExperience: number;
+  workingHours: string;
+  experienceYears: number;
   bio: string;
   certificates: DoctorCredential[];
   awards: DoctorCredential[];

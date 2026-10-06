@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Mail, ShieldCheck } from "@/assets/icons/icons";
 import ProfileHeader from "../molecules/ProfileHeader";
 import ProfileInfoCard from "../molecules/ProfileInfoCard";
-import ProfileSkeleton from "../molecules/ProfileSkeleton";
+import ProfileSkeleton from "@/shared/components/skeletons/ProfileSkeleton";
 import CredentialCard from "../molecules/CredentialCard";
 import Reload from "@/shared/components/molecules/Reload";
 import { useProfile } from "../../hooks/Queries/useProfile";

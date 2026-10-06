@@ -2,7 +2,6 @@
   "common": {
     "of": "من"
   },
-
   "nav": {
     "features": "المميزات",
     "pricing": "الأسعار",
@@ -820,7 +819,8 @@
       },
       "gender": {
         "male": "ذكر",
-        "female": "أنثى"
+        "female": "أنثى",
+        "unspecified": "غير محدد"
       },
       "experience": {
         "title": "الخبرة والسيرة الذاتية",
@@ -868,7 +868,6 @@
       "title": "عنوان العيادة",
       "placeholder": "أدخل عنوان العيادة"
     },
-
     "actions": {
       "cancel": "إلغاء",
       "save": "حفظ التغييرات",
@@ -909,7 +908,7 @@
       "error": "تعذر تحميل الإعدادات",
       "retry": "إعادة المحاولة"
     },
-     "toast": {
+    "toast": {
       "success": "تم تحديث الإعدادات بنجاح",
       "error": "فشل تحديث الإعدادات"
     }
@@ -964,6 +963,75 @@
       "awardDeleted": "تم حذف الجائزة بنجاح",
       "awardSaveFailed": "فشل حفظ الجائزة",
       "awardDeleteFailed": "فشل حذف الجائزة"
+    }
+  },
+  "doctorsList": {
+    "title": "الأطباء",
+    "columns": {
+      "name": "الطبيب",
+      "specialty": "التخصص",
+      "experience": "سنوات الخبرة",
+      "phone": "رقم الهاتف",
+      "email": "البريد الإلكتروني"
+    },
+    "loading": "جاري تحميل الأطباء...",
+    "loadError": "حدث خطأ أثناء تحميل بيانات الأطباء.",
+    "retry": "إعادة المحاولة",
+    "emptyTitle": "لا يوجد أطباء",
+    "emptyDescription": "لم يتم العثور على أي أطباء.",
+    "noData": "—",
+    "experienceYears": "{count} سنوات"
+  },
+  "doctorProfile": {
+    "notFound": "الطبيب غير موجود",
+    "retry": "إعادة المحاولة",
+    "editProfile": "تعديل الملف الشخصي",
+    "addAppointment": "إضافة موعد جديد",
+    "onlineNow": "متصل الآن",
+    "offline": "غير متصل",
+    "personalData": {
+      "title": "البيانات الشخصية",
+      "age": "العمر",
+      "gender": "النوع",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "clinicAddress": "عنوان العيادة",
+      "workingHours": "ساعات العمل"
+    },
+    "gender": {
+      "male": "ذكر",
+      "female": "أنثى",
+      "unspecified": "غير محدد"
+    },
+    "experience": {
+      "title": "الخبرة والسيرة الذاتية",
+      "yearsOfExperience": "سنوات الخبرة",
+      "certificates": "الشهادات",
+      "awards": "الجوائز"
+    },
+    "editDialog": {
+      "title": "تعديل ملف الطبيب",
+      "description": "حدّث اسم الطبيب والبريد الإلكتروني والدور والصورة.",
+      "name": "الاسم",
+      "namePlaceholder": "اسم الطبيب",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "email@example.com",
+      "role": "الدور",
+      "changePhoto": "تغيير الصورة",
+      "removePhoto": "حذف الصورة",
+      "cancel": "إلغاء",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "أدخل بريداً إلكترونياً صالحاً",
+      "updateSuccess": "تم تحديث بيانات الطبيب بنجاح",
+      "updateError": "تعذر تحديث بيانات الطبيب",
+      "roles": {
+        "doctor": "طبيب",
+        "receptionist": "موظف استقبال",
+        "accountant": "محاسب",
+        "nurse": "ممرض"
+      }
     }
   }
 }

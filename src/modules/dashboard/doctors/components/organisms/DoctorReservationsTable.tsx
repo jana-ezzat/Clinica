@@ -1,3 +1,4 @@
+// src/modules/dashboard/doctors/components/organisms/DoctorReservationsTable.tsx
 "use client";
 
 import { useState } from "react";
