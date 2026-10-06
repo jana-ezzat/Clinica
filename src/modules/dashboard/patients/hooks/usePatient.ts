@@ -47,10 +47,12 @@ export interface PatientDetails extends Patient {
   updatedAt?: string;
 }
 
-
 interface PatientResponse {
   status: string;
-  data: { patient: BackendPatient };
+
+  data: {
+    patient: BackendPatient;
+  };
 }
 
 interface BackendPatient {

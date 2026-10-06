@@ -15,7 +15,13 @@ export interface Patient {
 interface PatientsResponse {
   status: string;
   results: number;
+<<<<<<< HEAD
   data: { patients: BackendPatient[] };
+=======
+  data: {
+    patients: BackendPatient[];
+  };
+>>>>>>> 3f5842c15fa5131b3efbec54010ab5d85ba6378a
 }
 
 interface BackendPatient {
