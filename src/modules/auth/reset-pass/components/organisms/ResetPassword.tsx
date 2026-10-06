@@ -14,8 +14,16 @@ import useResetPassword from "@/modules/auth/hooks/useRestPassword";
 const ResetPassword = () => {
   const t = useTranslations("resetpassword");
   const c = useTranslations("resetpassword.commonAuth");
-  const { register, handleSubmit, errors, success, router } =
-    useResetPassword();
+  const Loading = useTranslations("forgetpassword");
+  const {
+    register,
+    handleSubmit,
+    errors,
+    success,
+    router,
+    apiError,
+    isPending,
+  } = useResetPassword();
   return (
     <div className="flex w-full flex-col items-center">
       <FormCard>
@@ -32,9 +40,10 @@ const ResetPassword = () => {
             placeholder={t("placeholder")}
             type="password"
             error={
-              errors.password?.message && t(`error.${errors.password.message}`)
+              errors.newPassword?.message &&
+              t(`error.${errors.newPassword.message}`)
             }
-            {...register("password")}
+            {...register("newPassword")}
           />
 
           <PasswordFelids
@@ -49,8 +58,15 @@ const ResetPassword = () => {
             {...register("confirmPassword")}
           />
 
-          <Button variant="primary" className="w-full mt-4" type="submit">
-            {t("btn")}
+          {apiError && <p className="text-red-500 text-sm">{apiError}</p>}
+
+          <Button
+            variant="primary"
+            className="w-full mt-4"
+            type="submit"
+            disabled={isPending}
+          >
+            {isPending ? Loading("btnLoading") : t("btn")}
           </Button>
           <LoginLink>{c("loginLink")}</LoginLink>
         </form>

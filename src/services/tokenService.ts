@@ -1,18 +1,22 @@
-// src/services/tokenService.ts
+import Cookies from "js-cookie";
+
 const TOKEN_KEY = "auth_token";
 
 export const tokenService = {
   get(): string | null {
-    if (typeof window === "undefined") return null;
-    return localStorage.getItem(TOKEN_KEY);
+    return Cookies.get(TOKEN_KEY) || null;
   },
 
   set(token: string): void {
-    localStorage.setItem(TOKEN_KEY, token);
+    Cookies.set(TOKEN_KEY, token, {
+      expires: 7,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
   },
 
   clear(): void {
-    localStorage.removeItem(TOKEN_KEY);
+    Cookies.remove(TOKEN_KEY);
   },
 
   isAuthenticated(): boolean {

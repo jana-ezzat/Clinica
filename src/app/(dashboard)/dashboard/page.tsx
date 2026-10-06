@@ -1,5 +1,5 @@
-import DashboardHome from "@/modules/dashboard/components/organisms/DashboardHome";
+import DashboardHomeTemplate from "@/modules/dashboard/templates/DashboardHomeTemplate";
 
 export default function DashboardPage() {
-  return <DashboardHome />;
+  return <DashboardHomeTemplate />;
 }

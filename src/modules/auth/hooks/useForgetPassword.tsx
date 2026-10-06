@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,25 +8,48 @@ import {
   ForgetPasswordValues,
 } from "../schema/ForgetPasswordSechma";
 import { useModal } from "./useModal";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
+import { forgetPasswordRequest } from "./useForgetPasswordRequest";
+import Cookies from "js-cookie";
 
 export const useForgetPassword = () => {
-  const [success, setSuccess] = useState(false);
   const [submitemail, setSubmitemail] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
-
-  useModal(success, "/otp", 3000);
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<ForgetPasswordValues>({
     resolver: zodResolver(forgetPasswordSchema),
   });
 
+  const { mutateAsync, isPending: isSubmitting } = useApiMutation<
+    string,
+    ForgetPasswordValues
+  >({
+    mutationFn: forgetPasswordRequest,
+  });
+
+  useModal(success, "/otp", 3000);
+
+  //Submit
   const Submit = async (data: ForgetPasswordValues) => {
-    setSubmitemail(data.email);
-    setSuccess(true);
+    try {
+      await mutateAsync(data.email);
+      setSubmitemail(data.email);
+      Cookies.set("reset_email", data.email, {
+        expires: 30 / (24 * 60),
+        sameSite: "strict",
+      });
+      setSuccess(true);
+    } catch (error: any) {
+      setApiError(
+        error?.response?.data?.message || "حدث خطأ ما، حاول مرة أخرى",
+      );
+    }
   };
 
   return {
@@ -36,6 +60,7 @@ export const useForgetPassword = () => {
     success,
     router,
     submitemail,
+    apiError,
   };
 };
 

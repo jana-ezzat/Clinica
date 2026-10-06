@@ -16,18 +16,17 @@ export default function DashboardHeader({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-4 sm:flex-row">
-      <Button
-        variant="primary"
-        className="shrink-0"
-        onClick={() => setIsModalOpen(true)}>
-        {addAppointmentLabel}
-      </Button>
-      <WelcomeBanner doctorName={doctorName} />
-      <ModalAppointment
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </div>
+    <>
+      <div className="flex flex-col gap-10 sm:flex-row sm:items-center">
+        <WelcomeBanner doctorName={doctorName} />
+        <Button variant="primary" onClick={() => setIsModalOpen(true)}>
+          {addAppointmentLabel}
+        </Button>
+        <ModalAppointment
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </div>
+    </>
   );
 }

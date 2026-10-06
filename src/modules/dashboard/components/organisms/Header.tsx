@@ -5,17 +5,20 @@ import {
   MdSearch,
   MdOutlineFilterList,
   MdNotificationsNone,
-  MdPerson,
 } from "react-icons/md";
 import { useTranslations } from "next-intl";
 import Button from "@/shared/components/atoms/Button";
 import Input from "@/shared/components/atoms/Input";
 import { ThemeToggle } from "@/shared/components/ThemeButton";
 import { useSidebar } from "../../context/SidebarContext";
+import ProfileDropdown from "../molecules/ProfileDropdown";
+import { useAuth } from "@/shared/hooks/useAuth";
+import SignInButton from "../molecules/SignInButton";
 
 export default function Header() {
   const { openMobile } = useSidebar();
   const t = useTranslations("dashboard.header");
+  const { isAuthenticated } = useAuth();
 
   return (
     <header className="flex justify-between items-center border-b ds-border-gray ds-bg px-4 py-4 sm:px-6">
@@ -25,7 +28,8 @@ export default function Header() {
           size="icon"
           onClick={openMobile}
           aria-label="Open menu"
-          className="!p-0 md:hidden">
+          className="!p-0 md:hidden"
+        >
           <MdMenu size={26} />
         </Button>
 
@@ -36,25 +40,21 @@ export default function Header() {
           trailingIcon={<MdOutlineFilterList size={20} />}
           className="flex-1 !bg-[var(--ds-card-background)]"
         />
-
       </div>
       <div className="flex gap-4">
-
         <Button
           variant="ghost"
           size="icon"
           aria-label="Notifications"
-          className="!p-0">
+          className="!p-0"
+        >
           <MdNotificationsNone size={24} />
         </Button>
 
         <ThemeToggle />
 
-        <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full ds-bg-icon">
-          <MdPerson size={20} className="ds-text-primary" />
-        </div>
+        {isAuthenticated ? <ProfileDropdown /> : <SignInButton />}
       </div>
-
     </header>
   );
 }

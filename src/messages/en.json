@@ -218,6 +218,7 @@
     "label": "Email Address",
     "placeholder": "email@example.com",
     "btn": "Send Reset Link",
+    "btnLoading": "Sending...",
     "error": {
       "invalidEmail": "Please enter a valid email address.",
       "emailRequired": "Email is required."
@@ -253,7 +254,10 @@
       "description": "A 6-digit code has been sent to your email",
       "resend": "Resend Code",
       "btn": "Verify Code",
-      "resendIn": "Resend code in "
+      "resendIn": "Resend code in ",
+      "error": {
+        "OtpNumber": "Otp is required."
+      }
     },
     "commonAuth": {
       "loginLink": "Back to Login",
@@ -261,25 +265,59 @@
       "rememberPassword": "Remember Password?"
     }
   },
-  "signin": {
-    "title": "Welcome Back",
-    "description": "Sign in to manage your clinic, patients, and appointments",
-    "emailLabel": "Email Address",
-    "emailPlaceholder": "email@example.com",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Enter your password",
-    "forgotPassword": "Forgot Password?",
-    "btn": "Sign In",
-    "btnLoading": "Signing in...",
-    "noAccount": "Don't have an account?",
-    "signUp": "Sign Up",
+  "sign-up": {
+    "title": "Create a New Account",
+    "description": "Start your 14-day free trial",
+    "label": "Full Name",
+    "placeholder": "Ahmed Mohamed Ali",
+    "role": {
+      "label": "Job Role",
+      "placeholder": "Select job role",
+      "options": {
+        "doctor": "Doctor",
+        "receptionist": "Receptionist",
+        "accountant": "Accountant",
+        "nurse": "Nurse"
+      }
+    },
+    "specialty": {
+      "label": "Specialty",
+      "placeholder": "Select specialty"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "email@gmail.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "••••••••••••",
+      "hint": "Must be at least 8 characters"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "••••••••••••"
+    },
+    "btn": "Create Account",
+    "btnLoading": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "termsText": "By creating an account, you agree to the",
+    "termsLink": "Terms & Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
     "error": {
+      "nameRequired": "Name is required.",
+      "roleRequired": "Please select a job role.",
+      "specialtyRequired": "Specialty is required.",
       "emailRequired": "Email is required.",
       "invalidEmail": "Please enter a valid email address.",
-      "passwordRequired": "Password is required.",
-      "invalidCredentials": "Incorrect email or password.",
+      "passwordMinLength": "Password must be at least 8 characters.",
+      "passwordMaxLength": "Password must not exceed 20 characters.",
+      "confirmPasswordRequired": "Please confirm your password.",
+      "passwordNotMatch": "Passwords do not match.",
+      "emailTaken": "This email is already in use.",
       "somethingWentWrong": "Something went wrong. Please try again.",
-      "networkError": "Couldn't connect to the server. Check your connection."
+      "networkError": "Could not connect to the server. Check your connection."
     }
   },
   "sign-up": {
@@ -321,6 +359,7 @@
       "appointments": "Appointments",
       "invoices": "Invoices",
       "reports": "Reports",
+      "profile": "profile ",
       "settings": "Settings",
       "logout": "Log out"
     },
@@ -367,7 +406,8 @@
         "visitTypes": {
           "checkup": "Routine checkup",
           "followUp": "Follow-up",
-          "consultation": "Consultation"
+          "consultation": "Consultation",
+          "emergency": "Emergency"
         }
       },
       "revenueChart": {
@@ -380,6 +420,11 @@
         "subtitle": "Number of appointments per day",
         "series": "Appointments"
       },
+      "errors": {
+        "load": "Could not load the dashboard data.",
+        "retry": "Try again",
+        "partial": "Part of the data could not be loaded, some numbers may be incomplete."
+      },
       "months": {
         "jan": "January",
         "feb": "February",
@@ -387,7 +432,12 @@
         "apr": "April",
         "may": "May",
         "jun": "June",
-        "jul": "July"
+        "jul": "July",
+        "aug": "August",
+        "sep": "September",
+        "oct": "October",
+        "nov": "November",
+        "dec": "December"
       },
       "weekdays": {
         "sat": "Sat",
@@ -534,7 +584,16 @@
         "email": "Email",
         "phone": "Phone Number",
         "searchPatient": "Search Patient",
-        "searchPatientPlaceholder": "Search by patient name or file number"
+        "searchPatientPlaceholder": "Search by patient name or file number",
+        "gender": "Gender",
+        "genderOptions": {
+          "male": "Male",
+          "female": "Female"
+        },
+        "age": "Age",
+        "loading": "Loading patients...",
+        "noResults": "No results",
+        "selectRequired": "Please select a patient."
       },
       "meeting": {
         "title": "Appointment Details",
@@ -549,7 +608,11 @@
         "types": {
           "followup": "Follow-up",
           "new": "New Examination",
-          "checkup": "Periodic Check-up"
+          "checkup": "Periodic Check-up",
+          "check-up": "Check-up",
+          "consultation": "Consultation",
+          "follow-up": "Follow-up",
+          "emergency": "Emergency"
         },
         "durations": {
           "15": "15 minutes",
@@ -559,6 +622,22 @@
         "notes": "Additional Notes",
         "notesPlaceholder": "Any additional notes or details about the appointment..."
       },
+      "required": "This field is required",
+      "submitting": "Saving...",
+      "errors": {
+        "noDoctor": "Couldn't identify the doctor. Please sign in again.",
+        "somethingWentWrong": "Something went wrong. Please try again."
+      }
+    },
+    "editAppointment": {
+      "title": "Edit appointment",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving...",
+      "date": "Date",
+      "time": "Time",
+      "type": "Visit type",
+      "status": "Status",
       "required": "This field is required"
     }
   },
@@ -631,12 +710,18 @@
     "bookingTypes": {
       "checkup": "Checkup",
       "followup": "Follow-up",
-      "emergency": "Emergency"
+      "emergency": "Emergency",
+      "check-up": "Check-up",
+      "consultation": "Consultation",
+      "follow-up": "Follow-up",
+      "other": "Other"
     },
     "statuses": {
       "confirmed": "Confirmed",
       "cancelled": "Cancelled",
-      "pending": "Pending"
+      "pending": "Pending",
+      "completed": "Completed",
+      "no-show": "No-show"
     },
     "table": {
       "name": "Name",
@@ -658,6 +743,12 @@
       "confirmedToday": "Confirmed Today",
       "confirmationRate": "Confirmation Rate",
       "date": "Saturday, November 28, 2025"
+    },
+    "toasts": {
+      "updateSuccess": "Appointment updated",
+      "updateError": "Failed to update the appointment",
+      "deleteSuccess": "Appointment deleted",
+      "deleteError": "Failed to delete the appointment"
     }
   },
   "Invoice": {
@@ -764,6 +855,120 @@
           "followUp": "Follow-up"
         }
       }
+    }
+  },
+  "settings": {
+    "pageTitle": "Clinica Settings",
+    "basicInfo": {
+      "title": "Basic Information",
+      "clinicName": "Clinic Name",
+      "clinicNamePlaceholder": "Clinic name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter phone number"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saving": "Saving..."
+    },
+    "logo": {
+      "title": "Logo",
+      "upload": "Upload Logo"
+    },
+    "address": {
+      "title": "Clinic Address",
+      "placeholder": "Enter clinic address"
+    },
+    "workHours": {
+      "title": "Work Hours",
+      "daysLabel": "Work Days",
+      "timesLabel": "Work Times",
+      "from": "From",
+      "to": "To",
+      "addSlot": "+ Add another time slot",
+      "days": {
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday"
+      }
+    },
+    "payment": {
+      "title": "Payment Settings",
+      "methodsLabel": "Available Payment Methods",
+      "cash": "Cash",
+      "card": "Visa",
+      "bank_transfer": "bank transfer",
+      "taxLabel": "Tax Percentage %"
+    },
+    "rules": {
+      "title": "Appointment Rules",
+      "defaultDuration": "Default Session Duration",
+      "maxPerDay": "Max Appointments Per Day",
+      "cancelWindow": "Cancellation Window (hours)"
+    },
+    "Reload": {
+      "error": "Failed to load settings",
+      "retry": "Retry"
+    },
+    "toast": {
+      "success": "Settings updated successfully",
+      "error": "Failed to update settings"
+    }
+  },
+  "profile": {
+    "editProfile": "Edit Profile",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "personalData": "Personal Data",
+    "certificatesAwards": "Certificates & Awards",
+    "noCertificatesYet": "No certificates or awards yet",
+    "changePhoto": "Change Photo",
+    "certificates": "Certificates",
+    "awards": "Awards",
+    "certificateTitle": "Certificate title",
+    "awardTitle": "Award title",
+    "addCertificate": "Add Another Certificate",
+    "descLabelaward": "Description Award",
+    "descLabelCertification": "Description Certification",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "deletePhoto": "Delete photo",
+    "NoItems": "No items yet",
+    "Delete": "Delete",
+    "Deleting": "Deleting...",
+    "Edit": "Edit",
+    "UploadImage": "Upload an image",
+    "DragOrClick": "Drag an image here or click to browse",
+    "ChangeImage": "Change",
+    "Remove": "Remove",
+    "title": "Title",
+    "description": "Description",
+    "Reload": {
+      "error": "Failed to load Profile",
+      "retry": "Retry"
+    },
+    "toast": {
+      "profileUpdated": "Profile updated successfully",
+      "profileUpdateFailed": "Failed to update profile",
+      "photoUpdated": "Profile photo updated successfully",
+      "photoDeleted": "Profile photo deleted successfully",
+      "photoDeleteFailed": "Failed to delete profile photo",
+      "certificateAdded": "Certificate added successfully",
+      "certificateUpdated": "Certificate updated successfully",
+      "certificateDeleted": "Certificate deleted successfully",
+      "certificateSaveFailed": "Failed to save certificate",
+      "certificateDeleteFailed": "Failed to delete certificate",
+      "awardAdded": "Award added successfully",
+      "awardUpdated": "Award updated successfully",
+      "awardDeleted": "Award deleted successfully",
+      "awardSaveFailed": "Failed to save award",
+      "awardDeleteFailed": "Failed to delete award"
     }
   }
 }

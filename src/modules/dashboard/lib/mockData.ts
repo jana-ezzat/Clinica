@@ -44,7 +44,7 @@ export const statCards: StatCardData[] = [
 export type NewPatient = {
   id: string;
   name: string;
-  age: number;
+  age: number | null;
   symptoms: string;
   date: string;
 };
@@ -74,7 +74,11 @@ export const newPatients: NewPatient[] = [
 ];
 
 export type AppointmentStatus = "confirmed" | "cancelled" | "pending";
-export type VisitType = "checkup" | "followUp" | "consultation";
+export type VisitType =
+  | "checkup"
+  | "followUp"
+  | "consultation"
+  | "emergency";
 
 export type UpcomingAppointment = {
   id: string;

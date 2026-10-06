@@ -5,7 +5,7 @@ import PatientTitle from "./PatientTitle";
 import ModalField from "./ModalField";
 import Text from "@/shared/components/atoms/Text";
 import SelectFields from "./SelectFields";
-import { AppointmentFormValues } from "@/shared/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 
 interface Props {
   register: UseFormRegister<AppointmentFormValues>;
@@ -47,18 +47,10 @@ const MeetingInfo = ({ register, errors }: Props) => {
           register={register}
           error={errors.appointmentType}
           options={[
-            {
-              value: "followup",
-              label: t("types.followup"),
-            },
-            {
-              value: "new",
-              label: t("types.new"),
-            },
-            {
-              value: "checkup",
-              label: t("types.checkup"),
-            },
+            { value: "check-up", label: t("types.check-up") },
+            { value: "consultation", label: t("types.consultation") },
+            { value: "follow-up", label: t("types.follow-up") },
+            { value: "emergency", label: t("types.emergency") },
           ]}
         />
 

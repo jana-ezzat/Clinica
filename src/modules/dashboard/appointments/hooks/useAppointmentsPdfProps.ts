@@ -1,15 +1,18 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { appointmentsMockData } from "../lib/mockData";
+import useAppointments from "./useAppointments";
+import useFormattedDay from "@/shared/hooks/useFormattedDay";
 
 export function useAppointmentsPdfProps() {
   const t = useTranslations("appointments");
+  const { data: appointments } = useAppointments();
+  const todayLabel = useFormattedDay();
 
   return {
     brand: "كلينيكا",
     title: t("pageTitle"),
-    generatedOn: t("stats.date"),
-    appointments: appointmentsMockData.map((a) => ({
+    generatedOn: todayLabel ?? "",
+    appointments: (appointments ?? []).map((a) => ({
       name: a.name,
       bookingType: t(`bookingTypes.${a.bookingType}`),
       status: t(`statuses.${a.status}`),

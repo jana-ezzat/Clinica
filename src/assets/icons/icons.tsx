@@ -5,6 +5,7 @@ import {
   Calendar,
   User,
   Pencil,
+  RotateCcw,
   ChevronDown,
   ExternalLink,
   Clock9,
@@ -13,10 +14,13 @@ import {
   Disc,
   Trash,
   LogOut,
+  FileWarning,
   LayoutDashboard,
   PieChart,
   PlusSquare,
   Users,
+  Mail,
+  ShieldCheck,
   ClockCheck,
   SquarePen,
   Send,
@@ -41,11 +45,22 @@ import {
   Download,
   Printer,
   ChevronRight,
-  
+  ImageOff,
+  ImagePlus,
+  Loader2,
+  RefreshCw,
+  X,
 } from "lucide-react";
 
 import { FcGoogle } from "react-icons/fc";
-import { MdOutlineEmail, MdPersonOutline } from "react-icons/md";
+import {
+  MdOutlineEmail,
+  MdPersonOutline,
+  MdPerson,
+  MdOutlineGridView,
+  MdOutlineAccountCircle,
+  MdLogout,
+} from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { PiTelegramLogo } from "react-icons/pi";
 import { TiPencil } from "react-icons/ti";
@@ -66,10 +81,13 @@ export {
   SquarePen,
   Send,
   Lock,
+  RefreshCw,
+  X,
   ChartPie,
   ChartLine,
   LayoutDashboard,
   PieChart,
+  ImagePlus,
   ChevronDown,
   PlusSquare,
   LogOut,
@@ -77,6 +95,7 @@ export {
   List,
   Link,
   Clock9,
+  ImageOff,
   Pencil,
   ExternalLink,
   Sun,
@@ -111,6 +130,8 @@ export {
   PanelLeftOpen,
   FileText,
   LuTimer,
+  Mail,
+  ShieldCheck,
   MdPersonOutline,
   ChevronLeft,
   HiOutlineInformationCircle,
@@ -122,4 +143,11 @@ export {
   Download,
   Printer,
   ChevronRight,
+  RotateCcw,
+  MdPerson,
+  MdOutlineGridView,
+  MdOutlineAccountCircle,
+  MdLogout,
+  Loader2,
+  FileWarning,
 };
