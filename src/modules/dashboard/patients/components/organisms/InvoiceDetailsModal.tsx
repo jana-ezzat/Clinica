@@ -2,13 +2,13 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import Modal from "../molecules/Modal";
 import Title from "@/shared/components/atoms/Title";
 import Button from "@/shared/components/atoms/Button";
 import InvoiceDetailsContent from "./InvoiceDetailsContent";
-import StatusCard from "../atoms/StatusCard";
 import { useInvoice } from "../../hooks/useInvoice";
 import { useUpdateInvoice } from "../../hooks/useUpdateInvoice";
+import Modal from "@/shared/components/molecules/ModalShell";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 
 interface InvoiceDetailsModalProps {
   isOpen: boolean;

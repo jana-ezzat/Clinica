@@ -1,4 +1,3 @@
-// src/app/(dashboard)/dashboard/patients/[id]/page.tsx
 "use client";
 import { useState } from "react";
 import { useParams } from "next/navigation";
@@ -49,14 +48,13 @@ export default function PatientDetailsPage() {
 
       {activeTab === "overview" && (
         <>
-          <DataSection />
-          <MedicalFileSection />
-          <EmergencySection />
-          <InsuranceSection />
+          <DataSection patient={patient} />
+          <MedicalFileSection patient={patient} />
+          <EmergencySection patient={patient} />
+          <InsuranceSection patient={patient} />
           <LatestSection />
         </>
       )}
-
       {activeTab === "visits" && <VisitHistorySection />}
       {activeTab === "medicalFile" && <MedicalFile />}
       {activeTab === "invoices" && <InvoicesSection patientId={patient.id} />}

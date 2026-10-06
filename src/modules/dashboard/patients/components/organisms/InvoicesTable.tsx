@@ -3,7 +3,7 @@
 
 import { useTranslations } from "next-intl";
 import { Invoice } from "../../types/invoice";
-import StatusCard from "@/modules/dashboard/patients/components/atoms/StatusCard";
+import StatusCard from "@/shared/components/atoms/StatusCard";
 import InvoiceTableRow from "../molecules/InvoiceTableRow";
 interface InvoicesTableProps {
     invoices: Invoice[];

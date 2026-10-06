@@ -17,7 +17,6 @@ import {
 } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 
 import { ageToDateOfBirth } from "@/lib/utils";
-import useCreatePatient from "@/modules/dashboard/patients/hooks/useCreatePatient";
 import useCreateAppointment, {
   getCurrentDoctorId,
 } from "@/modules/dashboard/appointments/hooks/useCreateAppointments";
@@ -44,50 +43,56 @@ export default function ModalAppointment({ isOpen, onClose }: Props) {
     resolver: zodResolver(schema),
   });
 
-  const createPatient = useCreatePatient();
   const createAppointment = useCreateAppointment();
 
-  const onSubmit = async (data: AppointmentFormOutput) => {
-    setFormError(null);
+ const onSubmit = async (data: AppointmentFormOutput) => {
+   setFormError(null);
 
-    if (patientType === "existing" && !data.patientId) {
-      setFormError(t("patient.selectRequired"));
-      return;
-    }
+   if (patientType === "existing" && !data.patientId) {
+     setFormError(t("patient.selectRequired"));
+     return;
+   }
 
-    try {
-      let patientId = data.patientId;
+   try {
+     const doctorId = getCurrentDoctorId();
+     if (!doctorId) {
+       setFormError(t("errors.noDoctor"));
+       return;
+     }
 
-      if (patientType === "new") {
-        const patientRes = await createPatient.mutateAsync({
-          name: data.name,
-          phone: data.phone,
-          email: data.email || undefined,
-          gender: data.gender,
-          dateOfBirth: ageToDateOfBirth(data.age),
-        });
-        patientId = patientRes.data.patient._id;
-      }
+     const basePayload = {
+       doctor: doctorId,
+       date: data.appointmentDate,
+       startTime: data.time,
+       type: data.appointmentType,
+       duration: Number(data.duration),
+     };
 
-      const doctorId = getCurrentDoctorId();
-      if (!doctorId) {
-        setFormError(t("errors.noDoctor"));
-        return;
-      }
+     if (patientType === "existing") {
+       await createAppointment.mutateAsync({
+         ...basePayload,
+         patientType: "existing",
+         patient: data.patientId!,
+       });
+     } else {
+       await createAppointment.mutateAsync({
+         ...basePayload,
+         patientType: "new",
+         newPatient: {
+           name: data.name,
+           phone: data.phone,
+           email: data.email || undefined,
+           gender: data.gender,
+           dateOfBirth: ageToDateOfBirth(data.age),
+         },
+       });
+     }
 
-      await createAppointment.mutateAsync({
-        patient: patientId!,
-        doctor: doctorId,
-        date: data.appointmentDate,
-        startTime: data.time,
-        type: data.appointmentType,
-      });
-
-      onClose();
-    } catch (error) {
-      setFormError(t("errors.somethingWentWrong"));
-    }
-  };
+     onClose();
+   } catch (error) {
+     setFormError(t("errors.somethingWentWrong"));
+   }
+ };
 
   const handleClose = () => {
     clearErrors();

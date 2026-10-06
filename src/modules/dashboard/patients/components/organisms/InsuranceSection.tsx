@@ -1,15 +1,35 @@
 import Accordion from "../molecules/Accordion";
 import DataField from "@/shared/components/atoms/DataField";
+import type { PatientDetails } from "../../hooks/usePatient";
 
-export default function InsuranceSection() {
+interface Props {
+  patient: PatientDetails;
+}
+
+export default function InsuranceSection({ patient }: Props) {
+  const insurance = patient.insurance;
+
   return (
     <Accordion title="بيانات التأمين">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <DataField label="شركة التأمين" value="شركة التأمين الطبي الوطنية" />
-        <DataField label="رقم العضوية" value="INS-123456" />
-
-        <DataField label="نسبة التغطية" value="80%" />
-        <DataField label="تاريخ انتهاء التأمين" value="2025-12-31" />
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <DataField label="شركة التأمين" value={insurance?.company ?? "—"} />
+        <DataField label="رقم العضوية" value={insurance?.memberNumber ?? "—"} />
+        <DataField
+          label="نسبة التغطية"
+          value={
+            insurance?.coverageRatio !== undefined
+              ? `${insurance.coverageRatio}%`
+              : "—"
+          }
+        />
+        <DataField
+          label="تاريخ انتهاء التأمين"
+          value={
+            insurance?.endDate
+              ? new Date(insurance.endDate).toLocaleDateString("ar-EG")
+              : "—"
+          }
+        />
       </div>
     </Accordion>
   );

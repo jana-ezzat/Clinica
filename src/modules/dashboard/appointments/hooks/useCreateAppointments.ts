@@ -3,19 +3,42 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosConfig from "@/services/axiosConfig";
 import tokenService from "@/services/tokenService";
 import { decodeToken } from "@/lib/utils";
-
-interface CreateAppointmentPayload {
-  patient: string;
-  doctor: string;
-  date: string;
-  startTime: string;
-  type: string;
+import type { AppointmentBookingType } from "@/modules/dashboard/appointments/lib/mockData";
+interface NewPatientInput {
+  name: string;
+  phone: string;
+  email?: string;
+  gender: "male" | "female";
+  dateOfBirth: string;
 }
+
+type CreateAppointmentPayload =
+  | {
+      patientType: "existing";
+      patient: string;
+      doctor: string;
+      date: string;
+      startTime: string;
+      type: AppointmentBookingType;
+      duration?: number;
+    }
+  | {
+      patientType: "new";
+      newPatient: NewPatientInput;
+      doctor: string;
+      date: string;
+      startTime: string;
+      type: AppointmentBookingType;
+      duration?: number;
+    };
 
 const createAppointment = async (payload: CreateAppointmentPayload) => {
   const { data } = await axiosConfig.post("/appointment", payload);
   return data;
 };
+
+
+
 
 export const useCreateAppointment = () => {
   const queryClient = useQueryClient();

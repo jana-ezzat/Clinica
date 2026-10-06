@@ -6,6 +6,7 @@ import ModalField from "./ModalField";
 import Text from "@/shared/components/atoms/Text";
 import SelectFields from "./SelectFields";
 import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
+import { APPOINTMENT_TYPES } from "@/modules/dashboard/appointments/lib/appointmentOptions";
 
 interface Props {
   register: UseFormRegister<AppointmentFormValues>;
@@ -13,6 +14,7 @@ interface Props {
 }
 const MeetingInfo = ({ register, errors }: Props) => {
   const t = useTranslations("appointmentsModal.addAppointment.meeting");
+  const tTypes = useTranslations("appointments.bookingTypes");
 
   return (
     <div className="flex flex-col gap-4 rounded-md border border-gray-200 px-4 py-4">
@@ -28,16 +30,13 @@ const MeetingInfo = ({ register, errors }: Props) => {
           error={errors.appointmentDate}
         />
 
-        <SelectFields
+        <ModalField
           label={t("time")}
-          placeholder={t("timePlaceholder")}
           name="time"
+          type="time"
           register={register}
+          required
           error={errors.time}
-          options={[
-            { value: "10pm", label: "10:00 PM" },
-            { value: "11pm", label: "11:00 PM" },
-          ]}
         />
 
         <SelectFields
@@ -46,12 +45,10 @@ const MeetingInfo = ({ register, errors }: Props) => {
           name="appointmentType"
           register={register}
           error={errors.appointmentType}
-          options={[
-            { value: "check-up", label: t("types.check-up") },
-            { value: "consultation", label: t("types.consultation") },
-            { value: "follow-up", label: t("types.follow-up") },
-            { value: "emergency", label: t("types.emergency") },
-          ]}
+          options={APPOINTMENT_TYPES.map((type) => ({
+            value: type,
+            label: tTypes(type),
+          }))}
         />
 
         <SelectFields
@@ -61,18 +58,9 @@ const MeetingInfo = ({ register, errors }: Props) => {
           register={register}
           error={errors.duration}
           options={[
-            {
-              value: "15",
-              label: t("durations.15"),
-            },
-            {
-              value: "30",
-              label: t("durations.30"),
-            },
-            {
-              value: "45",
-              label: t("durations.45"),
-            },
+            { value: "15", label: t("durations.15") },
+            { value: "30", label: t("durations.30") },
+            { value: "45", label: t("durations.45") },
           ]}
         />
       </div>

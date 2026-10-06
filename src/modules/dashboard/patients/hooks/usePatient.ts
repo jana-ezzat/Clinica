@@ -47,9 +47,10 @@ export interface PatientDetails extends Patient {
   updatedAt?: string;
 }
 
+
 interface PatientResponse {
   status: string;
-  data: BackendPatient;
+  data: { patient: BackendPatient };
 }
 
 interface BackendPatient {
@@ -101,7 +102,7 @@ interface BackendPatient {
 const fetchPatient = async (slug: string): Promise<PatientDetails> => {
   const { data } = await axiosConfig.get<PatientResponse>(`/patient/${slug}`);
 
-  const patient = data.data;
+  const patient = data.data.patient;
 
   return {
     id: patient._id,

@@ -16,7 +16,7 @@ export const AppointmentModalSchema = (requiredMessage: string) =>
 
     time: z.string().min(1, requiredMessage),
     appointmentDate: z.string().min(1, requiredMessage),
-    appointmentType: z.string().min(1, requiredMessage),
+    appointmentType: z.enum(APPOINTMENT_TYPES, { message: requiredMessage }),
     duration: z.string().min(1, requiredMessage),
     notes: z.string().min(1, requiredMessage),
   });

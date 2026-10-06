@@ -1,51 +1,77 @@
-
 import Accordion from "../molecules/Accordion";
 import FieldGroup from "../atoms/FieldGroup";
 import DataField from "@/shared/components/atoms/DataField";
 import IconList from "@/shared/components/molecules/IconList";
 import { Pill, Scissors } from "lucide-react";
 import Badge from "@/shared/components/atoms/Badge";
+import type { PatientDetails } from "../../hooks/usePatient";
 
-export default function MedicalFileSection() {
+interface Props {
+  patient: PatientDetails;
+}
+
+export default function MedicalFileSection({ patient }: Props) {
+  const med = patient.medicalInformation;
+
   return (
     <Accordion title="الملف الطبي">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         <FieldGroup label="فصيلة الدم">
-          <Badge tone="red">A+</Badge>
+          {med?.bloodType ? (
+            <Badge tone="red">{med.bloodType}</Badge>
+          ) : (
+            <span>—</span>
+          )}
         </FieldGroup>
 
         <FieldGroup label="الحساسية">
-          <Badge tone="pink">البنسلين</Badge>
-          <Badge tone="yellow">الفول السودانى</Badge>
+          {med?.allergies && med.allergies.length > 0 ? (
+            med.allergies.map((a) => (
+              <Badge key={a} tone="pink">
+                {a}
+              </Badge>
+            ))
+          ) : (
+            <span>—</span>
+          )}
         </FieldGroup>
 
         <FieldGroup label="الامراض المزمنة">
-          <Badge tone="yellow">السكري من النوع الثاني</Badge>
-          <Badge tone="info">ارتفاع ضغط الدم</Badge>
+          {med?.chronicDiseases && med.chronicDiseases.length > 0 ? (
+            med.chronicDiseases.map((d) => (
+              <Badge key={d} tone="yellow">
+                {d}
+              </Badge>
+            ))
+          ) : (
+            <span>—</span>
+          )}
         </FieldGroup>
 
         <IconList
           label="الأدوية الحالية"
           icon={Pill}
-          items={["كونكور 5 مجم مرة يومياً", "جلوكوفاج 500 مجم مرتين يومياً"]}
+          items={med?.medications ?? []}
           iconClassName="ds-color-secondary"
         />
 
         <IconList
           label="العمليات السابقة"
           icon={Scissors}
-          items={["عملية غضروف - 2020", "استئصال المرارة - 2018"]}
+          items={
+            med?.previousSurgeries?.map((s) => `${s.name} - ${s.date}`) ?? []
+          }
           iconClassName="text-red-500"
         />
 
         <DataField
           label="تاريخ العائلة المرضي"
-          value="والدة مصابة بالسكري، والدة مصابة بارتفاع ضغط الدم"
+          value={med?.familyMedicalHistory ?? "—"}
           fullWidth
         />
         <DataField
           label="التاريخ المرضي"
-          value="لم تشخيص المريض بأي أمراض مزمنة بخلاف ما ذكر"
+          value={med?.medicalHistory ?? "—"}
           fullWidth
         />
       </div>
