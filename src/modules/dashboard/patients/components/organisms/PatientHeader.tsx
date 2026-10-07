@@ -5,6 +5,9 @@ import PatientTabs, { PatientTab } from "../molecules/PatientTabs";
 import type { PatientDetails } from "../../hooks/usePatient";
 import BackButton from "@/shared/components/atoms/BackButton";
 import Header from "@/shared/components/molecules/Header";
+import Button from "@/shared/components/atoms/Button";
+import { useState } from "react";
+import EditPatientModal from "./EditPatientModal";
 
 interface PatientHeaderProps {
   patient: PatientDetails;
@@ -18,6 +21,8 @@ export default function PatientHeader({
   onTabChange,
 }: PatientHeaderProps) {
   const t = useTranslations("patients.details");
+    const [isEditOpen, setIsEditOpen] = useState(false);
+
 
   return (
     <div className="flex flex-col gap-5 p-5">
@@ -28,7 +33,17 @@ export default function PatientHeader({
         />
         <BackButton />
       </div>
+      <Button variant="primary" size="sm" onClick={() => setIsEditOpen(true)}>
+        تعديل البيانات
+      </Button>
 
+      {isEditOpen && (
+        <EditPatientModal
+          patient={patient}
+          isOpen={isEditOpen}
+          onClose={() => setIsEditOpen(false)}
+        />
+      )}
       <PatientInfoCards
         patient={patient}
         labels={{
