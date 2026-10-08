@@ -6,26 +6,33 @@ interface Props {
   items: string[];
   icon: LucideIcon;
   iconClassName?: string;
+  emptyLabel?: string;
 }
+
 export default function IconListSection({
   title,
   items,
   icon: Icon,
   iconClassName = "text-blue-500",
+  emptyLabel = "—",
 }: Props) {
   return (
     <div className="flex flex-col gap-3">
       <Title size="md" className="text-base sm:text-lg md:text-xl">
         {title}
       </Title>
-      <div className="flex flex-col gap-2">
-        {items.map((item) => (
-          <div key={item} className="flex items-start gap-2">
-            <Icon size={16} className={`mt-0.5 shrink-0 ${iconClassName}`} />
-            <span className="text-sm ds-text">{item}</span>
-          </div>
-        ))}
-      </div>
+      {items.length === 0 ? (
+        <span className="ds-text-secondary text-sm">{emptyLabel}</span>
+      ) : (
+        <div className="flex flex-col gap-2">
+          {items.map((item, i) => (
+            <div key={`${item}-${i}`} className="flex items-start gap-2">
+              <Icon size={16} className={`mt-0.5 shrink-0 ${iconClassName}`} />
+              <span className="ds-text text-sm">{item}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

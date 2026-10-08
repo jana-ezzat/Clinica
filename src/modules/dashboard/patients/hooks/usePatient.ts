@@ -65,6 +65,7 @@ interface BackendPatient {
     dateOfBirth?: string;
     nationalID?: string;
     address?: string;
+    age?: number;
   };
 
   medicalInformation?: {
@@ -117,6 +118,7 @@ const fetchPatient = async (slug: string): Promise<PatientDetails> => {
     slug: patient.slug,
 
     gender: patient.personalInformation.gender,
+    age: patient.personalInformation.age,
     dateOfBirth: patient.personalInformation.dateOfBirth,
     nationalID: patient.personalInformation.nationalID,
     address: patient.personalInformation.address,

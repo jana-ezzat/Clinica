@@ -472,6 +472,7 @@
     "details": {
       "loading": "Loading patient data...",
       "loadError": "Failed to load patient data",
+      "editButton": "Edit Patient",
       "retry": "Retry",
       "fileNumberLabel": "File No.",
       "notAvailable": "—",
@@ -479,6 +480,41 @@
       "phone": "Phone",
       "age": "Age",
       "gender": "Gender",
+      "overview": {
+        "sections": {
+          "basic": "Basic Information",
+          "medical": "Medical File",
+          "emergency": "Emergency Contact",
+          "insurance": "Insurance"
+        },
+        "fields": {
+          "fullName": "Full Name",
+          "gender": "Gender",
+          "dateOfBirth": "Date of Birth",
+          "age": "Age",
+          "nationalID": "National ID",
+          "phone": "Phone",
+          "otherPhone": "Other Phone",
+          "email": "Email",
+          "address": "Address",
+          "bloodType": "Blood Type",
+          "allergies": "Allergies",
+          "chronicDiseases": "Chronic Diseases",
+          "medications": "Current Medications",
+          "previousSurgeries": "Previous Surgeries",
+          "familyMedicalHistory": "Family Medical History",
+          "medicalHistory": "Medical History",
+          "emergencyName": "Name",
+          "emergencyPhone": "Phone",
+          "emergencyRelationship": "Relationship",
+          "insuranceCompany": "Insurance Company",
+          "memberNumber": "Member Number",
+          "coverageRatio": "Coverage Ratio",
+          "insuranceEndDate": "Insurance End Date"
+        },
+        "gender": { "male": "Male", "female": "Female" },
+        "ageYears": "{count} years"
+      },
       "tabs": {
         "overview": "Overview",
         "visits": "Visit History",
@@ -550,11 +586,62 @@
           }
         }
       }
+    },
+    "edit": {
+      "title": "Edit Patient",
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address",
+      "commaHint": "separate with commas",
+      "sections": {
+        "basic": "Basic Information",
+        "medical": "Medical File",
+        "emergency": "Emergency Contact",
+        "insurance": "Insurance"
+      },
+      "fields": {
+        "name": "Name",
+        "phone": "Phone",
+        "otherPhone": "Other Phone",
+        "email": "Email",
+        "gender": "Gender",
+        "dateOfBirth": "Date of Birth",
+        "nationalID": "National ID",
+        "address": "Address",
+        "bloodType": "Blood Type",
+        "allergies": "Allergies",
+        "chronicDiseases": "Chronic Diseases",
+        "medications": "Current Medications",
+        "familyMedicalHistory": "Family Medical History",
+        "medicalHistory": "Medical History",
+        "emergencyName": "Name",
+        "emergencyPhone": "Phone",
+        "emergencyRelationship": "Relationship",
+        "insuranceCompany": "Insurance Company",
+        "memberNumber": "Member Number",
+        "coverageRatio": "Coverage Ratio",
+        "insuranceEndDate": "End Date"
+      },
+      "gender": { "male": "Male", "female": "Female" },
+      "surgeries": {
+        "title": "Previous Surgeries",
+        "add": "+ Add Surgery",
+        "remove": "Remove",
+        "namePlaceholder": "Surgery name",
+        "date": "Surgery date"
+      },
+      "actions": {
+        "save": "Save Changes",
+        "saving": "Saving...",
+        "cancel": "Cancel"
+      },
+      "toasts": {
+        "success": "Patient updated successfully",
+        "error": "Something went wrong. Please try again."
+      }
     }
   },
   "visitHistory": {
     "Title": "Visit History",
-    "btnTitle": "Add Another Appointment +",
     "reason": "Visit Reason",
     "vitals": "Vital Signs",
     "weight": "Weight",
@@ -565,7 +652,30 @@
     "diagnosis": "Diagnosis",
     "prescription": "Prescription",
     "doctorNotes": "Doctor's Notes",
-    "followUp": "Follow-up Recommendations"
+    "followUp": "Follow-up Recommendations",
+    "btnTitle": "Add New Visit +",
+    "height": "Height",
+    "units": { "kg": "kg", "cm": "cm" },
+    "loading": "Loading visits...",
+    "loadError": "Could not load visits",
+    "retry": "Retry",
+    "empty": "No visits recorded for this patient yet",
+    "form": {
+      "addTitle": "Add New Visit",
+      "editTitle": "Edit Visit",
+      "visitDate": "Visit Date & Time",
+      "followUpDate": "Follow-up Date",
+      "save": "Save",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "required": "This field is required"
+    },
+    "toasts": {
+      "createSuccess": "Visit added",
+      "updateSuccess": "Visit updated",
+      "noDoctor": "Could not determine the current doctor. Please sign in again.",
+      "error": "Something went wrong. Please try again."
+    }
   },
   "appointmentsModal": {
     "addAppointment": {
@@ -649,7 +759,8 @@
     "previousOperations": "Previous Operations",
     "medicalAndFamilyHistory": "Medical & Family History",
     "medicalHistory": "Medical History",
-    "familyHistory": "Family Medical History"
+    "familyHistory": "Family Medical History",
+    "empty": "No data recorded"
   },
   "reports": {
     "filters": {

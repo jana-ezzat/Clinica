@@ -2,7 +2,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosConfig from "@/services/axiosConfig";
 
-interface UpdatePatientPayload {
+export interface UpdatePatientPayload {
   name?: string;
   phone?: string;
   otherPhone?: string;
@@ -11,25 +11,23 @@ interface UpdatePatientPayload {
   dateOfBirth?: string;
   nationalID?: string;
   address?: string;
-  medicalInformation?: {
-    bloodType?: string;
-    allergies?: string[];
-    chronicDiseases?: string[];
-    medications?: string[];
-    familyMedicalHistory?: string;
-    medicalHistory?: string;
-  };
-  emergencyContact?: {
-    emergencyname?: string;
-    emergencyphone?: string;
-    emergencyrelationship?: string;
-  };
-  insurance?: {
-    company?: string;
-    memberNumber?: string;
-    coverageRatio?: number;
-    endDate?: string;
-  };
+
+  bloodType?: string;
+  allergies?: string[];
+  chronicDiseases?: string[];
+  medications?: string[];
+  previousSurgeries?: { name: string; date: string }[];
+  familyMedicalHistory?: string;
+  medicalHistory?: string;
+
+  emergencyName?: string;
+  emergencyPhone?: string;
+  emergencyRelationship?: string;
+
+  insuranceCompany?: string;
+  memberNumber?: string;
+  coverageRatio?: number;
+  insuranceEndDate?: string;
 }
 
 const updatePatient = async ({
@@ -48,7 +46,7 @@ export const useUpdatePatient = () => {
 
   return useMutation({
     mutationFn: updatePatient,
-    onSuccess: (_data, variables) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["patient"] });
       queryClient.invalidateQueries({ queryKey: ["patients"] });
       queryClient.invalidateQueries({ queryKey: ["dashboard-home"] });

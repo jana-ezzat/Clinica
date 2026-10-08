@@ -16,6 +16,14 @@ export const EditPatientSchema = z.object({
   medications: z.string().optional(),
   familyMedicalHistory: z.string().optional(),
   medicalHistory: z.string().optional(),
+  previousSurgeries: z
+    .array(
+      z.object({
+        name: z.string().min(1, "required"),
+        date: z.string().min(1, "required"),
+      }),
+    )
+    .optional(),
 
   emergencyname: z.string().optional(),
   emergencyphone: z.string().optional(),

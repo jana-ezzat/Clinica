@@ -1,41 +1,59 @@
+"use client";
+import { useLocale, useTranslations } from "next-intl";
 import Accordion from "../molecules/Accordion";
 import DataField from "@/shared/components/atoms/DataField";
+import { formatLongDate } from "@/lib/utils";
 import type { PatientDetails } from "../../hooks/usePatient";
 
 interface Props {
   patient: PatientDetails;
 }
 
+const EMPTY = "—";
+
 export default function DataSection({ patient }: Props) {
+  const t = useTranslations("patients.details.overview");
+  const locale = useLocale();
+
   return (
-    <Accordion title="البيانات الأساسية">
+    <Accordion title={t("sections.basic")}>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <DataField label="الاسم الرباعي" value={patient.name} />
+        <DataField label={t("fields.fullName")} value={patient.name} />
         <DataField
-          label="النوع"
-          value={patient.gender === "female" ? "أنثى" : "ذكر"}
+          label={t("fields.gender")}
+          value={patient.gender ? t(`gender.${patient.gender}`) : EMPTY}
         />
         <DataField
-          label="تاريخ الميلاد"
+          label={t("fields.dateOfBirth")}
+          value={formatLongDate(patient.dateOfBirth, locale)}
+        />
+
+        <DataField
+          label={t("fields.age")}
           value={
-            patient.dateOfBirth
-              ? new Date(patient.dateOfBirth).toLocaleDateString("ar-EG")
-              : "—"
+            patient.age !== undefined
+              ? t("ageYears", { count: patient.age })
+              : EMPTY
           }
         />
+        <DataField
+          label={t("fields.nationalID")}
+          value={patient.nationalID ?? EMPTY}
+        />
+        <DataField label={t("fields.phone")} value={patient.phone} />
 
         <DataField
-          label="العمر"
-          value={patient.age !== undefined ? `${patient.age} سنه` : "—"}
+          label={t("fields.otherPhone")}
+          value={patient.otherPhone ?? EMPTY}
         />
-        <DataField label="الرقم القومي" value={patient.nationalID ?? "—"} />
-        <DataField label="رقم الهاتف" value={patient.phone} />
-
-        <DataField label="رقم الهاتف إضافي" value={patient.otherPhone ?? "—"} />
-        <DataField label="البريد الالكتروني" value={patient.email ?? "—"} />
+        <DataField label={t("fields.email")} value={patient.email ?? EMPTY} />
         <div />
 
-        <DataField label="العنوان" value={patient.address ?? "—"} fullWidth />
+        <DataField
+          label={t("fields.address")}
+          value={patient.address ?? EMPTY}
+          fullWidth
+        />
       </div>
     </Accordion>
   );

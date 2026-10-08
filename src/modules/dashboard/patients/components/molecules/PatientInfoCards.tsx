@@ -10,28 +10,33 @@ interface PatientInfoCardsProps {
     age: string;
     gender: string;
   };
+  lastVisit?: string;
+  ageText?: string;
+  genderText?: string;
   notAvailableLabel: string;
 }
+
+const ltr = (value: string) => `\u2066${value}\u2069`;
 
 export default function PatientInfoCards({
   patient,
   labels,
+  lastVisit,
+  ageText,
+  genderText,
   notAvailableLabel,
 }: PatientInfoCardsProps) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       <InfoStatCard
         label={labels.lastVisit}
-        value={patient.lastVisit ?? notAvailableLabel}
+        value={lastVisit ?? notAvailableLabel}
       />
-      <InfoStatCard label={labels.phone} value={patient.phone} />
-      <InfoStatCard
-        label={labels.age}
-        value={patient.age ? String(patient.age) : notAvailableLabel}
-      />
+      <InfoStatCard label={labels.phone} value={ltr(patient.phone)} />
+      <InfoStatCard label={labels.age} value={ageText ?? notAvailableLabel} />
       <InfoStatCard
         label={labels.gender}
-        value={patient.gender ?? notAvailableLabel}
+        value={genderText ?? notAvailableLabel}
       />
     </div>
   );

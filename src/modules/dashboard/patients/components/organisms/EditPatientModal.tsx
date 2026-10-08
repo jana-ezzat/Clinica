@@ -1,11 +1,13 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { isAxiosError } from "axios";
 import Modal from "@/shared/components/molecules/ModalShell";
 import Title from "@/shared/components/atoms/Title";
 import Button from "@/shared/components/atoms/Button";
+import PreviousSurgeriesField from "../molecules/PreviousSurgeriesField";
 import useUpdatePatient from "../../hooks/useUpdatePatient";
 import {
   EditPatientSchema,
@@ -13,6 +15,7 @@ import {
   type EditPatientFormOutput,
 } from "../../schema/EditPatientSchema";
 import type { PatientDetails } from "../../hooks/usePatient";
+import { errorClass, fieldClass, labelClass } from "../../lib/formStyles";
 
 interface Props {
   patient: PatientDetails;
@@ -20,15 +23,21 @@ interface Props {
   onClose: () => void;
 }
 
-const fieldClass =
-  "h-11 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none";
-const labelClass = "flex flex-col gap-2 text-sm";
+const splitList = (value?: string) =>
+  value
+    ? value
+        .split(",")
+        .map((v) => v.trim())
+        .filter(Boolean)
+    : [];
 
 export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
+  const t = useTranslations("patients.edit");
   const updatePatient = useUpdatePatient();
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<EditPatientFormValues, any, EditPatientFormOutput>({
@@ -51,6 +60,9 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
       familyMedicalHistory:
         patient.medicalInformation?.familyMedicalHistory ?? "",
       medicalHistory: patient.medicalInformation?.medicalHistory ?? "",
+      previousSurgeries: (
+        patient.medicalInformation?.previousSurgeries ?? []
+      ).map((s) => ({ name: s.name, date: s.date.split("T")[0] })),
 
       emergencyname: patient.emergencyContact?.emergencyname ?? "",
       emergencyphone: patient.emergencyContact?.emergencyphone ?? "",
@@ -63,14 +75,6 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
       insuranceEndDate: patient.insurance?.endDate?.split("T")[0] ?? "",
     },
   });
-
-  const splitList = (value?: string) =>
-    value
-      ? value
-          .split(",")
-          .map((v) => v.trim())
-          .filter(Boolean)
-      : [];
 
   const onSubmit = async (data: EditPatientFormOutput) => {
     try {
@@ -85,34 +89,34 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
           dateOfBirth: data.dateOfBirth,
           nationalID: data.nationalID || undefined,
           address: data.address || undefined,
-          medicalInformation: {
-            bloodType: data.bloodType || undefined,
-            allergies: splitList(data.allergies),
-            chronicDiseases: splitList(data.chronicDiseases),
-            medications: splitList(data.medications),
-            familyMedicalHistory: data.familyMedicalHistory || undefined,
-            medicalHistory: data.medicalHistory || undefined,
-          },
-          emergencyContact: {
-            emergencyname: data.emergencyname || undefined,
-            emergencyphone: data.emergencyphone || undefined,
-            emergencyrelationship: data.emergencyrelationship || undefined,
-          },
-          insurance: {
-            company: data.insuranceCompany || undefined,
-            memberNumber: data.insuranceMemberNumber || undefined,
-            coverageRatio: data.insuranceCoverageRatio,
-            endDate: data.insuranceEndDate || undefined,
-          },
+
+          bloodType: data.bloodType || undefined,
+          allergies: splitList(data.allergies),
+          chronicDiseases: splitList(data.chronicDiseases),
+          medications: splitList(data.medications),
+          familyMedicalHistory: data.familyMedicalHistory || undefined,
+          medicalHistory: data.medicalHistory || undefined,
+          previousSurgeries: (data.previousSurgeries ?? []).map(
+            ({ name, date }) => ({ name, date }),
+          ),
+
+          emergencyName: data.emergencyname || undefined,
+          emergencyPhone: data.emergencyphone || undefined,
+          emergencyRelationship: data.emergencyrelationship || undefined,
+
+          insuranceCompany: data.insuranceCompany || undefined,
+          memberNumber: data.insuranceMemberNumber || undefined,
+          coverageRatio: data.insuranceCoverageRatio,
+          insuranceEndDate: data.insuranceEndDate || undefined,
         },
       });
-      toast.success("تم تحديث بيانات المريض بنجاح");
+      toast.success(t("toasts.success"));
       onClose();
     } catch (error) {
       const backendMessage = isAxiosError(error)
         ? error.response?.data?.message
         : null;
-      toast.error(backendMessage ?? "حدث خطأ ما، يرجى المحاولة مرة أخرى");
+      toast.error(backendMessage ?? t("toasts.error"));
     }
   };
 
@@ -120,86 +124,95 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="flex max-h-[80vh] flex-col gap-6 overflow-y-auto">
         <Title size="lg" className="font-bold">
-          تعديل بيانات المريض
+          {t("title")}
         </Title>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-          <div>
-            <h3 className="mb-3 font-semibold">البيانات الأساسية</h3>
+          <section>
+            <h3 className="mb-3 font-semibold">{t("sections.basic")}</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className={labelClass}>
-                الاسم
+                {t("fields.name")}
                 <input className={fieldClass} {...register("name")} />
                 {errors.name && (
-                  <span className="text-xs text-red-500">مطلوب</span>
+                  <span className={errorClass}>{t("required")}</span>
                 )}
               </label>
               <label className={labelClass}>
-                الهاتف
+                {t("fields.phone")}
                 <input className={fieldClass} {...register("phone")} />
+                {errors.phone && (
+                  <span className={errorClass}>{t("required")}</span>
+                )}
               </label>
               <label className={labelClass}>
-                هاتف إضافي
+                {t("fields.otherPhone")}
                 <input className={fieldClass} {...register("otherPhone")} />
               </label>
               <label className={labelClass}>
-                البريد الإلكتروني
+                {t("fields.email")}
                 <input
                   className={fieldClass}
                   type="email"
                   {...register("email")}
                 />
+                {errors.email && (
+                  <span className={errorClass}>{t("invalidEmail")}</span>
+                )}
               </label>
               <label className={labelClass}>
-                النوع
+                {t("fields.gender")}
                 <select className={fieldClass} {...register("gender")}>
-                  <option value="male">ذكر</option>
-                  <option value="female">أنثى</option>
+                  <option value="male">{t("gender.male")}</option>
+                  <option value="female">{t("gender.female")}</option>
                 </select>
               </label>
               <label className={labelClass}>
-                تاريخ الميلاد
+                {t("fields.dateOfBirth")}
                 <input
                   className={fieldClass}
                   type="date"
                   {...register("dateOfBirth")}
                 />
+                {errors.dateOfBirth && (
+                  <span className={errorClass}>{t("required")}</span>
+                )}
               </label>
               <label className={labelClass}>
-                الرقم القومي
+                {t("fields.nationalID")}
                 <input className={fieldClass} {...register("nationalID")} />
               </label>
               <label className={`${labelClass} sm:col-span-2`}>
-                العنوان
+                {t("fields.address")}
                 <input className={fieldClass} {...register("address")} />
               </label>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <h3 className="mb-3 font-semibold">الملف الطبي</h3>
+          <section>
+            <h3 className="mb-3 font-semibold">{t("sections.medical")}</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className={labelClass}>
-                فصيلة الدم
+                {t("fields.bloodType")}
                 <input className={fieldClass} {...register("bloodType")} />
               </label>
               <label className={labelClass}>
-                الحساسية (افصل بينها بفاصلة)
+                {t("fields.allergies")} ({t("commaHint")})
                 <input className={fieldClass} {...register("allergies")} />
               </label>
               <label className={labelClass}>
-                الأمراض المزمنة (افصل بينها بفاصلة)
+                {t("fields.chronicDiseases")} ({t("commaHint")})
                 <input
                   className={fieldClass}
                   {...register("chronicDiseases")}
                 />
               </label>
               <label className={labelClass}>
-                الأدوية الحالية (افصل بينها بفاصلة)
+                {t("fields.medications")} ({t("commaHint")})
                 <input className={fieldClass} {...register("medications")} />
               </label>
               <label className={`${labelClass} sm:col-span-2`}>
-                تاريخ العائلة المرضي
+                {t("fields.familyMedicalHistory")}
                 <textarea
                   className={fieldClass}
                   rows={2}
@@ -207,56 +220,62 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
                 />
               </label>
               <label className={`${labelClass} sm:col-span-2`}>
-                التاريخ المرضي
+                {t("fields.medicalHistory")}
                 <textarea
                   className={fieldClass}
                   rows={2}
                   {...register("medicalHistory")}
                 />
               </label>
-            </div>
-          </div>
 
-          <div>
-            <h3 className="mb-3 font-semibold">جهة اتصال الطوارئ</h3>
+              <PreviousSurgeriesField
+                control={control}
+                register={register}
+                errors={errors}
+              />
+            </div>
+          </section>
+
+          <section>
+            <h3 className="mb-3 font-semibold">{t("sections.emergency")}</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <label className={labelClass}>
-                الاسم
+                {t("fields.emergencyName")}
                 <input className={fieldClass} {...register("emergencyname")} />
               </label>
               <label className={labelClass}>
-                رقم الهاتف
+                {t("fields.emergencyPhone")}
                 <input className={fieldClass} {...register("emergencyphone")} />
               </label>
               <label className={labelClass}>
-                صلة القرابة
+                {t("fields.emergencyRelationship")}
                 <input
                   className={fieldClass}
                   {...register("emergencyrelationship")}
                 />
               </label>
             </div>
-          </div>
+          </section>
 
-          <div>
-            <h3 className="mb-3 font-semibold">بيانات التأمين</h3>
+          <section>
+            <h3 className="mb-3 font-semibold">{t("sections.insurance")}</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className={labelClass}>
-                شركة التأمين
+                {t("fields.insuranceCompany")}
                 <input
                   className={fieldClass}
                   {...register("insuranceCompany")}
                 />
               </label>
               <label className={labelClass}>
-                رقم العضوية
+                {t("fields.memberNumber")}
                 <input
                   className={fieldClass}
                   {...register("insuranceMemberNumber")}
                 />
               </label>
               <label className={labelClass}>
-                نسبة التغطية
+                {t("fields.coverageRatio")}
                 <input
                   className={fieldClass}
                   type="number"
@@ -264,7 +283,7 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
                 />
               </label>
               <label className={labelClass}>
-                تاريخ الانتهاء
+                {t("fields.insuranceEndDate")}
                 <input
                   className={fieldClass}
                   type="date"
@@ -272,7 +291,7 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
                 />
               </label>
             </div>
-          </div>
+          </section>
 
           <div className="flex items-center justify-end gap-3">
             <Button
@@ -280,14 +299,14 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
               variant="ghost"
               className="text-red-500"
               onClick={onClose}>
-              إلغاء
+              {t("actions.cancel")}
             </Button>
             <Button
               type="submit"
               variant="primary"
               size="sm"
               disabled={isSubmitting}>
-              {isSubmitting ? "جارٍ الحفظ..." : "حفظ التعديلات"}
+              {isSubmitting ? t("actions.saving") : t("actions.save")}
             </Button>
           </div>
         </form>

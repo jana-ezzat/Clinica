@@ -55,9 +55,11 @@ export default function PatientDetailsPage() {
           <LatestSection />
         </>
       )}
-      {activeTab === "visits" && <VisitHistorySection />}
-      {activeTab === "medicalFile" && <MedicalFile />}
+
+      {activeTab === "visits" && <VisitHistorySection patientId={patient.id} />}
+      {activeTab === "medicalFile" && <MedicalFile patient={patient} />}
       {activeTab === "invoices" && <InvoicesSection patientId={patient.id} />}
+
     </div>
   );
 }

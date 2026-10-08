@@ -466,6 +466,7 @@
     "details": {
       "loading": "جاري تحميل بيانات المريض...",
       "loadError": "تعذر تحميل بيانات المريض",
+      "editButton": "تعديل بيانات المريض",
       "retry": "إعادة المحاولة",
       "fileNumberLabel": "رقم الملف",
       "notAvailable": "—",
@@ -473,6 +474,41 @@
       "phone": "الهاتف",
       "age": "العمر",
       "gender": "النوع",
+      "overview": {
+        "sections": {
+          "basic": "البيانات الأساسية",
+          "medical": "الملف الطبي",
+          "emergency": "جهة اتصال الطوارئ",
+          "insurance": "بيانات التأمين"
+        },
+        "fields": {
+          "fullName": "الاسم الرباعي",
+          "gender": "النوع",
+          "dateOfBirth": "تاريخ الميلاد",
+          "age": "العمر",
+          "nationalID": "الرقم القومي",
+          "phone": "رقم الهاتف",
+          "otherPhone": "رقم الهاتف إضافي",
+          "email": "البريد الإلكتروني",
+          "address": "العنوان",
+          "bloodType": "فصيلة الدم",
+          "allergies": "الحساسية",
+          "chronicDiseases": "الأمراض المزمنة",
+          "medications": "الأدوية الحالية",
+          "previousSurgeries": "العمليات السابقة",
+          "familyMedicalHistory": "تاريخ العائلة المرضي",
+          "medicalHistory": "التاريخ المرضي",
+          "emergencyName": "الاسم",
+          "emergencyPhone": "رقم الهاتف",
+          "emergencyRelationship": "صلة القرابة",
+          "insuranceCompany": "شركة التأمين",
+          "memberNumber": "رقم العضوية",
+          "coverageRatio": "نسبة التغطية",
+          "insuranceEndDate": "تاريخ انتهاء التأمين"
+        },
+        "gender": { "male": "ذكر", "female": "أنثى" },
+        "ageYears": "{count} سنة"
+      },
       "tabs": {
         "overview": "نظرة عامة",
         "visits": "سجل الزيارات",
@@ -544,11 +580,62 @@
           }
         }
       }
+    },
+    "edit": {
+      "title": "تعديل بيانات المريض",
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "بريد إلكتروني غير صالح",
+      "commaHint": "افصل بينها بفاصلة",
+      "sections": {
+        "basic": "البيانات الأساسية",
+        "medical": "الملف الطبي",
+        "emergency": "جهة اتصال الطوارئ",
+        "insurance": "بيانات التأمين"
+      },
+      "fields": {
+        "name": "الاسم",
+        "phone": "الهاتف",
+        "otherPhone": "هاتف إضافي",
+        "email": "البريد الإلكتروني",
+        "gender": "النوع",
+        "dateOfBirth": "تاريخ الميلاد",
+        "nationalID": "الرقم القومي",
+        "address": "العنوان",
+        "bloodType": "فصيلة الدم",
+        "allergies": "الحساسية",
+        "chronicDiseases": "الأمراض المزمنة",
+        "medications": "الأدوية الحالية",
+        "familyMedicalHistory": "تاريخ العائلة المرضي",
+        "medicalHistory": "التاريخ المرضي",
+        "emergencyName": "الاسم",
+        "emergencyPhone": "رقم الهاتف",
+        "emergencyRelationship": "صلة القرابة",
+        "insuranceCompany": "شركة التأمين",
+        "memberNumber": "رقم العضوية",
+        "coverageRatio": "نسبة التغطية",
+        "insuranceEndDate": "تاريخ الانتهاء"
+      },
+      "gender": { "male": "ذكر", "female": "أنثى" },
+      "surgeries": {
+        "title": "العمليات السابقة",
+        "add": "+ إضافة عملية",
+        "remove": "حذف",
+        "namePlaceholder": "اسم العملية",
+        "date": "تاريخ العملية"
+      },
+      "actions": {
+        "save": "حفظ التعديلات",
+        "saving": "جارٍ الحفظ...",
+        "cancel": "إلغاء"
+      },
+      "toasts": {
+        "success": "تم تحديث بيانات المريض بنجاح",
+        "error": "حدث خطأ ما، يرجى المحاولة مرة أخرى"
+      }
     }
   },
   "visitHistory": {
     "Title": "سجل الزيارات",
-    "btnTitle": "اضافة إضافة موعد اخر +",
     "reason": "سبب الزيارة",
     "vitals": "العلامات الحيوية",
     "weight": "الوزن",
@@ -559,7 +646,30 @@
     "diagnosis": "التشخيص",
     "prescription": "الروشتة",
     "doctorNotes": "ملاحظات الطبيب",
-    "followUp": "توصيات المتابعة"
+    "followUp": "توصيات المتابعة",
+    "btnTitle": "إضافة زيارة جديدة +",
+    "height": "الطول",
+    "units": { "kg": "كجم", "cm": "سم" },
+    "loading": "جاري تحميل الزيارات...",
+    "loadError": "تعذر تحميل الزيارات",
+    "retry": "إعادة المحاولة",
+    "empty": "لا توجد زيارات لهذا المريض بعد",
+    "form": {
+      "addTitle": "إضافة زيارة جديدة",
+      "editTitle": "تعديل الزيارة",
+      "visitDate": "تاريخ ووقت الزيارة",
+      "followUpDate": "تاريخ المتابعة",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "required": "هذا الحقل مطلوب"
+    },
+    "toasts": {
+      "createSuccess": "تمت إضافة الزيارة",
+      "updateSuccess": "تم تحديث الزيارة",
+      "noDoctor": "تعذر تحديد الطبيب الحالي. سجل الدخول مرة أخرى.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    }
   },
   "appointmentsModal": {
     "addAppointment": {
@@ -643,7 +753,8 @@
     "previousOperations": "العمليات السابقة",
     "medicalAndFamilyHistory": "التاريخ المرضي و العائلة",
     "medicalHistory": "التاريخ المرضي",
-    "familyHistory": "تاريخ العائلة المرضي"
+    "familyHistory": "تاريخ العائلة المرضي",
+    "empty": "لا توجد بيانات"
   },
   "reports": {
     "filters": {
@@ -909,7 +1020,7 @@
       "error": "تعذر تحميل الإعدادات",
       "retry": "إعادة المحاولة"
     },
-     "toast": {
+    "toast": {
       "success": "تم تحديث الإعدادات بنجاح",
       "error": "فشل تحديث الإعدادات"
     }
