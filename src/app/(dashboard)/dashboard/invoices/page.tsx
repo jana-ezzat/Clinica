@@ -1,8 +1,7 @@
-import Invoice from "@/modules/dashboard/invoices/components/organisms/Invoice";
-import React from "react";
+import InvoicesPage from "@/modules/dashboard/invoices/components/organisms/InvoicesPage";
 
 const page = () => {
-  return <Invoice />;
+  return <InvoicesPage />;
 };
 
 export default page;

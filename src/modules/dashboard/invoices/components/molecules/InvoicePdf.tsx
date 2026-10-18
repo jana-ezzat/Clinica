@@ -317,11 +317,17 @@ export default function InvoicePdf({ invoice, labels }: Props) {
 
             <Text style={styles.doctor}>{invoice.clinic.doctorName}</Text>
 
-            <Text style={styles.label}>{invoice.clinic.address}</Text>
+            {invoice.clinic.address ? (
+              <Text style={styles.label}>{invoice.clinic.address}</Text>
+            ) : null}
 
-            <Text style={styles.label}>{invoice.clinic.phone}</Text>
+            {invoice.clinic.phone ? (
+              <Text style={styles.label}>{invoice.clinic.phone}</Text>
+            ) : null}
 
-            <Text style={styles.label}>{invoice.clinic.email}</Text>
+            {invoice.clinic.email ? (
+              <Text style={styles.label}>{invoice.clinic.email}</Text>
+            ) : null}
           </View>
 
           <View style={styles.invoiceInfo}>
@@ -333,13 +339,15 @@ export default function InvoicePdf({ invoice, labels }: Props) {
           </View>
         </View>
 
-        <View style={styles.card}>
-          <View style={styles.row}>
-            <Text style={styles.label}>{labels.taxNumber}</Text>
+        {invoice.clinic.taxNumber ? (
+          <View style={styles.card}>
+            <View style={styles.row}>
+              <Text style={styles.label}>{labels.taxNumber}</Text>
 
-            <Text style={styles.value}>{invoice.clinic.taxNumber}</Text>
+              <Text style={styles.value}>{invoice.clinic.taxNumber}</Text>
+            </View>
           </View>
-        </View>
+        ) : null}
 
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>{labels.invoice}</Text>
@@ -375,11 +383,13 @@ export default function InvoicePdf({ invoice, labels }: Props) {
               <Text style={styles.value}>{invoice.patient.name}</Text>
             </View>
 
-            <View style={styles.patientItem}>
-              <Text style={styles.label}>{labels.fileNumber}</Text>
+            {invoice.patient.fileNumber ? (
+              <View style={styles.patientItem}>
+                <Text style={styles.label}>{labels.fileNumber}</Text>
 
-              <Text style={styles.value}>{invoice.patient.fileNumber}</Text>
-            </View>
+                <Text style={styles.value}>{invoice.patient.fileNumber}</Text>
+              </View>
+            ) : null}
 
             <View style={styles.patientItem}>
               <Text style={styles.label}>{labels.phone}</Text>
@@ -510,17 +520,21 @@ export default function InvoicePdf({ invoice, labels }: Props) {
         </View>
 
         <View style={{ marginTop: 20 }}>
-          <View style={styles.noteBox}>
-            <Text style={styles.noteTitle}>{labels.notes}</Text>
+          {invoice.notes ? (
+            <View style={styles.noteBox}>
+              <Text style={styles.noteTitle}>{labels.notes}</Text>
 
-            <Text style={styles.noteText}>{invoice.notes}</Text>
-          </View>
+              <Text style={styles.noteText}>{invoice.notes}</Text>
+            </View>
+          ) : null}
 
-          <View style={styles.noteBox}>
-            <Text style={styles.noteTitle}>{labels.terms}</Text>
+          {invoice.terms ? (
+            <View style={styles.noteBox}>
+              <Text style={styles.noteTitle}>{labels.terms}</Text>
 
-            <Text style={styles.noteText}>{invoice.terms}</Text>
-          </View>
+              <Text style={styles.noteText}>{invoice.terms}</Text>
+            </View>
+          ) : null}
         </View>
       </Page>
     </Document>

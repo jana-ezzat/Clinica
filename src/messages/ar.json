@@ -745,6 +745,76 @@
     }
   },
   "Invoice": {
+    "document": {
+      "loading": "جاري تحميل الفاتورة...",
+      "loadError": "تعذّر تحميل الفاتورة",
+      "retry": "إعادة المحاولة",
+      "back": "العودة للفواتير"
+    },
+    "list": {
+      "title": "الفواتير",
+      "addBtn": "إضافة فاتورة",
+      "loading": "جاري تحميل الفواتير...",
+      "loadError": "تعذّر تحميل الفواتير",
+      "retry": "إعادة المحاولة",
+      "empty": "لا توجد فواتير بعد",
+      "updateLabel": "تعديل الفاتورة",
+      "viewLabel": "عرض الفاتورة",
+      "columns": {
+        "invoiceNumber": "رقم الفاتورة",
+        "patient": "المريض",
+        "date": "التاريخ",
+        "total": "الإجمالي",
+        "paid": "المدفوع",
+        "remaining": "المتبقي",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      }
+    },
+    "form": {
+      "createTitle": "إضافة فاتورة جديدة",
+      "editTitle": "تعديل الفاتورة",
+      "patient": "المريض",
+      "patientPlaceholder": "اختر المريض",
+      "visit": "الزيارة",
+      "visitPlaceholder": "اختر الزيارة",
+      "selectPatientFirst": "اختر المريض أولاً",
+      "noVisits": "لا توجد زيارات لهذا المريض",
+      "servicesTitle": "الخدمات",
+      "serviceName": "اسم الخدمة",
+      "price": "السعر",
+      "discount": "الخصم",
+      "addService": "إضافة خدمة",
+      "removeService": "حذف الخدمة",
+      "subtotal": "المجموع",
+      "totalDiscount": "إجمالي الخصم",
+      "total": "الصافي",
+      "remaining": "المتبقي",
+      "paid": "المبلغ المدفوع",
+      "paymentMethod": "طريقة الدفع",
+      "methods": {
+        "cash": "نقدي",
+        "card": "بطاقة",
+        "insurance": "تأمين"
+      },
+      "invoiceDate": "تاريخ الفاتورة",
+      "notes": "ملاحظات",
+      "terms": "الشروط والأحكام",
+      "cancel": "إلغاء",
+      "create": "حفظ الفاتورة",
+      "save": "حفظ التعديلات",
+      "saving": "جاري الحفظ...",
+      "createSuccess": "تم إنشاء الفاتورة بنجاح",
+      "updateSuccess": "تم تحديث الفاتورة بنجاح",
+      "error": "حدث خطأ، حاول مرة أخرى",
+      "errors": {
+        "requiredField": "هذا الحقل مطلوب",
+        "invalidPrice": "أدخل سعرًا صحيحًا",
+        "invalidDiscount": "أدخل خصمًا صحيحًا",
+        "atLeastOneService": "أضف خدمة واحدة على الأقل",
+        "invalidPaid": "أدخل مبلغًا صحيحًا"
+      }
+    },
     "savePdf": "حفظ PDF",
     "print": "طباعة",
     "invoice": "فاتورة",
