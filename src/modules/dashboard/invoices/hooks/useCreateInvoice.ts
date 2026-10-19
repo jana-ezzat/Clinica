@@ -5,6 +5,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosConfig from "@/services/axiosConfig";
 import { CreateInvoicePayload, Invoice } from "../../patients/types/invoice";
 
+
+
 interface InvoiceResponse {
   status: string;
   message: string;

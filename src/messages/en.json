@@ -784,6 +784,9 @@
       "patient": "Patient",
       "patientPlaceholder": "Select patient",
       "visit": "Visit",
+      "visitOptional": "Visit (optional)",
+      "doctor": "Doctor",
+      "doctorPlaceholder": "Select doctor",
       "visitPlaceholder": "Select visit",
       "selectPatientFirst": "Select a patient first",
       "noVisits": "No visits for this patient",
@@ -816,6 +819,7 @@
       "error": "Something went wrong, please try again",
       "errors": {
         "requiredField": "This field is required",
+        "visitRequiredForAdmin": "Pick a visit so the invoice can be assigned to its doctor",
         "invalidPrice": "Enter a valid price",
         "invalidDiscount": "Enter a valid discount",
         "atLeastOneService": "Add at least one service",

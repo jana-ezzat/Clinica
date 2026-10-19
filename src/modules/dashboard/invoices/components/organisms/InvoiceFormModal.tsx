@@ -2,7 +2,12 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useFieldArray, useForm, useWatch } from "react-hook-form";
+import {
+  useFieldArray,
+  useForm,
+  useWatch,
+  type UseFormRegisterReturn,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormatter, useTranslations } from "next-intl";
 import { toast } from "sonner";
@@ -16,10 +21,9 @@ import Input from "@/shared/components/atoms/Input";
 import Button from "@/shared/components/atoms/Button";
 import { ErrorText } from "@/shared/components/atoms/ErrorText";
 import { usePatients } from "../../../patients/hooks/usePatients";
-import { usePatientVisits } from "../../../patients/hooks/usePatientVisits";
 import { useProfile } from "../../../profile/hooks/Queries/useProfile";
+import { useDoctors } from "../../../doctors/hooks/useDoctors";
 import { Invoice, PaymentMethod } from "../../../patients/types/invoice";
-import { getEntityId } from "../../../patients/types/visit";
 import {
   invoiceFormSchema,
   InvoiceFormInput,
@@ -38,15 +42,19 @@ interface Props {
   invoice?: Invoice | null;
   /** Read-only patient name shown while editing. */
   patientName?: string;
+  /** Opened from a patient's own page: the patient is fixed. */
+  fixedPatientId?: string;
 }
 
 const PAYMENT_METHODS: PaymentMethod[] = ["cash", "card", "insurance"];
 
-const getDefaults = (invoice?: Invoice | null): InvoiceFormInput =>
+const getDefaults = (
+  invoice?: Invoice | null,
+  fixedPatientId?: string,
+): InvoiceFormInput =>
   invoice
     ? {
         patient: invoice.patient,
-        visit: invoice.visit,
         services: invoice.services.map((s) => ({
           name: s.name,
           price: s.price,
@@ -56,11 +64,12 @@ const getDefaults = (invoice?: Invoice | null): InvoiceFormInput =>
         paymentMethod: invoice.paymentMethod,
         notes: invoice.notes ?? "",
         TermsAndConditions: invoice.TermsAndConditions ?? "",
+        doctor: "",
         invoiceDate: invoice.invoiceDate.slice(0, 10),
       }
     : {
-        patient: "",
-        visit: "",
+        patient: fixedPatientId ?? "",
+        doctor: "",
         services: [{ name: "", price: 0, discount: 0 }],
         paid: 0,
         paymentMethod: "cash",
@@ -68,6 +77,37 @@ const getDefaults = (invoice?: Invoice | null): InvoiceFormInput =>
         TermsAndConditions: "",
         invoiceDate: "",
       };
+
+// Mounted for admins only, so doctors never call GET /user/doctors.
+function AdminDoctorField({
+  registration,
+  label,
+  placeholder,
+  error,
+}: {
+  registration: UseFormRegisterReturn;
+  label: string;
+  placeholder: string;
+  error?: string;
+}) {
+  const doctorsQuery = useDoctors();
+  const options = (doctorsQuery.data ?? []).map((d) => ({
+    value: d.id,
+    label: d.name,
+  }));
+
+  return (
+    <SelectField
+      id="invoice-doctor"
+      label={label}
+      placeholder={placeholder}
+      options={options}
+      error={error}
+      defaultValue=""
+      {...registration}
+    />
+  );
+}
 
 function apiMessage(error: unknown): string | undefined {
   const message = (
@@ -81,10 +121,12 @@ export default function InvoiceFormModal({
   onClose,
   invoice,
   patientName,
+  fixedPatientId,
 }: Props) {
   const t = useTranslations("Invoice.form");
   const format = useFormatter();
   const isEdit = !!invoice;
+  const isFixedPatient = !isEdit && !!fixedPatientId;
 
   const profile = useProfile();
   const patientsQuery = usePatients();
@@ -95,12 +137,12 @@ export default function InvoiceFormModal({
     register,
     handleSubmit,
     control,
-    setValue,
+    setError,
     reset,
     formState: { errors },
   } = useForm<InvoiceFormInput, unknown, InvoiceFormValues>({
     resolver: zodResolver(invoiceFormSchema),
-    defaultValues: getDefaults(invoice),
+    defaultValues: getDefaults(invoice, fixedPatientId),
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -110,15 +152,12 @@ export default function InvoiceFormModal({
 
   // Fresh form every time the modal opens (or switches to another invoice).
   useEffect(() => {
-    if (isOpen) reset(getDefaults(invoice));
-  }, [isOpen, invoice, reset]);
+    if (isOpen) reset(getDefaults(invoice, fixedPatientId));
+  }, [isOpen, invoice, fixedPatientId, reset]);
 
-  const selectedPatient = useWatch({ control, name: "patient" });
-  const selectedVisit = useWatch({ control, name: "visit" });
+  const selectedDoctor = useWatch({ control, name: "doctor" });
   const services = useWatch({ control, name: "services" });
   const paid = useWatch({ control, name: "paid" });
-
-  const visitsQuery = usePatientVisits(selectedPatient ?? "", isOpen && !isEdit);
 
   // Live preview only — the server recalculates everything on save.
   const totals = useMemo(() => {
@@ -137,25 +176,6 @@ export default function InvoiceFormModal({
     label: p.name,
   }));
 
-  const visitOptions = (visitsQuery.data ?? []).map((v) => ({
-    value: v._id,
-    label:
-      [
-        v.visitDate
-          ? format.dateTime(new Date(v.visitDate), { dateStyle: "medium" })
-          : null,
-        v.reason,
-      ]
-        .filter(Boolean)
-        .join(" — ") || v._id,
-  }));
-
-  const visitPlaceholder = !selectedPatient
-    ? t("selectPatientFirst")
-    : visitsQuery.isSuccess && visitOptions.length === 0
-      ? t("noVisits")
-      : t("visitPlaceholder");
-
   const methodOptions = PAYMENT_METHODS.map((m) => ({
     value: m,
     label: t(`methods.${m}`),
@@ -166,13 +186,13 @@ export default function InvoiceFormModal({
     format.number(value, { maximumFractionDigits: 2 });
 
   const isSaving = createInvoice.isPending || editInvoice.isPending;
-  // A doctor invoices as themselves. An admin isn't a doctor, so the invoice is
-  // attributed to the doctor who did the selected visit.
-  const isAdmin = profile.data?.role === "admin";
-  const visitDoctorId = getEntityId(
-    visitsQuery.data?.find((v) => v._id === selectedVisit)?.doctor,
-  );
-  const doctorId = isAdmin ? visitDoctorId : profile.data?._id;
+  // A doctor invoices as themselves. An admin isn't a doctor, so they must
+  // pick the doctor the invoice belongs to.
+  const isAdminUser = profile.data?.role === "admin";
+  const doctorId = isAdminUser ? selectedDoctor : profile.data?._id;
+  const shownPatientName = isEdit
+    ? patientName
+    : patientsQuery.data?.find((p) => p.id === fixedPatientId)?.name;
 
   const onFail = (error: unknown) =>
     toast.error(apiMessage(error) ?? t("error"));
@@ -215,13 +235,16 @@ export default function InvoiceFormModal({
       return;
     }
 
+    if (isAdminUser && !doctorId) {
+      setError("doctor", { message: "requiredField" });
+      return;
+    }
     if (!doctorId) return;
 
     createInvoice.mutate(
       {
         patient: values.patient,
         doctor: doctorId,
-        visit: values.visit,
         services,
         paid: values.paid,
         paymentMethod: values.paymentMethod,
@@ -249,37 +272,35 @@ export default function InvoiceFormModal({
         <Title size="md" className="p-0 font-bold">
           {isEdit ? `${t("editTitle")} ${invoice?.invoiceNumber}` : t("createTitle")}
         </Title>
-        {isEdit && patientName && (
+        {shownPatientName && (isEdit || isFixedPatient) && (
           <Text size="sm" variant="secondary">
-            {t("patient")}: {patientName}
+            {t("patient")}: {shownPatientName}
           </Text>
         )}
       </div>
 
       <form onSubmit={onSubmit} className="flex flex-col gap-5" noValidate>
-        {!isEdit && (
+        {!isEdit && (!isFixedPatient || isAdminUser) && (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <SelectField
-              id="invoice-patient"
-              label={t("patient")}
-              placeholder={t("patientPlaceholder")}
-              options={patientOptions}
-              error={tErr(errors.patient?.message)}
-              defaultValue=""
-              {...register("patient", {
-                onChange: () => setValue("visit", ""),
-              })}
-            />
-            <SelectField
-              id="invoice-visit"
-              label={t("visit")}
-              placeholder={visitPlaceholder}
-              options={visitOptions}
-              error={tErr(errors.visit?.message)}
-              defaultValue=""
-              disabled={!selectedPatient || visitOptions.length === 0}
-              {...register("visit")}
-            />
+            {!isFixedPatient && (
+              <SelectField
+                id="invoice-patient"
+                label={t("patient")}
+                placeholder={t("patientPlaceholder")}
+                options={patientOptions}
+                error={tErr(errors.patient?.message)}
+                defaultValue=""
+                {...register("patient")}
+              />
+            )}
+            {isAdminUser && (
+              <AdminDoctorField
+                registration={register("doctor")}
+                label={t("doctor")}
+                placeholder={t("doctorPlaceholder")}
+                error={tErr(errors.doctor?.message)}
+              />
+            )}
           </div>
         )}
 
@@ -421,7 +442,7 @@ export default function InvoiceFormModal({
             type="submit"
             variant="primary"
             size="sm"
-            disabled={isSaving || (!isEdit && !doctorId)}>
+            disabled={isSaving || (!isEdit && !isAdminUser && !doctorId)}>
             {isSaving ? t("saving") : isEdit ? t("save") : t("create")}
           </Button>
         </div>

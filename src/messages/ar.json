@@ -777,6 +777,9 @@
       "patient": "المريض",
       "patientPlaceholder": "اختر المريض",
       "visit": "الزيارة",
+      "visitOptional": "الزيارة (اختياري)",
+      "doctor": "الدكتور",
+      "doctorPlaceholder": "اختر الدكتور",
       "visitPlaceholder": "اختر الزيارة",
       "selectPatientFirst": "اختر المريض أولاً",
       "noVisits": "لا توجد زيارات لهذا المريض",
@@ -809,6 +812,7 @@
       "error": "حدث خطأ، حاول مرة أخرى",
       "errors": {
         "requiredField": "هذا الحقل مطلوب",
+        "visitRequiredForAdmin": "يجب اختيار زيارة لتحديد الدكتور",
         "invalidPrice": "أدخل سعرًا صحيحًا",
         "invalidDiscount": "أدخل خصمًا صحيحًا",
         "atLeastOneService": "أضف خدمة واحدة على الأقل",
