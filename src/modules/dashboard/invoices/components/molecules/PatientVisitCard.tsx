@@ -29,9 +29,11 @@ const PatientVisitCard = ({
             {name}
           </Text>
 
-          <Text size="sm" variant="secondary">
-            {fileNumberLabel}: {fileNumber}
-          </Text>
+          {fileNumber && (
+            <Text size="sm" variant="secondary">
+              {fileNumberLabel}: {fileNumber}
+            </Text>
+          )}
 
           <Text size="sm" variant="secondary">
             {phoneLabel}: {phone}

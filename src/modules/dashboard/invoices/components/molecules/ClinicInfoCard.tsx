@@ -29,22 +29,30 @@ export default function ClinicInfoCard({
           {doctorName}
         </Text>
         <div>
-          <Text  className="text-white/80 text-xs">
-            {taxNumberLabel}: {taxNumber}
-          </Text>
+          {taxNumber && (
+            <Text  className="text-white/80 text-xs">
+              {taxNumberLabel}: {taxNumber}
+            </Text>
+          )}
           <Text size="sm" className="text-white">
             {mainBranchLabel}
           </Text>
         </div>
-        <Text size="sm" className="text-white">
-          {address}
-        </Text>
-        <Text size="sm" className="text-white">
-          {phone}
-        </Text>
-        <Text size="sm" className="text-white">
-          {email}
-        </Text>
+        {address && (
+          <Text size="sm" className="text-white">
+            {address}
+          </Text>
+        )}
+        {phone && (
+          <Text size="sm" className="text-white">
+            {phone}
+          </Text>
+        )}
+        {email && (
+          <Text size="sm" className="text-white">
+            {email}
+          </Text>
+        )}
       </div>
 
       <Title size="lg" className="text-white font-bold mt-4">

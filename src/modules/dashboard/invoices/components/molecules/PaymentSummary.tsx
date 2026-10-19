@@ -13,7 +13,31 @@ interface Props {
   paymentMethod: string;
 }
 
-const PaymentSummary = ({
+function Row({
+  label,
+  value,
+  strong = false,
+}: {
+  label: string;
+  value: string;
+  strong?: boolean;
+}) {
+  return (
+    <div className="flex items-center justify-between gap-4">
+      <Text size="sm" variant="secondary" className="p-0">
+        {label}
+      </Text>
+      <Text
+        size={strong ? "md" : "sm"}
+        variant="primary"
+        className={strong ? "p-0 font-bold" : "p-0"}>
+        {value}
+      </Text>
+    </div>
+  );
+}
+
+export default function PaymentSummary({
   totalLabel,
   total,
   discountLabel,
@@ -24,51 +48,16 @@ const PaymentSummary = ({
   paid,
   paymentMethodLabel,
   paymentMethod,
-}: Props) => {
-  const rows = [
-    {
-      label: totalLabel,
-      value: total,
-    },
-    {
-      label: discountLabel,
-      value: discount,
-    },
-    {
-      label: netTotalLabel,
-      value: netTotal,
-    },
-    {
-      label: paidLabel,
-      value: paid,
-      isGreen: true,
-    },
-    {
-      label: paymentMethodLabel,
-      value: paymentMethod,
-    },
-  ];
-
+}: Props) {
   return (
-    <div className="flex flex-col gap-5">
-      {rows.map((row, index) => (
-        <div key={row.label}>
-          <div className="grid grid-cols-3 items-center mb-6">
-            <Text size="sm" variant="secondary">
-              {row.label}
-            </Text>
-
-            <Text size="sm" variant={row.isGreen ? "accent" : "primary"}>
-              {row.value}
-            </Text>
-          </div>
-          {index === 2 && (
-            <div className="border-t border ds-border-secondary mx-1 " />
-          )}
-        </div>
-      ))}
+    <div className="ds-bg-card ds-shadow-sm flex w-full flex-col gap-3 rounded-xl p-5 md:ms-auto md:max-w-sm">
+      <Row label={totalLabel} value={total} />
+      <Row label={discountLabel} value={discount} />
+      <div className="ds-border-gray border-t pt-3">
+        <Row label={netTotalLabel} value={netTotal} strong />
+      </div>
+      <Row label={paidLabel} value={paid} />
+      <Row label={paymentMethodLabel} value={paymentMethod} />
     </div>
   );
-};
-
-export default PaymentSummary;
+}

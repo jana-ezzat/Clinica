@@ -1,3 +1,4 @@
+import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 
 interface Props {
@@ -9,46 +10,33 @@ interface Props {
   time: string;
 }
 
-const InvoicesDate = ({
+export default function InvoicesDate({
   title,
   invoiceNumber,
   dateLabel,
   date,
   timeLabel,
   time,
-}: Props) => {
+}: Props) {
   return (
-    <div className="flex items-center justify-between rounded-xl px-5 py-4">
-      <div className="flex flex-col gap-2 text-start">
-        <Text variant="primary" size="md">
+    <div className="flex flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-1 text-start">
+        <Title size="md" className="p-0 font-bold">
           {title}
-        </Text>
-
-        <Text variant="primary" size="lg">
+        </Title>
+        <Text size="sm" variant="secondary">
           {invoiceNumber}
         </Text>
       </div>
-      <div className="flex flex-col gap-2 text-start text-sm">
-        <div>
-          <Text variant="primary" size="sm">
-            {dateLabel}
-          </Text>
-          <Text variant="primary" size="sm" className="mt-1">
-            {date}
-          </Text>
-        </div>
 
-        <div>
-          <Text variant="primary" size="sm">
-            {timeLabel}
-          </Text>
-          <Text variant="primary" size="sm" className="mt-1">
-            {time}
-          </Text>
-        </div>
+      <div className="flex flex-col gap-1 text-start sm:text-end">
+        <Text size="sm" variant="secondary">
+          {dateLabel}: {date}
+        </Text>
+        <Text size="sm" variant="secondary">
+          {timeLabel}: {time}
+        </Text>
       </div>
     </div>
   );
-};
-
-export default InvoicesDate;
+}
