@@ -7,7 +7,7 @@ export const invoiceServiceSchema = z.object({
 });
 
 export const addInvoiceSchema = z.object({
-  visit: z.string().min(1, "requiredField"),
+  // visit: z.string().min(1, "requiredField"),
   services: z.array(invoiceServiceSchema).min(1, "atLeastOneService"),
   paid: z.coerce.number().min(0, "invalidPaid"),
   paymentMethod: z.enum(["cash", "card", "insurance"]),

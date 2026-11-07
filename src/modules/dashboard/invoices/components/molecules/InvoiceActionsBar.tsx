@@ -7,11 +7,13 @@ import Text from "@/shared/components/atoms/Text";
 interface Props {
   onDownload: () => void;
   isDownloading?: boolean;
+  invoiceNumber?: string;
 }
 
 export default function InvoiceActionsBar({
   onDownload,
   isDownloading,
+  invoiceNumber = "INV-2024-1247",
 }: Props) {
   const t = useTranslations("Invoice");
 
@@ -20,7 +22,7 @@ export default function InvoiceActionsBar({
       <div className="flex items-center gap-1 text-sm ds-text">
         <ChevronRight size={30} className="ds-primary font-bold" />
         <Text variant="primary" size="sm">
-          {t("invoiceNumber", { number: "INV-2024-1247" })}
+          {t("invoiceNumber", { number: invoiceNumber })}
         </Text>
       </div>
 

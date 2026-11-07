@@ -10,7 +10,7 @@ interface Props {
   date: string;
 }
 
-const PaymentDetails = ({
+export default function PaymentDetails({
   title,
   methodLabel,
   method,
@@ -18,40 +18,26 @@ const PaymentDetails = ({
   status,
   dateLabel,
   date,
-}: Props) => {
-  const details = [
-    {
-      label: methodLabel,
-      value: method,
-    },
-    {
-      label: statusLabel,
-      value: status,
-      isGreen: true,
-    },
-    {
-      label: dateLabel,
-      value: date,
-    },
+}: Props) {
+  const items = [
+    { label: methodLabel, value: method },
+    { label: statusLabel, value: status },
+    { label: dateLabel, value: date },
   ];
 
   return (
-    <div className="flex flex-col gap-4 mt-4">
-      <Text size="lg" variant="primary" className="font-medium">
+    <div className="flex flex-col gap-3">
+      <Text size="lg" variant="primary" className="font-bold">
         {title}
       </Text>
 
-      <div className="grid grid-cols-3 items-start">
-        {details.map((item) => (
-          <div key={item.label} className="flex flex-col gap-2">
-            <Text size="sm" variant="secondary">
+      <div className="ds-bg-card ds-shadow-sm grid grid-cols-1 gap-4 rounded-xl p-5 sm:grid-cols-3">
+        {items.map((item) => (
+          <div key={item.label} className="flex flex-col gap-1 text-start">
+            <Text size="xs" variant="secondary" className="p-0">
               {item.label}
             </Text>
-
-            <Text
-              size="sm"
-              variant={item.isGreen ? "accent" : "primary"}
-            >
+            <Text size="sm" variant="primary" className="p-0 font-bold">
               {item.value}
             </Text>
           </div>
@@ -59,6 +45,4 @@ const PaymentDetails = ({
       </div>
     </div>
   );
-};
-
-export default PaymentDetails;
+}

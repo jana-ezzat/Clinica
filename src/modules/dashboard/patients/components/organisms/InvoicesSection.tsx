@@ -8,6 +8,7 @@ import InvoicesHeader from "../molecules/InvoicesHeader";
 import InvoicesTable from "./InvoicesTable";
 import InvoiceDetailsModal from "./InvoiceDetailsModal";
 import StatusCard from "@/shared/components/atoms/StatusCard";
+import InvoiceFormModal from "@/modules/dashboard/invoices/components/organisms/InvoiceFormModal";
 
 interface InvoicesSectionProps {
     patientId: string;
@@ -17,6 +18,7 @@ const InvoicesSection = ({ patientId }: InvoicesSectionProps) => {
     const t = useTranslations("patients.details.invoices");
     const { data: invoices, isLoading, isError } = usePatientInvoices(patientId);
     const [selectedInvoice, setSelectedInvoice] = useState<Invoice | null>(null);
+    const [isAddOpen, setIsAddOpen] = useState(false);
 
     if (isLoading) return <StatusCard description={t("loading")} />;
     if (isError) return <StatusCard description={t("loadError")} tone="error" />;
@@ -26,7 +28,7 @@ const InvoicesSection = ({ patientId }: InvoicesSectionProps) => {
             <InvoicesHeader
                 title={t("title")}
                 btnTitle={t("addBtn")}
-                onClick={() => undefined}
+                onClick={() => setIsAddOpen(true)}
             />
 
             <InvoicesTable
@@ -39,6 +41,12 @@ const InvoicesSection = ({ patientId }: InvoicesSectionProps) => {
                 invoiceId={selectedInvoice?._id ?? null}
                 patientId={patientId}
                 onClose={() => setSelectedInvoice(null)}
+            />
+
+            <InvoiceFormModal
+                isOpen={isAddOpen}
+                onClose={() => setIsAddOpen(false)}
+                fixedPatientId={patientId}
             />
 
         </div>
