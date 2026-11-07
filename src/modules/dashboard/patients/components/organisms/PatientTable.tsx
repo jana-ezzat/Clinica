@@ -5,6 +5,7 @@ import StatusCard from "@/shared/components/atoms/StatusCard";
 import TableRow from "../molecules/TableRow";
 import TableCard from "@/shared/components/molecules/TableCard";
 import TableHeaderRow from "@/shared/components/molecules/TableHeaderRow";
+import TableSkeleton from "@/shared/components/molecules/TableSkeleton";
 
 export default function PatientTable() {
   const t = useTranslations("patients");
@@ -23,9 +24,22 @@ export default function PatientTable() {
     email: t("columns.email"),
   };
 
-  if (isLoading) {
-    return <StatusCard description={t("loading")} />;
-  }
+  const columns = [
+    columnLabels.name,
+    columnLabels.type,
+    columnLabels.nationality,
+    columnLabels.phone,
+    columnLabels.email,
+  ];
+
+ if (isLoading) {
+   return (
+     <TableCard className="ds-bg-card ds-shadow-sm overflow-hidden rounded-[18px]">
+       <TableHeaderRow columns={columns} />
+       <TableSkeleton columns={columns.length} />
+     </TableCard>
+   );
+ }
 
   if (isError) {
     return (

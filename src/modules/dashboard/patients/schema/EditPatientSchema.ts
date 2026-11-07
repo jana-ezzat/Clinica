@@ -25,9 +25,9 @@ export const EditPatientSchema = z.object({
     )
     .optional(),
 
-  emergencyname: z.string().optional(),
-  emergencyphone: z.string().optional(),
-  emergencyrelationship: z.string().optional(),
+  emergencyName: z.string().optional(),
+  emergencyPhone: z.string().optional(),
+  emergencyRelationship: z.string().optional(),
 
   insuranceCompany: z.string().optional(),
   insuranceMemberNumber: z.string().optional(),

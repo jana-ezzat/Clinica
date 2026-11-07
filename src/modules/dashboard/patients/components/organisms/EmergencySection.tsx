@@ -19,15 +19,15 @@ export default function EmergencySection({ patient }: Props) {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         <DataField
           label={t("fields.emergencyName")}
-          value={contact?.emergencyname ?? EMPTY}
+          value={contact?.emergencyName ?? EMPTY}
         />
         <DataField
           label={t("fields.emergencyPhone")}
-          value={contact?.emergencyphone ?? EMPTY}
+          value={contact?.emergencyPhone ?? EMPTY}
         />
         <DataField
           label={t("fields.emergencyRelationship")}
-          value={contact?.emergencyrelationship ?? EMPTY}
+          value={contact?.emergencyRelationship ?? EMPTY}
         />
       </div>
     </Accordion>

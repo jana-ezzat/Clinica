@@ -480,6 +480,12 @@
       "phone": "Phone",
       "age": "Age",
       "gender": "Gender",
+      "latest": {
+        "title": "Latest Appointments",
+        "loading": "Loading appointments...",
+        "loadError": "Could not load appointments",
+        "empty": "No appointments for this patient yet"
+      },
       "overview": {
         "sections": {
           "basic": "Basic Information",
@@ -684,6 +690,8 @@
       "submit": "Save Appointment",
       "cancel": "Cancel",
       "patient": {
+        "loadError": "Could not load patients",
+        "retry": "Retry",
         "title": "Patient Information",
         "subtitle": "Basic Patient Information",
         "patientType": "Patient Type",

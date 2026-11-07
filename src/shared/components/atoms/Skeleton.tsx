@@ -1,13 +1,17 @@
 import { cn } from "@/lib/cn";
 
-interface Props {
+interface SkeletonProps {
   className?: string;
 }
 
-export default function Skeleton({ className }: Props) {
+export default function Skeleton({ className }: SkeletonProps) {
   return (
     <div
-      className={cn("animate-pulse rounded-md bg-gray-200", className)}
+      aria-hidden="true"
+      className={cn(
+        "animate-pulse rounded-md bg-current opacity-[0.08] motion-reduce:animate-none",
+        className,
+      )}
     />
   );
 }

@@ -18,10 +18,9 @@ export default function AppointmentsHeader() {
       <Button variant="primary" onClick={() => setIsModalOpen(true)}>
         {`+ ${tModal("title")}`}
       </Button>
-      <ModalAppointment
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {isModalOpen && (
+        <ModalAppointment isOpen onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }

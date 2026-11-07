@@ -8,7 +8,7 @@ import Header from "@/shared/components/molecules/Header";
 import Button from "@/shared/components/atoms/Button";
 import { useState } from "react";
 import EditPatientModal from "./EditPatientModal";
-import { useLocale} from "next-intl";
+import { useLocale } from "next-intl";
 import { formatLongDate } from "@/lib/utils";
 import useVisits from "../../hooks/useVisits";
 
@@ -26,20 +26,25 @@ export default function PatientHeader({
   const t = useTranslations("patients.details");
   const [isEditOpen, setIsEditOpen] = useState(false);
   const tOverview = useTranslations("patients.details.overview");
-const locale = useLocale();
-const { data: visits } = useVisits(patient.id);
+  const locale = useLocale();
+  const { data: visits } = useVisits(patient.id);
 
-const latestVisit = visits?.[0]; // useVisits sorts newest first
-const lastVisit = latestVisit ? formatLongDate(latestVisit.visitDate, locale) : undefined;
-const ageText =
-  patient.age !== undefined ? tOverview("ageYears", { count: patient.age }) : undefined;
-const genderText = patient.gender ? tOverview(`gender.${patient.gender}`) : undefined;  
-
+  const latestVisit = visits?.[0];
+  const lastVisit = latestVisit
+    ? formatLongDate(latestVisit.visitDate, locale)
+    : undefined;
+  const ageText =
+    patient.age !== undefined
+      ? tOverview("ageYears", { count: patient.age })
+      : undefined;
+  const genderText = patient.gender
+    ? tOverview(`gender.${patient.gender}`)
+    : undefined;
 
   return (
     <div className="flex flex-col gap-5 p-5">
       <div className="flex items-start justify-between">
-        <Header title={patient.name} subtitle={t("notAvailable")} />
+        <Header title={patient.name}/>
         <BackButton />
       </div>
 

@@ -29,9 +29,9 @@ export interface PatientDetails extends Patient {
   };
 
   emergencyContact?: {
-    emergencyname?: string;
-    emergencyphone?: string;
-    emergencyrelationship?: string;
+    emergencyName?: string;
+    emergencyPhone?: string;
+    emergencyRelationship?: string;
   };
 
   insurance?: {
@@ -83,9 +83,9 @@ interface BackendPatient {
   };
 
   emergencyContact?: {
-    emergencyname?: string;
-    emergencyphone?: string;
-    emergencyrelationship?: string;
+    emergencyName?: string;
+    emergencyPhone?: string;
+    emergencyRelationship?: string;
   };
 
   insurance?: {
@@ -135,7 +135,7 @@ const fetchPatient = async (slug: string): Promise<PatientDetails> => {
     },
 
     emergencyContact: patient.emergencyContact,
-
+    
     insurance: patient.insurance,
 
     attachments: patient.attachments ?? [],

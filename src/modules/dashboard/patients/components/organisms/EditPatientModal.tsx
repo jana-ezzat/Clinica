@@ -64,10 +64,10 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
         patient.medicalInformation?.previousSurgeries ?? []
       ).map((s) => ({ name: s.name, date: s.date.split("T")[0] })),
 
-      emergencyname: patient.emergencyContact?.emergencyname ?? "",
-      emergencyphone: patient.emergencyContact?.emergencyphone ?? "",
-      emergencyrelationship:
-        patient.emergencyContact?.emergencyrelationship ?? "",
+      emergencyName: patient.emergencyContact?.emergencyName ?? "",
+      emergencyPhone: patient.emergencyContact?.emergencyPhone ?? "",
+      emergencyRelationship:
+        patient.emergencyContact?.emergencyRelationship ?? "",
 
       insuranceCompany: patient.insurance?.company ?? "",
       insuranceMemberNumber: patient.insurance?.memberNumber ?? "",
@@ -99,10 +99,9 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
           previousSurgeries: (data.previousSurgeries ?? []).map(
             ({ name, date }) => ({ name, date }),
           ),
-
-          emergencyName: data.emergencyname || undefined,
-          emergencyPhone: data.emergencyphone || undefined,
-          emergencyRelationship: data.emergencyrelationship || undefined,
+          emergencyName: data.emergencyName || undefined,
+          emergencyPhone: data.emergencyPhone || undefined,
+          emergencyRelationship: data.emergencyRelationship || undefined,
 
           insuranceCompany: data.insuranceCompany || undefined,
           memberNumber: data.insuranceMemberNumber || undefined,
@@ -241,17 +240,17 @@ export default function EditPatientModal({ patient, isOpen, onClose }: Props) {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <label className={labelClass}>
                 {t("fields.emergencyName")}
-                <input className={fieldClass} {...register("emergencyname")} />
+                <input className={fieldClass} {...register("emergencyName")} />
               </label>
               <label className={labelClass}>
                 {t("fields.emergencyPhone")}
-                <input className={fieldClass} {...register("emergencyphone")} />
+                <input className={fieldClass} {...register("emergencyPhone")} />
               </label>
               <label className={labelClass}>
                 {t("fields.emergencyRelationship")}
                 <input
                   className={fieldClass}
-                  {...register("emergencyrelationship")}
+                  {...register("emergencyRelationship")}
                 />
               </label>
             </div>

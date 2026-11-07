@@ -22,10 +22,11 @@ export default function DashboardHeader({
         <Button variant="primary" onClick={() => setIsModalOpen(true)}>
           {addAppointmentLabel}
         </Button>
-        <ModalAppointment
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+
+        {isModalOpen && (
+          <ModalAppointment isOpen onClose={() => setIsModalOpen(false)} />
+        )}
+        
       </div>
     </>
   );
