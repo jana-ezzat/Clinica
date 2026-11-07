@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { AppointmentFormValues } from "@/modules/dashboard/lib/schema/AppointmentModalSechma";
+import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 import Text from "@/shared/components/atoms/Text";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
@@ -29,6 +29,7 @@ export default function SelectFields({
       <div className="relative">
         <select
           {...register(name)}
+          name={String(name)}
           defaultValue=""
           className={cn(
             "h-11 w-full appearance-none rounded-lg px-3.5 text-sm",

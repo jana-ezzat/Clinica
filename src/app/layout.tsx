@@ -53,7 +53,9 @@ export default async function RootLayout({
     "appointments",
     "settings",
     "nav",
-    "profile"
+    "profile",
+    "doctorsList",
+    "doctorProfile",
   ]);
 
   const dir = locale === "ar" ? "rtl" : "ltr";

@@ -1,7 +1,22 @@
-import { redirect } from "next/navigation";
-import { doctorProfileMock } from "@/modules/dashboard/doctors/lib/mockData";
+// src/app/(dashboard)/dashboard/doctors/page.tsx
 
-export default function DoctorsPage() {
-  // TODO: replace with a real doctors list page once the API/table design is ready.
-  redirect(`/dashboard/doctors/${doctorProfileMock.id}`);
+import DoctorTable from "@/modules/dashboard/doctors/components/organisms/DoctorTable";
+import Title from "@/shared/components/atoms/Title";
+import { useTranslations } from "next-intl";
+
+
+const page = () => {
+  const t = useTranslations("doctorsList");
+
+  return (
+    <div className="flex flex-col gap-6 p-6">
+      <div className="flex items-center justify-between">
+        <Title className="ds-text text-xl font-bold">{t("title")}</Title>
+      </div>
+
+      <DoctorTable />
+    </div>
+  );
 }
+
+export default page

@@ -3,7 +3,6 @@
     "of": "من",
     "loading": "جاري التحميل..."
   },
-
   "nav": {
     "features": "المميزات",
     "pricing": "الأسعار",
@@ -867,6 +866,80 @@
     }
   },
   "Invoice": {
+    "document": {
+      "loading": "جاري تحميل الفاتورة...",
+      "loadError": "تعذّر تحميل الفاتورة",
+      "retry": "إعادة المحاولة",
+      "back": "العودة للفواتير"
+    },
+    "list": {
+      "title": "الفواتير",
+      "addBtn": "إضافة فاتورة",
+      "loading": "جاري تحميل الفواتير...",
+      "loadError": "تعذّر تحميل الفواتير",
+      "retry": "إعادة المحاولة",
+      "empty": "لا توجد فواتير بعد",
+      "updateLabel": "تعديل الفاتورة",
+      "viewLabel": "عرض الفاتورة",
+      "columns": {
+        "invoiceNumber": "رقم الفاتورة",
+        "patient": "المريض",
+        "date": "التاريخ",
+        "total": "الإجمالي",
+        "paid": "المدفوع",
+        "remaining": "المتبقي",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      }
+    },
+    "form": {
+      "createTitle": "إضافة فاتورة جديدة",
+      "editTitle": "تعديل الفاتورة",
+      "patient": "المريض",
+      "patientPlaceholder": "اختر المريض",
+      "visit": "الزيارة",
+      "visitOptional": "الزيارة (اختياري)",
+      "doctor": "الدكتور",
+      "doctorPlaceholder": "اختر الدكتور",
+      "visitPlaceholder": "اختر الزيارة",
+      "selectPatientFirst": "اختر المريض أولاً",
+      "noVisits": "لا توجد زيارات لهذا المريض",
+      "servicesTitle": "الخدمات",
+      "serviceName": "اسم الخدمة",
+      "price": "السعر",
+      "discount": "الخصم",
+      "addService": "إضافة خدمة",
+      "removeService": "حذف الخدمة",
+      "subtotal": "المجموع",
+      "totalDiscount": "إجمالي الخصم",
+      "total": "الصافي",
+      "remaining": "المتبقي",
+      "paid": "المبلغ المدفوع",
+      "paymentMethod": "طريقة الدفع",
+      "methods": {
+        "cash": "نقدي",
+        "card": "بطاقة",
+        "insurance": "تأمين"
+      },
+      "invoiceDate": "تاريخ الفاتورة",
+      "notes": "ملاحظات",
+      "terms": "الشروط والأحكام",
+      "cancel": "إلغاء",
+      "create": "حفظ الفاتورة",
+      "save": "حفظ التعديلات",
+      "saving": "جاري الحفظ...",
+      "createSuccess": "تم إنشاء الفاتورة بنجاح",
+      "updateSuccess": "تم تحديث الفاتورة بنجاح",
+      "error": "حدث خطأ، حاول مرة أخرى",
+      "errors": {
+        "requiredField": "هذا الحقل مطلوب",
+        "visitRequiredForAdmin": "يجب اختيار زيارة لتحديد الدكتور",
+        "invalidPrice": "أدخل سعرًا صحيحًا",
+        "invalidDiscount": "أدخل خصمًا صحيحًا",
+        "atLeastOneService": "أضف خدمة واحدة على الأقل",
+        "invalidPaid": "أدخل مبلغًا صحيحًا"
+      }
+    },
     "savePdf": "حفظ PDF",
     "print": "طباعة",
     "invoice": "فاتورة",
@@ -941,7 +1014,8 @@
       },
       "gender": {
         "male": "ذكر",
-        "female": "أنثى"
+        "female": "أنثى",
+        "unspecified": "غير محدد"
       },
       "experience": {
         "title": "الخبرة والسيرة الذاتية",
@@ -989,7 +1063,6 @@
       "title": "عنوان العيادة",
       "placeholder": "أدخل عنوان العيادة"
     },
-
     "actions": {
       "cancel": "إلغاء",
       "save": "حفظ التغييرات",
@@ -1085,6 +1158,75 @@
       "awardDeleted": "تم حذف الجائزة بنجاح",
       "awardSaveFailed": "فشل حفظ الجائزة",
       "awardDeleteFailed": "فشل حذف الجائزة"
+    }
+  },
+  "doctorsList": {
+    "title": "الأطباء",
+    "columns": {
+      "name": "الطبيب",
+      "specialty": "التخصص",
+      "experience": "سنوات الخبرة",
+      "phone": "رقم الهاتف",
+      "email": "البريد الإلكتروني"
+    },
+    "loading": "جاري تحميل الأطباء...",
+    "loadError": "حدث خطأ أثناء تحميل بيانات الأطباء.",
+    "retry": "إعادة المحاولة",
+    "emptyTitle": "لا يوجد أطباء",
+    "emptyDescription": "لم يتم العثور على أي أطباء.",
+    "noData": "—",
+    "experienceYears": "{count} سنوات"
+  },
+  "doctorProfile": {
+    "notFound": "الطبيب غير موجود",
+    "retry": "إعادة المحاولة",
+    "editProfile": "تعديل الملف الشخصي",
+    "addAppointment": "إضافة موعد جديد",
+    "onlineNow": "متصل الآن",
+    "offline": "غير متصل",
+    "personalData": {
+      "title": "البيانات الشخصية",
+      "age": "العمر",
+      "gender": "النوع",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "clinicAddress": "عنوان العيادة",
+      "workingHours": "ساعات العمل"
+    },
+    "gender": {
+      "male": "ذكر",
+      "female": "أنثى",
+      "unspecified": "غير محدد"
+    },
+    "experience": {
+      "title": "الخبرة والسيرة الذاتية",
+      "yearsOfExperience": "سنوات الخبرة",
+      "certificates": "الشهادات",
+      "awards": "الجوائز"
+    },
+    "editDialog": {
+      "title": "تعديل ملف الطبيب",
+      "description": "حدّث اسم الطبيب والبريد الإلكتروني والدور والصورة.",
+      "name": "الاسم",
+      "namePlaceholder": "اسم الطبيب",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "email@example.com",
+      "role": "الدور",
+      "changePhoto": "تغيير الصورة",
+      "removePhoto": "حذف الصورة",
+      "cancel": "إلغاء",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "أدخل بريداً إلكترونياً صالحاً",
+      "updateSuccess": "تم تحديث بيانات الطبيب بنجاح",
+      "updateError": "تعذر تحديث بيانات الطبيب",
+      "roles": {
+        "doctor": "طبيب",
+        "receptionist": "موظف استقبال",
+        "accountant": "محاسب",
+        "nurse": "ممرض"
+      }
     }
   }
 }

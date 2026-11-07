@@ -1,11 +1,11 @@
 "use client";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import type { EditAppointmentFormValues } from "../../schema/EditAppointmentSchema";
 import {
   APPOINTMENT_STATUSES,
   APPOINTMENT_TYPES,
 } from "../../lib/appointmentOptions";
+import { EditAppointmentFormValues } from "../../schema/AppointmentModalSchema";
 
 interface Props {
   register: UseFormRegister<EditAppointmentFormValues>;

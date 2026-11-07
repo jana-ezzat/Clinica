@@ -15,7 +15,10 @@ export default async function DoctorProfileTemplate({
   const t = await getTranslations("doctors.profile");
   const tCommon = await getTranslations("common");
 
-  const genderLabel = t(`gender.${doctor.gender}`);
+  const genderLabel =
+    doctor.gender === "male" || doctor.gender === "female"
+      ? t(`gender.${doctor.gender}`)
+      : t("gender.unspecified");
 
   return (
     <div className="flex flex-col gap-6 p-6">
@@ -38,7 +41,7 @@ export default async function DoctorProfileTemplate({
           phone: t("personalData.phone"),
           email: t("personalData.email"),
           clinicAddress: t("personalData.clinicAddress"),
-          workHours: t("personalData.workHours"),
+          workingHours: t("personalData.workingHours"),
         }}
         genderLabel={genderLabel}
       />
@@ -47,7 +50,7 @@ export default async function DoctorProfileTemplate({
         doctor={doctor}
         title={t("experience.title")}
         labels={{
-          yearsOfExperience: t("experience.yearsOfExperience"),
+          experienceYears: t("experience.experienceYears"),
           certificates: t("experience.certificates"),
           awards: t("experience.awards"),
         }}

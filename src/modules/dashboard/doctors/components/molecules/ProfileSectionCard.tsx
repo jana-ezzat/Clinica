@@ -13,7 +13,7 @@ export default function ProfileSectionCard({
   className,
 }: ProfileSectionCardProps) {
   return (
-    <section className={`ds-bg-card ds-shadow-sm rounded-lg p-6 ${className ?? ""}`}>
+    <section className={`ds-bg-card ds-shadow-sm rounded-lg h-fit p-6 ${className ?? ""}`}>
       <Title size="sm" className="p-0! font-bold">
         {title}
       </Title>

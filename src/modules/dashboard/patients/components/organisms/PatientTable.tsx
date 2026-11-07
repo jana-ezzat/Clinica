@@ -1,11 +1,12 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 import usePatients from "../../hooks/usePatients";
 import StatusCard from "@/shared/components/atoms/StatusCard";
 import TableRow from "../molecules/TableRow";
 import TableCard from "@/shared/components/molecules/TableCard";
 import TableHeaderRow from "@/shared/components/molecules/TableHeaderRow";
-import TableSkeleton from "@/shared/components/molecules/TableSkeleton";
+import TableSkeleton from "@/shared/components/skeletons/TableSkeleton";
 
 export default function PatientTable() {
   const t = useTranslations("patients");
@@ -52,9 +53,12 @@ export default function PatientTable() {
     );
   }
 
-  if (!patients || patients.length === 0) {
+  if (!isLoading && (!patients || patients.length === 0)) {
     return (
-      <StatusCard title={t("emptyTitle")} description={t("emptyDescription")} />
+      <StatusCard
+        title={t("emptyTitle")}
+        description={t("emptyDescription")}
+      />
     );
   }
 
@@ -69,15 +73,20 @@ export default function PatientTable() {
           columnLabels.email,
         ]}
       />
+
       <tbody>
-        {patients.map((patient) => (
-          <TableRow
-            key={patient.id}
-            patient={patient}
-            typeLabels={typeLabels}
-            emptyValueLabel={t("noEmail")}
-          />
-        ))}
+        {isLoading ? (
+          <TableSkeleton columns={5} />
+        ) : (
+          patients?.map((patient) => (
+            <TableRow
+              key={patient.id}
+              patient={patient}
+              typeLabels={typeLabels}
+              emptyValueLabel={t("noEmail")}
+            />
+          ))
+        )}
       </tbody>
     </TableCard>
   );

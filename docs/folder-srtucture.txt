@@ -1,134 +1,97 @@
-Project Structure
-────────────────────────────────────────────────────────────────────
+Clinica project structure
+=========================
 
-    ── clinica
-        ├── src
-        │   ├── app
-        │   │   ├── layout.tsx                    # Root layout, providers, locale, theme, RTL/LTR
-        │   │   ├── globals.css                   # Global styles
-        │   │   │
-        │   │   ├── (public)
-        │   │   │   └── page.tsx                  # Landing page
-        │   │   │
-        │   │   ├── (auth)
-        │   │   │   ├── layout.tsx                # Auth layout
-        │   │   │   ├── sign-in
-        │   │   │   │   └── page.tsx              # Sign in
-        │   │   │   ├── sign-up
-        │   │   │   │   └── page.tsx              # Sign up
-        │   │   │   ├── forget-pass
-        │   │   │   │   └── page.tsx              # Forgot password
-        │   │   │   ├── otp
-        │   │   │   │   └── page.tsx              # OTP verification
-        │   │   │   └── reset-pass
-        │   │   │       └── page.tsx              # Reset password
-        │   │   │
-        │   │   └── (dashboard)
-        │   │       ├── layout.tsx                # Dashboard layout (sidebar, header)
-        │   │       └── dashboard
-        │   │           ├── page.tsx              # Dashboard home
-        │   │           └── patients
-        │   │               ├── page.tsx          # Patients list
-        │   │               └── [id]
-        │   │                   └── page.tsx      # Patient detail
-        │   │
-        │   ├── modules
-        │   │   ├── auth
-        │   │   │   ├── hooks                     # Auth hooks (login, forget/reset password, modal)
-        │   │   │   ├── schema                    # Zod schemas (login, signup, forget/reset)
-        │   │   │   ├── sign-in
-        │   │   │   │   └── components
-        │   │   │   │       └── organisms         # SignIn form
-        │   │   │   ├── signup
-        │   │   │   │   └── components
-        │   │   │   │       └── organisms         # SignUpForm
-        │   │   │   └── reset-pass
-        │   │   │       └── components
-        │   │   │           ├── molecules         # Auth fields, OTP, form head
-        │   │   │           └── organisms         # ForgetPassword, Otp, ResetPassword
-        │   │   │
-        │   │   ├── dashboard
-        │   │   │   ├── components
-        │   │   │   │   ├── molecules             # StatCard, tables, WelcomeBanner
-        │   │   │   │   └── organisms             # DashboardHome, Sidebar, Header, charts
-        │   │   │   ├── context
-        │   │   │   │   └── SidebarContext.tsx
-        │   │   │   ├── lib                       # mockData, navItems, medicalfile, VisitHistoryData
-        │   │   │   ├── schema                    # Appointment modal schema
-        │   │   │   ├── templates
-        │   │   │   │   └── DashboardTemplate.tsx
-        │   │   │   ├── patients
-        │   │   │   │   ├── hooks                 # usePatients, usePatient
-        │   │   │   │   └── components
-        │   │   │   │       ├── atoms             # Avatar, Badge, FieldGroup, StatusCard
-        │   │   │   │       ├── molecules         # Tabs, table, accordion, info cards
-        │   │   │   │       └── organisms         # PatientTable, sections (data, insurance, etc.)
-        │   │   │   ├── medicalfile
-        │   │   │   │   └── components
-        │   │   │   │       ├── molecules         # GroupDetails, IconListSection
-        │   │   │   │       └── organisms         # MedicalFile, MedicalFileSection
-        │   │   │   └── visting
-        │   │   │       └── components
-        │   │   │           ├── molecules         # Visit meta, modal fields, patient info
-        │   │   │           └── organisms         # VisitDetails, VisitHistory, ModalAppointment
-        │   │   │
-        │   │   └── landing
-        │   │       └── components
-        │   │           ├── atoms                 # Footer links, social icons, pricing btn
-        │   │           ├── molecules             # Cards, accordion, billing toggle
-        │   │           └── organisms             # Hero, Features, Pricing, FAQ, Footer, etc.
-        │   │
-        │   ├── shared
-        │   │   ├── components
-        │   │   │   ├── atoms
-        │   │   │   │   ├── Auth/                 # FormCard, OtpInput, LoginLink, etc.
-        │   │   │   │   ├── navbar/               # MenuButton, NavLink, NavAuthActions
-        │   │   │   │   └── …                     # Button, Input, Text, Badge, Modal, etc.
-        │   │   │   ├── molecules                 # Header, IconList
-        │   │   │   ├── LocaleSwitcher.tsx
-        │   │   │   ├── ThemeButton.tsx
-        │   │   │   └── FooterSection.tsx
-        │   │   │
-        │   │   └── styles
-        │   │       └── variables.css            # Design tokens
-        │   │
-        │   ├── components
-        │   │   └── ui                            # shadcn/ui primitives (button, chart)
-        │   │
-        │   ├── services
-        │   │   ├── axiosConfig.ts                # Axios instance
-        │   │   └── tokenService.ts               # Auth token helpers
-        │   │
-        │   ├── lib
-        │   │   ├── cn.ts                          # ClassName helper
-        │   │   ├── utils.ts                       # Shared utils
-        │   │   ├── pickMessages.ts                # Select i18n namespaces
-        │   │   └── actions
-        │   │       ├── changeLocale.ts
-        │   │       └── changeTheme.ts
-        │   │
-        │   ├── providers
-        │   │   ├── ThemeProvider.tsx
-        │   │   └── QueryProvider.tsx             # React Query
-        │   │
-        │   ├── config
-        │   │   └── env.ts
-        │   │
-        │   ├── i18n
-        │   │   └── request.ts
-        │   │
-        │   ├── messages
-        │   │   ├── ar.json
-        │   │   └── en.json
-        │   │
-        │   └── assets
-        │       └── icons
-        │           └── icons.tsx
-        │
-        ├── next.config.ts
-        ├── tsconfig.json
-        ├── eslint.config.mjs
-        ├── postcss.config.mjs
-        ├── components.json                        # shadcn/ui config
-        ├── package.json
-        └── README.md
+clinica/
+|-- docs/
+|   |-- folder-srtucture.txt             # This document
+|   `-- New Collection.postman_collection update 2
+|-- public/
+|   |-- fonts/                           # Cairo font files
+|   `-- *.svg                            # Public SVG assets
+|-- src/
+|   |-- app/                             # Next.js App Router routes
+|   |   |-- layout.tsx                   # Root layout
+|   |   |-- globals.css                  # Global styles
+|   |   |-- (public)/
+|   |   |   `-- page.tsx                 # Landing page
+|   |   |-- (auth)/
+|   |   |   |-- layout.tsx
+|   |   |   |-- sign-in/page.tsx
+|   |   |   |-- sign-up/page.tsx
+|   |   |   |-- forget-pass/page.tsx
+|   |   |   |-- otp/page.tsx
+|   |   |   `-- reset-pass/page.tsx
+|   |   `-- (dashboard)/
+|   |       |-- layout.tsx               # Dashboard shell
+|   |       `-- dashboard/
+|   |           |-- page.tsx             # Dashboard overview
+|   |           |-- appointments/page.tsx
+|   |           |-- doctors/
+|   |           |   |-- page.tsx
+|   |           |   `-- [id]/page.tsx
+|   |           |-- invoices/page.tsx
+|   |           |-- patients/
+|   |           |   |-- page.tsx
+|   |           |   `-- [id]/page.tsx
+|   |           |-- profile/
+|   |           |   |-- page.tsx
+|   |           |   |-- update/page.tsx
+|   |           |   `-- updateData/[type]/[id]/page.tsx
+|   |           |-- reports/page.tsx
+|   |           `-- settings/page.tsx
+|   |-- assets/
+|   |   |-- icons/icons.tsx
+|   |   |-- images/OIP.webp
+|   |   `-- image.tsx
+|   |-- components/ui/                   # shadcn/ui primitives
+|   |-- hooks/useCurrentUser.ts
+|   |-- i18n/request.ts
+|   |-- lib/
+|   |   |-- actions/                     # Theme and locale actions
+|   |   |-- config/env.ts
+|   |   |-- cn.ts
+|   |   |-- pickMessages.ts
+|   |   `-- utils.ts
+|   |-- messages/                        # Arabic and English translations
+|   |-- modules/                         # Feature-specific code
+|   |   |-- auth/
+|   |   |   |-- hooks/
+|   |   |   |-- schema/
+|   |   |   |-- sign-in/components/organisms/
+|   |   |   |-- signup/components/organisms/
+|   |   |   `-- reset-pass/components/{molecules,organisms}/
+|   |   |-- dashboard/
+|   |   |   |-- appointments/            # Appointment UI, hooks, schema, data
+|   |   |   |-- doctors/                 # Doctor profiles and reservations
+|   |   |   |-- invoices/                # Invoice UI and PDF
+|   |   |   |-- patients/                # Patient records, visits, invoices
+|   |   |   |-- profile/                 # Profile and credential editing
+|   |   |   |-- reports/                 # Reports and filters
+|   |   |   |-- settings/                # Clinic settings and work hours
+|   |   |   |-- components/              # Dashboard-wide components
+|   |   |   |-- context/
+|   |   |   |-- hooks/
+|   |   |   |-- lib/
+|   |   |   `-- templates/
+|   |   `-- landing/components/{atoms,molecules,organisms}/
+|   |-- providers/                       # Theme and React Query providers
+|   |-- services/                        # Axios and token services
+|   |-- shared/                          # Cross-feature components, hooks, types and styles
+|   |   |-- components/{atoms,molecules,organisms}/
+|   |   |-- hooks/
+|   |   |-- styles/
+|   |   `-- types/
+|   `-- middleware.ts
+|-- components.json                      # shadcn/ui configuration
+|-- eslint.config.mjs
+|-- next.config.ts
+|-- package.json
+|-- postcss.config.mjs
+|-- README.md
+`-- tsconfig.json
+
+Notes
+-----
+- `app/` contains routes only; UI and feature logic live in `modules/`.
+- `shared/` contains code reused across multiple modules.
+- Route groups such as `(auth)` and `(dashboard)` do not appear in URLs.

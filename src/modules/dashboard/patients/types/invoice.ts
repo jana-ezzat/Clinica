@@ -15,7 +15,7 @@ export interface Invoice {
     invoiceNumber: string;
     patient: string;
     doctor: string;
-    visit: string;
+    visit?: string;
     invoiceDate: string;
     services: InvoiceService[];
     subtotal: number;
@@ -34,7 +34,7 @@ export interface Invoice {
 export interface CreateInvoicePayload {
     patient: string;
     doctor: string;
-    visit: string;
+    // visit: string;
     services: { name: string; price: number; discount: number }[];
     paid: number;
     paymentMethod: PaymentMethod;

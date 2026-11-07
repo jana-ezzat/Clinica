@@ -1,3 +1,4 @@
+// src/modules/dashboard/doctors/components/organisms/ExperienceSection.tsx
 import ProfileSectionCard from "../molecules/ProfileSectionCard";
 import CredentialCard from "../molecules/CredentialCard";
 import DataField from "@/shared/components/atoms/DataField";
@@ -8,7 +9,7 @@ interface ExperienceSectionProps {
   doctor: DoctorProfile;
   title: string;
   labels: {
-    yearsOfExperience: string;
+    experienceYears: string;
     certificates: string;
     awards: string;
   };
@@ -23,8 +24,8 @@ export default function ExperienceSection({
     <ProfileSectionCard title={title}>
       <div className="flex flex-col gap-6">
         <DataField
-          label={labels.yearsOfExperience}
-          value={String(doctor.yearsOfExperience)}
+          label={labels.experienceYears}
+          value={String(doctor.experienceYears)}
         />
 
         <Text size="sm" className="ds-text leading-relaxed">

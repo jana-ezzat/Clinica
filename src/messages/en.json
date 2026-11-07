@@ -871,6 +871,80 @@
     }
   },
   "Invoice": {
+    "document": {
+      "loading": "Loading invoice...",
+      "loadError": "Couldn't load the invoice",
+      "retry": "Retry",
+      "back": "Back to invoices"
+    },
+    "list": {
+      "title": "Invoices",
+      "addBtn": "Add Invoice",
+      "loading": "Loading invoices...",
+      "loadError": "Couldn't load invoices",
+      "retry": "Retry",
+      "empty": "No invoices yet",
+      "updateLabel": "Edit invoice",
+      "viewLabel": "View invoice",
+      "columns": {
+        "invoiceNumber": "Invoice No.",
+        "patient": "Patient",
+        "date": "Date",
+        "total": "Total",
+        "paid": "Paid",
+        "remaining": "Remaining",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "createTitle": "Add New Invoice",
+      "editTitle": "Edit Invoice",
+      "patient": "Patient",
+      "patientPlaceholder": "Select patient",
+      "visit": "Visit",
+      "visitOptional": "Visit (optional)",
+      "doctor": "Doctor",
+      "doctorPlaceholder": "Select doctor",
+      "visitPlaceholder": "Select visit",
+      "selectPatientFirst": "Select a patient first",
+      "noVisits": "No visits for this patient",
+      "servicesTitle": "Services",
+      "serviceName": "Service name",
+      "price": "Price",
+      "discount": "Discount",
+      "addService": "Add service",
+      "removeService": "Remove service",
+      "subtotal": "Subtotal",
+      "totalDiscount": "Total discount",
+      "total": "Net total",
+      "remaining": "Remaining",
+      "paid": "Amount paid",
+      "paymentMethod": "Payment method",
+      "methods": {
+        "cash": "Cash",
+        "card": "Card",
+        "insurance": "Insurance"
+      },
+      "invoiceDate": "Invoice date",
+      "notes": "Notes",
+      "terms": "Terms and conditions",
+      "cancel": "Cancel",
+      "create": "Save invoice",
+      "save": "Save changes",
+      "saving": "Saving...",
+      "createSuccess": "Invoice created successfully",
+      "updateSuccess": "Invoice updated successfully",
+      "error": "Something went wrong, please try again",
+      "errors": {
+        "requiredField": "This field is required",
+        "visitRequiredForAdmin": "Pick a visit so the invoice can be assigned to its doctor",
+        "invalidPrice": "Enter a valid price",
+        "invalidDiscount": "Enter a valid discount",
+        "atLeastOneService": "Add at least one service",
+        "invalidPaid": "Enter a valid amount"
+      }
+    },
     "savePdf": "Save PDF",
     "print": "Print",
     "invoice": "Invoice",
@@ -945,7 +1019,8 @@
       },
       "gender": {
         "male": "Male",
-        "female": "Female"
+        "female": "Female",
+        "unspecified": "Not specified"
       },
       "experience": {
         "title": "Experience & Bio",
@@ -1088,6 +1163,75 @@
       "awardDeleted": "Award deleted successfully",
       "awardSaveFailed": "Failed to save award",
       "awardDeleteFailed": "Failed to delete award"
+    }
+  },
+  "doctorsList": {
+    "title": "Doctors",
+    "columns": {
+      "name": "Doctor",
+      "specialty": "Specialty",
+      "experience": "Experience",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "loading": "Loading doctors...",
+    "loadError": "Something went wrong while loading doctors.",
+    "retry": "Retry",
+    "emptyTitle": "No doctors found",
+    "emptyDescription": "There are no doctors to display.",
+    "noData": "—",
+    "experienceYears": "{count} years"
+  },
+  "doctorProfile": {
+    "notFound": "Doctor not found",
+    "retry": "Try again",
+    "editProfile": "Edit Profile",
+    "addAppointment": "Add New Appointment",
+    "onlineNow": "Online now",
+    "offline": "Offline",
+    "personalData": {
+      "title": "Personal Information",
+      "age": "Age",
+      "gender": "Gender",
+      "phone": "Phone",
+      "email": "Email",
+      "clinicAddress": "Clinic Address",
+      "workingHours": "Working Hours"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female",
+      "unspecified": "Not specified"
+    },
+    "experience": {
+      "title": "Experience & Biography",
+      "yearsOfExperience": "Years of Experience",
+      "certificates": "Certificates",
+      "awards": "Awards"
+    },
+    "editDialog": {
+      "title": "Edit doctor profile",
+      "description": "Update the doctor's name, email, role, and photo.",
+      "name": "Name",
+      "namePlaceholder": "Doctor name",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "role": "Role",
+      "changePhoto": "Change photo",
+      "removePhoto": "Remove photo",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving...",
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email address",
+      "updateSuccess": "Doctor updated successfully",
+      "updateError": "Couldn't update the doctor",
+      "roles": {
+        "doctor": "Doctor",
+        "receptionist": "Receptionist",
+        "accountant": "Accountant",
+        "nurse": "Nurse"
+      }
     }
   }
 }

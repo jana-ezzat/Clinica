@@ -1,3 +1,4 @@
+// src/modules/dashboard/doctors/components/organisms/PersonalDataSection.tsx
 import ProfileSectionCard from "../molecules/ProfileSectionCard";
 import DataField from "@/shared/components/atoms/DataField";
 import type { DoctorProfile } from "../../types/doctor";
@@ -11,7 +12,7 @@ interface PersonalDataSectionProps {
     phone: string;
     email: string;
     clinicAddress: string;
-    workHours: string;
+    workingHours: string;
   };
   genderLabel: string;
 }
@@ -31,7 +32,7 @@ export default function PersonalDataSection({
         <DataField label={labels.email} value={doctor.email} />
         <DataField label={labels.phone} value={doctor.phone} />
 
-        <DataField label={labels.workHours} value={doctor.workHours} />
+        <DataField label={labels.workingHours} value={doctor.workingHours} />
         <DataField label={labels.clinicAddress} value={doctor.clinicAddress} />
       </div>
     </ProfileSectionCard>

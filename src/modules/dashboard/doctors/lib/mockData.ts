@@ -3,16 +3,16 @@ import type { DoctorProfile } from "../types/doctor";
 export const doctorProfileMock: DoctorProfile = {
   id: "1",
   name: "د/أحمد محمد",
+  role: "doctor",
   specialty: "أخصائي أمراض الباطنة",
-  avatarUrl: "https://i.pravatar.cc/150?img=13",
-  isOnline: true,
+  image: "https://i.pravatar.cc/150?img=13",
   age: 35,
   gender: "male",
   phone: "+1 (555) 123-4567",
   email: "ahmed.mohamed@healthhub.com",
   clinicAddress: "123 الشارع الرئيسي، القاهرة، مصر",
-  workHours: "من الإثنين إلى الجمعة: 9 صباحا - 5 مساء",
-  yearsOfExperience: 10,
+  workingHours: "من الإثنين إلى الجمعة: 9 صباحا - 5 مساء",
+  experienceYears: 10,
   bio: "الدكتور أحمد محمد هو طبيب باطني ذو خبرة عالية ولديه شغف بتقديم رعاية استثنائية للمرضى، وهو متخصص في تشخيص وعلاج مجموعة واسعة من حالات الطب الباطني، مع التركيز على الرعاية الوقائية وإدارة الأمراض المزمنة.",
   certificates: [
     {
