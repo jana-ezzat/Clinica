@@ -1,77 +1,84 @@
+"use client";
+import { useLocale, useTranslations } from "next-intl";
 import Accordion from "../molecules/Accordion";
 import FieldGroup from "../atoms/FieldGroup";
 import DataField from "@/shared/components/atoms/DataField";
 import IconList from "@/shared/components/molecules/IconList";
 import { Pill, Scissors } from "lucide-react";
 import Badge from "@/shared/components/atoms/Badge";
+import { formatLongDate } from "@/lib/utils";
 import type { PatientDetails } from "../../hooks/usePatient";
 
 interface Props {
   patient: PatientDetails;
 }
 
+const EMPTY = "—";
+
 export default function MedicalFileSection({ patient }: Props) {
+  const t = useTranslations("patients.details.overview");
+  const locale = useLocale();
   const med = patient.medicalInformation;
 
   return (
-    <Accordion title="الملف الطبي">
+    <Accordion title={t("sections.medical")}>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <FieldGroup label="فصيلة الدم">
+        <FieldGroup label={t("fields.bloodType")}>
           {med?.bloodType ? (
             <Badge tone="red">{med.bloodType}</Badge>
           ) : (
-            <span>—</span>
+            <span>{EMPTY}</span>
           )}
         </FieldGroup>
 
-        <FieldGroup label="الحساسية">
+        <FieldGroup label={t("fields.allergies")}>
           {med?.allergies && med.allergies.length > 0 ? (
-            med.allergies.map((a) => (
-              <Badge key={a} tone="pink">
+            med.allergies.map((a, i) => (
+              <Badge key={`${a}-${i}`} tone="pink">
                 {a}
               </Badge>
             ))
           ) : (
-            <span>—</span>
+            <span>{EMPTY}</span>
           )}
         </FieldGroup>
 
-        <FieldGroup label="الامراض المزمنة">
+        <FieldGroup label={t("fields.chronicDiseases")}>
           {med?.chronicDiseases && med.chronicDiseases.length > 0 ? (
-            med.chronicDiseases.map((d) => (
-              <Badge key={d} tone="yellow">
+            med.chronicDiseases.map((d, i) => (
+              <Badge key={`${d}-${i}`} tone="yellow">
                 {d}
               </Badge>
             ))
           ) : (
-            <span>—</span>
+            <span>{EMPTY}</span>
           )}
         </FieldGroup>
 
         <IconList
-          label="الأدوية الحالية"
+          label={t("fields.medications")}
           icon={Pill}
           items={med?.medications ?? []}
           iconClassName="ds-color-secondary"
         />
 
         <IconList
-          label="العمليات السابقة"
+          label={t("fields.previousSurgeries")}
           icon={Scissors}
-          items={
-            med?.previousSurgeries?.map((s) => `${s.name} - ${s.date}`) ?? []
-          }
+          items={(med?.previousSurgeries ?? []).map(
+            (s) => `${s.name} - ${formatLongDate(s.date, locale)}`,
+          )}
           iconClassName="text-red-500"
         />
 
         <DataField
-          label="تاريخ العائلة المرضي"
-          value={med?.familyMedicalHistory ?? "—"}
+          label={t("fields.familyMedicalHistory")}
+          value={med?.familyMedicalHistory ?? EMPTY}
           fullWidth
         />
         <DataField
-          label="التاريخ المرضي"
-          value={med?.medicalHistory ?? "—"}
+          label={t("fields.medicalHistory")}
+          value={med?.medicalHistory ?? EMPTY}
           fullWidth
         />
       </div>

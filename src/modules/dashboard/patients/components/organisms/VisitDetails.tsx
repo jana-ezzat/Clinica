@@ -4,31 +4,33 @@ import InfoBox from "../molecules/InfoBox";
 interface Props {
   reason: string;
   vitals: {
-    weight: string;
-    pressure: string;
-    pulse: string;
-    temperature: string;
+    weight?: number;
+    height?: number;
+    pulse?: number;
+    temperature?: number;
   };
-  examination: string;
-  diagnosis: string;
-  prescription: string;
+  diagnosis?: string;
+  treatment?: string;
+  doctorNotes?: string;
   followUp: string;
-  Doctornotes: string;
 }
+
+const show = (value: string | number | undefined, suffix = "") =>
+  value === undefined || value === "" ? "—" : `${value}${suffix}`;
 
 export default function VisitDetailsSection({
   reason,
   vitals,
-  examination,
   diagnosis,
-  prescription,
+  treatment,
+  doctorNotes,
   followUp,
-  Doctornotes,
 }: Props) {
   const t = useTranslations("visitHistory");
+
   return (
     <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <InfoBox label={t("reason")} tone="gray">
           {reason}
         </InfoBox>
@@ -36,36 +38,33 @@ export default function VisitDetailsSection({
         <InfoBox label={t("vitals")} tone="gray">
           <div className="flex flex-col gap-1">
             <span>
-              {t("weight")} : {vitals.weight}
+              {t("weight")} : {show(vitals.weight, ` ${t("units.kg")}`)}
             </span>
             <span>
-              {t("pressure")}: {vitals.pressure}
+              {t("height")} : {show(vitals.height, ` ${t("units.cm")}`)}
             </span>
             <span>
-              {t("pulse")} : {vitals.pulse}
+              {t("pulse")} : {show(vitals.pulse)}
             </span>
             <span>
-              {t("temperature")} : {vitals.temperature}
+              {t("temperature")} : {show(vitals.temperature, "°")}
             </span>
           </div>
         </InfoBox>
       </div>
 
-      <InfoBox label={t("examination")} tone="green">
-        {examination}
-      </InfoBox>
-
       <div className="grid grid-cols-2 gap-6">
         <InfoBox label={t("diagnosis")} tone="orange">
-          {diagnosis}
+          {show(diagnosis)}
         </InfoBox>
         <InfoBox label={t("prescription")} tone="cyan">
-          {prescription}
+          {show(treatment)}
         </InfoBox>
       </div>
-      <div className="grid grid-cols-2  gap-6">
+
+      <div className="grid grid-cols-2 gap-6">
         <InfoBox label={t("doctorNotes")} tone="gray">
-          {Doctornotes}
+          {show(doctorNotes)}
         </InfoBox>
         <InfoBox label={t("followUp")} tone="purple">
           {followUp}

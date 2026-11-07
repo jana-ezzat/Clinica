@@ -4,9 +4,9 @@ import InfoBox from "./InfoBox";
 interface Props {
   title: string;
   medicalHistoryLabel: string;
-  medicalHistory: string;
+  medicalHistory?: string;
   familyHistoryLabel: string;
-  familyHistory: string;
+  familyHistory?: string;
 }
 
 export default function HistorySection({
@@ -23,10 +23,10 @@ export default function HistorySection({
       </Title>
       <div className="flex flex-col gap-3">
         <InfoBox label={medicalHistoryLabel} tone="gray">
-          {medicalHistory}
+          {medicalHistory || "—"}
         </InfoBox>
         <InfoBox label={familyHistoryLabel} tone="gray">
-          {familyHistory}
+          {familyHistory || "—"}
         </InfoBox>
       </div>
     </div>

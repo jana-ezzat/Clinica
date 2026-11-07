@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import Text from "@/shared/components/atoms/Text";
@@ -8,6 +8,7 @@ import ModalField from "./ModalField";
 import PatientTitle from "./PatientTitle";
 import { AppointmentFormValues } from "@/modules/dashboard/appointments/schema/AppointmentModalSchema";
 import usePatients from "@/modules/dashboard/patients/hooks/usePatients";
+import ExistingPatientPicker from "./ExistingPatientPicker";
 
 interface Props {
   register: UseFormRegister<AppointmentFormValues>;
@@ -28,6 +29,13 @@ const PatientInfo = ({
   const [search, setSearch] = React.useState("");
   const { data: patients, isLoading } = usePatients();
 
+  const [selectedId, setSelectedId] = useState<string>();
+
+  const handleSelect = (id: string) => {
+    setSelectedId(id);
+    setValue("patientId", id, { shouldValidate: true });
+  };
+
   const filtered = (patients ?? []).filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase()),
   );
@@ -43,35 +51,11 @@ const PatientInfo = ({
       <PatientButton patientType={patientType} onChange={onPatientTypeChange} />
 
       {patientType === "existing" ? (
-        <div className="flex flex-col gap-2">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={t("searchPatientPlaceholder")}
-            className="ds-border w-full rounded-md border px-3 py-2 text-sm"
-          />
-          {isLoading && <Text size="sm">{t("loading")}</Text>}
-          <div className="max-h-40 overflow-y-auto rounded-md border">
-            {filtered.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                onClick={() => handleSelectPatient(p.id)}
-                className="block w-full px-3 py-2 text-start text-sm hover:bg-gray-100">
-                {p.name} — {p.phone}
-              </button>
-            ))}
-            {filtered.length === 0 && !isLoading && (
-              <p className="px-3 py-2 text-sm text-gray-400">
-                {t("noResults")}
-              </p>
-            )}
-          </div>
-          {errors.patientId && (
-            <p className="text-sm text-red-500">{errors.patientId.message}</p>
-          )}
-        </div>
+        <ExistingPatientPicker
+          selectedId={selectedId}
+          onSelect={handleSelect}
+          error={errors.patientId?.message}
+        />
       ) : (
         <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <ModalField

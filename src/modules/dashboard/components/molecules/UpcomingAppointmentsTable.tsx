@@ -13,6 +13,8 @@ const statusTones: Record<AppointmentStatus, BadgeTone> = {
   confirmed: "success",
   cancelled: "red",
   pending: "neutral",
+  completed: "success",
+  "no-show": "red",
 };
 
 type Props = {

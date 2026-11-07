@@ -25,6 +25,7 @@ import { isAxiosError } from "axios";
 import useDeleteAppointment from "../../hooks/useDeleteAppointments";
 import EditAppointmentModal from "./EditAppointmentModal";
 import type { AppointmentBooking } from "../../lib/mockData";
+import { APPOINTMENT_TYPES } from "../../lib/appointmentOptions";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -58,27 +59,26 @@ export default function AppointmentsTable() {
 
   const { data: appointments, isLoading, isError, refetch } = useAppointments();
 
- const bookingTypeLabels: Record<AppointmentBookingType, string> = {
-   "check-up": t("bookingTypes.check-up"),
-   consultation: t("bookingTypes.consultation"),
-   "follow-up": t("bookingTypes.follow-up"),
-   emergency: t("bookingTypes.emergency"),
- };
+const bookingTypeLabels: Record<AppointmentBookingType, string> = {
+  "check-up": t("bookingTypes.check-up"),
+  consultation: t("bookingTypes.consultation"),
+  "follow-up": t("bookingTypes.follow-up"),
+  emergency: t("bookingTypes.emergency"),
+  other: t("bookingTypes.other"),
+};
 
- const statusLabels: Record<AppointmentStatus, string> = {
-   pending: t("statuses.pending"),
-   confirmed: t("statuses.confirmed"),
-   completed: t("statuses.completed"),
-   cancelled: t("statuses.cancelled"),
-   "no-show": t("statuses.no-show"),
- };
+const bookingTypeOptions = APPOINTMENT_TYPES.map((value) => ({
+  value,
+  label: bookingTypeLabels[value],
+}));
 
- const bookingTypeOptions = [
-   { value: "check-up", label: bookingTypeLabels["check-up"] },
-   { value: "consultation", label: bookingTypeLabels.consultation },
-   { value: "follow-up", label: bookingTypeLabels["follow-up"] },
-   { value: "emergency", label: bookingTypeLabels.emergency },
- ];
+  const statusLabels: Record<AppointmentStatus, string> = {
+    pending: t("statuses.pending"),
+    confirmed: t("statuses.confirmed"),
+    completed: t("statuses.completed"),
+    cancelled: t("statuses.cancelled"),
+    "no-show": t("statuses.no-show"),
+  };
  
   const filtered = useMemo(() => {
     if (!appointments) return [];

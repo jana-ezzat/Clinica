@@ -1,4 +1,3 @@
-// src/modules/dashboard/patients/components/organisms/PatientTable.tsx
 "use client";
 
 import { useTranslations } from "next-intl";
@@ -25,6 +24,23 @@ export default function PatientTable() {
     phone: t("columns.phone"),
     email: t("columns.email"),
   };
+
+  const columns = [
+    columnLabels.name,
+    columnLabels.type,
+    columnLabels.nationality,
+    columnLabels.phone,
+    columnLabels.email,
+  ];
+
+ if (isLoading) {
+   return (
+     <TableCard className="ds-bg-card ds-shadow-sm overflow-hidden rounded-[18px]">
+       <TableHeaderRow columns={columns} />
+       <TableSkeleton columns={columns.length} />
+     </TableCard>
+   );
+ }
 
   if (isError) {
     return (

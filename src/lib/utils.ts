@@ -28,3 +28,17 @@ export const ageToDateOfBirth = (age: number): string => {
   const year = new Date().getFullYear() - age;
   return `${year}-01-01`;
 };
+
+export const formatLongDate = (
+  iso: string | undefined,
+  locale: string,
+): string => {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "—";
+  return new Intl.DateTimeFormat(`${locale}-u-nu-latn`, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(d);
+};

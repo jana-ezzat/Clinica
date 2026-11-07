@@ -5,12 +5,20 @@ interface Props {
   visitNumber: string;
   doctor: string;
   date: string;
+  onEdit: () => void;
+  editLabel: string;
 }
 
-export default function VisitMeta({ visitNumber, doctor, date }: Props) {
+export default function VisitMeta({
+  visitNumber,
+  doctor,
+  date,
+  onEdit,
+  editLabel,
+}: Props) {
   return (
-    <div className="flex items-center justify-between  rounded-xl px-4 py-3">
-      <div className="flex flex-col  gap-1">
+    <div className="flex items-center justify-between rounded-xl px-4 py-3">
+      <div className="flex flex-col gap-1">
         <Text size="sm" variant="secondary">
           {visitNumber} زيارة رقم
         </Text>
@@ -19,7 +27,7 @@ export default function VisitMeta({ visitNumber, doctor, date }: Props) {
         </Text>
       </div>
 
-      <button>
+      <button type="button" onClick={onEdit} aria-label={editLabel}>
         <TiPencil size={16} />
       </button>
     </div>

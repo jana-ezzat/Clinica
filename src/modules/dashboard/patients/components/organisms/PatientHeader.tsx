@@ -5,6 +5,12 @@ import PatientTabs, { PatientTab } from "../molecules/PatientTabs";
 import type { PatientDetails } from "../../hooks/usePatient";
 import BackButton from "@/shared/components/atoms/BackButton";
 import Header from "@/shared/components/molecules/Header";
+import Button from "@/shared/components/atoms/Button";
+import { useState } from "react";
+import EditPatientModal from "./EditPatientModal";
+import { useLocale } from "next-intl";
+import { formatLongDate } from "@/lib/utils";
+import useVisits from "../../hooks/useVisits";
 
 interface PatientHeaderProps {
   patient: PatientDetails;
@@ -18,16 +24,41 @@ export default function PatientHeader({
   onTabChange,
 }: PatientHeaderProps) {
   const t = useTranslations("patients.details");
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const tOverview = useTranslations("patients.details.overview");
+  const locale = useLocale();
+  const { data: visits } = useVisits(patient.id);
+
+  const latestVisit = visits?.[0];
+  const lastVisit = latestVisit
+    ? formatLongDate(latestVisit.visitDate, locale)
+    : undefined;
+  const ageText =
+    patient.age !== undefined
+      ? tOverview("ageYears", { count: patient.age })
+      : undefined;
+  const genderText = patient.gender
+    ? tOverview(`gender.${patient.gender}`)
+    : undefined;
 
   return (
     <div className="flex flex-col gap-5 p-5">
       <div className="flex items-start justify-between">
-        <Header
-          title={patient.name}
-          subtitle={`${t("fileNumberLabel")}: ${patient.insurance?.memberNumber ?? t("notAvailable")}`}
-        />
+        <Header title={patient.name}/>
         <BackButton />
       </div>
+
+      <Button variant="primary" size="sm" onClick={() => setIsEditOpen(true)}>
+        {t("editButton")}
+      </Button>
+
+      {isEditOpen && (
+        <EditPatientModal
+          patient={patient}
+          isOpen={isEditOpen}
+          onClose={() => setIsEditOpen(false)}
+        />
+      )}
 
       <PatientInfoCards
         patient={patient}
@@ -37,6 +68,9 @@ export default function PatientHeader({
           age: t("age"),
           gender: t("gender"),
         }}
+        lastVisit={lastVisit}
+        ageText={ageText}
+        genderText={genderText}
         notAvailableLabel={t("notAvailable")}
       />
 
