@@ -356,9 +356,26 @@
       "settings": "الأعدادات",
       "logout": "تسجيل الخروج"
     },
-    "header": {
-      "searchPlaceholder": "بحث...."
-    },
+  "header": {
+  "searchPlaceholder": "بحث....",
+  "notifications": {
+    "label": "الإشعارات",
+    "title": "الإشعارات",
+    "loading": "جاري التحميل...",
+    "error": "تعذر تحميل الإشعارات",
+    "empty": "لا توجد إشعارات",
+    "events": {
+      "invoiceCreated": "تم إنشاء فاتورة جديدة",
+      "invoiceUpdated": "تم تعديل فاتورة",
+      "appointmentCreated": "لديك موعد جديد",
+      "appointmentUpdated": "تم تعديل موعد",
+      "appointmentDeleted": "تم حذف موعد",
+      "patientCreated": "تمت إضافة مريض جديد",
+      "patientUpdated": "تم تحديث بيانات مريض",
+      "settingsUpdated": "تم تحديث الإعدادات"
+    }
+  }
+},
     "home": {
       "addAppointment": "إضافة موعد جديد",
       "welcome": "مرحبا {name}",

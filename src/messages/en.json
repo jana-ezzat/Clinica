@@ -363,9 +363,26 @@
       "settings": "Settings",
       "logout": "Log out"
     },
-    "header": {
-      "searchPlaceholder": "Search...."
-    },
+ "header": {
+  "searchPlaceholder": "Search....",
+  "notifications": {
+    "label": "Notifications",
+    "title": "Notifications",
+    "loading": "Loading...",
+    "error": "Couldn't load notifications",
+    "empty": "No notifications",
+    "events": {
+      "invoiceCreated": "New invoice created",
+      "invoiceUpdated": "Invoice updated",
+      "appointmentCreated": "You have a new appointment",
+      "appointmentUpdated": "Appointment updated",
+      "appointmentDeleted": "Appointment deleted",
+      "patientCreated": "New patient added",
+      "patientUpdated": "Patient updated",
+      "settingsUpdated": "Settings updated"
+    }
+  }
+},
     "home": {
       "addAppointment": "Add new appointment",
       "welcome": "Welcome {name}",
