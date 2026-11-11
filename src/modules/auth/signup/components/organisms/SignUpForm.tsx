@@ -89,7 +89,7 @@ export default function SignUpForm() {
 
         {apiError && (
           <p className="text-start text-sm text-red-500">
-            {t(`error.${apiError}`)}
+            {apiError}
           </p>
         )}
 
