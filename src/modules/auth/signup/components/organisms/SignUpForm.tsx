@@ -46,7 +46,11 @@ export default function SignUpForm() {
           label={t("specialty.label")}
           placeholder={t("specialty.placeholder")}
           error={
-            errors.specialty?.message && t(`error.${errors.specialty.message}`)
+            errors.specialty?.message
+              ? t(`error.${errors.specialty.message}`, {
+                  defaultValue: errors.specialty.message,
+                })
+              : undefined
           }
           {...register("specialty")}
         />
@@ -84,7 +88,7 @@ export default function SignUpForm() {
         />
 
         {apiError && (
-          <p className="text-center text-sm text-red-500">
+          <p className="text-start text-sm text-red-500">
             {t(`error.${apiError}`)}
           </p>
         )}
@@ -93,7 +97,8 @@ export default function SignUpForm() {
           variant="primary"
           className="mt-4 w-full"
           type="submit"
-          disabled={isSubmitting}>
+          disabled={isSubmitting}
+        >
           {isSubmitting ? t("btnLoading") : t("btn")}
         </Button>
         <LoginLink>{t("loginLink")}</LoginLink>

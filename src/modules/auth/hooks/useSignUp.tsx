@@ -5,10 +5,12 @@ import { SignUpSchema, SignUpValues } from "../schema/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { env } from "@/lib/config/env";
 import tokenService from "@/services/tokenService";
+import { useTranslations } from "next-intl";
 
 const useSignUp = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
+  const t = useTranslations("sign-up");
 
   const {
     register,
@@ -40,9 +42,13 @@ const useSignUp = () => {
       const signUpResult = await signUpResponse.json().catch(() => null);
 
       if (!signUpResponse.ok) {
-        setApiError(
-          signUpResponse.status === 409 ? "emailTaken" : "somethingWentWrong",
-        );
+        const errorMessage = signUpResult?.message || "";
+        const isEmailDuplicate =
+          signUpResponse.status === 409 ||
+          errorMessage.includes("E11000") ||
+          errorMessage.includes("duplicate");
+
+        setApiError(isEmailDuplicate ? "emailTaken" : "somethingWentWrong");
         return;
       }
 

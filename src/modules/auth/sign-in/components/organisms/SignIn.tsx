@@ -43,21 +43,18 @@ const SignIn = () => {
             }
             {...register("password")}
           />
-
-          <ForgotPasswordLink>{t("forgotPassword")}</ForgotPasswordLink>
-
           {apiError && (
-            <p className="text-center text-sm text-red-500">
-              {t(`error.${apiError}`)}
-            </p>
+            <p className="text-start text-sm text-red-500">{apiError}</p>
           )}
+          <ForgotPasswordLink>{t("forgotPassword")}</ForgotPasswordLink>
 
           <Button
             variant="primary"
             className="mt-4 w-full"
             type="submit"
-            disabled={isSubmitting}>
-            {isSubmitting ? t("btnLoading") : t("btn")}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t : t("btn")}
           </Button>
         </form>
       </FormCard>

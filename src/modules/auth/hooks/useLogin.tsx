@@ -10,6 +10,7 @@ import {
 } from "@/modules/auth/schema/LoginSchema";
 import axiosConfig from "@/services/axiosConfig";
 import tokenService from "@/services/tokenService";
+import { useTranslations } from "next-intl";
 
 interface LoginResponse {
   message: string;
@@ -25,6 +26,7 @@ interface LoginResponse {
 const useLogin = () => {
   const router = useRouter();
   const [apiError, setApiError] = useState<string | null>(null);
+  const t = useTranslations("signin");
 
   const {
     register,
@@ -46,7 +48,7 @@ const useLogin = () => {
       tokenService.set(response.data.jwt);
       router.push("/dashboard");
     } catch (error: any) {
-      setApiError(error?.response?.data?.message || "somethingWentWrong");
+      setApiError(error?.response?.data?.error || t("error.somethingWentWrong"));
     }
   };
 

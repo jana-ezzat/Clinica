@@ -265,6 +265,28 @@
       "rememberPassword": "Remember Password?"
     }
   },
+  "signin": {
+    "title": "Welcome Back",
+    "description": "Sign in to manage your clinic, patients, and appointments",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter password",
+    "forgotPassword": "Forgot password?",
+    "btn": "Sign In",
+    "btnLoading": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "error": {
+      "emailRequired": "Email is required.",
+      "invalidEmail": "Please enter a valid email.",
+      "passwordRequired": "Password is required.",
+      "invalidCredentials": "Invalid email or password.",
+      "somethingWentWrong": "Something went wrong. Please try again.",
+      "networkError": "Could not connect to the server. Check your connection.",
+      "loginFailed": "Login failed. Try again."
+    }
+  },
   "sign-up": {
     "title": "Create a New Account",
     "description": "Start your 14-day free trial",
@@ -282,7 +304,7 @@
     },
     "specialty": {
       "label": "Specialty",
-      "placeholder": "Select specialty"
+      "placeholder": "Select your specialty"
     },
     "email": {
       "label": "Email",
@@ -320,36 +342,7 @@
       "networkError": "Could not connect to the server. Check your connection."
     }
   },
-  "sign-up": {
-    "title": "Create a New Account",
-    "description": "Start your 14-day free trial",
-    "label": "Full Name",
-    "placeholder": "Ahmed Mohamed Ali",
-    "specialty": {
-      "label": "Specialty",
-      "placeholder": "Select your specialty"
-    },
-    "email": {
-      "label": "Email Address",
-      "placeholder": "email@gmail.com"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "••••••••••••",
-      "hint": "Must be at least 8 characters"
-    },
-    "confirmPassword": {
-      "label": "Confirm Password",
-      "placeholder": "••••••••••••"
-    },
-    "btn": "Create Account",
-    "haveAccount": "Already have an account?",
-    "loginLink": "Log in",
-    "termsText": "By creating an account, you agree to the",
-    "termsLink": "Terms & Conditions",
-    "and": "and",
-    "privacyLink": "Privacy Policy"
-  },
+
   "dashboard": {
     "lastMonth": "from last month",
     "sidebar": {

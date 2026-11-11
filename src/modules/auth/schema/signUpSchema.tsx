@@ -6,7 +6,7 @@ export const SignUpSchema = z
   .object({
     name: z.string().min(2, "nameRequired"),
     role: z.enum(ROLES, { message: "roleRequired" }),
-    specialty: z.string().min(1).optional(),
+    specialty: z.string().optional(),
     email: z.string().min(1, "emailRequired").email("invalidEmail"),
     password: z
       .string()
