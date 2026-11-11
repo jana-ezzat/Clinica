@@ -54,7 +54,7 @@ const SignIn = () => {
             type="submit"
             disabled={isSubmitting}
           >
-            {isSubmitting ? t : t("btn")}
+            {isSubmitting ? t("btnLoading") : t("btn")}
           </Button>
         </form>
       </FormCard>
