@@ -48,6 +48,7 @@ const useLogin = () => {
       tokenService.set(response.data.jwt);
       toast.success(t("success"));
       router.push("/dashboard");
+      router.refresh();
     } catch (error: any) {
       setApiError(
         error?.response?.data?.error || t("error.somethingWentWrong"),
