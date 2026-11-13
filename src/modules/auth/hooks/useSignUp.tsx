@@ -48,7 +48,11 @@ const useSignUp = () => {
           errorMessage.includes("E11000") ||
           errorMessage.includes("duplicate");
 
-        setApiError(isEmailDuplicate ? t("error.emailTaken") : "error.somethingWentWrong");
+        setApiError(
+          isEmailDuplicate
+            ? t("error.emailTaken")
+            : t("error.somethingWentWrong"),
+        );
         return;
       }
 
