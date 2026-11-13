@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,6 +10,7 @@ import {
 import axiosConfig from "@/services/axiosConfig";
 import tokenService from "@/services/tokenService";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 interface LoginResponse {
   message: string;
@@ -46,9 +46,12 @@ const useLogin = () => {
       });
 
       tokenService.set(response.data.jwt);
+      toast.success(t("success"));
       router.push("/dashboard");
     } catch (error: any) {
-      setApiError(error?.response?.data?.error || t("error.somethingWentWrong"));
+      setApiError(
+        error?.response?.data?.error || t("error.somethingWentWrong"),
+      );
     }
   };
 

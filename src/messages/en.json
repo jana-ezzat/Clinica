@@ -285,7 +285,8 @@
       "somethingWentWrong": "Something went wrong. Please try again.",
       "networkError": "Could not connect to the server. Check your connection.",
       "loginFailed": "Login failed. Try again."
-    }
+    },
+    "success": "Signed in successfully!"
   },
   "sign-up": {
     "title": "Create a New Account",
@@ -340,7 +341,8 @@
       "emailTaken": "This email is already in use.",
       "somethingWentWrong": "Something went wrong. Please try again.",
       "networkError": "Could not connect to the server. Check your connection."
-    }
+    },
+      "success": "Signed Up successfully!"
   },
 
   "dashboard": {
